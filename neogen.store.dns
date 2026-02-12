@@ -1,0 +1,60 @@
+; ============================================================
+; DNS Zone File - neogen.store
+; Generated: 2026-02-02
+; ============================================================
+
+$ORIGIN neogen.store.
+$TTL 14400
+
+; ============================================================
+; A RECORDS
+; ============================================================
+@                           14400   IN  A       176.126.84.39
+www                         14400   IN  A       176.126.84.39
+mail                        14400   IN  A       162.254.39.146
+cpcalendars                 14400   IN  A       162.254.39.146
+webmail                     14400   IN  A       162.254.39.146
+whm                         14400   IN  A       162.254.39.146
+autoconfig                  14400   IN  A       162.254.39.146
+cpcontacts                  14400   IN  A       162.254.39.146
+webdisk                     14400   IN  A       162.254.39.146
+cpanel                      14400   IN  A       162.254.39.146
+autodiscover                14400   IN  A       162.254.39.146
+
+; ============================================================
+; CNAME RECORDS
+; ============================================================
+ftp                         14400   IN  CNAME   neogen.store.
+
+; ============================================================
+; MX RECORDS
+; ============================================================
+@                           14400   IN  MX  5   mx1-hosting.jellyfish.systems.
+@                           14400   IN  MX  10  mx2-hosting.jellyfish.systems.
+@                           14400   IN  MX  20  mx3-hosting.jellyfish.systems.
+
+; ============================================================
+; SRV RECORDS
+; ============================================================
+_caldavs._tcp               14400   IN  SRV 0 0 2080    neogen.store.
+_caldav._tcp                14400   IN  SRV 0 0 2079    neogen.store.
+_autodiscover._tcp          14400   IN  SRV 0 0 443     cpanelemaildiscovery.cpanel.net.
+_carddav._tcp               14400   IN  SRV 0 0 2079    neogen.store.
+_carddavs._tcp              14400   IN  SRV 0 0 2080    neogen.store.
+
+; ============================================================
+; TXT RECORDS
+; ============================================================
+_caldavs._tcp               14400   IN  TXT "path=/"
+_caldav._tcp                14400   IN  TXT "path=/"
+_carddav._tcp               14400   IN  TXT "path=/"
+_carddavs._tcp              14400   IN  TXT "path=/"
+
+; SPF
+@                           14400   IN  TXT "v=spf1 +a +mx +ip4:162.254.39.142 include:spf.web-hosting.com ~all"
+
+; DKIM
+default._domainkey          14400   IN  TXT "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuLWHnVi0AzaiD8tZHqT3p+wvE96kbARoD4EXARnu7V0fhPqa8x4ynRt54/C28GFqQ3dBP6qw1RbKpjk4cXI7rr/DrHYR4R/paHhL71NCHVMk3hG1VIHDc0A2Byw2Wew+GzgMRl44RMl+8kuzuLQtFnheqk3MxImU+dEKkgloEuifL/efHw3FOmLi49AASk1u8VgGiN7yiAmmFjX/JhVJpFsXVQmwM9J4Q18XAXqgOaFiRGDen5W9vXiIa8kGmRIdlSQ8Jih4ffOCCJlnT7RS6w/yts3RjfqAYzTHmHK+EV+aFuLLFRQQ5qIlsQJo+I/83Q+ZXqXRGHHMPD9Q7QNXkQIDAQAB;"
+
+; DMARC
+_dmarc                      14400   IN  TXT "v=DMARC1; p=none;"

@@ -1,0 +1,459 @@
+/**
+ * Badges Component
+ *
+ * Badge components for protocols, stock status, sales, and AR features
+ * Uses CSS logical properties for RTL support
+ * Depends on: tokens.css (--ngs-* variables)
+ */
+
+/* Base Badge */
+.ngs-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  padding-block: 4px;
+  padding-inline: 12px;
+  border-radius: var(--ngs-radius-full);
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+/* Protocol Badge */
+.ngs-badge--protocol {
+  background: var(--ngs-primary-100);
+  color: var(--ngs-primary-hover);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 11px;
+  padding-block: 6px;
+  padding-inline: 10px;
+}
+
+.ngs-badge--protocol svg,
+.ngs-badge--protocol img {
+  inline-size: 16px;
+  block-size: 16px;
+  flex-shrink: 0;
+}
+
+/* Protocol Specific Colors */
+.ngs-badge--zigbee {
+  background: rgba(34, 139, 230, 0.1);
+  color: #228BE6;
+}
+
+.ngs-badge--zwave {
+  background: rgba(220, 38, 38, 0.1);
+  color: #DC2626;
+}
+
+.ngs-badge--wifi {
+  background: rgba(168, 85, 247, 0.1);
+  color: #A855F7;
+}
+
+.ngs-badge--bluetooth {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3B82F6;
+}
+
+.ngs-badge--matter {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22C55E;
+}
+
+.ngs-badge--thread {
+  background: rgba(245, 158, 11, 0.1);
+  color: #F59E0B;
+}
+
+/* New Badge (Product Card Overlay) */
+.ngs-badge--new {
+  position: absolute;
+  inset-block-start: 12px;
+  inset-inline-end: 12px;
+  padding-block: 6px;
+  padding-inline: 12px;
+  border-radius: var(--ngs-radius-sm);
+  box-shadow: var(--ngs-shadow-low);
+  z-index: 10;
+  color: #fff;
+  background: var(--ngs-primary);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Sale Badge (Product Card Overlay) */
+.ngs-badge--sale {
+  position: absolute;
+  inset-block-start: 12px;
+  inset-inline-end: 12px;
+  padding-block: 6px;
+  padding-inline: 12px;
+  border-radius: var(--ngs-radius-sm);
+  box-shadow: var(--ngs-shadow-low);
+  z-index: 10;
+  color: #fff;
+  background: var(--ngs-error);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Sale Percentage Badge */
+.ngs-badge--sale-percent {
+  position: absolute;
+  inset-block-start: 12px;
+  inset-inline-start: 12px;
+  padding-block: 8px;
+  padding-inline: 12px;
+  border-radius: var(--ngs-radius-sm);
+  box-shadow: var(--ngs-shadow-low);
+  z-index: 10;
+  color: #fff;
+  background: var(--ngs-error);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* AR Badge (Augmented Reality) */
+.ngs-badge--ar {
+  position: absolute;
+  inset-block-start: 12px;
+  inset-inline-start: 12px;
+  padding-block: 6px;
+  padding-inline: 12px;
+  border-radius: var(--ngs-radius-sm);
+  box-shadow: var(--ngs-shadow-low);
+  z-index: 10;
+  color: #fff;
+  background: var(--ngs-primary);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ngs-badge--ar svg {
+  inline-size: 14px;
+  block-size: 14px;
+}
+
+/* Stock Badges */
+.ngs-badge--stock {
+  font-size: 12px;
+  font-weight: 700;
+  padding-block: 4px;
+  padding-inline: 8px;
+  border-radius: var(--ngs-radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ngs-badge--stock-in {
+  background: rgba(22, 163, 74, 0.1);
+  color: var(--ngs-success);
+  border: 1px solid var(--ngs-success);
+}
+
+.ngs-badge--stock-in::before {
+  content: "✓";
+  font-size: 14px;
+}
+
+.ngs-badge--stock-low {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--ngs-warning);
+  border: 1px solid var(--ngs-warning);
+}
+
+.ngs-badge--stock-low::before {
+  content: "!";
+  font-size: 14px;
+}
+
+.ngs-badge--stock-out {
+  background: rgba(220, 38, 38, 0.1);
+  color: var(--ngs-error);
+  border: 1px solid var(--ngs-error);
+}
+
+.ngs-badge--stock-out::before {
+  content: "✕";
+  font-size: 14px;
+}
+
+/* Savings Badge */
+.ngs-badge--savings {
+  background: rgba(22, 163, 74, 0.1);
+  color: var(--ngs-success);
+  font-weight: 700;
+  font-size: 13px;
+  padding-block: 6px;
+  padding-inline: 10px;
+}
+
+/* Status Badge */
+.ngs-badge--status {
+  font-size: 11px;
+  padding-block: 4px;
+  padding-inline: 10px;
+}
+
+.ngs-badge--status-active {
+  background: rgba(22, 163, 74, 0.1);
+  color: var(--ngs-success);
+}
+
+.ngs-badge--status-inactive {
+  background: rgba(100, 116, 139, 0.1);
+  color: var(--ngs-text-secondary);
+}
+
+.ngs-badge--status-pending {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--ngs-warning);
+}
+
+.ngs-badge--status-error {
+  background: rgba(220, 38, 38, 0.1);
+  color: var(--ngs-error);
+}
+
+/* Category Badge */
+.ngs-badge--category {
+  background: var(--ngs-bg-alt);
+  color: var(--ngs-text);
+  font-weight: 600;
+  border: 1px solid var(--ngs-border-light);
+  padding-block: 6px;
+  padding-inline: 12px;
+  transition: all 200ms ease;
+}
+
+.ngs-badge--category:hover {
+  background: var(--ngs-primary-light);
+  border-color: var(--ngs-primary);
+  color: var(--ngs-primary);
+}
+
+/* Feature Badge */
+.ngs-badge--feature {
+  background: var(--ngs-primary);
+  color: #fff;
+  font-size: 10px;
+  padding-block: 3px;
+  padding-inline: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Count Badge (Notification Style) */
+.ngs-badge--count {
+  min-inline-size: 20px;
+  block-size: 20px;
+  background: var(--ngs-error);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 6px;
+}
+
+.ngs-badge--count-primary {
+  background: var(--ngs-primary);
+}
+
+.ngs-badge--count-success {
+  background: var(--ngs-success);
+}
+
+/* Dot Badge (Small Indicator) */
+.ngs-badge--dot {
+  inline-size: 8px;
+  block-size: 8px;
+  border-radius: 50%;
+  padding: 0;
+  display: inline-block;
+}
+
+.ngs-badge--dot-success {
+  background: var(--ngs-success);
+}
+
+.ngs-badge--dot-error {
+  background: var(--ngs-error);
+}
+
+.ngs-badge--dot-warning {
+  background: var(--ngs-warning);
+}
+
+.ngs-badge--dot-info {
+  background: var(--ngs-info);
+}
+
+/* Badge with Icon */
+.ngs-badge--with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ngs-badge--with-icon svg {
+  inline-size: 14px;
+  block-size: 14px;
+  flex-shrink: 0;
+}
+
+/* Badge Group */
+.ngs-badge-group {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+/* Badge Pill (Longer Badge) */
+.ngs-badge--pill {
+  padding-inline: 16px;
+  border-radius: var(--ngs-radius-full);
+}
+
+/* Outlined Badge */
+.ngs-badge--outlined {
+  background: transparent;
+  border: 1px solid currentColor;
+}
+
+.ngs-badge--outlined-primary {
+  color: var(--ngs-primary);
+  border-color: var(--ngs-primary);
+}
+
+.ngs-badge--outlined-success {
+  color: var(--ngs-success);
+  border-color: var(--ngs-success);
+}
+
+.ngs-badge--outlined-error {
+  color: var(--ngs-error);
+  border-color: var(--ngs-error);
+}
+
+.ngs-badge--outlined-warning {
+  color: var(--ngs-warning);
+  border-color: var(--ngs-warning);
+}
+
+/* Removable Badge */
+.ngs-badge--removable {
+  padding-inline-end: 4px;
+}
+
+.ngs-badge__remove {
+  inline-size: 16px;
+  block-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: currentColor;
+  border-radius: 50%;
+  transition: background 200ms ease;
+  margin-inline-start: 4px;
+}
+
+.ngs-badge__remove:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.ngs-badge__remove svg {
+  inline-size: 12px;
+  block-size: 12px;
+}
+
+/* Clickable Badge */
+.ngs-badge--clickable {
+  cursor: pointer;
+  transition: all 200ms ease;
+  text-decoration: none;
+}
+
+.ngs-badge--clickable:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Animated Badge */
+.ngs-badge--pulse {
+  animation: ngsBadgePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes ngsBadgePulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Badge with Dot Indicator */
+.ngs-badge--with-dot {
+  position: relative;
+  padding-inline-start: 20px;
+}
+
+.ngs-badge--with-dot::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 8px;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  inline-size: 6px;
+  block-size: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .ngs-badge {
+    font-size: 11px;
+    padding-block: 3px;
+    padding-inline: 10px;
+  }
+
+  .ngs-badge--new,
+  .ngs-badge--sale,
+  .ngs-badge--ar {
+    padding-block: 5px;
+    padding-inline: 10px;
+    font-size: 11px;
+  }
+
+  .ngs-badge--sale-percent {
+    padding-block: 6px;
+    padding-inline: 10px;
+    font-size: 13px;
+  }
+}

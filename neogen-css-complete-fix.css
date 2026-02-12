@@ -1,0 +1,413 @@
+/* ================================================
+   NEOGEN CSS - COMPLETE FIX
+   Fixes: White header, white hero, contrast issues
+   For: negt.blazr.net (Blocksy + Elementor)
+   ================================================ */
+
+/* ================================================
+   PART 1: FORCE DARK HEADER (HIGHEST PRIORITY)
+   ================================================ */
+
+/* Target ALL possible header containers */
+html body header,
+html body .site-header,
+html body .ct-header,
+html body .header-row,
+html body header[data-id="type-1"],
+html body #masthead,
+html body .ct-header-container,
+html body [data-row="top"],
+html body [data-row="middle"],
+html body [data-row="bottom"],
+html body .ct-header[data-transparent],
+html body header[data-transparent],
+html body .transparent-header,
+html body .ct-header.ct-sticky,
+html body .site-header.sticky,
+html body .is-sticky header,
+html body [data-sticky="yes"],
+body > header,
+#page > header,
+.site > header {
+    background: #0a0a0a !important;
+    background-color: #0a0a0a !important;
+    background-image: none !important;
+}
+
+/* Force WHITE text in header */
+html body header *,
+html body .site-header *,
+html body .ct-header *,
+html body .header-row *,
+html body header a,
+html body .site-header a,
+html body .ct-header a,
+html body header span,
+html body header p,
+html body header li,
+html body .ct-header-menu a,
+html body .main-navigation a,
+html body nav a,
+html body .site-title,
+html body .site-title a,
+html body .site-branding *,
+html body .ct-logo,
+html body .ct-logo *,
+html body [data-row] a,
+html body [data-row] span {
+    color: #FFFFFF !important;
+}
+
+/* Header icons WHITE */
+html body header svg,
+html body .site-header svg,
+html body .ct-header svg,
+html body header .ct-icon,
+html body .ct-header .ct-icon,
+html body header path,
+html body .ct-header path,
+html body [data-row] svg,
+html body [data-row] path {
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+}
+
+/* Header hover states */
+html body header a:hover,
+html body .site-header a:hover,
+html body .ct-header a:hover,
+html body .ct-header-menu a:hover {
+    color: #4F4EFC !important;
+    opacity: 0.9;
+}
+
+/* Cart badge */
+html body .ct-cart-count,
+html body .cart-count,
+html body [class*="cart-count"] {
+    background: #1F1EFB !important;
+    color: #FFFFFF !important;
+}
+
+/* Mobile menu toggle */
+html body .ct-toggle,
+html body .ct-hamburger,
+html body [class*="menu-toggle"],
+html body [class*="mobile-toggle"] {
+    color: #FFFFFF !important;
+}
+
+html body .ct-toggle span,
+html body .ct-hamburger span {
+    background: #FFFFFF !important;
+}
+
+/* ================================================
+   PART 2: FORCE DARK HERO SECTION
+   ================================================ */
+
+/* Target ALL possible hero containers */
+html body .ct-hero,
+html body .hero-section,
+html body [class*="hero"],
+html body section.hero,
+html body .elementor-section.hero,
+html body .site-main > section:first-child,
+html body .home .site-main > *:first-child,
+html body .ct-section-hero,
+html body .elementor-element[data-element_type="section"]:first-child,
+html body main > .elementor:first-child > .elementor-section:first-child,
+html body .elementor-section-wrap > .elementor-section:first-child,
+html body .e-con:first-child,
+html body .elementor-top-section:first-of-type {
+    background: linear-gradient(135deg, #0D2175 0%, #1F1EFB 100%) !important;
+    background-color: #0D2175 !important;
+}
+
+/* Force WHITE text in hero */
+html body .ct-hero *,
+html body .hero-section *,
+html body [class*="hero"] h1,
+html body [class*="hero"] h2,
+html body [class*="hero"] h3,
+html body [class*="hero"] h4,
+html body [class*="hero"] h5,
+html body [class*="hero"] h6,
+html body [class*="hero"] p,
+html body [class*="hero"] span,
+html body [class*="hero"] a,
+html body [class*="hero"] li,
+html body .site-main > section:first-child *,
+html body .elementor-section:first-child .elementor-heading-title,
+html body .elementor-section:first-child .elementor-text-editor,
+html body .elementor-section:first-child .elementor-widget-text-editor *,
+html body .elementor-section:first-child p,
+html body .elementor-section:first-child h1,
+html body .elementor-section:first-child h2,
+html body .elementor-section:first-child span {
+    color: #FFFFFF !important;
+}
+
+/* Hero buttons - White on dark */
+html body .ct-hero .ct-button,
+html body .hero-section .ct-button,
+html body .ct-hero a.button,
+html body .hero-section a.button,
+html body [class*="hero"] .button,
+html body [class*="hero"] .wp-block-button__link,
+html body [class*="hero"] .elementor-button,
+html body .elementor-section:first-child .elementor-button {
+    background: #FFFFFF !important;
+    color: #0D2175 !important;
+    border: 2px solid #FFFFFF !important;
+}
+
+html body .ct-hero .ct-button:hover,
+html body [class*="hero"] .button:hover,
+html body [class*="hero"] .elementor-button:hover {
+    background: transparent !important;
+    color: #FFFFFF !important;
+}
+
+/* ================================================
+   PART 3: DROPDOWN MENUS (White background)
+   ================================================ */
+
+html body .sub-menu,
+html body .dropdown-menu,
+html body .ct-header .sub-menu,
+html body header .sub-menu {
+    background: #FFFFFF !important;
+}
+
+html body .sub-menu a,
+html body .dropdown-menu a,
+html body .ct-header .sub-menu a {
+    color: #1a1a2e !important;
+}
+
+html body .sub-menu a:hover,
+html body .dropdown-menu a:hover {
+    background: #F8F9FA !important;
+    color: #1F1EFB !important;
+}
+
+/* ================================================
+   PART 4: FOOTER (Dark blue)
+   ================================================ */
+
+html body footer,
+html body .site-footer,
+html body .ct-footer,
+html body #colophon {
+    background: #0D2175 !important;
+}
+
+html body footer *,
+html body .site-footer *,
+html body .ct-footer * {
+    color: #FFFFFF !important;
+}
+
+html body footer a:hover,
+html body .site-footer a:hover {
+    color: #4F4EFC !important;
+}
+
+/* ================================================
+   PART 5: CONTENT SECTIONS (Light background)
+   ================================================ */
+
+html body .site-main section:not(:first-child),
+html body .elementor-section:not(:first-child) {
+    background: #FFFFFF;
+}
+
+html body .site-main section:nth-child(even):not(:first-child),
+html body .elementor-section:nth-child(even):not(:first-child) {
+    background: #F8F9FA;
+}
+
+/* ================================================
+   PART 6: CSS VARIABLES
+   ================================================ */
+
+:root {
+    --neo-dark: #0a0a0a;
+    --neo-dark-blue: #0D2175;
+    --neo-bright-blue: #1F1EFB;
+    --neo-light-blue: #4F4EFC;
+    --neo-white: #FFFFFF;
+    --neo-light-gray: #F8F9FA;
+    --neo-border: #E5E7EB;
+    --neo-text-dark: #1a1a2e;
+    --neo-text-muted: #6B7280;
+
+    --theme-palette-color-1: #1F1EFB;
+    --theme-palette-color-2: #0D2175;
+    --theme-palette-color-3: #4F4EFC;
+    --theme-palette-color-4: #F8F9FA;
+    --theme-palette-color-5: #FFFFFF;
+    --theme-palette-color-8: #FFFFFF;
+    --theme-link-initial-color: #1F1EFB;
+    --theme-link-hover-color: #0D2175;
+    --theme-button-background-initial-color: #1F1EFB;
+    --theme-button-background-hover-color: #0D2175;
+}
+
+/* ================================================
+   PART 7: BUTTONS (Global)
+   ================================================ */
+
+html body .wp-block-button__link,
+html body .ct-button,
+html body button[type="submit"],
+html body .button,
+html body a.button,
+html body .add_to_cart_button,
+html body .single_add_to_cart_button,
+html body .checkout-button,
+html body input[type="submit"],
+html body .elementor-button {
+    background: linear-gradient(135deg, #0D2175 0%, #1F1EFB 100%) !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 8px;
+}
+
+html body .wp-block-button__link:hover,
+html body .ct-button:hover,
+html body button[type="submit"]:hover,
+html body .button:hover,
+html body a.button:hover,
+html body .add_to_cart_button:hover,
+html body .elementor-button:hover {
+    background: linear-gradient(135deg, #1F1EFB 0%, #4F4EFC 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(31, 30, 251, 0.3);
+}
+
+/* ================================================
+   PART 8: MOBILE RESPONSIVE
+   ================================================ */
+
+@media (max-width: 768px) {
+    html body .mobile-menu,
+    html body .ct-mobile-menu,
+    html body .ct-panel,
+    html body [data-behaviour="modal"],
+    html body .ct-drawer-canvas {
+        background: #0a0a0a !important;
+    }
+
+    html body .mobile-menu a,
+    html body .ct-mobile-menu a,
+    html body .ct-panel a,
+    html body .ct-drawer-canvas a {
+        color: #FFFFFF !important;
+    }
+
+    html body .ct-panel .ct-toggle-close,
+    html body .ct-panel svg {
+        color: #FFFFFF !important;
+        fill: #FFFFFF !important;
+    }
+}
+
+/* ================================================
+   PART 9: WOOCOMMERCE
+   ================================================ */
+
+html body .woocommerce .products .product .price,
+html body .woocommerce-Price-amount {
+    color: #1F1EFB !important;
+    font-weight: 700;
+}
+
+html body .woocommerce span.onsale,
+html body .onsale {
+    background: #1F1EFB !important;
+    color: #FFFFFF !important;
+}
+
+/* ================================================
+   PART 10: CARDS
+   ================================================ */
+
+html body .product,
+html body .product-card,
+html body .woocommerce .product,
+html body .ct-card,
+html body [class*="card"] {
+    background: #FFFFFF !important;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+html body .product:hover,
+html body .product-card:hover,
+html body .ct-card:hover {
+    box-shadow: 0 8px 25px rgba(31, 30, 251, 0.12) !important;
+    transform: translateY(-4px);
+    border-color: #1F1EFB;
+}
+
+/* ================================================
+   PART 11: LINKS
+   ================================================ */
+
+html body a:not(header a):not(footer a):not([class*="hero"] a) {
+    color: #1F1EFB;
+}
+
+html body a:hover:not(header a):not(footer a):not([class*="hero"] a) {
+    color: #0D2175;
+}
+
+/* ================================================
+   PART 12: FORMS
+   ================================================ */
+
+html body input,
+html body textarea,
+html body select {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    color: #1a1a2e;
+}
+
+html body input:focus,
+html body textarea:focus,
+html body select:focus {
+    border-color: #1F1EFB !important;
+    box-shadow: 0 0 0 3px rgba(31, 30, 251, 0.1) !important;
+}
+
+/* ================================================
+   PART 13: SCROLLBAR & SELECTION
+   ================================================ */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F8F9FA;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #0D2175, #1F1EFB);
+    border-radius: 4px;
+}
+
+::selection {
+    background: #1F1EFB;
+    color: #FFFFFF;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}

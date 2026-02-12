@@ -1,0 +1,488 @@
+/*
+Theme Name: neogen Smart Home
+Theme URI: https://neogen.store
+Author: neogen Team
+Author URI: https://neogen.store
+Description: Custom lightweight Arabic-first theme for neogen Smart Home & Electronics store. Unifi-inspired design with dark header and light content areas.
+Version: 2.0.0
+Text Domain: neogen-smarthome
+*/
+
+:root {
+    /* neogen Brand Colors */
+    --color-primary: #1F1EFB;      /* Bright Blue - Primary CTA */
+    --color-secondary: #0D2175;    /* Dark Blue - Headers/Footer */
+    --color-dark: #0a0a0a;         /* Near Black - Header */
+    --color-accent: #4F4EFC;       /* Light Blue - Hover states */
+    --color-text: #1a1a2e;         /* Dark text */
+    --color-text-muted: #6B7280;   /* Muted text */
+    --color-bg: #FFFFFF;           /* White background */
+    --color-bg-light: #F8F9FA;     /* Light gray sections */
+    --color-border: #E5E7EB;       /* Border color */
+    --font-main: 'Tajawal', 'Inter', sans-serif;
+
+    /* Gradient */
+    --gradient-primary: linear-gradient(135deg, #0D2175 0%, #1F1EFB 100%);
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+}
+
+/* Responsive Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-secondary);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--color-secondary);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-secondary);
+    color: white;
+}
+
+.btn-outline {
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+/* ===========================================
+   HEADER STYLES - Dark Unifi-Inspired
+   =========================================== */
+.site-header {
+    background: var(--color-dark) !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.site-header * {
+    color: #FFFFFF !important;
+}
+
+.site-branding {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.site-branding a {
+    color: #FFFFFF !important;
+    text-decoration: none;
+}
+
+.site-branding img {
+    max-height: 50px;
+    width: auto;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+.main-navigation a {
+    font-weight: 500;
+    font-size: 1rem;
+    color: #FFFFFF !important;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.main-navigation a:hover {
+    color: var(--color-accent) !important;
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.header-actions a {
+    color: #FFFFFF !important;
+}
+
+.cart-link {
+    font-size: 1.2rem;
+}
+
+.cart-count {
+    background: var(--color-primary);
+    color: #FFFFFF !important;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+/* ===========================================
+   HERO SECTION - Blue Gradient
+   =========================================== */
+.hero-section {
+    background: var(--gradient-primary) !important;
+    color: #FFFFFF;
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.hero-section * {
+    color: #FFFFFF !important;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+}
+
+.hero-section .btn-primary {
+    background: #FFFFFF !important;
+    color: var(--color-secondary) !important;
+    border: 2px solid #FFFFFF;
+}
+
+.hero-section .btn-primary:hover {
+    background: transparent !important;
+    color: #FFFFFF !important;
+}
+
+.hero-section .btn-outline {
+    border-color: #FFFFFF !important;
+    color: #FFFFFF !important;
+}
+
+.hero-section .btn-outline:hover {
+    background: #FFFFFF !important;
+    color: var(--color-secondary) !important;
+}
+
+/* ===========================================
+   CONTENT SECTIONS - Light Background
+   =========================================== */
+.features-section,
+.best-sellers,
+.categories-section,
+.testimonials {
+    padding: 4rem 0;
+}
+
+.features-section {
+    background: var(--color-bg);
+}
+
+.categories-section {
+    background: var(--color-bg-light);
+}
+
+.best-sellers {
+    background: var(--color-bg);
+}
+
+.testimonials {
+    background: var(--color-bg-light);
+}
+
+/* Feature Cards */
+.feature-item {
+    background: var(--color-bg-light);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--color-border);
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(31, 30, 251, 0.1);
+    border-color: var(--color-primary);
+}
+
+.feature-item h3 {
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+}
+
+/* Category Cards */
+.category-card {
+    background: var(--color-bg);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: all 0.3s;
+    display: block;
+    color: var(--color-text);
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border: 1px solid var(--color-border);
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(31, 30, 251, 0.15);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+/* Testimonial Cards */
+.testimonial {
+    background: var(--color-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid var(--color-border);
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+.testimonial strong {
+    color: var(--color-secondary);
+}
+
+/* ===========================================
+   CTA SECTION - Blue Gradient
+   =========================================== */
+.cta-section {
+    background: var(--gradient-primary) !important;
+    color: #FFFFFF;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.cta-section * {
+    color: #FFFFFF !important;
+}
+
+.cta-section h2 {
+    margin-bottom: 1.5rem;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.cta-section .btn {
+    background: #FFFFFF !important;
+    color: var(--color-secondary) !important;
+}
+
+.cta-section .btn:hover {
+    background: transparent !important;
+    color: #FFFFFF !important;
+    border: 2px solid #FFFFFF;
+}
+
+/* ===========================================
+   FOOTER - Dark Blue
+   =========================================== */
+.site-footer {
+    background: var(--color-secondary) !important;
+    color: #FFFFFF;
+    padding: 4rem 0 0;
+    margin-top: 4rem;
+}
+
+.site-footer * {
+    color: #FFFFFF !important;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-widget h4 {
+    color: var(--color-accent) !important;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.footer-widget p {
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.8) !important;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--color-accent) !important;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 1.5rem 0;
+    text-align: center;
+    color: rgba(255,255,255,0.7) !important;
+    font-size: 0.9rem;
+}
+
+/* ===========================================
+   WOOCOMMERCE STYLES
+   =========================================== */
+.woocommerce .products .product {
+    background: var(--color-bg);
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    transition: all 0.3s;
+}
+
+.woocommerce .products .product:hover {
+    box-shadow: 0 10px 30px rgba(31, 30, 251, 0.12);
+    transform: translateY(-4px);
+    border-color: var(--color-primary);
+}
+
+.woocommerce .products .product .price {
+    color: var(--color-primary) !important;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.woocommerce .products .product .button,
+.woocommerce .add_to_cart_button,
+.woocommerce .single_add_to_cart_button {
+    background: var(--gradient-primary) !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s;
+}
+
+.woocommerce .products .product .button:hover,
+.woocommerce .add_to_cart_button:hover,
+.woocommerce .single_add_to_cart_button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(31, 30, 251, 0.3);
+}
+
+.woocommerce span.onsale {
+    background: var(--color-primary) !important;
+    color: #FFFFFF !important;
+}
+
+/* ===========================================
+   RESPONSIVE STYLES
+   =========================================== */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .main-navigation ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-section {
+        padding: 4rem 0;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===========================================
+   UTILITY CLASSES
+   =========================================== */
+.text-center { text-align: center; }
+.text-white { color: #FFFFFF !important; }
+.bg-gradient { background: var(--gradient-primary); }
+.mb-2 { margin-bottom: 2rem; }
+.mb-3 { margin-bottom: 3rem; }
+.py-4 { padding-top: 4rem; padding-bottom: 4rem; }

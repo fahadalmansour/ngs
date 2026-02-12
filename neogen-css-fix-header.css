@@ -1,0 +1,186 @@
+/* ================================================
+   NEOGEN CSS FIX - Header & Homepage
+   Problem: White header with white text
+   Solution: Force dark header with proper specificity
+   ================================================ */
+
+/* ----- FORCE DARK HEADER ----- */
+header,
+.site-header,
+.ct-header,
+.header-row,
+header[data-id="type-1"],
+#masthead,
+.ct-header-container,
+[data-row="top"],
+[data-row="middle"],
+[data-row="bottom"] {
+    background: #0a0a0a !important;
+    background-color: #0a0a0a !important;
+}
+
+/* ----- FORCE WHITE TEXT IN HEADER ----- */
+header *,
+.site-header *,
+.ct-header *,
+.header-row *,
+header a,
+.site-header a,
+.ct-header a,
+header span,
+header p,
+header li,
+.ct-header-menu a,
+.main-navigation a,
+nav a,
+.site-title,
+.site-title a,
+.site-branding *,
+.ct-logo,
+.ct-logo * {
+    color: #FFFFFF !important;
+}
+
+/* ----- HEADER ICONS WHITE ----- */
+header svg,
+.site-header svg,
+.ct-header svg,
+header .ct-icon,
+.ct-header .ct-icon,
+header path,
+.ct-header path {
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+}
+
+/* ----- CART BADGE ----- */
+.ct-cart-count,
+.cart-count,
+[class*="cart-count"] {
+    background: #1F1EFB !important;
+    color: #FFFFFF !important;
+}
+
+/* ----- HEADER HOVER STATES ----- */
+header a:hover,
+.site-header a:hover,
+.ct-header a:hover,
+.ct-header-menu a:hover {
+    color: #4F4EFC !important;
+    opacity: 0.9;
+}
+
+/* ----- MOBILE MENU TOGGLE ----- */
+.ct-toggle,
+.ct-hamburger,
+[class*="menu-toggle"],
+[class*="mobile-toggle"] {
+    color: #FFFFFF !important;
+}
+
+.ct-toggle span,
+.ct-hamburger span {
+    background: #FFFFFF !important;
+}
+
+/* ----- SEARCH ICON ----- */
+.ct-search,
+[class*="search-icon"],
+[class*="search-toggle"] {
+    color: #FFFFFF !important;
+}
+
+/* ----- DROPDOWN MENUS (keep white bg) ----- */
+.sub-menu,
+.dropdown-menu,
+.ct-header .sub-menu,
+header .sub-menu {
+    background: #FFFFFF !important;
+}
+
+.sub-menu a,
+.dropdown-menu a,
+.ct-header .sub-menu a {
+    color: #1a1a2e !important;
+}
+
+.sub-menu a:hover,
+.dropdown-menu a:hover {
+    background: #F8F9FA !important;
+    color: #1F1EFB !important;
+}
+
+/* ----- HERO SECTION ----- */
+.ct-hero,
+.hero-section,
+[class*="hero"],
+section.hero,
+.elementor-section.hero,
+.site-main > section:first-child,
+.home .site-main > *:first-child,
+.ct-section-hero {
+    background: linear-gradient(135deg, #0D2175 0%, #1F1EFB 100%) !important;
+}
+
+.ct-hero *,
+.hero-section *,
+[class*="hero"] h1,
+[class*="hero"] h2,
+[class*="hero"] h3,
+[class*="hero"] p,
+[class*="hero"] span,
+[class*="hero"] a {
+    color: #FFFFFF !important;
+}
+
+/* ----- HERO BUTTONS ----- */
+.ct-hero .ct-button,
+.hero-section .ct-button,
+.ct-hero a.button,
+.hero-section a.button,
+[class*="hero"] .button,
+[class*="hero"] .wp-block-button__link {
+    background: #FFFFFF !important;
+    color: #0D2175 !important;
+    border: 2px solid #FFFFFF !important;
+}
+
+.ct-hero .ct-button:hover,
+[class*="hero"] .button:hover {
+    background: transparent !important;
+    color: #FFFFFF !important;
+}
+
+/* ----- STICKY HEADER ----- */
+.ct-header.ct-sticky,
+.site-header.sticky,
+.is-sticky header,
+[data-sticky="yes"] {
+    background: #0a0a0a !important;
+}
+
+/* ----- TRANSPARENT HEADER FIX ----- */
+.ct-header[data-transparent],
+header[data-transparent],
+.transparent-header {
+    background: #0a0a0a !important;
+}
+
+/* ----- FOOTER (ensure dark) ----- */
+footer,
+.site-footer,
+.ct-footer,
+#colophon {
+    background: #0D2175 !important;
+}
+
+footer *,
+.site-footer *,
+.ct-footer * {
+    color: #FFFFFF !important;
+}
+
+footer a:hover,
+.site-footer a:hover {
+    color: #4F4EFC !important;
+}

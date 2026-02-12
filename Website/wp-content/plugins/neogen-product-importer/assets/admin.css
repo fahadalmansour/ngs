@@ -1,0 +1,591 @@
+/**
+ * Neogen Product Importer - Admin Styles
+ */
+
+/* RTL Support */
+.rtl .neogen-importer-wrap {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Main Wrapper */
+.neogen-importer-wrap {
+    max-width: 1200px;
+}
+
+.neogen-importer-wrap h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 23px;
+    font-weight: 600;
+    color: #1d2327;
+    margin-bottom: 20px;
+}
+
+.neogen-importer-wrap h1 .dashicons {
+    color: #1F1EFB;
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
+}
+
+/* Stats Grid */
+.neogen-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.neogen-stat-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e4e7;
+}
+
+.neogen-stat-card .stat-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f1;
+}
+
+.neogen-stat-card .stat-icon .dashicons {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    color: #50575e;
+}
+
+.neogen-stat-card.success .stat-icon {
+    background: #d1fae5;
+}
+
+.neogen-stat-card.success .stat-icon .dashicons {
+    color: #059669;
+}
+
+.neogen-stat-card.error .stat-icon {
+    background: #fee2e2;
+}
+
+.neogen-stat-card.error .stat-icon .dashicons {
+    color: #dc2626;
+}
+
+.neogen-stat-card.warning .stat-icon {
+    background: #fef3c7;
+}
+
+.neogen-stat-card.warning .stat-icon .dashicons {
+    color: #d97706;
+}
+
+.neogen-stat-card .stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.neogen-stat-card .stat-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1d2327;
+    line-height: 1;
+}
+
+.neogen-stat-card .stat-label {
+    font-size: 13px;
+    color: #50575e;
+    margin-top: 4px;
+}
+
+/* Cards */
+.neogen-import-card,
+.neogen-platforms-card,
+.neogen-recent-card,
+.neogen-settings-card,
+.neogen-history-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e4e7;
+}
+
+.neogen-import-card h2,
+.neogen-platforms-card h3,
+.neogen-recent-card h3,
+.neogen-settings-card h2 {
+    margin: 0 0 20px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e2e4e7;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d2327;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.neogen-settings-card h2 .dashicons {
+    color: #1F1EFB;
+}
+
+/* Import Form */
+.neogen-import-form .form-row {
+    margin-bottom: 20px;
+}
+
+.neogen-import-form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #1d2327;
+}
+
+.neogen-import-form input[type="url"],
+.neogen-import-form select {
+    width: 100%;
+    max-width: 600px;
+    padding: 12px 16px;
+    border: 2px solid #e2e4e7;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.neogen-import-form input[type="url"]:focus,
+.neogen-import-form select:focus {
+    border-color: #1F1EFB;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(31, 30, 251, 0.1);
+}
+
+.neogen-import-form .description {
+    font-size: 12px;
+    color: #646970;
+    margin-top: 6px;
+}
+
+.neogen-import-form .checkbox-row label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+}
+
+.neogen-import-form .checkbox-row .not-configured {
+    color: #d97706;
+    font-size: 12px;
+}
+
+.neogen-import-form .form-actions {
+    margin-top: 24px;
+}
+
+.neogen-import-form .button-primary {
+    background: linear-gradient(135deg, #0D2175 0%, #1F1EFB 100%);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.neogen-import-form .button-primary:hover {
+    background: linear-gradient(135deg, #1F1EFB 0%, #4F4EFC 100%);
+}
+
+.neogen-import-form .button-primary .dashicons {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+}
+
+/* Import Progress */
+.import-progress {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: #f0f6ff;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.import-progress .spinner {
+    float: none;
+    margin: 0;
+}
+
+.import-progress .progress-message {
+    color: #1F1EFB;
+    font-weight: 500;
+}
+
+/* Import Result */
+.import-result {
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.import-result.success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.import-result.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.import-result a {
+    color: inherit;
+    font-weight: 600;
+}
+
+/* Platforms Grid */
+.platforms-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.platform-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 24px;
+    background: #f6f7f7;
+    border-radius: 8px;
+    min-width: 100px;
+}
+
+.platform-item img {
+    height: 24px;
+    object-fit: contain;
+}
+
+.platform-item .dashicons {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    color: #1F1EFB;
+}
+
+.platform-item span:last-child {
+    font-size: 12px;
+    color: #50575e;
+}
+
+/* Table Styles */
+.neogen-importer-wrap .wp-list-table {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.neogen-importer-wrap .wp-list-table th {
+    background: #f6f7f7;
+    font-weight: 600;
+    padding: 12px 16px;
+}
+
+.neogen-importer-wrap .wp-list-table td {
+    padding: 12px 16px;
+    vertical-align: middle;
+}
+
+.neogen-importer-wrap .wp-list-table .no-items {
+    text-align: center;
+    color: #646970;
+    padding: 40px;
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-badge.status-pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-badge.status-processing {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.status-badge.status-completed {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-badge.status-failed {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Platform Badges */
+.platform-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.platform-badge.aliexpress {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.platform-badge.amazon {
+    background: #fef9c3;
+    color: #854d0e;
+}
+
+.platform-badge.alibaba {
+    background: #ffedd5;
+    color: #c2410c;
+}
+
+/* Source Link */
+.source-link {
+    color: #2271b1;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.source-link:hover {
+    color: #135e96;
+    text-decoration: underline;
+}
+
+/* View All Link */
+.view-all {
+    text-align: left;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e2e4e7;
+}
+
+.rtl .view-all {
+    text-align: right;
+}
+
+.view-all a {
+    color: #1F1EFB;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* History Page */
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.table-filters {
+    display: flex;
+    gap: 12px;
+}
+
+.table-filters select {
+    padding: 8px 12px;
+    border: 1px solid #e2e4e7;
+    border-radius: 6px;
+}
+
+.column-actions {
+    white-space: nowrap;
+}
+
+.column-actions .button {
+    padding: 4px 8px;
+}
+
+.column-actions .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+.product-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.product-actions a {
+    color: #50575e;
+}
+
+.product-actions a:hover {
+    color: #1F1EFB;
+}
+
+.error-tooltip {
+    color: #dc2626;
+    cursor: help;
+}
+
+/* Settings Page */
+.neogen-settings-form .form-table th {
+    padding-left: 0;
+    width: 200px;
+}
+
+.rtl .neogen-settings-form .form-table th {
+    padding-right: 0;
+    padding-left: 10px;
+}
+
+.n8n-info-box {
+    background: #f0f6ff;
+    border: 1px solid #c3dafe;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.n8n-info-box h4 {
+    margin: 0 0 16px 0;
+    color: #1e40af;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.info-row label {
+    min-width: 100px;
+    font-weight: 500;
+}
+
+.info-row code {
+    flex: 1;
+    padding: 8px 12px;
+    background: #fff;
+    border-radius: 4px;
+    font-size: 12px;
+    word-break: break-all;
+}
+
+.copy-btn {
+    padding: 4px 8px !important;
+}
+
+.copy-btn .dashicons {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+}
+
+/* Spinning animation for regenerate button */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.spinning {
+    animation: spin 1s linear infinite;
+}
+
+#regenerate-api-key {
+    margin-right: 8px;
+}
+
+.rtl #regenerate-api-key {
+    margin-right: 0;
+    margin-left: 8px;
+}
+
+/* Workflow Template */
+.workflow-template {
+    background: #1d2327;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 16px;
+}
+
+.workflow-template pre {
+    color: #a0aec0;
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 0 0 16px 0;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.workflow-template .copy-workflow {
+    background: #4F4EFC;
+    color: #fff;
+    border: none;
+}
+
+.workflow-template .copy-workflow:hover {
+    background: #1F1EFB;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+    .neogen-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .table-header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+
+    .table-filters {
+        flex-direction: column;
+    }
+
+    .neogen-settings-form .form-table th {
+        width: auto;
+        display: block;
+        padding-bottom: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .neogen-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .platforms-grid {
+        justify-content: center;
+    }
+}

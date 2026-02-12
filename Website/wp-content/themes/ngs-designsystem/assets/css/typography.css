@@ -1,0 +1,398 @@
+/**
+ * NGS Design System - Typography
+ *
+ * Font loading, heading styles, and bilingual text utilities
+ *
+ * @package NGS_DesignSystem
+ * @version 1.0.0
+ */
+
+/* ========================================
+   FONT FACE DECLARATIONS
+   ======================================== */
+
+/* Inter - English */
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 100%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 100%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
+/* Cairo - Arabic */
+@font-face {
+  font-family: 'Cairo';
+  src: url('../fonts/Cairo-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 105%;
+  ascent-override: 88%;
+  descent-override: 28%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Cairo';
+  src: url('../fonts/Cairo-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 105%;
+  ascent-override: 88%;
+  descent-override: 28%;
+  line-gap-override: 0%;
+}
+
+/* ========================================
+   HEADINGS
+   ======================================== */
+
+h1,
+.ngs-h1 {
+  font-size: var(--ngs-font-size-h1);
+  line-height: var(--ngs-line-height-h1);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-block-end: var(--ngs-space-4);
+}
+
+h2,
+.ngs-h2 {
+  font-size: var(--ngs-font-size-h2);
+  line-height: var(--ngs-line-height-h2);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-block-end: var(--ngs-space-3);
+}
+
+h3,
+.ngs-h3 {
+  font-size: var(--ngs-font-size-h3);
+  line-height: var(--ngs-line-height-h3);
+  font-weight: 700;
+  margin-block-end: var(--ngs-space-3);
+}
+
+h4,
+.ngs-h4 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+  margin-block-end: var(--ngs-space-2);
+}
+
+h5,
+.ngs-h5 {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 700;
+  margin-block-end: var(--ngs-space-2);
+}
+
+h6,
+.ngs-h6 {
+  font-size: var(--ngs-font-size-body);
+  line-height: var(--ngs-line-height-body);
+  font-weight: 700;
+  margin-block-end: var(--ngs-space-2);
+}
+
+/* ========================================
+   ARABIC HEADING ADJUSTMENTS
+   ======================================== */
+
+h1:lang(ar),
+.ngs-h1:lang(ar),
+h2:lang(ar),
+.ngs-h2:lang(ar),
+h3:lang(ar),
+.ngs-h3:lang(ar),
+h4:lang(ar),
+.ngs-h4:lang(ar),
+h5:lang(ar),
+.ngs-h5:lang(ar),
+h6:lang(ar),
+.ngs-h6:lang(ar) {
+  letter-spacing: normal;
+  /* No letter-spacing for Arabic */
+}
+
+/* ========================================
+   BODY TEXT
+   ======================================== */
+
+p,
+.ngs-body {
+  font-size: var(--ngs-font-size-body);
+  line-height: var(--ngs-line-height-body);
+  margin-block-end: var(--ngs-space-3);
+}
+
+/* Arabic body text - increased line-height */
+p:lang(ar),
+.ngs-body:lang(ar) {
+  line-height: calc(var(--ngs-line-height-body) * 1.125);
+  /* 1.6 * 1.125 = 1.8 */
+}
+
+/* ========================================
+   SMALL TEXT
+   ======================================== */
+
+small,
+.ngs-small {
+  font-size: var(--ngs-font-size-small);
+  line-height: var(--ngs-line-height-small);
+}
+
+/* ========================================
+   LABEL TEXT
+   ======================================== */
+
+label,
+.ngs-label {
+  font-size: var(--ngs-font-size-label);
+  line-height: var(--ngs-line-height-label);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Arabic labels - no uppercase, no letter-spacing */
+label:lang(ar),
+.ngs-label:lang(ar) {
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* ========================================
+   TEXT COLOR UTILITIES
+   ======================================== */
+
+.ngs-text-primary {
+  color: var(--ngs-text);
+}
+
+.ngs-text-secondary {
+  color: var(--ngs-text-secondary);
+}
+
+.ngs-text-success {
+  color: var(--ngs-success);
+}
+
+.ngs-text-warning {
+  color: var(--ngs-warning);
+}
+
+.ngs-text-error {
+  color: var(--ngs-error);
+}
+
+.ngs-text-info {
+  color: var(--ngs-info);
+}
+
+/* ========================================
+   BIDIRECTIONAL TEXT UTILITIES
+   ======================================== */
+
+/* Plain text direction (auto-detect) */
+.ngs-bidi-plain {
+  unicode-bidi: plaintext;
+}
+
+/* Force LTR for prices, phone numbers, SKUs */
+.ngs-bidi-ltr {
+  unicode-bidi: isolate;
+  direction: ltr;
+}
+
+/* Force RTL */
+.ngs-bidi-rtl {
+  unicode-bidi: isolate;
+  direction: rtl;
+}
+
+/* ========================================
+   ARABIC TYPOGRAPHY RULES
+   ======================================== */
+
+/* No italics in Arabic */
+em:lang(ar),
+i:lang(ar),
+cite:lang(ar) {
+  font-style: normal;
+  font-weight: 700;
+  /* Use bold instead of italic for emphasis */
+}
+
+/* No underline for emphasis in Arabic */
+strong:lang(ar),
+b:lang(ar) {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* ========================================
+   RESPONSIVE TYPOGRAPHY - MOBILE
+   ======================================== */
+
+@media (max-width: 767px) {
+  h1,
+  .ngs-h1 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  h2,
+  .ngs-h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  h3,
+  .ngs-h3 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  /* Mobile: Increase body text to 18px for better readability */
+  p,
+  .ngs-body {
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  /* Arabic mobile body text */
+  p:lang(ar),
+  .ngs-body:lang(ar) {
+    line-height: 36px;
+    /* 18px * 2 = 36px (maintains 1.8 ratio) */
+  }
+}
+
+/* ========================================
+   FONT WEIGHT UTILITIES
+   ======================================== */
+
+.ngs-font-normal {
+  font-weight: 400;
+}
+
+.ngs-font-bold {
+  font-weight: 700;
+}
+
+/* ========================================
+   TEXT ALIGNMENT UTILITIES
+   ======================================== */
+
+.ngs-text-start {
+  text-align: start;
+}
+
+.ngs-text-end {
+  text-align: end;
+}
+
+.ngs-text-center {
+  text-align: center;
+}
+
+/* ========================================
+   LINK STYLES
+   ======================================== */
+
+a {
+  color: var(--ngs-primary);
+  transition: color var(--ngs-duration-fast) var(--ngs-ease-out);
+}
+
+a:hover {
+  color: var(--ngs-primary-hover);
+}
+
+a:active {
+  color: var(--ngs-primary-hover);
+}
+
+/* Remove underline from Arabic links (cultural preference) */
+a:lang(ar) {
+  text-decoration: none;
+}
+
+/* ========================================
+   BLOCKQUOTE
+   ======================================== */
+
+blockquote {
+  margin-block: var(--ngs-space-4);
+  margin-inline: 0;
+  padding-inline-start: var(--ngs-space-4);
+  border-inline-start: 4px solid var(--ngs-primary);
+  font-style: italic;
+  color: var(--ngs-text-secondary);
+}
+
+blockquote:lang(ar) {
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* ========================================
+   LISTS
+   ======================================== */
+
+ul,
+ol {
+  margin-block-start: var(--ngs-space-2);
+  margin-block-end: var(--ngs-space-4);
+  padding-inline-start: var(--ngs-space-4);
+}
+
+li {
+  margin-block-end: var(--ngs-space-1);
+}
+
+/* ========================================
+   CODE AND PREFORMATTED TEXT
+   ======================================== */
+
+code {
+  padding: 2px 6px;
+  background-color: var(--ngs-bg-alt);
+  border-radius: var(--ngs-radius-sm);
+  font-size: 0.875em;
+}
+
+pre {
+  padding: var(--ngs-space-3);
+  background-color: var(--ngs-bg-alt);
+  border-radius: var(--ngs-radius-md);
+  overflow-x: auto;
+  margin-block: var(--ngs-space-4);
+}
+
+pre code {
+  padding: 0;
+  background-color: transparent;
+}

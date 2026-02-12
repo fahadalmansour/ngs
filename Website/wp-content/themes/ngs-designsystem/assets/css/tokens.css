@@ -1,0 +1,194 @@
+/**
+ * NGS Design System - Design Tokens
+ *
+ * CSS Custom Properties for consistent theming
+ * Namespace: --ngs-
+ *
+ * @package NGS_DesignSystem
+ * @version 1.0.0
+ */
+
+:root {
+  /* ========================================
+     COLORS - PRIMARY
+     ======================================== */
+  --ngs-primary: #2563EB;           /* Blue 600 */
+  --ngs-primary-hover: #1D4ED8;     /* Blue 700 */
+  --ngs-primary-light: #EFF6FF;     /* Blue 50 */
+  --ngs-primary-100: #DBEAFE;       /* Blue 100 */
+
+  /* ========================================
+     COLORS - TEXT
+     ======================================== */
+  --ngs-text: #1A1A1A;              /* Near black */
+  --ngs-text-secondary: #666666;    /* Gray 500 */
+
+  /* ========================================
+     COLORS - BACKGROUND
+     ======================================== */
+  --ngs-bg: #FFFFFF;                /* White */
+  --ngs-bg-alt: #F5F5F5;            /* Gray 100 */
+
+  /* ========================================
+     COLORS - BORDERS
+     ======================================== */
+  --ngs-border: #A3A3A3;            /* Gray 400 - 3:1 contrast validated */
+  --ngs-border-light: #E5E5E5;      /* Gray 300 */
+
+  /* ========================================
+     COLORS - FEEDBACK
+     ======================================== */
+  --ngs-success: #16A34A;           /* Green 600 */
+  --ngs-warning: #F59E0B;           /* Amber 500 */
+  --ngs-error: #DC2626;             /* Red 600 */
+  --ngs-info: #3B82F6;              /* Blue 500 */
+
+  /* ========================================
+     COLORS - BRAND BADGES
+     ======================================== */
+  --ngs-brand-maroof: #D4AF37;      /* Gold */
+  --ngs-brand-mada: #00A651;        /* Green */
+  --ngs-brand-tamara: #6C3FB5;      /* Purple */
+  --ngs-brand-tabby: #F68522;       /* Orange */
+
+  /* ========================================
+     SPACING - 8px BASE SCALE
+     ======================================== */
+  --ngs-space-1: 8px;               /* 8px */
+  --ngs-space-2: 16px;              /* 16px */
+  --ngs-space-3: 24px;              /* 24px */
+  --ngs-space-4: 32px;              /* 32px */
+  --ngs-space-5: 40px;              /* 40px */
+  --ngs-space-6: 48px;              /* 48px */
+  --ngs-space-7: 56px;              /* 56px */
+  --ngs-space-8: 64px;              /* 64px */
+  --ngs-space-9: 72px;              /* 72px */
+  --ngs-space-10: 80px;             /* 80px */
+  --ngs-space-11: 88px;             /* 88px */
+  --ngs-space-12: 96px;             /* 96px */
+  --ngs-space-13: 104px;            /* 104px */
+  --ngs-space-14: 112px;            /* 112px */
+  --ngs-space-15: 120px;            /* 120px */
+  --ngs-space-16: 128px;            /* 128px */
+
+  /* ========================================
+     TYPOGRAPHY - FONT FAMILIES
+     ======================================== */
+  --ngs-font-ar: 'Cairo', sans-serif;
+  --ngs-font-en: 'Inter', sans-serif;
+
+  /* ========================================
+     TYPOGRAPHY - FONT SIZES
+     ======================================== */
+  --ngs-font-size-h1: 48px;
+  --ngs-line-height-h1: 56px;
+
+  --ngs-font-size-h2: 32px;
+  --ngs-line-height-h2: 40px;
+
+  --ngs-font-size-h3: 24px;
+  --ngs-line-height-h3: 32px;
+
+  --ngs-font-size-body: 16px;
+  --ngs-line-height-body: 32px;
+
+  --ngs-font-size-small: 14px;
+  --ngs-line-height-small: 22px;
+
+  --ngs-font-size-label: 12px;
+  --ngs-line-height-label: 18px;
+
+  /* ========================================
+     SHADOWS
+     ======================================== */
+  --ngs-shadow-low: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --ngs-shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --ngs-shadow-high: 0 8px 24px rgba(0, 0, 0, 0.16);
+
+  /* ========================================
+     BORDER RADIUS
+     ======================================== */
+  --ngs-radius-sm: 4px;
+  --ngs-radius-md: 8px;
+  --ngs-radius-lg: 12px;
+  --ngs-radius-full: 9999px;
+
+  /* ========================================
+     Z-INDEX LAYERS
+     ======================================== */
+  --ngs-z-base: 1;
+  --ngs-z-dropdown: 100;
+  --ngs-z-sticky: 500;
+  --ngs-z-header: 1000;
+  --ngs-z-drawer: 2000;
+  --ngs-z-modal: 3000;
+  --ngs-z-toast: 4000;
+  --ngs-z-tooltip: 5000;
+
+  /* ========================================
+     TRANSITIONS - EASING FUNCTIONS
+     ======================================== */
+  --ngs-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ngs-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ngs-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ngs-ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* ========================================
+     TRANSITIONS - DURATION
+     ======================================== */
+  --ngs-duration-instant: 100ms;
+  --ngs-duration-fast: 200ms;
+  --ngs-duration-normal: 300ms;
+  --ngs-duration-slow: 500ms;
+
+  /* ========================================
+     CONTAINER - MAX WIDTHS
+     ======================================== */
+  --ngs-container-max: 1440px;
+
+  /* ========================================
+     CONTAINER - MARGINS (HORIZONTAL PADDING)
+     ======================================== */
+  --ngs-margin-desktop: 120px;      /* 1440px+ */
+  --ngs-margin-laptop: 80px;        /* 1024-1439px */
+  --ngs-margin-tablet: 40px;        /* 768-1023px */
+  --ngs-margin-mobile: 24px;        /* 320-767px */
+
+  /* ========================================
+     GRID - GUTTERS (COLUMN GAPS)
+     ======================================== */
+  --ngs-gutter-desktop: 40px;       /* 1440px+ */
+  --ngs-gutter-laptop: 32px;        /* 1024-1439px */
+  --ngs-gutter-tablet: 24px;        /* 768-1023px */
+  --ngs-gutter-mobile: 16px;        /* 320-767px */
+}
+
+/* ========================================
+   DARK MODE OVERRIDES
+   ======================================== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Text colors */
+    --ngs-text: #F5F5F5;
+    --ngs-text-secondary: #A3A3A3;
+
+    /* Background colors */
+    --ngs-bg: #1A1A1A;
+    --ngs-bg-alt: #262626;
+
+    /* Border colors */
+    --ngs-border: #525252;
+    --ngs-border-light: #404040;
+
+    /* Primary adjustments for better contrast */
+    --ngs-primary: #3B82F6;         /* Blue 500 - brighter for dark bg */
+    --ngs-primary-hover: #60A5FA;   /* Blue 400 */
+    --ngs-primary-light: #1E3A8A;   /* Blue 900 */
+    --ngs-primary-100: #1E40AF;     /* Blue 800 */
+
+    /* Shadows - more prominent in dark mode */
+    --ngs-shadow-low: 0 2px 8px rgba(0, 0, 0, 0.24);
+    --ngs-shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.32);
+    --ngs-shadow-high: 0 8px 24px rgba(0, 0, 0, 0.48);
+  }
+}

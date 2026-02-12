@@ -1,0 +1,686 @@
+/**
+ * NGS Design System - Layout System
+ *
+ * Container, grid, and layout utilities with RTL support
+ *
+ * Breakpoints:
+ * - Desktop: 1440px+
+ * - Laptop: 1024px - 1439px
+ * - Tablet: 768px - 1023px
+ * - Mobile: 320px - 767px
+ *
+ * @package NGS_DesignSystem
+ * @version 1.0.0
+ */
+
+/* ========================================
+   CONTAINER
+   ======================================== */
+
+.ngs-container {
+  max-inline-size: var(--ngs-container-max);
+  margin-inline: auto;
+  padding-inline: var(--ngs-margin-desktop);
+}
+
+/* Laptop: 1024px - 1439px */
+@media (max-width: 1439px) {
+  .ngs-container {
+    padding-inline: var(--ngs-margin-laptop);
+  }
+}
+
+/* Tablet: 768px - 1023px */
+@media (max-width: 1023px) {
+  .ngs-container {
+    padding-inline: var(--ngs-margin-tablet);
+  }
+}
+
+/* Mobile: 320px - 767px */
+@media (max-width: 767px) {
+  .ngs-container {
+    padding-inline: var(--ngs-margin-mobile);
+  }
+}
+
+/* ========================================
+   GRID SYSTEM
+   ======================================== */
+
+.ngs-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--ngs-gutter-desktop);
+}
+
+/* Laptop: 1024px - 1439px */
+@media (max-width: 1439px) {
+  .ngs-grid {
+    gap: var(--ngs-gutter-laptop);
+  }
+}
+
+/* Tablet: 768px - 1023px */
+@media (max-width: 1023px) {
+  .ngs-grid {
+    grid-template-columns: repeat(8, 1fr);
+    gap: var(--ngs-gutter-tablet);
+  }
+}
+
+/* Mobile: 320px - 767px */
+@media (max-width: 767px) {
+  .ngs-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--ngs-gutter-mobile);
+  }
+}
+
+/* ========================================
+   GRID COLUMN SPANS - DESKTOP (12 columns)
+   ======================================== */
+
+.ngs-col-1 {
+  grid-column: span 1;
+}
+
+.ngs-col-2 {
+  grid-column: span 2;
+}
+
+.ngs-col-3 {
+  grid-column: span 3;
+}
+
+.ngs-col-4 {
+  grid-column: span 4;
+}
+
+.ngs-col-5 {
+  grid-column: span 5;
+}
+
+.ngs-col-6 {
+  grid-column: span 6;
+}
+
+.ngs-col-7 {
+  grid-column: span 7;
+}
+
+.ngs-col-8 {
+  grid-column: span 8;
+}
+
+.ngs-col-9 {
+  grid-column: span 9;
+}
+
+.ngs-col-10 {
+  grid-column: span 10;
+}
+
+.ngs-col-11 {
+  grid-column: span 11;
+}
+
+.ngs-col-12 {
+  grid-column: span 12;
+}
+
+/* ========================================
+   GRID COLUMN SPANS - TABLET (8 columns)
+   ======================================== */
+
+@media (max-width: 1023px) {
+  .ngs-col-tablet-1 {
+    grid-column: span 1;
+  }
+
+  .ngs-col-tablet-2 {
+    grid-column: span 2;
+  }
+
+  .ngs-col-tablet-3 {
+    grid-column: span 3;
+  }
+
+  .ngs-col-tablet-4 {
+    grid-column: span 4;
+  }
+
+  .ngs-col-tablet-5 {
+    grid-column: span 5;
+  }
+
+  .ngs-col-tablet-6 {
+    grid-column: span 6;
+  }
+
+  .ngs-col-tablet-7 {
+    grid-column: span 7;
+  }
+
+  .ngs-col-tablet-8 {
+    grid-column: span 8;
+  }
+
+  /* Auto-collapse larger spans to full width on tablet */
+  .ngs-col-9,
+  .ngs-col-10,
+  .ngs-col-11,
+  .ngs-col-12 {
+    grid-column: span 8;
+  }
+}
+
+/* ========================================
+   GRID COLUMN SPANS - MOBILE (4 columns)
+   ======================================== */
+
+@media (max-width: 767px) {
+  .ngs-col-mobile-1 {
+    grid-column: span 1;
+  }
+
+  .ngs-col-mobile-2 {
+    grid-column: span 2;
+  }
+
+  .ngs-col-mobile-3 {
+    grid-column: span 3;
+  }
+
+  .ngs-col-mobile-4 {
+    grid-column: span 4;
+  }
+
+  /* Auto-collapse all to full width on mobile by default */
+  .ngs-col-1,
+  .ngs-col-2,
+  .ngs-col-3,
+  .ngs-col-4,
+  .ngs-col-5,
+  .ngs-col-6,
+  .ngs-col-7,
+  .ngs-col-8,
+  .ngs-col-9,
+  .ngs-col-10,
+  .ngs-col-11,
+  .ngs-col-12 {
+    grid-column: span 4;
+  }
+}
+
+/* ========================================
+   FLEXBOX UTILITIES
+   ======================================== */
+
+.ngs-flex {
+  display: flex;
+}
+
+.ngs-flex-inline {
+  display: inline-flex;
+}
+
+.ngs-flex-row {
+  flex-direction: row;
+}
+
+.ngs-flex-column {
+  flex-direction: column;
+}
+
+.ngs-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.ngs-flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+/* Alignment */
+.ngs-flex-start {
+  justify-content: flex-start;
+}
+
+.ngs-flex-end {
+  justify-content: flex-end;
+}
+
+.ngs-flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.ngs-flex-between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ngs-flex-around {
+  justify-content: space-around;
+  align-items: center;
+}
+
+.ngs-flex-evenly {
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Align items */
+.ngs-items-start {
+  align-items: flex-start;
+}
+
+.ngs-items-end {
+  align-items: flex-end;
+}
+
+.ngs-items-center {
+  align-items: center;
+}
+
+.ngs-items-baseline {
+  align-items: baseline;
+}
+
+.ngs-items-stretch {
+  align-items: stretch;
+}
+
+/* Gap utilities */
+.ngs-gap-1 {
+  gap: var(--ngs-space-1);
+}
+
+.ngs-gap-2 {
+  gap: var(--ngs-space-2);
+}
+
+.ngs-gap-3 {
+  gap: var(--ngs-space-3);
+}
+
+.ngs-gap-4 {
+  gap: var(--ngs-space-4);
+}
+
+.ngs-gap-5 {
+  gap: var(--ngs-space-5);
+}
+
+.ngs-gap-6 {
+  gap: var(--ngs-space-6);
+}
+
+/* ========================================
+   SECTIONS
+   ======================================== */
+
+.ngs-section {
+  padding-block: var(--ngs-space-12);
+  /* 96px desktop */
+}
+
+.ngs-section--alt {
+  background-color: var(--ngs-bg-alt);
+}
+
+/* Mobile: 320px - 767px */
+@media (max-width: 767px) {
+  .ngs-section {
+    padding-block: var(--ngs-space-8);
+    /* 64px mobile */
+  }
+}
+
+/* ========================================
+   SPACING UTILITIES
+   ======================================== */
+
+/* Margin Block (Vertical) */
+.ngs-mb-0 {
+  margin-block-end: 0;
+}
+
+.ngs-mb-1 {
+  margin-block-end: var(--ngs-space-1);
+}
+
+.ngs-mb-2 {
+  margin-block-end: var(--ngs-space-2);
+}
+
+.ngs-mb-3 {
+  margin-block-end: var(--ngs-space-3);
+}
+
+.ngs-mb-4 {
+  margin-block-end: var(--ngs-space-4);
+}
+
+.ngs-mb-5 {
+  margin-block-end: var(--ngs-space-5);
+}
+
+.ngs-mb-6 {
+  margin-block-end: var(--ngs-space-6);
+}
+
+/* Margin Inline (Horizontal) */
+.ngs-mi-0 {
+  margin-inline-end: 0;
+}
+
+.ngs-mi-1 {
+  margin-inline-end: var(--ngs-space-1);
+}
+
+.ngs-mi-2 {
+  margin-inline-end: var(--ngs-space-2);
+}
+
+.ngs-mi-3 {
+  margin-inline-end: var(--ngs-space-3);
+}
+
+.ngs-mi-4 {
+  margin-inline-end: var(--ngs-space-4);
+}
+
+/* Padding Block (Vertical) */
+.ngs-pb-0 {
+  padding-block: 0;
+}
+
+.ngs-pb-1 {
+  padding-block: var(--ngs-space-1);
+}
+
+.ngs-pb-2 {
+  padding-block: var(--ngs-space-2);
+}
+
+.ngs-pb-3 {
+  padding-block: var(--ngs-space-3);
+}
+
+.ngs-pb-4 {
+  padding-block: var(--ngs-space-4);
+}
+
+.ngs-pb-5 {
+  padding-block: var(--ngs-space-5);
+}
+
+.ngs-pb-6 {
+  padding-block: var(--ngs-space-6);
+}
+
+/* Padding Inline (Horizontal) */
+.ngs-pi-0 {
+  padding-inline: 0;
+}
+
+.ngs-pi-1 {
+  padding-inline: var(--ngs-space-1);
+}
+
+.ngs-pi-2 {
+  padding-inline: var(--ngs-space-2);
+}
+
+.ngs-pi-3 {
+  padding-inline: var(--ngs-space-3);
+}
+
+.ngs-pi-4 {
+  padding-inline: var(--ngs-space-4);
+}
+
+.ngs-pi-5 {
+  padding-inline: var(--ngs-space-5);
+}
+
+.ngs-pi-6 {
+  padding-inline: var(--ngs-space-6);
+}
+
+/* ========================================
+   ACCESSIBILITY UTILITIES
+   ======================================== */
+
+/* Screen reader only */
+.ngs-sr-only {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus visible variant */
+.ngs-sr-only:focus-visible {
+  position: static;
+  inline-size: auto;
+  block-size: auto;
+  padding: var(--ngs-space-2);
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Skip to content link */
+.ngs-skip-link {
+  position: absolute;
+  inset-block-start: var(--ngs-space-2);
+  inset-inline-start: var(--ngs-space-2);
+  padding: var(--ngs-space-2) var(--ngs-space-3);
+  background-color: var(--ngs-primary);
+  color: var(--ngs-bg);
+  font-weight: 700;
+  border-radius: var(--ngs-radius-md);
+  z-index: var(--ngs-z-tooltip);
+  transform: translateY(-200%);
+  transition: transform var(--ngs-duration-fast) var(--ngs-ease-out);
+}
+
+.ngs-skip-link:focus {
+  transform: translateY(0);
+}
+
+/* ========================================
+   DISPLAY UTILITIES
+   ======================================== */
+
+.ngs-block {
+  display: block;
+}
+
+.ngs-inline-block {
+  display: inline-block;
+}
+
+.ngs-inline {
+  display: inline;
+}
+
+.ngs-hidden {
+  display: none;
+}
+
+/* Responsive display utilities */
+@media (max-width: 767px) {
+  .ngs-hidden-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ngs-hidden-tablet {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ngs-hidden-desktop {
+    display: none;
+  }
+}
+
+/* ========================================
+   WIDTH UTILITIES
+   ======================================== */
+
+.ngs-w-full {
+  inline-size: 100%;
+}
+
+.ngs-w-auto {
+  inline-size: auto;
+}
+
+.ngs-w-fit {
+  inline-size: fit-content;
+}
+
+.ngs-w-max {
+  inline-size: max-content;
+}
+
+.ngs-w-min {
+  inline-size: min-content;
+}
+
+/* ========================================
+   HEIGHT UTILITIES
+   ======================================== */
+
+.ngs-h-full {
+  block-size: 100%;
+}
+
+.ngs-h-auto {
+  block-size: auto;
+}
+
+.ngs-h-screen {
+  block-size: 100vh;
+  block-size: 100dvh;
+}
+
+/* ========================================
+   POSITION UTILITIES
+   ======================================== */
+
+.ngs-relative {
+  position: relative;
+}
+
+.ngs-absolute {
+  position: absolute;
+}
+
+.ngs-fixed {
+  position: fixed;
+}
+
+.ngs-sticky {
+  position: sticky;
+  inset-block-start: 0;
+}
+
+/* ========================================
+   OVERFLOW UTILITIES
+   ======================================== */
+
+.ngs-overflow-hidden {
+  overflow: hidden;
+}
+
+.ngs-overflow-auto {
+  overflow: auto;
+}
+
+.ngs-overflow-scroll {
+  overflow: scroll;
+}
+
+/* ========================================
+   ASPECT RATIO UTILITIES
+   ======================================== */
+
+.ngs-aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.ngs-aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.ngs-aspect-4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+/* ========================================
+   OBJECT FIT UTILITIES
+   ======================================== */
+
+.ngs-object-cover {
+  object-fit: cover;
+}
+
+.ngs-object-contain {
+  object-fit: contain;
+}
+
+.ngs-object-fill {
+  object-fit: fill;
+}
+
+/* ========================================
+   STACK LAYOUT (Vertical spacing)
+   ======================================== */
+
+.ngs-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.ngs-stack > * + * {
+  margin-block-start: var(--ngs-space-3);
+}
+
+.ngs-stack--tight > * + * {
+  margin-block-start: var(--ngs-space-2);
+}
+
+.ngs-stack--loose > * + * {
+  margin-block-start: var(--ngs-space-4);
+}
+
+/* ========================================
+   CLUSTER LAYOUT (Horizontal wrapping)
+   ======================================== */
+
+.ngs-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ngs-space-2);
+}
+
+.ngs-cluster--tight {
+  gap: var(--ngs-space-1);
+}
+
+.ngs-cluster--loose {
+  gap: var(--ngs-space-4);
+}

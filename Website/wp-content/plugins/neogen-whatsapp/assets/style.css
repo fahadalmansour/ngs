@@ -1,0 +1,280 @@
+/**
+ * Neogen WhatsApp - Styles
+ */
+
+/* Floating Button Container */
+.neogen-whatsapp-float {
+    position: fixed;
+    z-index: 9998;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.neogen-whatsapp-float.position-bottom-left {
+    bottom: 90px;
+    left: 20px;
+}
+
+.neogen-whatsapp-float.position-bottom-right {
+    bottom: 90px;
+    right: 20px;
+    align-items: flex-end;
+}
+
+[dir="rtl"] .neogen-whatsapp-float.position-bottom-left {
+    left: auto;
+    right: 20px;
+    align-items: flex-end;
+}
+
+[dir="rtl"] .neogen-whatsapp-float.position-bottom-right {
+    right: auto;
+    left: 20px;
+    align-items: flex-start;
+}
+
+/* CTA Bubble */
+.neogen-wa-cta {
+    background: #fff;
+    padding: 12px 16px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: neogen-wa-bounce 0.5s ease;
+    max-width: 200px;
+}
+
+.neogen-wa-cta .cta-text {
+    font-size: 14px;
+    color: #1a1a2e;
+    font-weight: 500;
+}
+
+.neogen-wa-cta .cta-close {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #999;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.neogen-wa-cta .cta-close:hover {
+    color: #333;
+}
+
+.neogen-wa-cta.hidden {
+    display: none;
+}
+
+/* Main Button */
+.neogen-wa-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: #fff !important;
+    padding: 14px 18px;
+    border-radius: 50px;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+}
+
+.neogen-wa-button:hover {
+    background: #128C7E;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
+.neogen-wa-button .wa-icon {
+    width: 28px;
+    height: 28px;
+}
+
+.neogen-wa-button .wa-text {
+    white-space: nowrap;
+}
+
+/* Icon only (no text) */
+.neogen-wa-button:not(:has(.wa-text)) {
+    padding: 14px;
+    border-radius: 50%;
+}
+
+/* Pulse Animation */
+.neogen-wa-button::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: inherit;
+    animation: neogen-wa-pulse 2s infinite;
+    z-index: -1;
+}
+
+@keyframes neogen-wa-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
+}
+
+@keyframes neogen-wa-bounce {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Product Page Button */
+.neogen-wa-product-btn {
+    margin-top: 15px;
+}
+
+.wa-product-button {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+    background: #25D366 !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 12px 20px !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+.wa-product-button:hover {
+    background: #128C7E !important;
+    color: #fff !important;
+}
+
+.wa-product-button .wa-icon-small {
+    width: 20px;
+    height: 20px;
+}
+
+/* Order Page Button */
+.neogen-wa-order-btn {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.wa-order-button {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+    background: #25D366 !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 12px 24px !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+}
+
+.wa-order-button:hover {
+    background: #128C7E !important;
+    color: #fff !important;
+}
+
+/* Cart Page Button */
+.neogen-wa-cart-btn {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.wa-cart-button {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+    background: transparent !important;
+    color: #25D366 !important;
+    border: 2px solid #25D366 !important;
+    padding: 10px 20px !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    width: 100%;
+    justify-content: center;
+}
+
+.wa-cart-button:hover {
+    background: #25D366 !important;
+    color: #fff !important;
+}
+
+/* Shortcode Button */
+.neogen-wa-shortcode {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #25D366;
+    color: #fff !important;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.neogen-wa-shortcode:hover {
+    background: #128C7E;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .neogen-whatsapp-float.position-bottom-left,
+    .neogen-whatsapp-float.position-bottom-right {
+        bottom: 80px;
+    }
+
+    .neogen-wa-button .wa-text {
+        display: none;
+    }
+
+    .neogen-wa-button {
+        padding: 14px;
+        border-radius: 50%;
+    }
+
+    .neogen-wa-cta {
+        max-width: 160px;
+        padding: 10px 12px;
+    }
+
+    .neogen-wa-cta .cta-text {
+        font-size: 12px;
+    }
+}
+
+/* Hide on specific devices */
+@media (min-width: 768px) {
+    .neogen-whatsapp-float.hide-desktop {
+        display: none !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .neogen-whatsapp-float.hide-mobile {
+        display: none !important;
+    }
+}

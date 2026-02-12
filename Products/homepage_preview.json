@@ -1,0 +1,1628 @@
+[
+  {
+    "id": "69d9c19c",
+    "elType": "section",
+    "settings": {
+      "layout": "full_width",
+      "content_width": {
+        "size": 1140,
+        "unit": "px"
+      },
+      "min_height": {
+        "size": 500,
+        "unit": "px"
+      },
+      "height": "min-height",
+      "background_background": "gradient",
+      "background_color": "#1A3A5C",
+      "background_color_b": "#0D2137",
+      "background_gradient_angle": {
+        "size": 135,
+        "unit": "deg"
+      },
+      "padding": {
+        "top": "80",
+        "right": "20",
+        "bottom": "80",
+        "left": "20",
+        "unit": "px"
+      },
+      "padding_mobile": {
+        "top": "50",
+        "right": "15",
+        "bottom": "50",
+        "left": "15",
+        "unit": "px"
+      }
+    },
+    "elements": [
+      {
+        "id": "1866e7e3",
+        "elType": "column",
+        "settings": {
+          "_column_size": 100,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "6087efb5",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "حوّل بيتك إلى بيت ذكي",
+              "header_size": "h1",
+              "align": "center",
+              "title_color": "#FFFFFF",
+              "typography_typography": "custom",
+              "typography_font_family": "IBM Plex Sans Arabic",
+              "typography_font_size": {
+                "size": 44,
+                "unit": "px"
+              },
+              "typography_font_size_mobile": {
+                "size": 28,
+                "unit": "px"
+              },
+              "typography_font_weight": "700",
+              "typography_line_height": {
+                "size": 1.4,
+                "unit": "em"
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "1aa6bdc1",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "بدون فني وبدون تعقيد - أجهزة ذكية مُختارة بعناية | دعم عربي 24/7 | شحن مجاني فوق 300 ريال",
+              "header_size": "h3",
+              "align": "center",
+              "title_color": "#CBD5E1",
+              "typography_typography": "custom",
+              "typography_font_family": "IBM Plex Sans Arabic",
+              "typography_font_size": {
+                "size": 18,
+                "unit": "px"
+              },
+              "typography_font_size_mobile": {
+                "size": 14,
+                "unit": "px"
+              },
+              "typography_font_weight": "400",
+              "typography_line_height": {
+                "size": 1.8,
+                "unit": "em"
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "5174d723",
+            "elType": "widget",
+            "widgetType": "spacer",
+            "settings": {
+              "space": {
+                "size": 20,
+                "unit": "px"
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "728fc328",
+            "elType": "section",
+            "settings": {
+              "layout": "full_width",
+              "content_width": {
+                "size": 500,
+                "unit": "px"
+              },
+              "gap": "default"
+            },
+            "elements": [
+              {
+                "id": "2b841f96",
+                "elType": "column",
+                "settings": {
+                  "_column_size": 50,
+                  "_inline_size": null
+                },
+                "elements": [
+                  {
+                    "id": "79ebabf4",
+                    "elType": "widget",
+                    "widgetType": "button",
+                    "settings": {
+                      "text": "تسوّق الآن",
+                      "link": {
+                        "url": "/shop/",
+                        "is_external": false,
+                        "nofollow": false
+                      },
+                      "align": "center",
+                      "size": "lg",
+                      "button_type": "",
+                      "background_color": "#00BFA6",
+                      "button_text_color": "#FFFFFF",
+                      "border_radius": {
+                        "size": 8,
+                        "unit": "px"
+                      },
+                      "typography_typography": "custom",
+                      "typography_font_family": "IBM Plex Sans Arabic",
+                      "typography_font_size": {
+                        "size": 18,
+                        "unit": "px"
+                      },
+                      "typography_font_weight": "600",
+                      "button_background_color": "#00BFA6"
+                    },
+                    "elements": []
+                  }
+                ],
+                "isInner": false
+              },
+              {
+                "id": "6f5a99b1",
+                "elType": "column",
+                "settings": {
+                  "_column_size": 50,
+                  "_inline_size": null
+                },
+                "elements": [
+                  {
+                    "id": "7cdccd91",
+                    "elType": "widget",
+                    "widgetType": "button",
+                    "settings": {
+                      "text": "شاهد الدليل",
+                      "link": {
+                        "url": "/blog/",
+                        "is_external": false,
+                        "nofollow": false
+                      },
+                      "align": "center",
+                      "size": "lg",
+                      "button_type": "",
+                      "background_color": "transparent",
+                      "button_text_color": "#FFFFFF",
+                      "border_border": "solid",
+                      "border_width": {
+                        "top": "2",
+                        "right": "2",
+                        "bottom": "2",
+                        "left": "2",
+                        "unit": "px"
+                      },
+                      "border_color": "#FFFFFF",
+                      "border_radius": {
+                        "size": 8,
+                        "unit": "px"
+                      },
+                      "typography_typography": "custom",
+                      "typography_font_family": "IBM Plex Sans Arabic",
+                      "typography_font_size": {
+                        "size": 18,
+                        "unit": "px"
+                      },
+                      "typography_font_weight": "600"
+                    },
+                    "elements": []
+                  }
+                ],
+                "isInner": false
+              }
+            ],
+            "isInner": true
+          }
+        ],
+        "isInner": false
+      }
+    ],
+    "isInner": false
+  },
+  {
+    "id": "68d3858b",
+    "elType": "section",
+    "settings": {
+      "background_background": "classic",
+      "background_color": "#FFFFFF",
+      "padding": {
+        "top": "30",
+        "right": "0",
+        "bottom": "30",
+        "left": "0",
+        "unit": "px"
+      },
+      "border_border": "solid",
+      "border_width": {
+        "top": "0",
+        "right": "0",
+        "bottom": "1",
+        "left": "0",
+        "unit": "px"
+      },
+      "border_color": "#E5E7EB"
+    },
+    "elements": [
+      {
+        "id": "5537098",
+        "elType": "column",
+        "settings": {
+          "_column_size": 25,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "15fe1429",
+            "elType": "widget",
+            "widgetType": "icon-box",
+            "settings": {
+              "selected_icon": {
+                "value": "fas fa-truck",
+                "library": "fa-solid"
+              },
+              "title_text": "شحن مجاني فوق 300 ر.س",
+              "description_text": "توصيل لجميع مدن السعودية",
+              "position": "top",
+              "text_align": "center",
+              "primary_color": "#00BFA6",
+              "title_size": "h5",
+              "title_color": "#1A1A2E",
+              "description_color": "#6B7280",
+              "icon_size": {
+                "size": 36,
+                "unit": "px"
+              },
+              "title_typography_typography": "custom",
+              "title_typography_font_family": "IBM Plex Sans Arabic",
+              "title_typography_font_size": {
+                "size": 16,
+                "unit": "px"
+              },
+              "title_typography_font_weight": "600",
+              "description_typography_typography": "custom",
+              "description_typography_font_family": "IBM Plex Sans Arabic",
+              "description_typography_font_size": {
+                "size": 13,
+                "unit": "px"
+              }
+            },
+            "elements": []
+          }
+        ],
+        "isInner": false
+      },
+      {
+        "id": "36b88305",
+        "elType": "column",
+        "settings": {
+          "_column_size": 25,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "4ecf513",
+            "elType": "widget",
+            "widgetType": "icon-box",
+            "settings": {
+              "selected_icon": {
+                "value": "fas fa-shield-alt",
+                "library": "fa-solid"
+              },
+              "title_text": "ضمان سنة كاملة",
+              "description_text": "على جميع المنتجات",
+              "position": "top",
+              "text_align": "center",
+              "primary_color": "#00BFA6",
+              "title_size": "h5",
+              "title_color": "#1A1A2E",
+              "description_color": "#6B7280",
+              "icon_size": {
+                "size": 36,
+                "unit": "px"
+              },
+              "title_typography_typography": "custom",
+              "title_typography_font_family": "IBM Plex Sans Arabic",
+              "title_typography_font_size": {
+                "size": 16,
+                "unit": "px"
+              },
+              "title_typography_font_weight": "600",
+              "description_typography_typography": "custom",
+              "description_typography_font_family": "IBM Plex Sans Arabic",
+              "description_typography_font_size": {
+                "size": 13,
+                "unit": "px"
+              }
+            },
+            "elements": []
+          }
+        ],
+        "isInner": false
+      },
+      {
+        "id": "3f01697d",
+        "elType": "column",
+        "settings": {
+          "_column_size": 25,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "50192d67",
+            "elType": "widget",
+            "widgetType": "icon-box",
+            "settings": {
+              "selected_icon": {
+                "value": "fab fa-whatsapp",
+                "library": "fa-brands"
+              },
+              "title_text": "دعم عربي عبر واتساب",
+              "description_text": "فريق تقني متخصص 24/7",
+              "position": "top",
+              "text_align": "center",
+              "primary_color": "#00BFA6",
+              "title_size": "h5",
+              "title_color": "#1A1A2E",
+              "description_color": "#6B7280",
+              "icon_size": {
+                "size": 36,
+                "unit": "px"
+              },
+              "title_typography_typography": "custom",
+              "title_typography_font_family": "IBM Plex Sans Arabic",
+              "title_typography_font_size": {
+                "size": 16,
+                "unit": "px"
+              },
+              "title_typography_font_weight": "600",
+              "description_typography_typography": "custom",
+              "description_typography_font_family": "IBM Plex Sans Arabic",
+              "description_typography_font_size": {
+                "size": 13,
+                "unit": "px"
+              }
+            },
+            "elements": []
+          }
+        ],
+        "isInner": false
+      },
+      {
+        "id": "6ddf0514",
+        "elType": "column",
+        "settings": {
+          "_column_size": 25,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "7b7696b4",
+            "elType": "widget",
+            "widgetType": "icon-box",
+            "settings": {
+              "selected_icon": {
+                "value": "fas fa-undo-alt",
+                "library": "fa-solid"
+              },
+              "title_text": "إرجاع خلال 15 يوم",
+              "description_text": "سياسة إرجاع مرنة",
+              "position": "top",
+              "text_align": "center",
+              "primary_color": "#00BFA6",
+              "title_size": "h5",
+              "title_color": "#1A1A2E",
+              "description_color": "#6B7280",
+              "icon_size": {
+                "size": 36,
+                "unit": "px"
+              },
+              "title_typography_typography": "custom",
+              "title_typography_font_family": "IBM Plex Sans Arabic",
+              "title_typography_font_size": {
+                "size": 16,
+                "unit": "px"
+              },
+              "title_typography_font_weight": "600",
+              "description_typography_typography": "custom",
+              "description_typography_font_family": "IBM Plex Sans Arabic",
+              "description_typography_font_size": {
+                "size": 13,
+                "unit": "px"
+              }
+            },
+            "elements": []
+          }
+        ],
+        "isInner": false
+      }
+    ],
+    "isInner": false
+  },
+  {
+    "id": "6c7686b",
+    "elType": "section",
+    "settings": {
+      "background_background": "classic",
+      "background_color": "#F8F9FA",
+      "padding": {
+        "top": "50",
+        "right": "0",
+        "bottom": "0",
+        "left": "0",
+        "unit": "px"
+      }
+    },
+    "elements": [
+      {
+        "id": "761061b6",
+        "elType": "column",
+        "settings": {
+          "_column_size": 100,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "8b94f9d",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "تسوّق حسب الفئة",
+              "header_size": "h2",
+              "align": "center",
+              "title_color": "#1A1A2E",
+              "typography_typography": "custom",
+              "typography_font_family": "IBM Plex Sans Arabic",
+              "typography_font_size": {
+                "size": 32,
+                "unit": "px"
+              },
+              "typography_font_size_mobile": {
+                "size": 24,
+                "unit": "px"
+              },
+              "typography_font_weight": "700"
+            },
+            "elements": []
+          },
+          {
+            "id": "3b6cbf15",
+            "elType": "widget",
+            "widgetType": "spacer",
+            "settings": {
+              "space": {
+                "size": 10,
+                "unit": "px"
+              }
+            },
+            "elements": []
+          }
+        ],
+        "isInner": false
+      }
+    ],
+    "isInner": false
+  },
+  {
+    "id": "1c689d4b",
+    "elType": "section",
+    "settings": {
+      "background_background": "classic",
+      "background_color": "#F8F9FA",
+      "padding": {
+        "top": "20",
+        "right": "20",
+        "bottom": "0",
+        "left": "20",
+        "unit": "px"
+      }
+    },
+    "elements": [
+      {
+        "id": "6d13793",
+        "elType": "column",
+        "settings": {
+          "_column_size": 33,
+          "_inline_size": null,
+          "background_background": "classic",
+          "background_color": "#FFFFFF",
+          "border_radius": {
+            "size": 12,
+            "unit": "px"
+          },
+          "box_shadow_box_shadow_type": "yes",
+          "box_shadow_box_shadow": {
+            "horizontal": 0,
+            "vertical": 2,
+            "blur": 8,
+            "spread": 0,
+            "color": "rgba(0,0,0,0.08)"
+          },
+          "padding": {
+            "top": "30",
+            "right": "20",
+            "bottom": "30",
+            "left": "20",
+            "unit": "px"
+          },
+          "margin": {
+            "top": "0",
+            "right": "10",
+            "bottom": "20",
+            "left": "10",
+            "unit": "px"
+          }
+        },
+        "elements": [
+          {
+            "id": "31b0aad0",
+            "elType": "widget",
+            "widgetType": "icon-box",
+            "settings": {
+              "selected_icon": {
+                "value": "fas fa-shield-alt",
+                "library": "fa-solid"
+              },
+              "title_text": "الأمان والكاميرات",
+              "description_text": "كاميرات مراقبة، أقفال ذكية، أجراس",
+              "link": {
+                "url": "/product-category/security-cameras/",
+                "is_external": false
+              },
+              "position": "top",
+              "text_align": "center",
+              "primary_color": "#1A3A5C",
+              "title_size": "h4",
+              "title_color": "#1A1A2E",
+              "description_color": "#6B7280",
+              "icon_size": {
+                "size": 48,
+                "unit": "px"
+              },
+              "title_typography_typography": "custom",
+              "title_typography_font_family": "IBM Plex Sans Arabic",
+              "title_typography_font_size": {
+                "size": 20,
+                "unit": "px"
+              },
+              "title_typography_font_weight": "600",
+              "description_typography_typography": "custom",
+              "description_typography_font_family": "IBM Plex Sans Arabic",
+              "description_typography_font_size": {
+                "size": 14,
+                "unit": "px"
+              }
+            },
+            "elements": []
+          }
+        ],
+        "isInner": false
+      },
+      {
+        "id": "36fb4fcf",
+        "elType": "column",
+        "settings": {
+          "_column_size": 33,
+          "_inline_size": null,
+          "background_background": "classic",
+          "background_color": "#FFFFFF",
+          "border_radius": {
+            "size": 12,
+            "unit": "px"
+          },
+          "box_shadow_box_shadow_type": "yes",
+          "box_shadow_box_shadow": {
+            "horizontal": 0,
+            "vertical": 2,
+            "blur": 8,
+            "spread": 0,
+            "color": "rgba(0,0,0,0.08)"
+          },
+          "padding": {
+            "top": "30",
+            "right": "20",
+            "bottom": "30",
+            "left": "20",
+            "unit": "px"
+          },
+          "margin": {
+            "top": "0",
+            "right": "10",
+            "bottom": "20",
+            "left": "10",
+            "unit": "px"
+          }
+        },
+        "elements": [
+          {
+            "id": "7770e753",
+            "elType": "widget",
+            "widgetType": "icon-box",
+            "settings": {
+              "selected_icon": {
+                "value": "fas fa-lightbulb",
+                "library": "fa-solid"
+              },
+              "title_text": "الإضاءة الذكية",
+              "description_text": "لمبات ذكية، شرائط LED، لوحات إضاءة",
+              "link": {
+                "url": "/product-category/smart-lighting/",
+                "is_external": false
+              },
+              "position": "top",
+              "text_align": "center",
+              "primary_color": "#1A3A5C",
+              "title_size": "h4",
+              "title_color": "#1A1A2E",
+              "description_color": "#6B7280",
+              "icon_size": {
+                "size": 48,
+                "unit": "px"
+              },
+              "title_typography_typography": "custom",
+              "title_typography_font_family": "IBM Plex Sans Arabic",
+              "title_typography_font_size": {
+                "size": 20,
+                "unit": "px"
+              },
+              "title_typography_font_weight": "600",
+              "description_typography_typography": "custom",
+              "description_typography_font_family": "IBM Plex Sans Arabic",
+              "description_typography_font_size": {
+                "size": 14,
+                "unit": "px"
+              }
+            },
+            "elements": []
+          }
+        ],
+        "isInner": false
+      },
+      {
+        "id": "7a384442",
+        "elType": "column",
+        "settings": {
+          "_column_size": 33,
+          "_inline_size": null,
+          "background_background": "classic",
+          "background_color": "#FFFFFF",
+          "border_radius": {
+            "size": 12,
+            "unit": "px"
+          },
+          "box_shadow_box_shadow_type": "yes",
+          "box_shadow_box_shadow": {
+            "horizontal": 0,
+            "vertical": 2,
+            "blur": 8,
+            "spread": 0,
+            "color": "rgba(0,0,0,0.08)"
+          },
+          "padding": {
+            "top": "30",
+            "right": "20",
+            "bottom": "30",
+            "left": "20",
+            "unit": "px"
+          },
+          "margin": {
+            "top": "0",
+            "right": "10",
+            "bottom": "20",
+            "left": "10",
+            "unit": "px"
+          }
+        },
+        "elements": [
+          {
+            "id": "4084c251",
+            "elType": "widget",
+            "widgetType": "icon-box",
+            "settings": {
+              "selected_icon": {
+                "value": "fas fa-broadcast-tower",
+                "library": "fa-solid"
+              },
+              "title_text": "المستشعرات والمراكز",
+              "description_text": "مستشعرات حركة، أبواب، حرارة، هبات",
+              "link": {
+                "url": "/product-category/sensors-hubs/",
+                "is_external": false
+              },
+              "position": "top",
+              "text_align": "center",
+              "primary_color": "#1A3A5C",
+              "title_size": "h4",
+              "title_color": "#1A1A2E",
+              "description_color": "#6B7280",
+              "icon_size": {
+                "size": 48,
+                "unit": "px"
+              },
+              "title_typography_typography": "custom",
+              "title_typography_font_family": "IBM Plex Sans Arabic",
+              "title_typography_font_size": {
+                "size": 20,
+                "unit": "px"
+              },
+              "title_typography_font_weight": "600",
+              "description_typography_typography": "custom",
+              "description_typography_font_family": "IBM Plex Sans Arabic",
+              "description_typography_font_size": {
+                "size": 14,
+                "unit": "px"
+              }
+            },
+            "elements": []
+          }
+        ],
+        "isInner": false
+      }
+    ],
+    "isInner": false
+  },
+  {
+    "id": "1bd15668",
+    "elType": "section",
+    "settings": {
+      "background_background": "classic",
+      "background_color": "#F8F9FA",
+      "padding": {
+        "top": "0",
+        "right": "20",
+        "bottom": "50",
+        "left": "20",
+        "unit": "px"
+      }
+    },
+    "elements": [
+      {
+        "id": "7a439fb4",
+        "elType": "column",
+        "settings": {
+          "_column_size": 33,
+          "_inline_size": null,
+          "background_background": "classic",
+          "background_color": "#FFFFFF",
+          "border_radius": {
+            "size": 12,
+            "unit": "px"
+          },
+          "box_shadow_box_shadow_type": "yes",
+          "box_shadow_box_shadow": {
+            "horizontal": 0,
+            "vertical": 2,
+            "blur": 8,
+            "spread": 0,
+            "color": "rgba(0,0,0,0.08)"
+          },
+          "padding": {
+            "top": "30",
+            "right": "20",
+            "bottom": "30",
+            "left": "20",
+            "unit": "px"
+          },
+          "margin": {
+            "top": "0",
+            "right": "10",
+            "bottom": "20",
+            "left": "10",
+            "unit": "px"
+          }
+        },
+        "elements": [
+          {
+            "id": "49becd92",
+            "elType": "widget",
+            "widgetType": "icon-box",
+            "settings": {
+              "selected_icon": {
+                "value": "fas fa-toggle-on",
+                "library": "fa-solid"
+              },
+              "title_text": "المفاتيح والكهربائيات",
+              "description_text": "مفاتيح ذكية، بلاقات، ريلاي، قواطع",
+              "link": {
+                "url": "/product-category/switches-electrical/",
+                "is_external": false
+              },
+              "position": "top",
+              "text_align": "center",
+              "primary_color": "#1A3A5C",
+              "title_size": "h4",
+              "title_color": "#1A1A2E",
+              "description_color": "#6B7280",
+              "icon_size": {
+                "size": 48,
+                "unit": "px"
+              },
+              "title_typography_typography": "custom",
+              "title_typography_font_family": "IBM Plex Sans Arabic",
+              "title_typography_font_size": {
+                "size": 20,
+                "unit": "px"
+              },
+              "title_typography_font_weight": "600",
+              "description_typography_typography": "custom",
+              "description_typography_font_family": "IBM Plex Sans Arabic",
+              "description_typography_font_size": {
+                "size": 14,
+                "unit": "px"
+              }
+            },
+            "elements": []
+          }
+        ],
+        "isInner": false
+      },
+      {
+        "id": "50893c7",
+        "elType": "column",
+        "settings": {
+          "_column_size": 33,
+          "_inline_size": null,
+          "background_background": "classic",
+          "background_color": "#FFFFFF",
+          "border_radius": {
+            "size": 12,
+            "unit": "px"
+          },
+          "box_shadow_box_shadow_type": "yes",
+          "box_shadow_box_shadow": {
+            "horizontal": 0,
+            "vertical": 2,
+            "blur": 8,
+            "spread": 0,
+            "color": "rgba(0,0,0,0.08)"
+          },
+          "padding": {
+            "top": "30",
+            "right": "20",
+            "bottom": "30",
+            "left": "20",
+            "unit": "px"
+          },
+          "margin": {
+            "top": "0",
+            "right": "10",
+            "bottom": "20",
+            "left": "10",
+            "unit": "px"
+          }
+        },
+        "elements": [
+          {
+            "id": "39f26d5",
+            "elType": "widget",
+            "widgetType": "icon-box",
+            "settings": {
+              "selected_icon": {
+                "value": "fas fa-thermometer-half",
+                "library": "fa-solid"
+              },
+              "title_text": "التحكم بالمناخ والطاقة",
+              "description_text": "تحكم مكيف، ثرموستات، ستائر ذكية",
+              "link": {
+                "url": "/product-category/climate-energy/",
+                "is_external": false
+              },
+              "position": "top",
+              "text_align": "center",
+              "primary_color": "#1A3A5C",
+              "title_size": "h4",
+              "title_color": "#1A1A2E",
+              "description_color": "#6B7280",
+              "icon_size": {
+                "size": 48,
+                "unit": "px"
+              },
+              "title_typography_typography": "custom",
+              "title_typography_font_family": "IBM Plex Sans Arabic",
+              "title_typography_font_size": {
+                "size": 20,
+                "unit": "px"
+              },
+              "title_typography_font_weight": "600",
+              "description_typography_typography": "custom",
+              "description_typography_font_family": "IBM Plex Sans Arabic",
+              "description_typography_font_size": {
+                "size": 14,
+                "unit": "px"
+              }
+            },
+            "elements": []
+          }
+        ],
+        "isInner": false
+      },
+      {
+        "id": "188ee0aa",
+        "elType": "column",
+        "settings": {
+          "_column_size": 33,
+          "_inline_size": null,
+          "background_background": "classic",
+          "background_color": "#FFFFFF",
+          "border_radius": {
+            "size": 12,
+            "unit": "px"
+          },
+          "box_shadow_box_shadow_type": "yes",
+          "box_shadow_box_shadow": {
+            "horizontal": 0,
+            "vertical": 2,
+            "blur": 8,
+            "spread": 0,
+            "color": "rgba(0,0,0,0.08)"
+          },
+          "padding": {
+            "top": "30",
+            "right": "20",
+            "bottom": "30",
+            "left": "20",
+            "unit": "px"
+          },
+          "margin": {
+            "top": "0",
+            "right": "10",
+            "bottom": "20",
+            "left": "10",
+            "unit": "px"
+          }
+        },
+        "elements": [
+          {
+            "id": "584ae077",
+            "elType": "widget",
+            "widgetType": "icon-box",
+            "settings": {
+              "selected_icon": {
+                "value": "fas fa-wifi",
+                "library": "fa-solid"
+              },
+              "title_text": "الشبكات والصوت",
+              "description_text": "راوترات، أكسس بوينت، مكبرات صوت",
+              "link": {
+                "url": "/product-category/networking-audio/",
+                "is_external": false
+              },
+              "position": "top",
+              "text_align": "center",
+              "primary_color": "#1A3A5C",
+              "title_size": "h4",
+              "title_color": "#1A1A2E",
+              "description_color": "#6B7280",
+              "icon_size": {
+                "size": 48,
+                "unit": "px"
+              },
+              "title_typography_typography": "custom",
+              "title_typography_font_family": "IBM Plex Sans Arabic",
+              "title_typography_font_size": {
+                "size": 20,
+                "unit": "px"
+              },
+              "title_typography_font_weight": "600",
+              "description_typography_typography": "custom",
+              "description_typography_font_family": "IBM Plex Sans Arabic",
+              "description_typography_font_size": {
+                "size": 14,
+                "unit": "px"
+              }
+            },
+            "elements": []
+          }
+        ],
+        "isInner": false
+      }
+    ],
+    "isInner": false
+  },
+  {
+    "id": "67b9ed0b",
+    "elType": "section",
+    "settings": {
+      "background_background": "classic",
+      "background_color": "#FFFFFF",
+      "padding": {
+        "top": "50",
+        "right": "20",
+        "bottom": "50",
+        "left": "20",
+        "unit": "px"
+      }
+    },
+    "elements": [
+      {
+        "id": "1b231a3f",
+        "elType": "column",
+        "settings": {
+          "_column_size": 100,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "49bcc2d8",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "الأكثر مبيعاً",
+              "header_size": "h2",
+              "align": "center",
+              "title_color": "#1A1A2E",
+              "typography_typography": "custom",
+              "typography_font_family": "IBM Plex Sans Arabic",
+              "typography_font_size": {
+                "size": 32,
+                "unit": "px"
+              },
+              "typography_font_size_mobile": {
+                "size": 24,
+                "unit": "px"
+              },
+              "typography_font_weight": "700"
+            },
+            "elements": []
+          },
+          {
+            "id": "4ab59ef7",
+            "elType": "widget",
+            "widgetType": "spacer",
+            "settings": {
+              "space": {
+                "size": 10,
+                "unit": "px"
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "3832ce71",
+            "elType": "widget",
+            "widgetType": "shortcode",
+            "settings": {
+              "shortcode": "[products limit=\"8\" columns=\"4\" best_selling=\"true\" orderby=\"popularity\"]"
+            },
+            "elements": []
+          }
+        ],
+        "isInner": false
+      }
+    ],
+    "isInner": false
+  },
+  {
+    "id": "d382bca",
+    "elType": "section",
+    "settings": {
+      "background_background": "gradient",
+      "background_color": "#1A3A5C",
+      "background_color_b": "#0D2137",
+      "background_gradient_angle": {
+        "size": 135,
+        "unit": "deg"
+      },
+      "padding": {
+        "top": "50",
+        "right": "0",
+        "bottom": "0",
+        "left": "0",
+        "unit": "px"
+      }
+    },
+    "elements": [
+      {
+        "id": "681b1df1",
+        "elType": "column",
+        "settings": {
+          "_column_size": 100,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "3476f3bf",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "لماذا نيوجين؟",
+              "header_size": "h2",
+              "align": "center",
+              "title_color": "#FFFFFF",
+              "typography_typography": "custom",
+              "typography_font_family": "IBM Plex Sans Arabic",
+              "typography_font_size": {
+                "size": 32,
+                "unit": "px"
+              },
+              "typography_font_size_mobile": {
+                "size": 24,
+                "unit": "px"
+              },
+              "typography_font_weight": "700"
+            },
+            "elements": []
+          },
+          {
+            "id": "12f544b8",
+            "elType": "widget",
+            "widgetType": "spacer",
+            "settings": {
+              "space": {
+                "size": 20,
+                "unit": "px"
+              }
+            },
+            "elements": []
+          }
+        ],
+        "isInner": false
+      }
+    ],
+    "isInner": false
+  },
+  {
+    "id": "37bbb03d",
+    "elType": "section",
+    "settings": {
+      "background_background": "gradient",
+      "background_color": "#1A3A5C",
+      "background_color_b": "#0D2137",
+      "background_gradient_angle": {
+        "size": 135,
+        "unit": "deg"
+      },
+      "padding": {
+        "top": "10",
+        "right": "20",
+        "bottom": "60",
+        "left": "20",
+        "unit": "px"
+      }
+    },
+    "elements": [
+      {
+        "id": "1e0f48e9",
+        "elType": "column",
+        "settings": {
+          "_column_size": 33,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "680eff33",
+            "elType": "widget",
+            "widgetType": "icon-box",
+            "settings": {
+              "selected_icon": {
+                "value": "fas fa-home",
+                "library": "fa-solid"
+              },
+              "title_text": "متخصصون في Home Assistant",
+              "description_text": "نحن الوحيدون في السعودية المتخصصون في أنظمة Home Assistant. نختار أجهزة متوافقة ومجربة تعمل بشكل مثالي مع بيتك الذكي.",
+              "position": "top",
+              "text_align": "center",
+              "primary_color": "#00BFA6",
+              "title_size": "h4",
+              "title_color": "#FFFFFF",
+              "description_color": "#CBD5E1",
+              "icon_size": {
+                "size": 44,
+                "unit": "px"
+              },
+              "title_typography_typography": "custom",
+              "title_typography_font_family": "IBM Plex Sans Arabic",
+              "title_typography_font_size": {
+                "size": 22,
+                "unit": "px"
+              },
+              "title_typography_font_weight": "600",
+              "description_typography_typography": "custom",
+              "description_typography_font_family": "IBM Plex Sans Arabic",
+              "description_typography_font_size": {
+                "size": 15,
+                "unit": "px"
+              },
+              "description_typography_line_height": {
+                "size": 1.8,
+                "unit": "em"
+              }
+            },
+            "elements": []
+          }
+        ],
+        "isInner": false
+      },
+      {
+        "id": "18fed06d",
+        "elType": "column",
+        "settings": {
+          "_column_size": 33,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "27734da",
+            "elType": "widget",
+            "widgetType": "icon-box",
+            "settings": {
+              "selected_icon": {
+                "value": "fas fa-headset",
+                "library": "fa-solid"
+              },
+              "title_text": "دعم عربي حقيقي",
+              "description_text": "مش بوت - فريق تقني يرد عليك عبر واتساب بالعربي، يساعدك من اختيار الجهاز المناسب إلى التركيب والإعداد.",
+              "position": "top",
+              "text_align": "center",
+              "primary_color": "#00BFA6",
+              "title_size": "h4",
+              "title_color": "#FFFFFF",
+              "description_color": "#CBD5E1",
+              "icon_size": {
+                "size": 44,
+                "unit": "px"
+              },
+              "title_typography_typography": "custom",
+              "title_typography_font_family": "IBM Plex Sans Arabic",
+              "title_typography_font_size": {
+                "size": 22,
+                "unit": "px"
+              },
+              "title_typography_font_weight": "600",
+              "description_typography_typography": "custom",
+              "description_typography_font_family": "IBM Plex Sans Arabic",
+              "description_typography_font_size": {
+                "size": 15,
+                "unit": "px"
+              },
+              "description_typography_line_height": {
+                "size": 1.8,
+                "unit": "em"
+              }
+            },
+            "elements": []
+          }
+        ],
+        "isInner": false
+      },
+      {
+        "id": "8142d18",
+        "elType": "column",
+        "settings": {
+          "_column_size": 33,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "33a870ea",
+            "elType": "widget",
+            "widgetType": "icon-box",
+            "settings": {
+              "selected_icon": {
+                "value": "fas fa-graduation-cap",
+                "library": "fa-solid"
+              },
+              "title_text": "محتوى تعليمي مجاني",
+              "description_text": "فيديوهات يوتيوب ومقالات بالعربي تشرح لك كل خطوة. حوّل بيتك بنفسك بدون ما تحتاج فني.",
+              "position": "top",
+              "text_align": "center",
+              "primary_color": "#00BFA6",
+              "title_size": "h4",
+              "title_color": "#FFFFFF",
+              "description_color": "#CBD5E1",
+              "icon_size": {
+                "size": 44,
+                "unit": "px"
+              },
+              "title_typography_typography": "custom",
+              "title_typography_font_family": "IBM Plex Sans Arabic",
+              "title_typography_font_size": {
+                "size": 22,
+                "unit": "px"
+              },
+              "title_typography_font_weight": "600",
+              "description_typography_typography": "custom",
+              "description_typography_font_family": "IBM Plex Sans Arabic",
+              "description_typography_font_size": {
+                "size": 15,
+                "unit": "px"
+              },
+              "description_typography_line_height": {
+                "size": 1.8,
+                "unit": "em"
+              }
+            },
+            "elements": []
+          }
+        ],
+        "isInner": false
+      }
+    ],
+    "isInner": false
+  },
+  {
+    "id": "2ee94623",
+    "elType": "section",
+    "settings": {
+      "layout": "full_width",
+      "background_background": "gradient",
+      "background_color": "#1A3A5C",
+      "background_color_b": "#0A1628",
+      "background_gradient_angle": {
+        "size": 180,
+        "unit": "deg"
+      },
+      "padding": {
+        "top": "60",
+        "right": "20",
+        "bottom": "60",
+        "left": "20",
+        "unit": "px"
+      }
+    },
+    "elements": [
+      {
+        "id": "4612e630",
+        "elType": "column",
+        "settings": {
+          "_column_size": 100,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "1b4e739c",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "باقة البيت الذكي للمبتدئين",
+              "header_size": "h2",
+              "align": "center",
+              "title_color": "#FFFFFF",
+              "typography_typography": "custom",
+              "typography_font_family": "IBM Plex Sans Arabic",
+              "typography_font_size": {
+                "size": 32,
+                "unit": "px"
+              },
+              "typography_font_size_mobile": {
+                "size": 24,
+                "unit": "px"
+              },
+              "typography_font_weight": "700"
+            },
+            "elements": []
+          },
+          {
+            "id": "612f1f4a",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "Smart Home Starter Kit",
+              "header_size": "h4",
+              "align": "center",
+              "title_color": "#00BFA6",
+              "typography_typography": "custom",
+              "typography_font_family": "Inter",
+              "typography_font_size": {
+                "size": 18,
+                "unit": "px"
+              },
+              "typography_font_weight": "500"
+            },
+            "elements": []
+          },
+          {
+            "id": "ee5a4d5",
+            "elType": "widget",
+            "widgetType": "text-editor",
+            "settings": {
+              "editor": "<p style=\"text-align: center; color: #CBD5E1; font-size: 16px; line-height: 1.8;\">\nHub + 2 مستشعرات + لمبة ذكية + بلاقة ذكية<br>\nابدأ رحلتك في عالم البيت الذكي بأفضل الأجهزة المتوافقة مع Home Assistant\n</p>"
+            },
+            "elements": []
+          },
+          {
+            "id": "4650f458",
+            "elType": "widget",
+            "widgetType": "spacer",
+            "settings": {
+              "space": {
+                "size": 10,
+                "unit": "px"
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "75e03726",
+            "elType": "widget",
+            "widgetType": "button",
+            "settings": {
+              "text": "تصفّح الباقات",
+              "link": {
+                "url": "/product-category/pre-configured-bundles/",
+                "is_external": false
+              },
+              "align": "center",
+              "size": "lg",
+              "background_color": "#FF6B35",
+              "button_text_color": "#FFFFFF",
+              "border_radius": {
+                "size": 8,
+                "unit": "px"
+              },
+              "typography_typography": "custom",
+              "typography_font_family": "IBM Plex Sans Arabic",
+              "typography_font_size": {
+                "size": 18,
+                "unit": "px"
+              },
+              "typography_font_weight": "600",
+              "button_background_color": "#FF6B35"
+            },
+            "elements": []
+          }
+        ],
+        "isInner": false
+      }
+    ],
+    "isInner": false
+  },
+  {
+    "id": "22b64f02",
+    "elType": "section",
+    "settings": {
+      "background_background": "classic",
+      "background_color": "#F8F9FA",
+      "padding": {
+        "top": "50",
+        "right": "20",
+        "bottom": "50",
+        "left": "20",
+        "unit": "px"
+      }
+    },
+    "elements": [
+      {
+        "id": "1c7845ee",
+        "elType": "column",
+        "settings": {
+          "_column_size": 100,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "6c88114d",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "من مدونتنا",
+              "header_size": "h2",
+              "align": "center",
+              "title_color": "#1A1A2E",
+              "typography_typography": "custom",
+              "typography_font_family": "IBM Plex Sans Arabic",
+              "typography_font_size": {
+                "size": 32,
+                "unit": "px"
+              },
+              "typography_font_size_mobile": {
+                "size": 24,
+                "unit": "px"
+              },
+              "typography_font_weight": "700"
+            },
+            "elements": []
+          },
+          {
+            "id": "4260e80e",
+            "elType": "widget",
+            "widgetType": "spacer",
+            "settings": {
+              "space": {
+                "size": 10,
+                "unit": "px"
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "1b5a6190",
+            "elType": "widget",
+            "widgetType": "html",
+            "settings": {
+              "html": "<style>\n.neo-blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1140px; margin: 0 auto; }\n.neo-blog-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.2s; }\n.neo-blog-card:hover { transform: translateY(-4px); }\n.neo-blog-card img { width: 100%; height: 200px; object-fit: cover; }\n.neo-blog-card-body { padding: 20px; }\n.neo-blog-card h3 { font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 18px; color: #1A1A2E; margin: 0 0 8px; }\n.neo-blog-card p { font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 14px; color: #6B7280; line-height: 1.6; }\n.neo-blog-card a { color: #1A3A5C; font-family: 'IBM Plex Sans Arabic', sans-serif; font-weight: 600; text-decoration: none; }\n@media (max-width: 768px) { .neo-blog-grid { grid-template-columns: 1fr; } }\n</style>\n<div class=\"neo-blog-grid\">\n  <div class=\"neo-blog-card\">\n    <div class=\"neo-blog-card-body\">\n      <h3>كيف تبدأ بيتك الذكي من الصفر</h3>\n      <p>دليل شامل للمبتدئين في عالم البيت الذكي - من اختيار الأجهزة إلى الإعداد</p>\n      <a href=\"/blog/\">اقرأ المزيد ←</a>\n    </div>\n  </div>\n  <div class=\"neo-blog-card\">\n    <div class=\"neo-blog-card-body\">\n      <h3>ما هو Home Assistant وليه تحتاجه</h3>\n      <p>تعرّف على أقوى نظام تحكم بالبيت الذكي وكيف يجمع كل أجهزتك في مكان واحد</p>\n      <a href=\"/blog/\">اقرأ المزيد ←</a>\n    </div>\n  </div>\n  <div class=\"neo-blog-card\">\n    <div class=\"neo-blog-card-body\">\n      <h3>أفضل 5 كاميرات مراقبة للبيت</h3>\n      <p>مقارنة شاملة لأفضل كاميرات المراقبة المتوافقة مع Home Assistant</p>\n      <a href=\"/blog/\">اقرأ المزيد ←</a>\n    </div>\n  </div>\n</div>"
+            },
+            "elements": []
+          }
+        ],
+        "isInner": false
+      }
+    ],
+    "isInner": false
+  },
+  {
+    "id": "7e1656bd",
+    "elType": "section",
+    "settings": {
+      "background_background": "classic",
+      "background_color": "#FFFFFF",
+      "padding": {
+        "top": "40",
+        "right": "0",
+        "bottom": "40",
+        "left": "0",
+        "unit": "px"
+      },
+      "border_border": "solid",
+      "border_width": {
+        "top": "1",
+        "right": "0",
+        "bottom": "0",
+        "left": "0",
+        "unit": "px"
+      },
+      "border_color": "#E5E7EB"
+    },
+    "elements": [
+      {
+        "id": "759627fa",
+        "elType": "column",
+        "settings": {
+          "_column_size": 100,
+          "_inline_size": null
+        },
+        "elements": [
+          {
+            "id": "4f1e18f",
+            "elType": "widget",
+            "widgetType": "heading",
+            "settings": {
+              "title": "العلامات التجارية",
+              "header_size": "h2",
+              "align": "center",
+              "title_color": "#1A1A2E",
+              "typography_typography": "custom",
+              "typography_font_family": "IBM Plex Sans Arabic",
+              "typography_font_size": {
+                "size": 32,
+                "unit": "px"
+              },
+              "typography_font_size_mobile": {
+                "size": 24,
+                "unit": "px"
+              },
+              "typography_font_weight": "700"
+            },
+            "elements": []
+          },
+          {
+            "id": "f9ece5c",
+            "elType": "widget",
+            "widgetType": "spacer",
+            "settings": {
+              "space": {
+                "size": 20,
+                "unit": "px"
+              }
+            },
+            "elements": []
+          },
+          {
+            "id": "65e28808",
+            "elType": "widget",
+            "widgetType": "html",
+            "settings": {
+              "html": "<style>\n@keyframes neo-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }\n.neo-brands-marquee { overflow: hidden; white-space: nowrap; padding: 20px 0; }\n.neo-brands-track { display: inline-block; animation: neo-scroll 30s linear infinite; }\n.neo-brands-track:hover { animation-play-state: paused; }\n</style>\n<div class=\"neo-brands-marquee\">\n  <div class=\"neo-brands-track\">\n    <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">Aqara</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">Sonoff</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">Philips Hue</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">Reolink</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">Shelly</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">SwitchBot</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">Ubiquiti</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">Nanoleaf</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">Google Nest</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">Apple</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">IKEA</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">Eufy</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">Aqara</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">Sonoff</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">Philips Hue</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">Reolink</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">Shelly</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">SwitchBot</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">Ubiquiti</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">Nanoleaf</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">Google Nest</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">Apple</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">IKEA</span> &nbsp;&bull;&nbsp; <span style=\"font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; color: #6B7280;\">Eufy</span>\n  </div>\n</div>"
+            },
+            "elements": []
+          }
+        ],
+        "isInner": false
+      }
+    ],
+    "isInner": false
+  }
+]

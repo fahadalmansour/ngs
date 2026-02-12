@@ -1,0 +1,327 @@
+/**
+ * NGS Design System - RTL Overrides
+ *
+ * Minimal RTL-specific overrides for edge cases
+ * Most RTL support is handled by CSS logical properties
+ *
+ * @package NGS_DesignSystem
+ * @version 1.0.0
+ */
+
+/* ========================================
+   ICON MIRRORING
+   Directional icons should flip in RTL
+   ======================================== */
+
+[dir="rtl"] .ngs-icon-arrow-right,
+[dir="rtl"] .ngs-icon-arrow-left,
+[dir="rtl"] .ngs-icon-chevron-right,
+[dir="rtl"] .ngs-icon-chevron-left,
+[dir="rtl"] .ngs-icon-arrow-forward,
+[dir="rtl"] .ngs-icon-arrow-back {
+  transform: scaleX(-1);
+}
+
+/* ========================================
+   DRAWER ANIMATIONS
+   Slide direction needs to be reversed
+   ======================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  [dir="rtl"] @keyframes ngsSlideInRight {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  [dir="rtl"] @keyframes ngsSlideInLeft {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  [dir="rtl"] @keyframes ngsSlideOutRight {
+    to {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
+
+  [dir="rtl"] @keyframes ngsSlideOutLeft {
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+}
+
+/* ========================================
+   TOAST SLIDE DIRECTION
+   ======================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  [dir="rtl"] @keyframes ngsSlideIn {
+    from {
+      transform: translateX(-400px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  [dir="rtl"] @keyframes ngsSlideOut {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(-400px);
+      opacity: 0;
+    }
+  }
+}
+
+/* ========================================
+   MOBILE DRAWER
+   ======================================== */
+
+[dir="rtl"] .ngs-mobile-nav {
+  inset-inline-start: auto;
+  inset-inline-end: -100%;
+}
+
+[dir="rtl"] .ngs-mobile-nav--open {
+  inset-inline-end: 0;
+}
+
+[dir="rtl"] .ngs-shop-sidebar {
+  inset-inline-start: auto;
+  inset-inline-end: -100%;
+}
+
+[dir="rtl"] .ngs-shop-sidebar--open {
+  inset-inline-end: 0;
+}
+
+/* ========================================
+   SEARCH OVERLAY
+   ======================================== */
+
+[dir="rtl"] .ngs-search-overlay__close {
+  inset-inline-start: auto;
+  inset-inline-end: var(--ngs-space-3);
+}
+
+/* ========================================
+   CART DRAWER
+   ======================================== */
+
+[dir="rtl"] .ngs-cart-drawer {
+  inset-inline-start: auto;
+  inset-inline-end: -100%;
+}
+
+[dir="rtl"] .ngs-cart-drawer--open {
+  inset-inline-end: 0;
+}
+
+/* ========================================
+   PRODUCT GALLERY NAVIGATION
+   ======================================== */
+
+[dir="rtl"] .ngs-gallery__prev {
+  inset-inline-start: auto;
+  inset-inline-end: var(--ngs-space-2);
+}
+
+[dir="rtl"] .ngs-gallery__next {
+  inset-inline-end: auto;
+  inset-inline-start: var(--ngs-space-2);
+}
+
+/* ========================================
+   BADGE POSITIONING
+   ======================================== */
+
+[dir="rtl"] .ngs-badge--top-right {
+  inset-inline-end: auto;
+  inset-inline-start: 0;
+}
+
+[dir="rtl"] .ngs-badge--top-left {
+  inset-inline-start: auto;
+  inset-inline-end: 0;
+}
+
+/* ========================================
+   DROPDOWN MENU POSITIONING
+   ======================================== */
+
+[dir="rtl"] .ngs-dropdown__menu--right {
+  inset-inline-end: auto;
+  inset-inline-start: 0;
+}
+
+[dir="rtl"] .ngs-dropdown__menu--left {
+  inset-inline-start: auto;
+  inset-inline-end: 0;
+}
+
+/* ========================================
+   TOOLTIP ARROW
+   ======================================== */
+
+[dir="rtl"] .ngs-tooltip::before {
+  inset-inline-start: auto;
+  inset-inline-end: 50%;
+  transform: translateX(50%);
+}
+
+/* ========================================
+   PROGRESS BAR DIRECTION
+   ======================================== */
+
+[dir="rtl"] .ngs-progress__bar {
+  transform-origin: right;
+}
+
+/* ========================================
+   CAROUSEL NAVIGATION
+   ======================================== */
+
+[dir="rtl"] .ngs-carousel__prev {
+  inset-inline-start: auto;
+  inset-inline-end: var(--ngs-space-2);
+}
+
+[dir="rtl"] .ngs-carousel__next {
+  inset-inline-end: auto;
+  inset-inline-start: var(--ngs-space-2);
+}
+
+/* ========================================
+   ACCORDION ICON
+   ======================================== */
+
+[dir="rtl"] .ngs-accordion__icon {
+  transform: rotate(180deg);
+}
+
+[dir="rtl"] .ngs-accordion__item--open .ngs-accordion__icon {
+  transform: rotate(90deg);
+}
+
+/* ========================================
+   NOTIFICATION POSITION
+   ======================================== */
+
+[dir="rtl"] .ngs-notification--top-right {
+  inset-inline-end: auto;
+  inset-inline-start: var(--ngs-space-3);
+}
+
+[dir="rtl"] .ngs-notification--top-left {
+  inset-inline-start: auto;
+  inset-inline-end: var(--ngs-space-3);
+}
+
+[dir="rtl"] .ngs-notification--bottom-right {
+  inset-inline-end: auto;
+  inset-inline-start: var(--ngs-space-3);
+}
+
+[dir="rtl"] .ngs-notification--bottom-left {
+  inset-inline-start: auto;
+  inset-inline-end: var(--ngs-space-3);
+}
+
+/* ========================================
+   BREADCRUMB SEPARATOR
+   ======================================== */
+
+[dir="rtl"] .ngs-breadcrumb__separator {
+  transform: scaleX(-1);
+}
+
+/* ========================================
+   STEPPER INDICATOR
+   ======================================== */
+
+[dir="rtl"] .ngs-stepper__connector::before {
+  inset-inline-start: auto;
+  inset-inline-end: 50%;
+  transform: translateX(50%);
+}
+
+/* ========================================
+   RATING STARS DIRECTION
+   ======================================== */
+
+[dir="rtl"] .ngs-rating {
+  direction: ltr;
+}
+
+/* ========================================
+   PRICE DIRECTION (ALWAYS LTR)
+   ======================================== */
+
+[dir="rtl"] .ngs-price,
+[dir="rtl"] .ngs-product-card__price,
+[dir="rtl"] .ngs-cart-item__price,
+[dir="rtl"] .ngs-order-total,
+[dir="rtl"] .woocommerce .price,
+[dir="rtl"] .woocommerce .amount {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* ========================================
+   FORM VALIDATION ICON
+   ======================================== */
+
+[dir="rtl"] .ngs-input--valid::after,
+[dir="rtl"] .ngs-input--error::after {
+  inset-inline-end: auto;
+  inset-inline-start: var(--ngs-space-2);
+}
+
+/* ========================================
+   MODAL CLOSE BUTTON
+   ======================================== */
+
+[dir="rtl"] .ngs-modal__close {
+  inset-inline-end: auto;
+  inset-inline-start: var(--ngs-space-3);
+}
+
+/* ========================================
+   TABLE TEXT ALIGNMENT
+   Keep numbers right-aligned in RTL
+   ======================================== */
+
+[dir="rtl"] .ngs-table td[data-type="number"],
+[dir="rtl"] .ngs-table th[data-type="number"] {
+  text-align: end;
+}
+
+/* ========================================
+   CHECKBOX/RADIO LABEL SPACING
+   ======================================== */
+
+[dir="rtl"] .ngs-checkbox input,
+[dir="rtl"] .ngs-radio input {
+  margin-inline-end: 0;
+  margin-inline-start: var(--ngs-space-1);
+}

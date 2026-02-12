@@ -1,0 +1,436 @@
+/**
+ * NGS Design System - Account Pages Styles
+ *
+ * My Account, Orders, Addresses, and profile pages
+ * Uses CSS logical properties for RTL support
+ *
+ * @package NGS_DesignSystem
+ * @version 1.0.0
+ */
+
+/* ========================================
+   ACCOUNT LAYOUT
+   ======================================== */
+
+.ngs-account-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: var(--ngs-gutter-desktop);
+  padding-block: var(--ngs-space-6);
+}
+
+@media (max-width: 1023px) {
+  .ngs-account-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   ACCOUNT NAVIGATION
+   ======================================== */
+
+.ngs-account-nav {
+  position: sticky;
+  inset-block-start: calc(var(--ngs-space-12) + 20px);
+  block-size: fit-content;
+  background: var(--ngs-bg-alt);
+  border-radius: var(--ngs-radius-md);
+  padding: var(--ngs-space-3);
+}
+
+.ngs-account-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ngs-space-1);
+}
+
+.ngs-account-nav__item {
+  margin: 0;
+}
+
+.ngs-account-nav__link {
+  display: flex;
+  align-items: center;
+  gap: var(--ngs-space-2);
+  padding-block: var(--ngs-space-2);
+  padding-inline: var(--ngs-space-2);
+  border-radius: var(--ngs-radius-sm);
+  color: var(--ngs-text);
+  text-decoration: none;
+  font-size: var(--ngs-font-size-body);
+  transition: all var(--ngs-duration-fast) var(--ngs-ease-out);
+  border-inline-start: 3px solid transparent;
+}
+
+.ngs-account-nav__link:hover {
+  background: var(--ngs-bg);
+}
+
+.ngs-account-nav__link--active {
+  background: var(--ngs-bg);
+  color: var(--ngs-primary);
+  border-inline-start-color: var(--ngs-primary);
+  font-weight: 600;
+}
+
+.ngs-account-nav__icon {
+  inline-size: 20px;
+  block-size: 20px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1023px) {
+  .ngs-account-nav {
+    position: static;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ngs-account-nav__list {
+    flex-direction: row;
+  }
+
+  .ngs-account-nav__link {
+    white-space: nowrap;
+  }
+}
+
+/* ========================================
+   ACCOUNT CONTENT
+   ======================================== */
+
+.ngs-account-content__title {
+  font-size: var(--ngs-font-size-h2);
+  line-height: var(--ngs-line-height-h2);
+  font-weight: 700;
+  color: var(--ngs-text);
+  margin-block-end: var(--ngs-space-4);
+}
+
+/* ========================================
+   ORDERS TABLE
+   ======================================== */
+
+.ngs-orders-table {
+  inline-size: 100%;
+  border-collapse: collapse;
+  background: var(--ngs-bg);
+  border-radius: var(--ngs-radius-md);
+  overflow: hidden;
+}
+
+.ngs-orders-table thead {
+  background: var(--ngs-bg-alt);
+}
+
+.ngs-orders-table th {
+  padding: var(--ngs-space-3);
+  text-align: start;
+  font-size: var(--ngs-font-size-small);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ngs-text-secondary);
+}
+
+.ngs-orders-table tbody tr {
+  border-block-end: 1px solid var(--ngs-border-light);
+}
+
+.ngs-orders-table tbody tr:last-child {
+  border-block-end: none;
+}
+
+.ngs-orders-table td {
+  padding: var(--ngs-space-3);
+  font-size: var(--ngs-font-size-body);
+  color: var(--ngs-text);
+}
+
+.ngs-order-number {
+  font-weight: 600;
+  color: var(--ngs-primary);
+  text-decoration: none;
+}
+
+.ngs-order-number:hover {
+  text-decoration: underline;
+}
+
+.ngs-order-date {
+  color: var(--ngs-text-secondary);
+}
+
+.ngs-order-total {
+  font-weight: 600;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* Status badges */
+.ngs-order-status {
+  display: inline-block;
+  padding-inline: var(--ngs-space-2);
+  padding-block: 4px;
+  border-radius: var(--ngs-radius-sm);
+  font-size: var(--ngs-font-size-small);
+  font-weight: 600;
+}
+
+.ngs-order-status--processing {
+  background: var(--ngs-info);
+  color: var(--ngs-bg);
+}
+
+.ngs-order-status--completed {
+  background: var(--ngs-success);
+  color: var(--ngs-bg);
+}
+
+.ngs-order-status--on-hold {
+  background: var(--ngs-warning);
+  color: var(--ngs-bg);
+}
+
+.ngs-order-status--cancelled {
+  background: var(--ngs-error);
+  color: var(--ngs-bg);
+}
+
+.ngs-order-status--pending {
+  background: var(--ngs-text-secondary);
+  color: var(--ngs-bg);
+}
+
+.ngs-order-actions {
+  display: flex;
+  gap: var(--ngs-space-1);
+}
+
+@media (max-width: 767px) {
+  .ngs-orders-table {
+    display: block;
+  }
+
+  .ngs-orders-table thead {
+    display: none;
+  }
+
+  .ngs-orders-table tbody {
+    display: block;
+  }
+
+  .ngs-orders-table tr {
+    display: block;
+    padding: var(--ngs-space-3);
+    border-block-end: 1px solid var(--ngs-border-light);
+  }
+
+  .ngs-orders-table td {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--ngs-space-1) 0;
+  }
+
+  .ngs-orders-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--ngs-text-secondary);
+  }
+}
+
+/* ========================================
+   ADDRESS CARDS
+   ======================================== */
+
+.ngs-addresses-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--ngs-space-4);
+}
+
+.ngs-address-card {
+  background: var(--ngs-bg-alt);
+  padding: var(--ngs-space-4);
+  border-radius: var(--ngs-radius-md);
+  border: 2px solid transparent;
+  transition: border-color var(--ngs-duration-fast) var(--ngs-ease-out);
+}
+
+.ngs-address-card:hover {
+  border-color: var(--ngs-border-light);
+}
+
+.ngs-address-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: var(--ngs-space-2);
+}
+
+.ngs-address-card__title {
+  font-size: var(--ngs-font-size-body);
+  font-weight: 700;
+  color: var(--ngs-text);
+}
+
+.ngs-address-card__edit {
+  font-size: var(--ngs-font-size-small);
+  color: var(--ngs-primary);
+  text-decoration: none;
+}
+
+.ngs-address-card__edit:hover {
+  text-decoration: underline;
+}
+
+.ngs-address-card__content {
+  font-size: var(--ngs-font-size-body);
+  line-height: 1.8;
+  color: var(--ngs-text-secondary);
+}
+
+.ngs-address-card__content p {
+  margin: 0;
+}
+
+.ngs-address-card--default {
+  border-color: var(--ngs-primary);
+}
+
+.ngs-address-card__badge {
+  display: inline-block;
+  padding-inline: var(--ngs-space-1);
+  padding-block: 2px;
+  background: var(--ngs-primary);
+  color: var(--ngs-bg);
+  border-radius: var(--ngs-radius-sm);
+  font-size: var(--ngs-font-size-label);
+  font-weight: 600;
+  margin-inline-start: var(--ngs-space-1);
+}
+
+@media (max-width: 767px) {
+  .ngs-addresses-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   ACCOUNT DETAILS FORM
+   ======================================== */
+
+.ngs-account-form {
+  background: var(--ngs-bg);
+  padding: var(--ngs-space-4);
+  border-radius: var(--ngs-radius-md);
+}
+
+.ngs-account-form__section {
+  margin-block-end: var(--ngs-space-6);
+}
+
+.ngs-account-form__section:last-child {
+  margin-block-end: 0;
+}
+
+.ngs-account-form__section-title {
+  font-size: var(--ngs-font-size-h3);
+  line-height: var(--ngs-line-height-h3);
+  font-weight: 700;
+  color: var(--ngs-text);
+  margin-block-end: var(--ngs-space-3);
+  padding-block-end: var(--ngs-space-2);
+  border-block-end: 1px solid var(--ngs-border-light);
+}
+
+.ngs-account-form__fields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--ngs-space-3);
+}
+
+.ngs-account-form__field--full {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 767px) {
+  .ngs-account-form__fields {
+    grid-template-columns: 1fr;
+  }
+
+  .ngs-account-form__field--full {
+    grid-column: 1;
+  }
+}
+
+/* ========================================
+   DASHBOARD STATS
+   ======================================== */
+
+.ngs-dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--ngs-space-4);
+  margin-block-end: var(--ngs-space-6);
+}
+
+.ngs-dashboard-stat {
+  background: var(--ngs-bg-alt);
+  padding: var(--ngs-space-4);
+  border-radius: var(--ngs-radius-md);
+  text-align: center;
+}
+
+.ngs-dashboard-stat__value {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--ngs-primary);
+  margin-block-end: var(--ngs-space-1);
+}
+
+.ngs-dashboard-stat__label {
+  font-size: var(--ngs-font-size-body);
+  color: var(--ngs-text-secondary);
+}
+
+@media (max-width: 767px) {
+  .ngs-dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   RECENT ORDERS
+   ======================================== */
+
+.ngs-recent-orders {
+  margin-block-end: var(--ngs-space-6);
+}
+
+.ngs-recent-orders__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: var(--ngs-space-3);
+}
+
+.ngs-recent-orders__title {
+  font-size: var(--ngs-font-size-h3);
+  line-height: var(--ngs-line-height-h3);
+  font-weight: 700;
+  color: var(--ngs-text);
+}
+
+.ngs-recent-orders__viewall {
+  font-size: var(--ngs-font-size-body);
+  color: var(--ngs-primary);
+  text-decoration: none;
+}
+
+.ngs-recent-orders__viewall:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,36 @@
+node_modules/
+negt/wp-content/
+.DS_Store
+._.DS_Store
+._*
+
+# Sensitive files - NEVER commit
+.env
+.env.*
+*.env
+Products/.env
+
+# API credentials and secrets
+*credentials*
+*secrets*
+
+# Backup files
+*.backup-*
+negt.zip
+
+# Product images (large binary files)
+Products/images/
+
+# Progress/state files (local to each developer)
+*_progress.json
+*.log
+Products/omnichannel_hub.db
+Products/output/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Screenshots (local testing artifacts)
+screenshots/

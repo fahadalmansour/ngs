@@ -1,0 +1,364 @@
+{
+  "name": "Neogen Product Importer (Ollama Arabic)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "neogen-product-import",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [250, 300],
+      "webhookId": "neogen-product-import"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ $json.body.url }}",
+        "options": {
+          "timeout": 30000,
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        },
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.5"
+            }
+          ]
+        }
+      },
+      "id": "http-fetch",
+      "name": "Fetch Product Page",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [470, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract product data from HTML\nconst html = $input.first().json.body;\nconst url = $('Webhook').first().json.body.url;\nconst importId = $('Webhook').first().json.body.import_id;\nconst platform = $('Webhook').first().json.body.platform;\nconst settings = $('Webhook').first().json.body.settings;\n\n// Helper function to extract text\nfunction extractText(html, patterns) {\n  for (const pattern of patterns) {\n    const regex = new RegExp(pattern, 'i');\n    const match = html.match(regex);\n    if (match && match[1]) {\n      return match[1].trim().replace(/<[^>]*>/g, '').trim();\n    }\n  }\n  return '';\n}\n\n// Helper function to extract images\nfunction extractImages(html) {\n  const images = [];\n  \n  // Try og:image first\n  const ogImage = html.match(/<meta[^>]*property=[\"']og:image[\"'][^>]*content=[\"']([^\"']+)[\"']/i);\n  if (ogImage) images.push(ogImage[1]);\n  \n  // AliExpress images\n  const aliImages = html.matchAll(/\"imagePathList\"\\s*:\\s*\\[(.*?)\\]/g);\n  for (const match of aliImages) {\n    const urls = match[1].match(/\"(https?:\\/\\/[^\"]+\\.jpg[^\"]*)\"/g);\n    if (urls) {\n      urls.slice(0, 5).forEach(u => images.push(u.replace(/\"/g, '')));\n    }\n  }\n  \n  // Amazon images\n  const amzImages = html.matchAll(/\"hiRes\"\\s*:\\s*\"([^\"]+)\"/g);\n  for (const match of amzImages) {\n    images.push(match[1]);\n    if (images.length >= 5) break;\n  }\n  \n  // Generic product images\n  const genericImages = html.matchAll(/<img[^>]*class=[\"'][^\"']*product[^\"']*[\"'][^>]*src=[\"']([^\"']+)[\"']/gi);\n  for (const match of genericImages) {\n    if (!match[1].includes('placeholder') && !match[1].includes('loading')) {\n      images.push(match[1]);\n      if (images.length >= 5) break;\n    }\n  }\n  \n  return [...new Set(images)].slice(0, 5);\n}\n\n// Extract title\nlet title = '';\nconst titlePatterns = [\n  '<h1[^>]*class=[\"'][^\"']*product[^\"']*[\"'][^>]*>([^<]+)',\n  '<h1[^>]*class=[\"'][^\"']*title[^\"']*[\"'][^>]*>([^<]+)',\n  '<span[^>]*id=[\"']productTitle[\"'][^>]*>([^<]+)',\n  '<meta[^>]*property=[\"']og:title[\"'][^>]*content=[\"']([^\"']+)',\n  '<title>([^<]+)',\n];\ntitle = extractText(html, titlePatterns);\n\n// Extract price\nlet price = 0;\nconst pricePatterns = [\n  '\"formatedAmount\"\\s*:\\s*\"([\\d.,]+)\"',\n  '\"price\"\\s*:\\s*\"?([\\d.,]+)',\n  'class=[\"'][^\"']*price[^\"']*[\"'][^>]*>\\s*\\$?([\\d.,]+)',\n  'itemprop=[\"']price[\"'][^>]*content=[\"']([\\d.,]+)',\n];\nconst priceText = extractText(html, pricePatterns);\nif (priceText) {\n  price = parseFloat(priceText.replace(/[^\\d.]/g, ''));\n}\n\n// Extract description\nlet description = '';\nconst descPatterns = [\n  '<div[^>]*id=[\"']productDescription[\"'][^>]*>([\\s\\S]*?)</div>',\n  '<div[^>]*class=[\"'][^\"']*description[^\"']*[\"'][^>]*>([\\s\\S]*?)</div>',\n  '<meta[^>]*property=[\"']og:description[\"'][^>]*content=[\"']([^\"']+)',\n];\ndescription = extractText(html, descPatterns);\n\n// Extract images\nconst images = extractImages(html);\n\n// Apply price markup if specified\nif (settings && settings.price_markup && price > 0) {\n  price = price * (1 + settings.price_markup / 100);\n}\n\nreturn [{\n  json: {\n    import_id: importId,\n    source_url: url,\n    platform: platform,\n    title: title,\n    description: description,\n    price: Math.round(price * 100) / 100,\n    images: images,\n    category_id: $('Webhook').first().json.body.category_id,\n    settings: settings,\n    raw_length: html.length\n  }\n}];"
+      },
+      "id": "extract-data",
+      "name": "Extract Product Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [690, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.settings.auto_translate === 'yes' }}",
+              "value2": true
+            }
+          ],
+          "string": [
+            {
+              "value1": "={{ $json.title }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "check-translate",
+      "name": "Should Translate?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [910, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://192.168.8.211:11434/api/generate",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"qwen2:7b\",\n  \"prompt\": \"أنت مترجم محترف. ترجم معلومات المنتج التالية إلى العربية. احتفظ بأسماء العلامات التجارية وأرقام الموديلات بالإنجليزية. أخرج فقط JSON المترجم، لا شيء آخر.\\n\\nInput:\\n{\\n  \\\"title\\\": \\\"{{ $json.title }}\\\",\\n  \\\"description\\\": \\\"{{ $json.description }}\\\"\\n}\\n\\nOutput the same JSON structure with Arabic translations:\",\n  \"stream\": false,\n  \"options\": {\n    \"temperature\": 0.3\n  }\n}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "translate-ollama",
+      "name": "Translate with Ollama (Arabic)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1130, 200]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Merge translated content with original data\nconst original = $('Extract Product Data').first().json;\nconst ollamaResponse = $input.first().json;\n\nlet translatedTitle = original.title;\nlet translatedDescription = original.description;\n\ntry {\n  const responseText = ollamaResponse.response || '';\n  // Try to extract JSON from the response\n  const jsonMatch = responseText.match(/\\{[\\s\\S]*\\}/);\n  if (jsonMatch) {\n    const parsed = JSON.parse(jsonMatch[0]);\n    if (parsed.title) translatedTitle = parsed.title;\n    if (parsed.description) translatedDescription = parsed.description;\n  }\n} catch (e) {\n  // Use original if parsing fails\n  console.log('Translation parsing failed:', e.message);\n}\n\nreturn [{\n  json: {\n    ...original,\n    title: translatedTitle,\n    description: translatedDescription,\n    original_title: original.title,\n    original_description: original.description\n  }\n}];"
+      },
+      "id": "merge-translation",
+      "name": "Merge Translation",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1350, 200]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('Webhook').first().json.body.callback_url }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-API-Key",
+              "value": "={{ $('Webhook').first().json.body.api_key }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"import_id\": {{ $json.import_id }},\n  \"title\": \"{{ $json.title }}\",\n  \"description\": \"{{ $json.description }}\",\n  \"price\": {{ $json.price }},\n  \"images\": {{ JSON.stringify($json.images) }},\n  \"category_id\": {{ $json.category_id || 0 }},\n  \"source_url\": \"{{ $json.source_url }}\",\n  \"apply_markup\": false\n}",
+        "options": {}
+      },
+      "id": "callback-wordpress",
+      "name": "Send to WordPress",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1570, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { success: true, product_id: $json.product_id } }}"
+      },
+      "id": "respond-success",
+      "name": "Respond Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1790, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { success: false, error: $json.error || 'Unknown error' } }}",
+        "options": {
+          "responseCode": 500
+        }
+      },
+      "id": "respond-error",
+      "name": "Respond Error",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1790, 500]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.title }}",
+              "operation": "isEmpty"
+            }
+          ]
+        }
+      },
+      "id": "check-extraction",
+      "name": "Extraction Success?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1130, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{\n  json: {\n    error: 'Failed to extract product data. The page might be protected or the structure is not recognized.',\n    import_id: $('Webhook').first().json.body.import_id\n  }\n}];"
+      },
+      "id": "extraction-failed",
+      "name": "Extraction Failed",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1350, 500]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('Webhook').first().json.body.callback_url }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-API-Key",
+              "value": "={{ $('Webhook').first().json.body.api_key }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"import_id\": {{ $json.import_id }},\n  \"error\": \"{{ $json.error }}\"\n}",
+        "options": {}
+      },
+      "id": "callback-error",
+      "name": "Send Error to WordPress",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1570, 500]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Fetch Product Page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Product Page": {
+      "main": [
+        [
+          {
+            "node": "Extract Product Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Product Data": {
+      "main": [
+        [
+          {
+            "node": "Should Translate?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Should Translate?": {
+      "main": [
+        [
+          {
+            "node": "Translate with Ollama (Arabic)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Extraction Success?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Translate with Ollama (Arabic)": {
+      "main": [
+        [
+          {
+            "node": "Merge Translation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Translation": {
+      "main": [
+        [
+          {
+            "node": "Send to WordPress",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extraction Success?": {
+      "main": [
+        [
+          {
+            "node": "Extraction Failed",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send to WordPress",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extraction Failed": {
+      "main": [
+        [
+          {
+            "node": "Send Error to WordPress",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send to WordPress": {
+      "main": [
+        [
+          {
+            "node": "Respond Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Error to WordPress": {
+      "main": [
+        [
+          {
+            "node": "Respond Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "neogen"
+    },
+    {
+      "name": "negt.blazr.net"
+    }
+  ],
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "neogen-product-importer-ollama"
+  }
+}

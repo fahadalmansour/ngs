@@ -1,0 +1,441 @@
+/**
+ * NGS Design System - WooCommerce Overrides
+ *
+ * Override WooCommerce default styles with design system
+ * Ensures our components take precedence
+ *
+ * @package NGS_DesignSystem
+ * @version 1.0.0
+ */
+
+/* ========================================
+   BUTTON OVERRIDES
+   ======================================== */
+
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce a.button,
+.woocommerce #respond input#submit {
+  /* Override with .ngs-btn styles */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ngs-space-1);
+  padding-inline: var(--ngs-space-3);
+  padding-block: var(--ngs-space-2);
+  border: none;
+  border-radius: var(--ngs-radius-sm);
+  font-size: var(--ngs-font-size-body);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--ngs-duration-fast) var(--ngs-ease-out);
+  background: var(--ngs-primary);
+  color: var(--ngs-bg);
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.woocommerce button.button:hover,
+.woocommerce input.button:hover,
+.woocommerce a.button:hover,
+.woocommerce #respond input#submit:hover {
+  background: var(--ngs-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--ngs-shadow-medium);
+}
+
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
+.woocommerce a.button.alt {
+  background: var(--ngs-primary);
+  color: var(--ngs-bg);
+}
+
+.woocommerce button.button.alt:hover,
+.woocommerce input.button.alt:hover,
+.woocommerce a.button.alt:hover {
+  background: var(--ngs-primary-hover);
+}
+
+/* ========================================
+   PRICE OVERRIDES
+   ======================================== */
+
+.woocommerce .price,
+.woocommerce .amount {
+  color: var(--ngs-primary);
+  font-weight: 700;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.woocommerce .price del,
+.woocommerce del .amount {
+  color: var(--ngs-text-secondary);
+  font-weight: 400;
+  text-decoration: line-through;
+}
+
+.woocommerce .price ins,
+.woocommerce ins .amount {
+  text-decoration: none;
+  color: var(--ngs-primary);
+}
+
+/* ========================================
+   NOTICE/MESSAGE OVERRIDES
+   ======================================== */
+
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error {
+  padding: var(--ngs-space-2) var(--ngs-space-3);
+  border-radius: var(--ngs-radius-sm);
+  border-inline-start: 4px solid;
+  margin-block-end: var(--ngs-space-3);
+  font-size: var(--ngs-font-size-body);
+}
+
+.woocommerce-message {
+  background: var(--ngs-success);
+  color: var(--ngs-bg);
+  border-inline-start-color: var(--ngs-success);
+}
+
+.woocommerce-info {
+  background: var(--ngs-info);
+  color: var(--ngs-bg);
+  border-inline-start-color: var(--ngs-info);
+}
+
+.woocommerce-error {
+  background: var(--ngs-error);
+  color: var(--ngs-bg);
+  border-inline-start-color: var(--ngs-error);
+}
+
+.woocommerce-message a,
+.woocommerce-info a,
+.woocommerce-error a {
+  color: var(--ngs-bg);
+  text-decoration: underline;
+}
+
+/* ========================================
+   FORM OVERRIDES
+   ======================================== */
+
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea,
+.woocommerce form .form-row select {
+  padding-inline: var(--ngs-space-2);
+  padding-block: var(--ngs-space-2);
+  border: 1px solid var(--ngs-border-light);
+  border-radius: var(--ngs-radius-sm);
+  font-size: var(--ngs-font-size-body);
+  color: var(--ngs-text);
+  background: var(--ngs-bg);
+  inline-size: 100%;
+  transition: border-color var(--ngs-duration-fast) var(--ngs-ease-out);
+}
+
+.woocommerce form .form-row input.input-text:focus,
+.woocommerce form .form-row textarea:focus,
+.woocommerce form .form-row select:focus {
+  outline: 2px solid var(--ngs-primary);
+  outline-offset: -1px;
+  border-color: var(--ngs-primary);
+}
+
+.woocommerce form .form-row label {
+  font-size: var(--ngs-font-size-body);
+  font-weight: 600;
+  color: var(--ngs-text);
+  margin-block-end: var(--ngs-space-1);
+  display: block;
+}
+
+.woocommerce form .form-row-first,
+.woocommerce form .form-row-last {
+  inline-size: 48%;
+}
+
+/* ========================================
+   BREADCRUMB OVERRIDES
+   ======================================== */
+
+.woocommerce-breadcrumb {
+  display: flex;
+  gap: var(--ngs-space-1);
+  align-items: center;
+  font-size: var(--ngs-font-size-small);
+  color: var(--ngs-text-secondary);
+  margin-block-end: var(--ngs-space-3);
+}
+
+.woocommerce-breadcrumb a {
+  color: var(--ngs-primary);
+  text-decoration: none;
+}
+
+.woocommerce-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   SALE BADGE OVERRIDE
+   ======================================== */
+
+.woocommerce span.onsale {
+  background: var(--ngs-error);
+  color: var(--ngs-bg);
+  padding-inline: var(--ngs-space-2);
+  padding-block: 4px;
+  border-radius: var(--ngs-radius-sm);
+  font-size: var(--ngs-font-size-small);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  min-block-size: auto;
+  min-inline-size: auto;
+  line-height: 1;
+}
+
+/* ========================================
+   STAR RATING OVERRIDE
+   ======================================== */
+
+.woocommerce .star-rating {
+  color: var(--ngs-warning);
+  font-size: var(--ngs-font-size-body);
+}
+
+.woocommerce .star-rating::before {
+  color: var(--ngs-border-light);
+}
+
+.woocommerce .star-rating span::before {
+  color: var(--ngs-warning);
+}
+
+/* ========================================
+   QUANTITY INPUT OVERRIDE
+   ======================================== */
+
+.woocommerce .quantity .qty {
+  inline-size: 60px;
+  padding-inline: var(--ngs-space-1);
+  padding-block: var(--ngs-space-1);
+  border: 1px solid var(--ngs-border-light);
+  border-radius: var(--ngs-radius-sm);
+  text-align: center;
+  font-size: var(--ngs-font-size-body);
+  font-weight: 600;
+  color: var(--ngs-text);
+  background: var(--ngs-bg);
+}
+
+.woocommerce .quantity .qty:focus {
+  outline: 2px solid var(--ngs-primary);
+  outline-offset: -1px;
+  border-color: var(--ngs-primary);
+}
+
+/* ========================================
+   WIDGET OVERRIDES
+   ======================================== */
+
+.woocommerce .widget {
+  margin-block-end: var(--ngs-space-4);
+}
+
+.woocommerce .widget_title,
+.woocommerce .widgettitle {
+  font-size: var(--ngs-font-size-body);
+  font-weight: 700;
+  color: var(--ngs-text);
+  margin-block-end: var(--ngs-space-2);
+  padding-block-end: var(--ngs-space-1);
+  border-block-end: 2px solid var(--ngs-border-light);
+}
+
+.woocommerce .widget ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.woocommerce .widget ul li {
+  padding-block: var(--ngs-space-1);
+  border-block-end: 1px solid var(--ngs-border-light);
+}
+
+.woocommerce .widget ul li:last-child {
+  border-block-end: none;
+}
+
+.woocommerce .widget ul li a {
+  color: var(--ngs-text-secondary);
+  text-decoration: none;
+  transition: color var(--ngs-duration-fast) var(--ngs-ease-out);
+}
+
+.woocommerce .widget ul li a:hover {
+  color: var(--ngs-primary);
+}
+
+/* ========================================
+   PAGINATION OVERRIDE
+   ======================================== */
+
+.woocommerce nav.woocommerce-pagination {
+  margin-block-start: var(--ngs-space-6);
+}
+
+.woocommerce nav.woocommerce-pagination ul {
+  display: flex;
+  justify-content: center;
+  gap: var(--ngs-space-1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.woocommerce nav.woocommerce-pagination ul li {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a,
+.woocommerce nav.woocommerce-pagination ul li span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 44px;
+  block-size: 44px;
+  border-radius: var(--ngs-radius-sm);
+  border: 1px solid var(--ngs-border-light);
+  background: var(--ngs-bg);
+  color: var(--ngs-text);
+  text-decoration: none;
+  font-size: var(--ngs-font-size-body);
+  transition: all var(--ngs-duration-fast) var(--ngs-ease-out);
+}
+
+.woocommerce nav.woocommerce-pagination ul li a:hover {
+  border-color: var(--ngs-primary);
+  color: var(--ngs-primary);
+}
+
+.woocommerce nav.woocommerce-pagination ul li span.current {
+  background: var(--ngs-primary);
+  color: var(--ngs-bg);
+  border-color: var(--ngs-primary);
+}
+
+/* ========================================
+   PRODUCT TABS OVERRIDE
+   ======================================== */
+
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+  display: flex;
+  gap: var(--ngs-space-3);
+  border-block-end: 1px solid var(--ngs-border-light);
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--ngs-space-4) 0;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+  padding-block: var(--ngs-space-2);
+  padding-inline: var(--ngs-space-3);
+  border-block-end: 2px solid transparent;
+  color: var(--ngs-text-secondary);
+  text-decoration: none;
+  font-size: var(--ngs-font-size-body);
+  font-weight: 600;
+  transition: all var(--ngs-duration-fast) var(--ngs-ease-out);
+  margin-block-end: -1px;
+  display: block;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
+  border-block-end-color: var(--ngs-primary);
+  color: var(--ngs-primary);
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
+  color: var(--ngs-text);
+}
+
+/* ========================================
+   CART TABLE OVERRIDE
+   ======================================== */
+
+.woocommerce table.shop_table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: none;
+}
+
+.woocommerce table.shop_table th {
+  background: var(--ngs-bg-alt);
+  padding: var(--ngs-space-2);
+  font-size: var(--ngs-font-size-small);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ngs-text-secondary);
+  border: none;
+}
+
+.woocommerce table.shop_table td {
+  padding: var(--ngs-space-3) var(--ngs-space-2);
+  border-block-end: 1px solid var(--ngs-border-light);
+  border-inline-start: none;
+  border-inline-end: none;
+  border-block-start: none;
+  vertical-align: middle;
+}
+
+/* ========================================
+   SELECT2 DROPDOWN OVERRIDE
+   ======================================== */
+
+.select2-container .select2-selection--single {
+  border: 1px solid var(--ngs-border-light);
+  border-radius: var(--ngs-radius-sm);
+  block-size: 44px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 44px;
+  color: var(--ngs-text);
+  padding-inline-start: var(--ngs-space-2);
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  block-size: 44px;
+}
+
+.select2-dropdown {
+  border: 1px solid var(--ngs-border-light);
+  border-radius: var(--ngs-radius-sm);
+  box-shadow: var(--ngs-shadow-medium);
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background: var(--ngs-primary);
+  color: var(--ngs-bg);
+}

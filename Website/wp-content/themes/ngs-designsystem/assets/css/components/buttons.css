@@ -1,0 +1,289 @@
+/**
+ * Buttons Component
+ *
+ * Button component with 3 types (primary, secondary, tertiary) x 6 states
+ * Uses CSS logical properties for RTL support
+ * Depends on: tokens.css (--ngs-* variables)
+ */
+
+/* Base Button */
+.ngs-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-block-size: 48px;
+  padding-block: 12px;
+  padding-inline: 24px;
+  border-radius: var(--ngs-radius-sm);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all var(--ngs-duration-fast) var(--ngs-ease-out);
+  text-decoration: none;
+  -webkit-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Primary Button */
+.ngs-btn--primary {
+  background: var(--ngs-primary);
+  color: #fff;
+  border-color: var(--ngs-primary);
+}
+
+.ngs-btn--primary:hover {
+  background: var(--ngs-primary-hover);
+  border-color: var(--ngs-primary-hover);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.24);
+  transform: translateY(-1px);
+}
+
+.ngs-btn--primary:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(37, 99, 235, 0.16);
+}
+
+.ngs-btn--primary:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.3);
+  outline-offset: 2px;
+}
+
+/* Secondary Button */
+.ngs-btn--secondary {
+  background: transparent;
+  color: var(--ngs-primary);
+  border-color: var(--ngs-primary);
+}
+
+.ngs-btn--secondary:hover {
+  background: var(--ngs-primary-light);
+  border-color: var(--ngs-primary-hover);
+  color: var(--ngs-primary-hover);
+  transform: translateY(-1px);
+}
+
+.ngs-btn--secondary:active {
+  background: var(--ngs-primary);
+  color: #fff;
+  transform: translateY(0);
+}
+
+.ngs-btn--secondary:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.3);
+  outline-offset: 2px;
+}
+
+/* Tertiary Button */
+.ngs-btn--tertiary {
+  background: transparent;
+  color: var(--ngs-primary);
+  border: none;
+  padding-block: 8px;
+  padding-inline: 16px;
+}
+
+.ngs-btn--tertiary:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.ngs-btn--tertiary:active {
+  color: var(--ngs-primary-hover);
+}
+
+.ngs-btn--tertiary:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.3);
+  outline-offset: 2px;
+  border-radius: var(--ngs-radius-sm);
+}
+
+/* Disabled State */
+.ngs-btn[disabled],
+.ngs-btn--disabled {
+  background: var(--ngs-border-light);
+  color: var(--ngs-text-secondary);
+  border-color: var(--ngs-border-light);
+  cursor: not-allowed;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.ngs-btn[disabled]:hover,
+.ngs-btn--disabled:hover {
+  background: var(--ngs-border-light);
+  color: var(--ngs-text-secondary);
+  border-color: var(--ngs-border-light);
+  transform: none;
+  box-shadow: none;
+}
+
+/* Loading State */
+.ngs-btn[data-state="loading"] {
+  position: relative;
+  color: transparent;
+  pointer-events: none;
+}
+
+.ngs-btn[data-state="loading"]::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  inline-size: 16px;
+  block-size: 16px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: ngsBtnSpin 0.8s linear infinite;
+}
+
+.ngs-btn--primary[data-state="loading"]::after {
+  border-color: #fff;
+  border-top-color: transparent;
+}
+
+.ngs-btn--secondary[data-state="loading"]::after {
+  border-color: var(--ngs-primary);
+  border-top-color: transparent;
+}
+
+.ngs-btn--tertiary[data-state="loading"]::after {
+  border-color: var(--ngs-primary);
+  border-top-color: transparent;
+}
+
+@keyframes ngsBtnSpin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Success State */
+.ngs-btn[data-state="success"] {
+  background: var(--ngs-success);
+  border-color: var(--ngs-success);
+  color: #fff;
+}
+
+.ngs-btn[data-state="success"]:hover {
+  background: var(--ngs-success);
+  border-color: var(--ngs-success);
+  transform: none;
+}
+
+/* Size Variants */
+.ngs-btn--lg {
+  min-block-size: 56px;
+  padding-block: 16px;
+  padding-inline: 32px;
+  font-size: 18px;
+}
+
+.ngs-btn--sm {
+  min-block-size: 40px;
+  padding-block: 8px;
+  padding-inline: 16px;
+  font-size: 14px;
+}
+
+/* Full Width */
+.ngs-btn--full {
+  inline-size: 100%;
+}
+
+/* Icon Only Button */
+.ngs-btn--icon {
+  padding-block: 12px;
+  padding-inline: 12px;
+  min-inline-size: 48px;
+}
+
+.ngs-btn--icon.ngs-btn--lg {
+  padding-block: 16px;
+  padding-inline: 16px;
+  min-inline-size: 56px;
+}
+
+.ngs-btn--icon.ngs-btn--sm {
+  padding-block: 8px;
+  padding-inline: 8px;
+  min-inline-size: 40px;
+}
+
+/* Icon Spacing */
+.ngs-btn svg {
+  inline-size: 20px;
+  block-size: 20px;
+  flex-shrink: 0;
+}
+
+.ngs-btn--sm svg {
+  inline-size: 16px;
+  block-size: 16px;
+}
+
+.ngs-btn--lg svg {
+  inline-size: 24px;
+  block-size: 24px;
+}
+
+/* Button Group */
+.ngs-btn-group {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.ngs-btn-group--attached {
+  gap: 0;
+}
+
+.ngs-btn-group--attached .ngs-btn {
+  border-radius: 0;
+}
+
+.ngs-btn-group--attached .ngs-btn:first-child {
+  border-start-start-radius: var(--ngs-radius-sm);
+  border-end-start-radius: var(--ngs-radius-sm);
+}
+
+.ngs-btn-group--attached .ngs-btn:last-child {
+  border-start-end-radius: var(--ngs-radius-sm);
+  border-end-end-radius: var(--ngs-radius-sm);
+}
+
+.ngs-btn-group--attached .ngs-btn:not(:last-child) {
+  border-inline-end-width: 1px;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .ngs-btn {
+    min-block-size: 44px;
+    padding-block: 10px;
+    padding-inline: 20px;
+    font-size: 15px;
+  }
+
+  .ngs-btn--lg {
+    min-block-size: 52px;
+    padding-block: 14px;
+    padding-inline: 28px;
+    font-size: 17px;
+  }
+
+  .ngs-btn-group {
+    inline-size: 100%;
+  }
+
+  .ngs-btn-group .ngs-btn {
+    flex: 1;
+  }
+}

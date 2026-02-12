@@ -1,0 +1,539 @@
+/* ================================================
+   NEOGEN Custom CSS v3 - Blended Design
+   Style: Dark Header/Hero + Light Content
+   Inspired by: Unifi + Al Rajhi Bank
+   ================================================ */
+
+/* ----- CSS VARIABLES ----- */
+:root {
+    /* Dark colors (header, hero, footer) */
+    --neo-dark: #0a0a0a;
+    --neo-dark-blue: #0D2175;
+    --neo-bright-blue: #1F1EFB;
+    --neo-light-blue: #4F4EFC;
+
+    /* Light colors (content sections) */
+    --neo-white: #FFFFFF;
+    --neo-light-gray: #F8F9FA;
+    --neo-border: #E5E7EB;
+    --neo-text-dark: #1a1a2e;
+    --neo-text-muted: #6B7280;
+
+    /* Theme overrides */
+    --theme-palette-color-1: #1F1EFB;
+    --theme-palette-color-2: #0D2175;
+    --theme-palette-color-3: #4F4EFC;
+    --theme-palette-color-4: #F8F9FA;
+    --theme-palette-color-5: #FFFFFF;
+    --theme-palette-color-8: #FFFFFF;
+    --theme-link-initial-color: #1F1EFB;
+    --theme-link-hover-color: #0D2175;
+    --theme-button-background-initial-color: #1F1EFB;
+    --theme-button-background-hover-color: #0D2175;
+}
+
+/* ----- EXISTING STYLES (PRESERVED) ----- */
+.ct-frosted-glass {
+    backdrop-filter: blur(40px) brightness(200%);
+    -webkit-backdrop-filter: blur(40px) brightness(200%);
+}
+
+.ct-subscribe-form {
+    --theme-form-field-height: 60px;
+    --theme-form-field-padding: 0 25px;
+    --theme-form-field-background-initial-color: rgba(255, 255, 255, 0.1);
+    --theme-form-field-background-focus-color: rgba(255, 255, 255, 0.2);
+    --theme-form-field-border-width: 1px;
+    --theme-form-field-border-initial-color: rgba(255, 255, 255, 0.3);
+    --theme-text-color: #fff;
+    --theme-button-min-height: 60px;
+    --theme-button-background-initial-color: #FFFFFF;
+    --theme-button-text-initial-color: #0D2175;
+}
+
+.ct-mainbox h5,
+.ct-mainbox h6,
+.ct-mainbox p {
+    transition: all 0.2s ease;
+}
+
+.ct-mainbox:hover h5,
+.ct-mainbox:hover h6,
+.ct-mainbox:hover p {
+    color: var(--theme-palette-color-1) !important;
+}
+
+.elementor-shortcode [data-products] figure {
+    margin-bottom: var(--product-element-spacing, 10px) !important;
+}
+
+/* ================================================
+   HEADER - Dark (Unifi Style)
+   ================================================ */
+header,
+.site-header,
+.header-row,
+header[data-id="type-1"] {
+    background: var(--neo-dark) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-header *,
+.site-header a,
+.ct-header *,
+.ct-header a,
+header a,
+.header-row a {
+    color: var(--neo-white) !important;
+}
+
+.site-header a:hover,
+.ct-header a:hover {
+    color: var(--neo-light-blue) !important;
+}
+
+/* Header icons */
+.site-header svg,
+.ct-header svg,
+.site-header .ct-icon,
+.ct-header .ct-icon {
+    color: var(--neo-white) !important;
+    fill: var(--neo-white) !important;
+}
+
+/* Cart count badge */
+.ct-cart-count,
+.cart-count {
+    background: var(--neo-bright-blue) !important;
+    color: var(--neo-white) !important;
+}
+
+/* ================================================
+   HERO SECTION - Dark Gradient
+   ================================================ */
+.ct-hero,
+.hero-section,
+[class*="hero"],
+section.hero,
+.elementor-section.hero,
+.site-main > section:first-child {
+    background: linear-gradient(135deg, var(--neo-dark-blue) 0%, var(--neo-bright-blue) 100%) !important;
+}
+
+.ct-hero *,
+.hero-section *,
+.ct-hero h1, .ct-hero h2, .ct-hero h3,
+.ct-hero p, .ct-hero span,
+.hero-section h1, .hero-section h2, .hero-section h3,
+.hero-section p, .hero-section span {
+    color: var(--neo-white) !important;
+}
+
+/* Hero buttons - White on dark */
+.ct-hero .ct-button,
+.hero-section .ct-button,
+.ct-hero a.button,
+.hero-section a.button,
+.ct-hero .wp-block-button__link,
+.hero-section .wp-block-button__link {
+    background: var(--neo-white) !important;
+    color: var(--neo-dark-blue) !important;
+    border: 2px solid var(--neo-white) !important;
+    font-weight: 600;
+}
+
+.ct-hero .ct-button:hover,
+.hero-section .ct-button:hover {
+    background: transparent !important;
+    color: var(--neo-white) !important;
+}
+
+/* Secondary/outline button in hero */
+.ct-hero .button-outline,
+.ct-hero .ct-button-ghost,
+.hero-section .button-outline {
+    background: transparent !important;
+    color: var(--neo-white) !important;
+    border: 2px solid var(--neo-white) !important;
+}
+
+.ct-hero .button-outline:hover {
+    background: var(--neo-white) !important;
+    color: var(--neo-dark-blue) !important;
+}
+
+/* ================================================
+   CONTENT SECTIONS - Light (Al Rajhi Style)
+   ================================================ */
+body,
+.site-main,
+.content-area,
+main {
+    background: var(--neo-white);
+}
+
+/* Section backgrounds alternate */
+section,
+.elementor-section {
+    background: var(--neo-white);
+}
+
+section:nth-child(even),
+.elementor-section:nth-child(even) {
+    background: var(--neo-light-gray);
+}
+
+/* Text on light backgrounds */
+section h1, section h2, section h3, section h4, section h5, section h6,
+.elementor-section h1, .elementor-section h2, .elementor-section h3 {
+    color: var(--neo-text-dark) !important;
+}
+
+section p, section span,
+.elementor-section p, .elementor-section span {
+    color: var(--neo-text-muted);
+}
+
+/* ================================================
+   CARDS - Clean with subtle shadow
+   ================================================ */
+.product,
+.product-card,
+.woocommerce .product,
+.ct-card,
+[class*="card"] {
+    background: var(--neo-white) !important;
+    border: 1px solid var(--neo-border);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+
+.product:hover,
+.product-card:hover,
+.ct-card:hover {
+    box-shadow: 0 8px 25px rgba(31, 30, 251, 0.12) !important;
+    transform: translateY(-4px);
+    border-color: var(--neo-bright-blue);
+}
+
+/* ================================================
+   BUTTONS - Blue gradient
+   ================================================ */
+.wp-block-button__link,
+.ct-button,
+button[type="submit"],
+.button,
+a.button,
+.add_to_cart_button,
+.single_add_to_cart_button,
+.checkout-button,
+input[type="submit"] {
+    background: linear-gradient(135deg, var(--neo-dark-blue) 0%, var(--neo-bright-blue) 100%) !important;
+    color: var(--neo-white) !important;
+    border: none !important;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.wp-block-button__link:hover,
+.ct-button:hover,
+button[type="submit"]:hover,
+.button:hover,
+a.button:hover,
+.add_to_cart_button:hover,
+.single_add_to_cart_button:hover {
+    background: linear-gradient(135deg, var(--neo-bright-blue) 0%, var(--neo-light-blue) 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(31, 30, 251, 0.3);
+}
+
+/* ================================================
+   LINKS
+   ================================================ */
+a {
+    color: var(--neo-bright-blue);
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--neo-dark-blue);
+}
+
+/* ================================================
+   NAVIGATION DROPDOWNS
+   ================================================ */
+.sub-menu,
+.dropdown-menu,
+.ct-header .sub-menu {
+    background: var(--neo-white) !important;
+    border: 1px solid var(--neo-border);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.sub-menu a,
+.dropdown-menu a {
+    color: var(--neo-text-dark) !important;
+}
+
+.sub-menu a:hover,
+.dropdown-menu a:hover {
+    background: var(--neo-light-gray) !important;
+    color: var(--neo-bright-blue) !important;
+}
+
+/* ================================================
+   FOOTER - Dark Blue
+   ================================================ */
+footer,
+.site-footer,
+.ct-footer {
+    background: var(--neo-dark-blue) !important;
+}
+
+footer *,
+.site-footer *,
+.ct-footer *,
+footer a,
+footer p,
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6,
+footer span {
+    color: var(--neo-white) !important;
+}
+
+footer a:hover,
+.site-footer a:hover {
+    color: var(--neo-light-blue) !important;
+}
+
+/* Footer social icons */
+footer .social-icons a,
+footer .ct-social-box a {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+footer .social-icons a:hover,
+footer .ct-social-box a:hover {
+    background: var(--neo-white) !important;
+    color: var(--neo-dark-blue) !important;
+}
+
+footer svg,
+footer .ct-icon {
+    color: var(--neo-white) !important;
+    fill: var(--neo-white) !important;
+}
+
+/* ================================================
+   WOOCOMMERCE
+   ================================================ */
+.woocommerce .products .product .price,
+.woocommerce-Price-amount {
+    color: var(--neo-bright-blue) !important;
+    font-weight: 700;
+}
+
+.woocommerce span.onsale,
+.onsale {
+    background: var(--neo-bright-blue) !important;
+    color: var(--neo-white) !important;
+    border-radius: 4px;
+}
+
+/* Product page */
+.woocommerce-tabs {
+    background: var(--neo-light-gray);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+/* ================================================
+   FORMS
+   ================================================ */
+input,
+textarea,
+select {
+    background: var(--neo-white);
+    border: 1px solid var(--neo-border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: var(--neo-text-dark);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--neo-bright-blue) !important;
+    box-shadow: 0 0 0 3px rgba(31, 30, 251, 0.1) !important;
+    outline: none;
+}
+
+/* Forms in dark sections */
+footer input,
+footer textarea,
+.ct-hero input,
+.hero-section input {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: var(--neo-white) !important;
+}
+
+footer input::placeholder,
+.ct-hero input::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* ================================================
+   TRUST BADGES / FEATURES
+   ================================================ */
+.trust-badge,
+.feature-box,
+.why-us-item {
+    background: var(--neo-white);
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid var(--neo-border);
+    text-align: center;
+}
+
+.trust-badge .ct-icon,
+.feature-box .ct-icon {
+    color: var(--neo-bright-blue) !important;
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+/* ================================================
+   ICONS
+   ================================================ */
+.ct-icon,
+[class*="icon"] {
+    color: var(--neo-bright-blue);
+}
+
+/* ================================================
+   BREADCRUMBS
+   ================================================ */
+.breadcrumbs,
+.woocommerce-breadcrumb {
+    color: var(--neo-text-muted);
+    padding: 16px 0;
+}
+
+.breadcrumbs a,
+.woocommerce-breadcrumb a {
+    color: var(--neo-bright-blue) !important;
+}
+
+/* ================================================
+   PAGINATION
+   ================================================ */
+.pagination a,
+.page-numbers {
+    background: var(--neo-white);
+    border: 1px solid var(--neo-border);
+    color: var(--neo-text-dark);
+    border-radius: 8px;
+    padding: 8px 16px;
+}
+
+.pagination a:hover,
+.page-numbers:hover,
+.pagination .current,
+.page-numbers.current {
+    background: var(--neo-bright-blue) !important;
+    color: var(--neo-white) !important;
+    border-color: var(--neo-bright-blue) !important;
+}
+
+/* ================================================
+   SCROLLBAR
+   ================================================ */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--neo-light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--neo-dark-blue), var(--neo-bright-blue));
+    border-radius: 4px;
+}
+
+/* ================================================
+   SELECTION
+   ================================================ */
+::selection {
+    background: var(--neo-bright-blue);
+    color: var(--neo-white);
+}
+
+/* ================================================
+   MOBILE RESPONSIVE
+   ================================================ */
+@media (max-width: 768px) {
+    .mobile-menu,
+    .ct-mobile-menu {
+        background: var(--neo-dark) !important;
+    }
+
+    .mobile-menu a,
+    .ct-mobile-menu a {
+        color: var(--neo-white) !important;
+    }
+
+    .ct-card,
+    .product {
+        margin-bottom: 16px;
+    }
+}
+
+/* ================================================
+   ANIMATIONS
+   ================================================ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ================================================
+   ELEMENTOR SPECIFIC
+   ================================================ */
+.elementor-button {
+    background: linear-gradient(135deg, var(--neo-dark-blue) 0%, var(--neo-bright-blue) 100%) !important;
+    color: var(--neo-white) !important;
+    border-radius: 8px !important;
+}
+
+.elementor-icon {
+    color: var(--neo-bright-blue) !important;
+}
+
+/* Elementor widgets in dark sections */
+.elementor-section[data-settings*="background_background"] .elementor-widget *,
+.elementor-section.dark * {
+    color: var(--neo-white) !important;
+}

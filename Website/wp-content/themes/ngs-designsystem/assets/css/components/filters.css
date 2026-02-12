@@ -1,0 +1,427 @@
+/**
+ * Filters Component
+ *
+ * Filter sidebar and mobile filter drawer for product filtering
+ * Uses CSS logical properties for RTL support
+ * Depends on: tokens.css (--ngs-* variables)
+ */
+
+/* Filter Sidebar */
+.ngs-filter-sidebar {
+  inline-size: 280px;
+  background: var(--ngs-bg);
+  border: 1px solid var(--ngs-border-light);
+  border-radius: var(--ngs-radius-md);
+  padding-block: 24px;
+  padding-inline: 24px;
+  position: sticky;
+  inset-block-start: 96px;
+  max-block-size: calc(100vh - 112px);
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ngs-border-light) transparent;
+  flex-shrink: 0;
+}
+
+.ngs-filter-sidebar::-webkit-scrollbar {
+  inline-size: 8px;
+}
+
+.ngs-filter-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ngs-filter-sidebar::-webkit-scrollbar-thumb {
+  background: var(--ngs-border-light);
+  border-radius: 4px;
+}
+
+.ngs-filter-sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--ngs-primary-light);
+}
+
+/* Filter Header */
+.ngs-filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-end: 24px;
+  padding-block-end: 16px;
+  border-block-end: 1px solid var(--ngs-border-light);
+}
+
+.ngs-filter-header__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ngs-text);
+}
+
+.ngs-filter-header__clear {
+  font-size: 14px;
+  color: var(--ngs-primary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.ngs-filter-header__clear:hover {
+  color: var(--ngs-primary-hover);
+}
+
+/* Filter Group */
+.ngs-filter-group {
+  margin-block-end: 32px;
+}
+
+.ngs-filter-group:last-child {
+  margin-block-end: 0;
+}
+
+/* Filter Group Title */
+.ngs-filter-group__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ngs-text);
+  margin-block-end: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.ngs-filter-group__title-text {
+  flex: 1;
+}
+
+.ngs-filter-group__chevron {
+  inline-size: 16px;
+  block-size: 16px;
+  transition: transform 200ms ease;
+  color: var(--ngs-text-secondary);
+}
+
+.ngs-filter-group--collapsed .ngs-filter-group__chevron {
+  transform: rotate(-90deg);
+}
+
+[dir="rtl"] .ngs-filter-group--collapsed .ngs-filter-group__chevron {
+  transform: rotate(90deg);
+}
+
+/* Filter Group Options */
+.ngs-filter-group__options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ngs-filter-group--collapsed .ngs-filter-group__options {
+  display: none;
+}
+
+/* Filter Option */
+.ngs-filter-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ngs-filter-option label {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--ngs-text);
+  line-height: 1.5;
+}
+
+.ngs-filter-option input[type="checkbox"] {
+  flex-shrink: 0;
+}
+
+/* Filter Count */
+.ngs-filter-count {
+  font-size: 14px;
+  color: var(--ngs-text-secondary);
+  font-weight: 400;
+}
+
+/* Filter Color Swatch */
+.ngs-filter-color-swatch {
+  inline-size: 24px;
+  block-size: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--ngs-border-light);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.ngs-filter-option input[type="checkbox"]:checked + .ngs-filter-color-swatch::after {
+  content: "✓";
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Filter Price Range */
+.ngs-filter-price-range {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ngs-filter-price-inputs {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 8px;
+  align-items: center;
+}
+
+.ngs-filter-price-inputs input {
+  inline-size: 100%;
+}
+
+.ngs-filter-price-separator {
+  font-size: 14px;
+  color: var(--ngs-text-secondary);
+}
+
+.ngs-filter-price-slider {
+  inline-size: 100%;
+  block-size: 6px;
+  background: var(--ngs-border-light);
+  border-radius: 3px;
+  position: relative;
+  margin-block: 8px;
+}
+
+.ngs-filter-price-slider__track {
+  block-size: 100%;
+  background: var(--ngs-primary);
+  border-radius: 3px;
+  position: absolute;
+}
+
+.ngs-filter-price-slider__thumb {
+  inline-size: 16px;
+  block-size: 16px;
+  background: var(--ngs-primary);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  inset-block-start: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Filter Actions */
+.ngs-filter-actions {
+  margin-block-start: 24px;
+  padding-block-start: 24px;
+  border-block-start: 1px solid var(--ngs-border-light);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Active Filters */
+.ngs-active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block-end: 16px;
+}
+
+.ngs-active-filter-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-block: 6px;
+  padding-inline: 12px;
+  background: var(--ngs-primary-light);
+  color: var(--ngs-primary);
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: var(--ngs-radius-full);
+}
+
+.ngs-active-filter-tag__remove {
+  inline-size: 16px;
+  block-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--ngs-primary);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.ngs-active-filter-tag__remove:hover {
+  color: var(--ngs-primary-hover);
+}
+
+/* Mobile Filter Drawer */
+.ngs-filter-drawer {
+  position: fixed;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  inline-size: 100%;
+  max-block-size: 80vh;
+  background: var(--ngs-bg);
+  border-start-start-radius: 16px;
+  border-start-end-radius: 16px;
+  box-shadow: var(--ngs-shadow-high);
+  padding-block: 24px;
+  padding-inline: 24px;
+  overflow-y: auto;
+  z-index: var(--ngs-z-drawer);
+  transform: translateY(100%);
+  transition: transform 300ms ease-in-out;
+}
+
+.ngs-filter-drawer--open {
+  transform: translateY(0);
+}
+
+.ngs-filter-drawer__handle {
+  inline-size: 40px;
+  block-size: 4px;
+  background: var(--ngs-border-light);
+  border-radius: 2px;
+  margin-inline: auto;
+  margin-block-end: 16px;
+}
+
+.ngs-filter-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-end: 24px;
+  padding-block-end: 16px;
+  border-block-end: 1px solid var(--ngs-border-light);
+}
+
+.ngs-filter-drawer__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ngs-text);
+}
+
+.ngs-filter-drawer__close {
+  inline-size: 32px;
+  block-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--ngs-text);
+  padding: 0;
+}
+
+.ngs-filter-drawer__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ngs-filter-drawer__actions {
+  position: sticky;
+  inset-block-end: 0;
+  background: var(--ngs-bg);
+  padding-block-start: 16px;
+  margin-block-start: 16px;
+  border-block-start: 1px solid var(--ngs-border-light);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Filter Drawer Overlay */
+.ngs-filter-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: calc(var(--ngs-z-drawer) - 1);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 300ms ease, visibility 300ms ease;
+}
+
+.ngs-filter-drawer-overlay--open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Filter Toggle Button (Mobile) */
+.ngs-filter-toggle {
+  display: none;
+  position: fixed;
+  inset-block-end: 24px;
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  z-index: calc(var(--ngs-z-drawer) - 2);
+  box-shadow: var(--ngs-shadow-high);
+}
+
+[dir="rtl"] .ngs-filter-toggle {
+  transform: translateX(50%);
+}
+
+/* Results Count */
+.ngs-filter-results {
+  font-size: 14px;
+  color: var(--ngs-text-secondary);
+  padding-block: 12px;
+  padding-inline: 16px;
+  background: var(--ngs-bg-alt);
+  border-radius: var(--ngs-radius-sm);
+  text-align: center;
+}
+
+.ngs-filter-results__count {
+  font-weight: 700;
+  color: var(--ngs-primary);
+}
+
+/* Responsive */
+@media (max-width: 1023px) {
+  .ngs-filter-sidebar {
+    display: none;
+  }
+
+  .ngs-filter-toggle {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 767px) {
+  .ngs-filter-drawer {
+    max-block-size: 85vh;
+  }
+
+  .ngs-filter-group__title {
+    font-size: 15px;
+  }
+
+  .ngs-filter-option label {
+    font-size: 13px;
+  }
+}

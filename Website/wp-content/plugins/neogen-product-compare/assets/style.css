@@ -1,0 +1,579 @@
+/**
+ * Neogen Product Compare - Styles
+ */
+
+/* Compare Button in Loop/Single */
+.neogen-compare-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: 2px solid var(--neogen-border, #e5e7eb);
+    color: var(--neogen-text-muted, #6b7280);
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.neogen-compare-btn:hover {
+    border-color: var(--neogen-primary, #1F1EFB);
+    color: var(--neogen-primary, #1F1EFB);
+    background: rgba(31, 30, 251, 0.05);
+}
+
+.neogen-compare-btn.added {
+    border-color: var(--neogen-success, #10B981);
+    color: var(--neogen-success, #10B981);
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.neogen-compare-btn .compare-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.neogen-compare-btn.loop {
+    width: 100%;
+    justify-content: center;
+}
+
+.neogen-compare-btn.single {
+    margin-right: 10px;
+}
+
+[dir="rtl"] .neogen-compare-btn.single {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+/* Floating Compare Bar */
+.neogen-compare-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--neogen-bg-card, #fff);
+    border-top: 1px solid var(--neogen-border, #e5e7eb);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 9997;
+    padding: 12px 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.neogen-compare-bar.visible {
+    transform: translateY(0);
+}
+
+.compare-bar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.compare-bar-products {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 5px 0;
+}
+
+.compare-bar-product {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.compare-bar-product img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid var(--neogen-border, #e5e7eb);
+}
+
+.compare-bar-product .remove-btn {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 20px;
+    height: 20px;
+    background: var(--neogen-error, #ef4444);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 14px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[dir="rtl"] .compare-bar-product .remove-btn {
+    right: auto;
+    left: -6px;
+}
+
+.compare-bar-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.compare-count {
+    color: var(--neogen-text-muted, #6b7280);
+    font-size: 14px;
+}
+
+.compare-count .count-number {
+    font-weight: 700;
+    color: var(--neogen-primary, #1F1EFB);
+}
+
+.btn-compare-now {
+    background: linear-gradient(135deg, #0D2175 0%, #1F1EFB 100%);
+    color: #fff !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.btn-compare-now:hover {
+    background: linear-gradient(135deg, #1F1EFB 0%, #4F4EFC 100%);
+    transform: translateY(-2px);
+}
+
+.btn-clear-compare {
+    background: transparent;
+    border: none;
+    color: var(--neogen-text-muted, #6b7280);
+    cursor: pointer;
+    font-size: 13px;
+    padding: 8px;
+}
+
+.btn-clear-compare:hover {
+    color: var(--neogen-error, #ef4444);
+}
+
+/* Compare Page */
+.neogen-compare-page {
+    padding: 20px 0;
+}
+
+.compare-empty {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.compare-empty svg {
+    width: 80px;
+    height: 80px;
+    color: var(--neogen-text-muted, #9ca3af);
+    margin-bottom: 20px;
+}
+
+.compare-empty h2 {
+    margin: 0 0 10px;
+    color: var(--neogen-text, #1a1a2e);
+}
+
+.compare-empty p {
+    color: var(--neogen-text-muted, #6b7280);
+    margin-bottom: 20px;
+}
+
+.compare-empty .btn-shop {
+    display: inline-block;
+    background: var(--neogen-primary, #1F1EFB);
+    color: #fff !important;
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none !important;
+    font-weight: 600;
+}
+
+.compare-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.compare-header h1 {
+    margin: 0;
+    font-size: 28px;
+    color: var(--neogen-text, #1a1a2e);
+}
+
+.btn-clear-all {
+    background: transparent;
+    border: 1px solid var(--neogen-border, #e5e7eb);
+    color: var(--neogen-text-muted, #6b7280);
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.btn-clear-all:hover {
+    border-color: var(--neogen-error, #ef4444);
+    color: var(--neogen-error, #ef4444);
+}
+
+/* Compare Table */
+.compare-table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 30px;
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--neogen-bg-card, #fff);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.compare-table th,
+.compare-table td {
+    padding: 16px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--neogen-border, #e5e7eb);
+}
+
+.compare-table th.attribute-label {
+    text-align: right;
+    background: var(--neogen-bg-alt, #f8f9fa);
+    font-weight: 600;
+    color: var(--neogen-text, #1a1a2e);
+    min-width: 150px;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+}
+
+[dir="rtl"] .compare-table th.attribute-label {
+    text-align: left;
+}
+
+.compare-table .product-cell {
+    min-width: 200px;
+    vertical-align: top;
+    position: relative;
+}
+
+.compare-table .products-row .product-cell {
+    padding: 20px;
+    background: var(--neogen-bg-card, #fff);
+}
+
+.compare-table .remove-product {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background: var(--neogen-bg-alt, #f3f4f6);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--neogen-text-muted, #6b7280);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[dir="rtl"] .compare-table .remove-product {
+    right: auto;
+    left: 10px;
+}
+
+.compare-table .remove-product:hover {
+    background: var(--neogen-error, #ef4444);
+    color: #fff;
+}
+
+.compare-table .product-image {
+    display: block;
+    margin-bottom: 12px;
+}
+
+.compare-table .product-image img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.compare-table .product-name {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.compare-table .product-name a {
+    color: var(--neogen-text, #1a1a2e);
+    text-decoration: none;
+}
+
+.compare-table .product-name a:hover {
+    color: var(--neogen-primary, #1F1EFB);
+}
+
+/* Price Row */
+.compare-table .price-row .product-cell {
+    background: var(--neogen-bg-alt, #f8f9fa);
+}
+
+.compare-table .price {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--neogen-primary, #1F1EFB);
+}
+
+.compare-table .best-value {
+    background: rgba(16, 185, 129, 0.1) !important;
+}
+
+.compare-table .best-badge {
+    display: inline-block;
+    background: var(--neogen-success, #10B981);
+    color: #fff;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-top: 8px;
+}
+
+/* Rating */
+.rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+
+.rating .star {
+    color: #e5e7eb;
+    font-size: 16px;
+}
+
+.rating .star.filled {
+    color: #fbbf24;
+}
+
+.rating .review-count {
+    color: var(--neogen-text-muted, #6b7280);
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+[dir="rtl"] .rating .review-count {
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+.no-rating {
+    color: var(--neogen-text-muted, #9ca3af);
+    font-size: 13px;
+}
+
+/* Stock Status */
+.in-stock {
+    color: var(--neogen-success, #10B981);
+    font-weight: 500;
+}
+
+.out-of-stock {
+    color: var(--neogen-error, #ef4444);
+    font-weight: 500;
+}
+
+/* Checkmarks */
+.check-yes {
+    color: var(--neogen-success, #10B981);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.check-no {
+    color: var(--neogen-error, #ef4444);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.no-value {
+    color: var(--neogen-text-muted, #9ca3af);
+}
+
+/* Add to Cart Row */
+.add-to-cart-row .product-cell {
+    padding: 20px;
+}
+
+.btn-add-to-cart {
+    display: inline-block;
+    background: linear-gradient(135deg, #0D2175 0%, #1F1EFB 100%);
+    color: #fff !important;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.btn-add-to-cart:hover {
+    background: linear-gradient(135deg, #1F1EFB 0%, #4F4EFC 100%);
+    transform: translateY(-2px);
+}
+
+.unavailable {
+    color: var(--neogen-text-muted, #9ca3af);
+    font-style: italic;
+}
+
+/* Add Product Cell */
+.add-product-cell {
+    background: var(--neogen-bg-alt, #f8f9fa) !important;
+    border-left: 1px dashed var(--neogen-border, #e5e7eb);
+}
+
+[dir="rtl"] .add-product-cell {
+    border-left: none;
+    border-right: 1px dashed var(--neogen-border, #e5e7eb);
+}
+
+.add-product-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: var(--neogen-text-muted, #6b7280);
+    text-decoration: none !important;
+    padding: 20px;
+}
+
+.add-product-btn:hover {
+    color: var(--neogen-primary, #1F1EFB);
+}
+
+.add-product-btn .plus-icon {
+    width: 60px;
+    height: 60px;
+    border: 2px dashed var(--neogen-border, #d1d5db);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.add-product-btn:hover .plus-icon {
+    border-color: var(--neogen-primary, #1F1EFB);
+}
+
+/* Share Section */
+.compare-share {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+    background: var(--neogen-bg-alt, #f8f9fa);
+    border-radius: 12px;
+}
+
+.compare-share span {
+    color: var(--neogen-text-muted, #6b7280);
+}
+
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--neogen-bg-card, #fff);
+    border: 1px solid var(--neogen-border, #e5e7eb);
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--neogen-text, #1a1a2e);
+}
+
+.share-btn:hover {
+    border-color: var(--neogen-primary, #1F1EFB);
+    color: var(--neogen-primary, #1F1EFB);
+}
+
+.share-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .compare-bar-inner {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .compare-bar-products {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .compare-bar-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .compare-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .compare-table th.attribute-label {
+        min-width: 100px;
+        font-size: 13px;
+        padding: 12px;
+    }
+
+    .compare-table .product-cell {
+        min-width: 150px;
+        padding: 12px;
+    }
+
+    .compare-table .product-image img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .compare-table .product-name {
+        font-size: 13px;
+    }
+
+    .compare-table .price {
+        font-size: 16px;
+    }
+
+    .btn-add-to-cart {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+}

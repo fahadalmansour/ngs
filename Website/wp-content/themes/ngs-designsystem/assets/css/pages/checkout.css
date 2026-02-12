@@ -1,0 +1,367 @@
+/**
+ * NGS Design System - Checkout Page Styles
+ *
+ * Checkout page layout and form components
+ * Uses CSS logical properties for RTL support
+ *
+ * @package NGS_DesignSystem
+ * @version 1.0.0
+ */
+
+/* ========================================
+   CHECKOUT LAYOUT
+   ======================================== */
+
+.ngs-checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: var(--ngs-gutter-desktop);
+  padding-block: var(--ngs-space-6);
+}
+
+@media (max-width: 1023px) {
+  .ngs-checkout-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ngs-order-review {
+    order: -1;
+  }
+}
+
+/* ========================================
+   CHECKOUT FORM
+   ======================================== */
+
+.ngs-checkout-section {
+  margin-block-end: var(--ngs-space-6);
+}
+
+.ngs-checkout-section__title {
+  font-size: var(--ngs-font-size-h3);
+  line-height: var(--ngs-line-height-h3);
+  font-weight: 700;
+  color: var(--ngs-text);
+  margin-block-end: var(--ngs-space-3);
+  padding-block-end: var(--ngs-space-2);
+  border-block-end: 2px solid var(--ngs-border-light);
+}
+
+.ngs-checkout-fields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--ngs-space-3);
+}
+
+.ngs-checkout-field--full {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 767px) {
+  .ngs-checkout-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .ngs-checkout-field--full {
+    grid-column: 1;
+  }
+}
+
+/* ========================================
+   SHIPPING SAME AS BILLING
+   ======================================== */
+
+.ngs-checkout-shipping-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--ngs-space-2);
+  padding: var(--ngs-space-3);
+  background: var(--ngs-bg-alt);
+  border-radius: var(--ngs-radius-sm);
+  margin-block-end: var(--ngs-space-3);
+}
+
+.ngs-checkout-shipping-toggle input[type="checkbox"] {
+  inline-size: 20px;
+  block-size: 20px;
+}
+
+.ngs-checkout-shipping-toggle label {
+  font-size: var(--ngs-font-size-body);
+  color: var(--ngs-text);
+  cursor: pointer;
+}
+
+/* ========================================
+   PAYMENT METHODS
+   ======================================== */
+
+.ngs-payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ngs-space-2);
+}
+
+.ngs-payment-method {
+  display: flex;
+  align-items: center;
+  padding: var(--ngs-space-3);
+  border: 2px solid var(--ngs-border-light);
+  border-radius: var(--ngs-radius-sm);
+  cursor: pointer;
+  transition: border-color var(--ngs-duration-fast) var(--ngs-ease-out);
+}
+
+.ngs-payment-method:hover {
+  border-color: var(--ngs-border);
+}
+
+.ngs-payment-method--selected {
+  border-color: var(--ngs-primary);
+  background: var(--ngs-primary-light);
+}
+
+.ngs-payment-method__radio {
+  margin-inline-end: var(--ngs-space-2);
+  inline-size: 20px;
+  block-size: 20px;
+}
+
+.ngs-payment-method__content {
+  flex: 1;
+}
+
+.ngs-payment-method__title {
+  font-size: var(--ngs-font-size-body);
+  font-weight: 600;
+  color: var(--ngs-text);
+  margin-block-end: 4px;
+}
+
+.ngs-payment-method__description {
+  font-size: var(--ngs-font-size-small);
+  color: var(--ngs-text-secondary);
+}
+
+.ngs-payment-method__icon {
+  inline-size: 40px;
+  block-size: 24px;
+  object-fit: contain;
+}
+
+/* ========================================
+   ORDER REVIEW
+   ======================================== */
+
+.ngs-order-review {
+  background: var(--ngs-bg-alt);
+  padding: var(--ngs-space-4);
+  border-radius: var(--ngs-radius-md);
+  position: sticky;
+  inset-block-start: calc(var(--ngs-space-12) + 20px);
+  block-size: fit-content;
+}
+
+.ngs-order-review__title {
+  font-size: var(--ngs-font-size-h3);
+  line-height: var(--ngs-line-height-h3);
+  font-weight: 700;
+  color: var(--ngs-text);
+  margin-block-end: var(--ngs-space-3);
+  padding-block-end: var(--ngs-space-3);
+  border-block-end: 1px solid var(--ngs-border-light);
+}
+
+.ngs-order-items {
+  margin-block-end: var(--ngs-space-3);
+}
+
+.ngs-order-item {
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  gap: var(--ngs-space-2);
+  padding-block: var(--ngs-space-2);
+  border-block-end: 1px solid var(--ngs-border-light);
+}
+
+.ngs-order-item:last-child {
+  border-block-end: none;
+}
+
+.ngs-order-item__image {
+  inline-size: 60px;
+  block-size: 60px;
+  border-radius: var(--ngs-radius-sm);
+  overflow: hidden;
+  background: var(--ngs-bg);
+}
+
+.ngs-order-item__image img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.ngs-order-item__details {
+  min-inline-size: 0;
+}
+
+.ngs-order-item__name {
+  font-size: var(--ngs-font-size-small);
+  font-weight: 600;
+  color: var(--ngs-text);
+  margin-block-end: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ngs-order-item__quantity {
+  font-size: var(--ngs-font-size-small);
+  color: var(--ngs-text-secondary);
+}
+
+.ngs-order-item__price {
+  font-size: var(--ngs-font-size-body);
+  font-weight: 600;
+  color: var(--ngs-text);
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* ========================================
+   ORDER TOTALS
+   ======================================== */
+
+.ngs-order-totals {
+  margin-block-end: var(--ngs-space-3);
+}
+
+.ngs-order-totals__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: var(--ngs-space-2);
+  font-size: var(--ngs-font-size-body);
+}
+
+.ngs-order-totals__label {
+  color: var(--ngs-text-secondary);
+}
+
+.ngs-order-totals__value {
+  font-weight: 600;
+  color: var(--ngs-text);
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.ngs-order-totals__row--total {
+  padding-block-start: var(--ngs-space-3);
+  margin-block-start: var(--ngs-space-2);
+  border-block-start: 1px solid var(--ngs-border-light);
+}
+
+.ngs-order-totals__row--total .ngs-order-totals__label {
+  font-size: var(--ngs-font-size-h3);
+  font-weight: 700;
+  color: var(--ngs-text);
+}
+
+.ngs-order-totals__row--total .ngs-order-totals__value {
+  font-size: var(--ngs-font-size-h3);
+  font-weight: 700;
+  color: var(--ngs-primary);
+}
+
+/* ========================================
+   PAYMENT BADGES
+   ======================================== */
+
+.ngs-order-payment-badges {
+  display: flex;
+  justify-content: center;
+  gap: var(--ngs-space-2);
+  padding-block: var(--ngs-space-3);
+  margin-block-end: var(--ngs-space-3);
+  border-block-end: 1px solid var(--ngs-border-light);
+}
+
+.ngs-order-payment-badges img {
+  block-size: 24px;
+  inline-size: auto;
+}
+
+/* ========================================
+   PLACE ORDER BUTTON
+   ======================================== */
+
+.ngs-order-review__submit {
+  inline-size: 100%;
+}
+
+/* ========================================
+   TERMS ACCEPTANCE
+   ======================================== */
+
+.ngs-checkout-terms {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ngs-space-2);
+  padding: var(--ngs-space-3);
+  background: var(--ngs-bg-alt);
+  border-radius: var(--ngs-radius-sm);
+  margin-block-end: var(--ngs-space-3);
+}
+
+.ngs-checkout-terms input[type="checkbox"] {
+  inline-size: 20px;
+  block-size: 20px;
+  margin-block-start: 2px;
+  flex-shrink: 0;
+}
+
+.ngs-checkout-terms label {
+  font-size: var(--ngs-font-size-small);
+  color: var(--ngs-text-secondary);
+  line-height: 1.6;
+}
+
+.ngs-checkout-terms label a {
+  color: var(--ngs-primary);
+  text-decoration: none;
+}
+
+.ngs-checkout-terms label a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   SECURITY NOTICE
+   ======================================== */
+
+.ngs-checkout-security {
+  display: flex;
+  align-items: center;
+  gap: var(--ngs-space-2);
+  padding: var(--ngs-space-2);
+  background: var(--ngs-success);
+  color: var(--ngs-bg);
+  border-radius: var(--ngs-radius-sm);
+  font-size: var(--ngs-font-size-small);
+  margin-block-end: var(--ngs-space-3);
+}
+
+.ngs-checkout-security__icon {
+  font-size: 20px;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 1023px) {
+  .ngs-order-review {
+    position: static;
+  }
+}

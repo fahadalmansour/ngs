@@ -1,0 +1,391 @@
+/**
+ * NGS Design System - Animations
+ *
+ * Complete animation system with accessibility support
+ * All animations wrapped in prefers-reduced-motion checks
+ *
+ * @package NGS_DesignSystem
+ * @version 1.0.0
+ */
+
+/* ========================================
+   KEYFRAME ANIMATIONS - ENTRANCES
+   ======================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes ngsFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes ngsFadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes ngsFadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes ngsSlideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes ngsSlideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes ngsScaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+/* ========================================
+   KEYFRAME ANIMATIONS - EXITS
+   ======================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes ngsFadeOut {
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes ngsSlideOutRight {
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes ngsSlideOutLeft {
+    to {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
+}
+
+/* ========================================
+   KEYFRAME ANIMATIONS - MICRO-INTERACTIONS
+   ======================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes ngsButtonPress {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.98);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes ngsBadgePop {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.3);
+    }
+    75% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes ngsPriceFlash {
+    0% {
+      background: transparent;
+      transform: scale(1);
+    }
+    30% {
+      background: var(--ngs-primary-light);
+      transform: scale(1.05);
+    }
+    100% {
+      background: transparent;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes ngsCheckboxCheck {
+    0% {
+      transform: scale(0);
+    }
+    60% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes ngsShake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+      transform: translateX(-8px);
+    }
+    20%, 40%, 60%, 80% {
+      transform: translateX(8px);
+    }
+  }
+}
+
+/* ========================================
+   KEYFRAME ANIMATIONS - LOADING
+   ======================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes ngsShimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  @keyframes ngsSpin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes ngsPulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes ngsDotPulse {
+    0%, 20%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+/* ========================================
+   KEYFRAME ANIMATIONS - TOAST
+   ======================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes ngsSlideIn {
+    from {
+      transform: translateX(400px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes ngsSlideOut {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(400px);
+      opacity: 0;
+    }
+  }
+}
+
+/* ========================================
+   UTILITY ANIMATION CLASSES
+   ======================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  .ngs-animate-fade-in {
+    animation: ngsFadeIn 500ms var(--ngs-ease-out) backwards;
+  }
+
+  .ngs-animate-fade-up {
+    animation: ngsFadeInUp 500ms var(--ngs-ease-out) backwards;
+  }
+
+  .ngs-animate-fade-down {
+    animation: ngsFadeInDown 300ms var(--ngs-ease-out) backwards;
+  }
+
+  .ngs-animate-scale-in {
+    animation: ngsScaleIn 400ms var(--ngs-ease-out) backwards;
+  }
+
+  .ngs-animate-shake {
+    animation: ngsShake 500ms var(--ngs-ease-out);
+  }
+}
+
+/* ========================================
+   SCROLL ANIMATIONS
+   Data attribute: data-ngs-animate
+   Requires JS to add .ngs-animated class
+   ======================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-ngs-animate] {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 600ms var(--ngs-ease-out), transform 600ms var(--ngs-ease-out);
+  }
+
+  [data-ngs-animate].ngs-animated {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Stagger delays - data-ngs-delay attribute */
+  [data-ngs-animate][data-ngs-delay="50"].ngs-animated {
+    transition-delay: 50ms;
+  }
+
+  [data-ngs-animate][data-ngs-delay="100"].ngs-animated {
+    transition-delay: 100ms;
+  }
+
+  [data-ngs-animate][data-ngs-delay="150"].ngs-animated {
+    transition-delay: 150ms;
+  }
+
+  [data-ngs-animate][data-ngs-delay="200"].ngs-animated {
+    transition-delay: 200ms;
+  }
+
+  [data-ngs-animate][data-ngs-delay="250"].ngs-animated {
+    transition-delay: 250ms;
+  }
+
+  [data-ngs-animate][data-ngs-delay="300"].ngs-animated {
+    transition-delay: 300ms;
+  }
+
+  [data-ngs-animate][data-ngs-delay="350"].ngs-animated {
+    transition-delay: 350ms;
+  }
+
+  [data-ngs-animate][data-ngs-delay="400"].ngs-animated {
+    transition-delay: 400ms;
+  }
+}
+
+/* ========================================
+   STAGGER GRID CHILDREN
+   Apply .ngs-stagger to parent container
+   ======================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  .ngs-stagger > :nth-child(1) {
+    transition-delay: 0ms;
+  }
+
+  .ngs-stagger > :nth-child(2) {
+    transition-delay: 50ms;
+  }
+
+  .ngs-stagger > :nth-child(3) {
+    transition-delay: 100ms;
+  }
+
+  .ngs-stagger > :nth-child(4) {
+    transition-delay: 150ms;
+  }
+
+  .ngs-stagger > :nth-child(5) {
+    transition-delay: 200ms;
+  }
+
+  .ngs-stagger > :nth-child(6) {
+    transition-delay: 250ms;
+  }
+
+  .ngs-stagger > :nth-child(7) {
+    transition-delay: 300ms;
+  }
+
+  .ngs-stagger > :nth-child(8) {
+    transition-delay: 350ms;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION OVERRIDE (CRITICAL)
+   Disables all animations for accessibility
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Reset scroll animations */
+  [data-ngs-animate] {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Reset stagger delays */
+  .ngs-stagger > * {
+    transition-delay: 0ms !important;
+  }
+}

@@ -1,0 +1,493 @@
+/* ================================================
+   NEOGEN Custom CSS v2 - Fixed Contrast Issues
+   Brand Colors:
+   - Primary Blue: #1F1EFB
+   - Dark Blue: #0D2175
+   - Light Blue: #4F4EFC (for hover states)
+   - White: #FFFFFF
+   - Light Gray: #f8f9fa (backgrounds)
+   ================================================ */
+
+/* ----- ROOT CSS VARIABLES ----- */
+:root {
+    --theme-palette-color-1: #1F1EFB;
+    --theme-palette-color-2: #0D2175;
+    --theme-palette-color-3: #4F4EFC;
+    --theme-palette-color-4: #f8f9fa;
+    --theme-palette-color-5: #FFFFFF;
+    --theme-palette-color-6: #1a1a2e;
+    --theme-palette-color-7: #f0f0f5;
+    --theme-palette-color-8: #FFFFFF;
+    --theme-link-initial-color: #1F1EFB;
+    --theme-link-hover-color: #0D2175;
+    --theme-button-background-initial-color: #1F1EFB;
+    --theme-button-background-hover-color: #0D2175;
+    --theme-button-text-initial-color: #FFFFFF;
+    --theme-button-text-hover-color: #FFFFFF;
+}
+
+/* ----- EXISTING STYLES (PRESERVED) ----- */
+.ct-frosted-glass {
+    backdrop-filter: blur(40px) brightness(200%);
+    -webkit-backdrop-filter: blur(40px) brightness(200%);
+}
+
+.ct-subscribe-form {
+    --theme-form-field-height: 60px;
+    --theme-form-field-padding: 0 25px;
+    --theme-form-field-background-initial-color: rgba(255, 255, 255, 0.1);
+    --theme-form-field-background-focus-color: rgba(255, 255, 255, 0.2);
+    --theme-form-field-border-width: 1px;
+    --theme-form-field-border-initial-color: rgba(255, 255, 255, 0.3);
+    --theme-text-color: #fff;
+    --theme-button-min-height: 60px;
+    --theme-button-background-initial-color: #FFFFFF;
+    --theme-button-text-initial-color: #0D2175;
+}
+
+.ct-mainbox h5,
+.ct-mainbox h6,
+.ct-mainbox p {
+    transition: all 0.2s ease;
+}
+
+.ct-mainbox:hover h5,
+.ct-mainbox:hover h6,
+.ct-mainbox:hover p {
+    color: var(--theme-palette-color-8) !important;
+}
+
+.elementor-shortcode [data-products] figure {
+    margin-bottom: var(--product-element-spacing, 10px) !important;
+}
+
+/* ----- HEADER - White text on blue ----- */
+header[data-id="type-1"],
+.site-header,
+.header-row {
+    background: linear-gradient(135deg, #0D2175 0%, #1F1EFB 100%);
+}
+
+.site-header *,
+.header-row *,
+.site-header a,
+.header-row a,
+.ct-header a,
+.site-header .ct-icon,
+.header-row .ct-icon {
+    color: #FFFFFF !important;
+}
+
+/* Header icons - must be white */
+.site-header svg,
+.header-row svg,
+.ct-header svg {
+    fill: #FFFFFF !important;
+    color: #FFFFFF !important;
+}
+
+.site-header path,
+.header-row path {
+    fill: #FFFFFF !important;
+}
+
+/* ----- BUTTONS - White text always ----- */
+.wp-block-button__link,
+.ct-button,
+button[type="submit"],
+.button,
+.wc-block-components-button,
+input[type="submit"],
+a.button,
+.add_to_cart_button,
+.single_add_to_cart_button,
+.checkout-button {
+    background: linear-gradient(135deg, #0D2175 0%, #1F1EFB 100%) !important;
+    border: none !important;
+    color: #FFFFFF !important;
+    transition: all 0.3s ease !important;
+}
+
+.wp-block-button__link:hover,
+.ct-button:hover,
+button[type="submit"]:hover,
+.button:hover,
+input[type="submit"]:hover,
+a.button:hover,
+.add_to_cart_button:hover,
+.single_add_to_cart_button:hover,
+.checkout-button:hover {
+    background: linear-gradient(135deg, #1F1EFB 0%, #4F4EFC 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 15px rgba(31, 30, 251, 0.4) !important;
+    color: #FFFFFF !important;
+}
+
+/* ----- LINKS - Blue on white backgrounds only ----- */
+body a,
+.entry-content a,
+.post-content a {
+    color: #1F1EFB;
+}
+
+body a:hover,
+.entry-content a:hover {
+    color: #0D2175;
+}
+
+/* ----- FIX: Icons/dots on blue backgrounds ----- */
+/* Make all icons on dark/blue backgrounds WHITE */
+[style*="background"][style*="blue"] .ct-icon,
+[style*="background"][style*="#0D2175"] .ct-icon,
+[style*="background"][style*="#1F1EFB"] .ct-icon,
+.ct-hero .ct-icon,
+.hero-section .ct-icon,
+footer .ct-icon,
+.site-footer .ct-icon {
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+}
+
+/* List bullets and dots - use white on blue, blue on white */
+.ct-hero li::before,
+.hero-section li::before,
+footer li::before,
+[class*="blue-bg"] li::before {
+    background: #FFFFFF !important;
+    color: #FFFFFF !important;
+}
+
+/* Default list dots - blue on white backgrounds */
+li::marker {
+    color: #1F1EFB;
+}
+
+/* ----- HERO SECTION - All text white ----- */
+.ct-hero,
+.hero-section,
+[class*="hero"],
+.elementor-section.hero {
+    background: linear-gradient(135deg, #0D2175 0%, #1F1EFB 100%);
+}
+
+.ct-hero *,
+.hero-section *,
+.ct-hero h1, .ct-hero h2, .ct-hero h3, .ct-hero h4, .ct-hero h5, .ct-hero h6,
+.ct-hero p, .ct-hero span, .ct-hero a,
+.hero-section h1, .hero-section h2, .hero-section h3,
+.hero-section p, .hero-section span {
+    color: #FFFFFF !important;
+}
+
+/* Hero buttons - white outline or solid white */
+.ct-hero .ct-button,
+.hero-section .ct-button,
+.ct-hero a.button,
+.hero-section a.button {
+    background: #FFFFFF !important;
+    color: #0D2175 !important;
+    border: 2px solid #FFFFFF !important;
+}
+
+.ct-hero .ct-button:hover,
+.hero-section .ct-button:hover {
+    background: transparent !important;
+    color: #FFFFFF !important;
+}
+
+/* Secondary hero button - outline style */
+.ct-hero .ct-button-ghost,
+.hero-section .ct-button-ghost,
+.ct-hero .button-outline {
+    background: transparent !important;
+    color: #FFFFFF !important;
+    border: 2px solid #FFFFFF !important;
+}
+
+/* ----- FOOTER - White text on dark blue ----- */
+footer,
+.site-footer,
+.ct-footer {
+    background: #0D2175 !important;
+}
+
+footer *,
+.site-footer *,
+.ct-footer *,
+footer a,
+.site-footer a,
+.ct-footer a,
+footer p,
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6,
+footer span,
+footer .ct-icon {
+    color: #FFFFFF !important;
+}
+
+footer a:hover,
+.site-footer a:hover {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Footer icons */
+footer svg,
+.site-footer svg {
+    fill: #FFFFFF !important;
+}
+
+/* ----- WOOCOMMERCE ----- */
+.woocommerce .products .product .price,
+.woocommerce-Price-amount {
+    color: #1F1EFB !important;
+}
+
+.woocommerce span.onsale,
+.onsale {
+    background: #1F1EFB !important;
+    color: #FFFFFF !important;
+}
+
+/* Product cards - blue accents on white */
+.product-card,
+.woocommerce .product {
+    background: #FFFFFF;
+}
+
+.product:hover {
+    box-shadow: 0 8px 25px rgba(31, 30, 251, 0.15) !important;
+}
+
+/* ----- NAVIGATION ----- */
+.main-navigation a,
+.ct-header-menu a,
+nav.menu a {
+    color: #FFFFFF !important;
+}
+
+.main-navigation a:hover,
+.ct-header-menu a:hover {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Dropdown menus - white background */
+.sub-menu,
+.ct-header .sub-menu,
+.dropdown-menu {
+    background: #FFFFFF !important;
+}
+
+.sub-menu a,
+.dropdown-menu a {
+    color: #0D2175 !important;
+}
+
+.sub-menu a:hover,
+.dropdown-menu a:hover {
+    background: #f8f9fa !important;
+    color: #1F1EFB !important;
+}
+
+/* ----- CART ICON ----- */
+.ct-cart-icon,
+.cart-icon,
+[class*="cart-icon"] {
+    color: #FFFFFF !important;
+}
+
+.ct-cart-count,
+.cart-count {
+    background: #FFFFFF !important;
+    color: #0D2175 !important;
+}
+
+/* ----- BADGES & TAGS ----- */
+.tag,
+.badge,
+.category-badge {
+    background: #1F1EFB !important;
+    color: #FFFFFF !important;
+}
+
+/* ----- ICONS ON WHITE BACKGROUNDS ----- */
+.ct-icon,
+[class*="icon"]:not(header *):not(footer *):not(.hero-section *) {
+    color: #1F1EFB;
+}
+
+/* ----- FORM INPUTS ----- */
+input,
+textarea,
+select {
+    border: 1px solid #e0e0e0;
+    background: #FFFFFF;
+    color: #333;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #1F1EFB !important;
+    box-shadow: 0 0 0 3px rgba(31, 30, 251, 0.1) !important;
+}
+
+/* Form inputs in dark sections */
+footer input,
+footer textarea,
+.ct-hero input,
+.hero-section input {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: #FFFFFF !important;
+}
+
+footer input::placeholder,
+.ct-hero input::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* ----- PAGINATION ----- */
+.pagination a,
+.page-numbers {
+    color: #0D2175;
+    background: #FFFFFF;
+    border: 1px solid #e0e0e0;
+}
+
+.pagination a:hover,
+.page-numbers:hover,
+.pagination .current,
+.page-numbers.current {
+    background: #1F1EFB !important;
+    color: #FFFFFF !important;
+    border-color: #1F1EFB !important;
+}
+
+/* ----- SCROLLBAR ----- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #0D2175 0%, #1F1EFB 100%);
+    border-radius: 4px;
+}
+
+/* ----- SELECTION ----- */
+::selection {
+    background: #1F1EFB !important;
+    color: #FFFFFF !important;
+}
+
+/* ----- BLOCKQUOTES ----- */
+blockquote {
+    border-left: 4px solid #1F1EFB !important;
+    background: #f8f9fa;
+}
+
+/* ----- MOBILE MENU ----- */
+@media (max-width: 768px) {
+    .mobile-menu,
+    .ct-mobile-menu,
+    .mobile-navigation {
+        background: #0D2175 !important;
+    }
+
+    .mobile-menu *,
+    .ct-mobile-menu *,
+    .mobile-menu a {
+        color: #FFFFFF !important;
+    }
+}
+
+/* ----- ELEMENTOR SPECIFIC ----- */
+.elementor-button {
+    background: linear-gradient(135deg, #0D2175 0%, #1F1EFB 100%) !important;
+    color: #FFFFFF !important;
+}
+
+.elementor-button:hover {
+    background: linear-gradient(135deg, #1F1EFB 0%, #4F4EFC 100%) !important;
+}
+
+/* Elementor icons on white backgrounds */
+.elementor-icon {
+    color: #1F1EFB !important;
+}
+
+/* Elementor icons on dark backgrounds */
+.elementor-section[data-settings*="background"] .elementor-icon,
+.elementor-section.dark .elementor-icon {
+    color: #FFFFFF !important;
+}
+
+/* ----- TRUST BADGES / FEATURE BOXES ----- */
+.trust-badge,
+.feature-box,
+.why-us-item {
+    background: #FFFFFF;
+    border-bottom: 3px solid #1F1EFB !important;
+}
+
+.trust-badge .ct-icon,
+.feature-box .ct-icon {
+    color: #1F1EFB !important;
+}
+
+/* ----- LOADING SPINNER ----- */
+.loader,
+.loading,
+.spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #1F1EFB !important;
+}
+
+/* ----- SOCIAL ICONS ----- */
+.social-icons a,
+.ct-social-box a {
+    color: #FFFFFF !important;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.social-icons a:hover,
+.ct-social-box a:hover {
+    background: #FFFFFF !important;
+    color: #0D2175 !important;
+}
+
+/* ----- BREADCRUMBS ----- */
+.breadcrumbs,
+.woocommerce-breadcrumb {
+    color: #666;
+}
+
+.breadcrumbs a,
+.woocommerce-breadcrumb a {
+    color: #1F1EFB !important;
+}
+
+/* ----- TABLES ----- */
+table th {
+    background: #0D2175;
+    color: #FFFFFF;
+}
+
+table td {
+    background: #FFFFFF;
+    color: #333;
+}
+
+/* ----- ALERTS/NOTICES ----- */
+.woocommerce-message,
+.woocommerce-info {
+    border-top-color: #1F1EFB !important;
+}
+
+.woocommerce-message::before,
+.woocommerce-info::before {
+    color: #1F1EFB !important;
+}

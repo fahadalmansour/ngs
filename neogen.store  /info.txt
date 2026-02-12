@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Ubuntu-L
+font link: https://fonts.google.com/specimen/Ubuntu
+font author: Dalton Maag
+font author site: http://www.daltonmaag.com/
+
+
+icon designer: DOUBLE SLASH
+icon designer link: /creator/double-slash/
+        
+{"bg-gradient-0":"#0D2175","bg-gradient-1":"#1F1EFB","icon":"#ffffff","font":"#ffffff","slogan":"#ffffff"}
+      

@@ -1,0 +1,222 @@
+{
+  "name": "Neogen Omnichannel Sync",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 15
+            }
+          ]
+        }
+      },
+      "id": "schedule-inventory",
+      "name": "Inventory Every 15m",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [220, 120]
+    },
+    {
+      "parameters": {
+        "command": "python3 /Volumes/Fahadmega/NGS_Business/Products/hub_sync.py --channel woo --mode inventory --scope active --report-json /Volumes/Fahadmega/NGS_Business/Products/output/woo_inventory.json && python3 /Volumes/Fahadmega/NGS_Business/Products/hub_sync.py --channel zid --mode inventory --scope active --report-json /Volumes/Fahadmega/NGS_Business/Products/output/zid_inventory.json && python3 /Volumes/Fahadmega/NGS_Business/Products/hub_sync.py --channel salla --mode inventory --scope active --report-json /Volumes/Fahadmega/NGS_Business/Products/output/salla_inventory.json && python3 /Volumes/Fahadmega/NGS_Business/Products/hub_sync.py --channel shopify --mode inventory --scope active --report-json /Volumes/Fahadmega/NGS_Business/Products/output/shopify_inventory.json"
+      },
+      "id": "cmd-inventory",
+      "name": "Sync Inventory All Channels",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [520, 120]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 12
+            }
+          ]
+        }
+      },
+      "id": "schedule-pricing",
+      "name": "Pricing Twice Daily",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [220, 280]
+    },
+    {
+      "parameters": {
+        "command": "python3 /Volumes/Fahadmega/NGS_Business/Products/hub_sync.py --channel woo --mode pricing --scope active --report-json /Volumes/Fahadmega/NGS_Business/Products/output/woo_pricing.json && python3 /Volumes/Fahadmega/NGS_Business/Products/hub_sync.py --channel zid --mode pricing --scope active --report-json /Volumes/Fahadmega/NGS_Business/Products/output/zid_pricing.json && python3 /Volumes/Fahadmega/NGS_Business/Products/hub_sync.py --channel salla --mode pricing --scope active --report-json /Volumes/Fahadmega/NGS_Business/Products/output/salla_pricing.json && python3 /Volumes/Fahadmega/NGS_Business/Products/hub_sync.py --channel shopify --mode pricing --scope active --report-json /Volumes/Fahadmega/NGS_Business/Products/output/shopify_pricing.json"
+      },
+      "id": "cmd-pricing",
+      "name": "Sync Pricing All Channels",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [520, 280]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24
+            }
+          ]
+        }
+      },
+      "id": "schedule-nightly",
+      "name": "Nightly Reconcile",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [220, 440]
+    },
+    {
+      "parameters": {
+        "command": "python3 /Volumes/Fahadmega/NGS_Business/Products/hub_sync.py --channel woo --mode reconcile --scope active --report-json /Volumes/Fahadmega/NGS_Business/Products/output/woo_reconcile.json && python3 /Volumes/Fahadmega/NGS_Business/Products/hub_validate.py --stage wave50 --strict --report-file /Volumes/Fahadmega/NGS_Business/Products/output/wave50_validate.json"
+      },
+      "id": "cmd-nightly",
+      "name": "Nightly Reconcile + Gate",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [520, 440]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "webhooks/:channel/orders",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-orders",
+      "name": "Orders Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [220, 700],
+      "webhookId": "omnichannel-orders"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=http://127.0.0.1:8788/webhooks/{{$json.params.channel}}/orders",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{$json.body}}",
+        "options": {}
+      },
+      "id": "forward-orders",
+      "name": "Forward Orders",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [520, 700]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "webhooks/:channel/cancellations",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-cancel",
+      "name": "Cancellations Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [220, 850],
+      "webhookId": "omnichannel-cancellations"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=http://127.0.0.1:8788/webhooks/{{$json.params.channel}}/cancellations",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{$json.body}}",
+        "options": {}
+      },
+      "id": "forward-cancel",
+      "name": "Forward Cancellations",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [520, 850]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "webhooks/:channel/returns",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-returns",
+      "name": "Returns Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [220, 1000],
+      "webhookId": "omnichannel-returns"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=http://127.0.0.1:8788/webhooks/{{$json.params.channel}}/returns",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{$json.body}}",
+        "options": {}
+      },
+      "id": "forward-returns",
+      "name": "Forward Returns",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [520, 1000]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"accepted\": true, \"status\": \"queued\" } }}"
+      },
+      "id": "respond-webhook",
+      "name": "Respond Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [780, 850]
+    }
+  ],
+  "connections": {
+    "Inventory Every 15m": {
+      "main": [[{"node": "Sync Inventory All Channels", "type": "main", "index": 0}]]
+    },
+    "Pricing Twice Daily": {
+      "main": [[{"node": "Sync Pricing All Channels", "type": "main", "index": 0}]]
+    },
+    "Nightly Reconcile": {
+      "main": [[{"node": "Nightly Reconcile + Gate", "type": "main", "index": 0}]]
+    },
+    "Orders Webhook": {
+      "main": [[{"node": "Forward Orders", "type": "main", "index": 0}]]
+    },
+    "Forward Orders": {
+      "main": [[{"node": "Respond Webhook", "type": "main", "index": 0}]]
+    },
+    "Cancellations Webhook": {
+      "main": [[{"node": "Forward Cancellations", "type": "main", "index": 0}]]
+    },
+    "Forward Cancellations": {
+      "main": [[{"node": "Respond Webhook", "type": "main", "index": 0}]]
+    },
+    "Returns Webhook": {
+      "main": [[{"node": "Forward Returns", "type": "main", "index": 0}]]
+    },
+    "Forward Returns": {
+      "main": [[{"node": "Respond Webhook", "type": "main", "index": 0}]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "timezone": "Asia/Riyadh",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "versionId": "omnichannel-sync-v1"
+}

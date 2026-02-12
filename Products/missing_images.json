@@ -1,0 +1,352 @@
+[
+  {
+    "id": 4136,
+    "sku": "NGS-CHA-LEV-0631",
+    "name": "ChargePoint Home Flex"
+  },
+  {
+    "id": 4048,
+    "sku": "NGS-GEN-MIS-0545",
+    "name": "Generic Logic Level Converter"
+  },
+  {
+    "id": 3989,
+    "sku": "NGS-POE-ACC-0483",
+    "name": "PoE PoE Extender"
+  },
+  {
+    "id": 3980,
+    "sku": "NGS-HIK-NVR-0477",
+    "name": "Hikvision DS-7608NXI-K2"
+  },
+  {
+    "id": 3972,
+    "sku": "NGS-UNI-PTZ-0469",
+    "name": "UniFi G4 PTZ"
+  },
+  {
+    "id": 3971,
+    "sku": "NGS-HIK-OUT-0464",
+    "name": "Hikvision DS-2CD2087G2-L"
+  },
+  {
+    "id": 3920,
+    "sku": "NGS-NVI-GPU-0412",
+    "name": "NVIDIA Quadro P2000 5GB"
+  },
+  {
+    "id": 3890,
+    "sku": "NGS-GMK-MIN-0390",
+    "name": "GMKtec NucBox G3"
+  },
+  {
+    "id": 3872,
+    "sku": "NGS-MAR-VOI-0370",
+    "name": "Marshall Uxbridge Voice"
+  },
+  {
+    "id": 3841,
+    "sku": "NGS-SKY-ZIG-0336",
+    "name": "SkyConnect Home Assistant SkyConnect"
+  },
+  {
+    "id": 3755,
+    "sku": "NGS-MER-PLU-0249",
+    "name": "Meross MSS310"
+  },
+  {
+    "id": 3730,
+    "sku": "NGS-NGS-SER-0215",
+    "name": "Energy Audit Service"
+  },
+  {
+    "id": 3729,
+    "sku": "NGS-NGS-SER-0214",
+    "name": "Firmware Update Service"
+  },
+  {
+    "id": 3728,
+    "sku": "NGS-NGS-SER-0213",
+    "name": "Annual Maintenance Contract"
+  },
+  {
+    "id": 3727,
+    "sku": "NGS-NGS-SER-0212",
+    "name": "Network Design Service"
+  },
+  {
+    "id": 3726,
+    "sku": "NGS-NGS-SER-0211",
+    "name": "Extended Warranty - 2 Years"
+  },
+  {
+    "id": 3725,
+    "sku": "NGS-NGS-SER-0210",
+    "name": "Extended Warranty - 1 Year"
+  },
+  {
+    "id": 3724,
+    "sku": "NGS-NGS-SER-0209",
+    "name": "Security Audit Service"
+  },
+  {
+    "id": 3723,
+    "sku": "NGS-NGS-SER-0208",
+    "name": "Platform Migration - Full"
+  },
+  {
+    "id": 3722,
+    "sku": "NGS-NGS-SER-0207",
+    "name": "Platform Migration - Basic"
+  },
+  {
+    "id": 3721,
+    "sku": "NGS-NGS-SER-0206",
+    "name": "Custom Theme Design"
+  },
+  {
+    "id": 3720,
+    "sku": "NGS-NGS-SER-0205",
+    "name": "Custom Blueprint Development"
+  },
+  {
+    "id": 3719,
+    "sku": "NGS-NGS-SER-0204",
+    "name": "Home Assessment Consultation"
+  },
+  {
+    "id": 3718,
+    "sku": "NGS-NGS-SER-0203",
+    "name": "Remote Login Access Setup"
+  },
+  {
+    "id": 3717,
+    "sku": "NGS-NGS-SER-0202",
+    "name": "Remote Backup Configuration"
+  },
+  {
+    "id": 3716,
+    "sku": "NGS-NGS-SER-0201",
+    "name": "Remote System Health Check"
+  },
+  {
+    "id": 3715,
+    "sku": "NGS-NGS-SER-0200",
+    "name": "Remote Troubleshooting - Emergency"
+  },
+  {
+    "id": 3714,
+    "sku": "NGS-NGS-SER-0199",
+    "name": "Remote Support - 5-Pack"
+  },
+  {
+    "id": 3713,
+    "sku": "NGS-NGS-SER-0198",
+    "name": "Remote Support - Single Session"
+  },
+  {
+    "id": 3712,
+    "sku": "NGS-NGS-SER-0197",
+    "name": "Training - Full Course"
+  },
+  {
+    "id": 3711,
+    "sku": "NGS-NGS-SER-0196",
+    "name": "Training - Advanced"
+  },
+  {
+    "id": 3710,
+    "sku": "NGS-NGS-SER-0195",
+    "name": "Training - HA Basics"
+  },
+  {
+    "id": 3709,
+    "sku": "NGS-NGS-SER-0194",
+    "name": "Support - Premium Monthly"
+  },
+  {
+    "id": 3708,
+    "sku": "NGS-NGS-SER-0193",
+    "name": "Support - Standard Monthly"
+  },
+  {
+    "id": 3707,
+    "sku": "NGS-NGS-SER-0192",
+    "name": "Support - Basic Monthly"
+  },
+  {
+    "id": 3706,
+    "sku": "NGS-NGS-SER-0191",
+    "name": "UniFi Integration"
+  },
+  {
+    "id": 3705,
+    "sku": "NGS-NGS-SER-0190",
+    "name": "VLAN Setup"
+  },
+  {
+    "id": 3704,
+    "sku": "NGS-NGS-SER-0189",
+    "name": "Network Consultation"
+  },
+  {
+    "id": 3703,
+    "sku": "NGS-NGS-SER-0188",
+    "name": "Frigate NVR Setup"
+  },
+  {
+    "id": 3702,
+    "sku": "NGS-NGS-SER-0187",
+    "name": "Camera Integration"
+  },
+  {
+    "id": 3701,
+    "sku": "NGS-NGS-SER-0186",
+    "name": "Matter Setup"
+  },
+  {
+    "id": 3700,
+    "sku": "NGS-NGS-SER-0185",
+    "name": "Zigbee Migration"
+  },
+  {
+    "id": 3699,
+    "sku": "NGS-NGS-SER-0184",
+    "name": "Zigbee Setup"
+  },
+  {
+    "id": 3698,
+    "sku": "NGS-NGS-SER-0183",
+    "name": "Automation - Premium Pack"
+  },
+  {
+    "id": 3697,
+    "sku": "NGS-NGS-SER-0182",
+    "name": "Automation - Standard Pack"
+  },
+  {
+    "id": 3696,
+    "sku": "NGS-NGS-SER-0181",
+    "name": "Automation - Basic Pack"
+  },
+  {
+    "id": 3693,
+    "sku": "NGS-NGS-SER-0180",
+    "name": "Dashboard - Mushroom Pack"
+  },
+  {
+    "id": 3692,
+    "sku": "NGS-NGS-SER-0179",
+    "name": "Dashboard - Premium"
+  },
+  {
+    "id": 3691,
+    "sku": "NGS-NGS-SER-0178",
+    "name": "Dashboard - Standard"
+  },
+  {
+    "id": 3690,
+    "sku": "NGS-NGS-SER-0177",
+    "name": "Dashboard - Starter"
+  },
+  {
+    "id": 3689,
+    "sku": "NGS-NGS-SER-0176",
+    "name": "HA OS Installation - Premium"
+  },
+  {
+    "id": 3688,
+    "sku": "NGS-NGS-SER-0175",
+    "name": "HA OS Installation - Standard"
+  },
+  {
+    "id": 3687,
+    "sku": "NGS-NGS-SER-0174",
+    "name": "HA OS Installation - Basic"
+  },
+  {
+    "id": 3677,
+    "sku": "NGS-NGS-PRE-0167",
+    "name": "SD Card Only - Basic"
+  },
+  {
+    "id": 3643,
+    "sku": "NGS-RAS-RAS-0129",
+    "name": "Raspberry Pi 5 Model B 8GB"
+  },
+  {
+    "id": 3612,
+    "sku": "NGS-NGS-SER-0093",
+    "name": "NGS Complete Security Kit"
+  },
+  {
+    "id": 3611,
+    "sku": "NGS-NGS-SER-0092",
+    "name": "NGS Starter Smart Home Kit"
+  },
+  {
+    "id": 3610,
+    "sku": "NGS-NGS-SER-0091",
+    "name": "NGS Network Upgrade"
+  },
+  {
+    "id": 3609,
+    "sku": "NGS-NGS-SER-0090",
+    "name": "NGS Camera System Install"
+  },
+  {
+    "id": 3577,
+    "sku": "NGS-NGS-SER-0057",
+    "name": "NGS Remote Troubleshooting Session"
+  },
+  {
+    "id": 3576,
+    "sku": "NGS-NGS-SER-0056",
+    "name": "NGS Smart Home Design"
+  },
+  {
+    "id": 3575,
+    "sku": "NGS-NGS-SER-0055",
+    "name": "NGS Monthly Support Plan"
+  },
+  {
+    "id": 3574,
+    "sku": "NGS-NGS-SER-0054",
+    "name": "NGS Zigbee Network Setup"
+  },
+  {
+    "id": 3573,
+    "sku": "NGS-NGS-SER-0053",
+    "name": "NGS HA Advanced Setup"
+  },
+  {
+    "id": 3572,
+    "sku": "NGS-NGS-SER-0052",
+    "name": "NGS HA Basic Setup"
+  },
+  {
+    "id": 3565,
+    "sku": "NGS-TAD-CLI-0045",
+    "name": "Tado Smart AC Control V3+"
+  },
+  {
+    "id": 3558,
+    "sku": "NGS-RIN-CAM-0038",
+    "name": "Ring Video Doorbell 4"
+  },
+  {
+    "id": 2093,
+    "sku": "NGS-TUY-ENE-0765",
+    "name": "Tuya 3-Phase Energy Meter"
+  },
+  {
+    "id": 2085,
+    "sku": "NGS-PHI-MED-0757",
+    "name": "Philips Medication Dispenser"
+  },
+  {
+    "id": 2081,
+    "sku": "NGS-FAC-VID-0753",
+    "name": "Facebook Portal+"
+  }
+]

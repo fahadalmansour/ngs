@@ -1,0 +1,290 @@
+/* ================================================
+   NEOGEN Custom CSS - Blue Color Scheme
+   Brand Colors:
+   - Primary Blue: #1F1EFB
+   - Dark Blue: #0D2175
+   - Gradient: 25deg, #0D2175 → #1F1EFB
+   - White: #FFFFFF
+   ================================================ */
+
+/* ----- ROOT CSS VARIABLES ----- */
+:root {
+    --theme-palette-color-1: #1F1EFB !important;
+    --theme-palette-color-2: #0D2175 !important;
+    --theme-palette-color-3: #1F1EFB !important;
+    --theme-palette-color-4: #0D2175 !important;
+    --theme-palette-color-5: #FFFFFF !important;
+    --theme-palette-color-6: #1a1a2e !important;
+    --theme-palette-color-7: #f0f0f5 !important;
+    --theme-palette-color-8: #FFFFFF !important;
+    --theme-link-initial-color: #1F1EFB !important;
+    --theme-link-hover-color: #0D2175 !important;
+    --theme-button-background-initial-color: #1F1EFB !important;
+    --theme-button-background-hover-color: #0D2175 !important;
+}
+
+/* ----- EXISTING STYLES (PRESERVED) ----- */
+.ct-frosted-glass {
+    backdrop-filter: blur(40px) brightness(200%);
+    -webkit-backdrop-filter: blur(40px) brightness(200%);
+}
+
+.ct-subscribe-form {
+    --theme-form-field-height: 60px;
+    --theme-form-field-padding: 0 25px;
+    --theme-form-field-background-initial-color: #000;
+    --theme-form-field-background-focus-color: rgba(0, 0, 0, 0.4);
+    --theme-form-field-border-width: 0;
+    --theme-text-color: #fff;
+    --theme-button-min-height: 60px;
+    --theme-button-background-initial-color: var(--theme-palette-color-1);
+    --theme-button-text-initial-color: #fff;
+}
+
+/* Main icon boxes */
+.ct-mainbox h5,
+.ct-mainbox h6,
+.ct-mainbox p {
+    transition: all 0.2s ease;
+}
+
+.ct-mainbox:hover h5,
+.ct-mainbox:hover h6,
+.ct-mainbox:hover p {
+    color: var(--theme-palette-color-8) !important;
+}
+
+.elementor-shortcode [data-products] figure {
+    margin-bottom: var(--product-element-spacing, 10px) !important;
+}
+
+/* ----- HEADER ----- */
+header[data-id="type-1"],
+.site-header,
+.header-row {
+    background: linear-gradient(135deg, #0D2175 0%, #1F1EFB 100%) !important;
+}
+
+.site-header a,
+.header-row a {
+    color: #FFFFFF !important;
+}
+
+/* ----- BUTTONS ----- */
+.wp-block-button__link,
+.ct-button,
+button[type="submit"],
+.button,
+.wc-block-components-button,
+input[type="submit"],
+a.button,
+.add_to_cart_button,
+.single_add_to_cart_button,
+.checkout-button {
+    background: linear-gradient(135deg, #0D2175 0%, #1F1EFB 100%) !important;
+    border: none !important;
+    color: #FFFFFF !important;
+    transition: all 0.3s ease !important;
+}
+
+.wp-block-button__link:hover,
+.ct-button:hover,
+button[type="submit"]:hover,
+.button:hover,
+input[type="submit"]:hover,
+a.button:hover,
+.add_to_cart_button:hover,
+.single_add_to_cart_button:hover,
+.checkout-button:hover {
+    background: linear-gradient(135deg, #1F1EFB 0%, #0D2175 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 15px rgba(31, 30, 251, 0.4) !important;
+}
+
+/* ----- LINKS ----- */
+a {
+    color: #1F1EFB !important;
+}
+
+a:hover {
+    color: #0D2175 !important;
+}
+
+/* ----- NAVIGATION ----- */
+.main-navigation a,
+.ct-header-menu a,
+nav.menu a {
+    color: #FFFFFF !important;
+}
+
+.main-navigation a:hover,
+.ct-header-menu a:hover {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* ----- HERO SECTION ----- */
+.hero-section,
+.ct-hero,
+[class*="hero"],
+.elementor-section.hero {
+    background: linear-gradient(135deg, #0D2175 0%, #1F1EFB 100%) !important;
+}
+
+/* ----- FOOTER ----- */
+footer,
+.site-footer,
+.ct-footer {
+    background: #0D2175 !important;
+    color: #FFFFFF !important;
+}
+
+footer a,
+.site-footer a,
+.ct-footer a {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+footer a:hover,
+.site-footer a:hover,
+.ct-footer a:hover {
+    color: #FFFFFF !important;
+}
+
+/* ----- WOOCOMMERCE ----- */
+.woocommerce .products .product .price,
+.woocommerce-Price-amount {
+    color: #1F1EFB !important;
+}
+
+.woocommerce span.onsale,
+.onsale {
+    background: #1F1EFB !important;
+    color: #FFFFFF !important;
+}
+
+.woocommerce .product .add_to_cart_button,
+.woocommerce .product .product_type_simple {
+    background: linear-gradient(135deg, #0D2175 0%, #1F1EFB 100%) !important;
+    color: #FFFFFF !important;
+}
+
+/* ----- PRODUCT CARDS ----- */
+.product:hover {
+    box-shadow: 0 8px 25px rgba(31, 30, 251, 0.15) !important;
+}
+
+/* ----- CATEGORY CARDS ----- */
+.product-category,
+.woocommerce .product-category {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+}
+
+.product-category:hover {
+    box-shadow: 0 8px 25px rgba(31, 30, 251, 0.2) !important;
+}
+
+/* ----- BADGES & TAGS ----- */
+.tag,
+.badge,
+.category-badge {
+    background: #1F1EFB !important;
+    color: #FFFFFF !important;
+}
+
+/* ----- ICONS ----- */
+.icon,
+[class*="icon"],
+.fa,
+.fas,
+.far {
+    color: #1F1EFB !important;
+}
+
+/* ----- CART ICON ----- */
+.ct-cart-icon .ct-icon,
+.cart-icon,
+[class*="cart-icon"] {
+    color: #FFFFFF !important;
+}
+
+.ct-cart-count,
+.cart-count {
+    background: #1F1EFB !important;
+    color: #FFFFFF !important;
+}
+
+/* ----- SCROLLBAR ----- */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #0D2175 0%, #1F1EFB 100%) !important;
+}
+
+/* ----- SELECTION ----- */
+::selection {
+    background: #1F1EFB !important;
+    color: #FFFFFF !important;
+}
+
+/* ----- BLOCKQUOTES ----- */
+blockquote {
+    border-left-color: #1F1EFB !important;
+}
+
+/* ----- FORM FOCUS ----- */
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #1F1EFB !important;
+    box-shadow: 0 0 0 3px rgba(31, 30, 251, 0.1) !important;
+}
+
+/* ----- PAGINATION ----- */
+.pagination a:hover,
+.page-numbers:hover,
+.pagination .current,
+.page-numbers.current {
+    background: #1F1EFB !important;
+    color: #FFFFFF !important;
+}
+
+/* ----- TRUST BADGES ----- */
+.trust-badge,
+.feature-box,
+.why-us-item {
+    border-bottom: 3px solid #1F1EFB !important;
+}
+
+/* ----- LOADING SPINNER ----- */
+.loader,
+.loading,
+.spinner {
+    border-top-color: #1F1EFB !important;
+}
+
+/* ----- MOBILE MENU ----- */
+@media (max-width: 768px) {
+    .mobile-menu,
+    .ct-mobile-menu,
+    .mobile-navigation {
+        background: linear-gradient(135deg, #0D2175 0%, #1F1EFB 100%) !important;
+    }
+
+    .mobile-menu a {
+        color: #FFFFFF !important;
+    }
+}
+
+/* ----- ELEMENTOR OVERRIDES ----- */
+.elementor-button,
+.elementor-button:hover {
+    background: linear-gradient(135deg, #0D2175 0%, #1F1EFB 100%) !important;
+}
+
+.elementor-icon {
+    color: #1F1EFB !important;
+}
+
+.elementor-widget-heading .elementor-heading-title span,
+.elementor-widget-text-editor a {
+    color: #1F1EFB !important;
+}

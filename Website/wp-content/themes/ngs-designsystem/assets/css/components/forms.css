@@ -1,0 +1,434 @@
+/**
+ * Forms Component
+ *
+ * Form inputs, select, textarea, checkbox, radio, labels, and error states
+ * Uses CSS logical properties for RTL support
+ * Depends on: tokens.css (--ngs-* variables)
+ */
+
+/* Form Group */
+.ngs-form-group {
+  margin-block-end: 16px;
+}
+
+/* Form Label */
+.ngs-form-label {
+  display: block;
+  margin-block-end: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ngs-text);
+  line-height: 1.5;
+}
+
+.ngs-form-label--required::after {
+  content: " *";
+  color: var(--ngs-error);
+}
+
+/* Base Input */
+.ngs-input {
+  inline-size: 100%;
+  block-size: 48px;
+  padding-block: 12px;
+  padding-inline: 16px;
+  background: var(--ngs-bg);
+  border: 1px solid var(--ngs-border-light);
+  border-radius: var(--ngs-radius-sm);
+  font-size: 16px;
+  font-family: inherit;
+  color: var(--ngs-text);
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+  outline: none;
+}
+
+.ngs-input::placeholder {
+  color: var(--ngs-text-secondary);
+  opacity: 0.7;
+}
+
+/* Input Focus State */
+.ngs-input:focus {
+  border-color: var(--ngs-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Input Error State */
+.ngs-input--error {
+  border-color: var(--ngs-error);
+}
+
+.ngs-input--error:focus {
+  border-color: var(--ngs-error);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+/* Input Success State */
+.ngs-input--success {
+  border-color: var(--ngs-success);
+}
+
+.ngs-input--success:focus {
+  border-color: var(--ngs-success);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+/* Input Disabled State */
+.ngs-input:disabled {
+  background: var(--ngs-bg-alt);
+  color: var(--ngs-text-secondary);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Select */
+.ngs-select {
+  inline-size: 100%;
+  block-size: 48px;
+  padding-block: 12px;
+  padding-inline-start: 16px;
+  padding-inline-end: 40px;
+  background: var(--ngs-bg);
+  border: 1px solid var(--ngs-border-light);
+  border-radius: var(--ngs-radius-sm);
+  font-size: 16px;
+  font-family: inherit;
+  color: var(--ngs-text);
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 6L8 10L12 6' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+[dir="rtl"] .ngs-select {
+  background-position: left 12px center;
+}
+
+.ngs-select:focus {
+  border-color: var(--ngs-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.ngs-select:disabled {
+  background-color: var(--ngs-bg-alt);
+  color: var(--ngs-text-secondary);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Textarea */
+.ngs-textarea {
+  inline-size: 100%;
+  block-size: auto;
+  min-block-size: 120px;
+  padding-block: 12px;
+  padding-inline: 16px;
+  background: var(--ngs-bg);
+  border: 1px solid var(--ngs-border-light);
+  border-radius: var(--ngs-radius-sm);
+  font-size: 16px;
+  font-family: inherit;
+  color: var(--ngs-text);
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+  outline: none;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.ngs-textarea::placeholder {
+  color: var(--ngs-text-secondary);
+  opacity: 0.7;
+}
+
+.ngs-textarea:focus {
+  border-color: var(--ngs-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.ngs-textarea:disabled {
+  background: var(--ngs-bg-alt);
+  color: var(--ngs-text-secondary);
+  cursor: not-allowed;
+  opacity: 0.6;
+  resize: none;
+}
+
+/* Checkbox */
+.ngs-checkbox-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.ngs-checkbox {
+  appearance: none;
+  inline-size: 20px;
+  block-size: 20px;
+  border: 2px solid var(--ngs-border-light);
+  border-radius: var(--ngs-radius-sm);
+  background: var(--ngs-bg);
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  margin-block-start: 2px;
+  transition: all 200ms ease;
+}
+
+.ngs-checkbox:hover {
+  border-color: var(--ngs-primary);
+}
+
+.ngs-checkbox:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.3);
+  outline-offset: 2px;
+}
+
+.ngs-checkbox:checked {
+  background: var(--ngs-primary);
+  border-color: var(--ngs-primary);
+}
+
+.ngs-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 5px;
+  inset-block-start: 1px;
+  inline-size: 6px;
+  block-size: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.ngs-checkbox:disabled {
+  background: var(--ngs-bg-alt);
+  border-color: var(--ngs-border-light);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.ngs-checkbox-label {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ngs-text);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Radio */
+.ngs-radio-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.ngs-radio {
+  appearance: none;
+  inline-size: 20px;
+  block-size: 20px;
+  border: 2px solid var(--ngs-border-light);
+  border-radius: 50%;
+  background: var(--ngs-bg);
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  margin-block-start: 2px;
+  transition: all 200ms ease;
+}
+
+.ngs-radio:hover {
+  border-color: var(--ngs-primary);
+}
+
+.ngs-radio:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.3);
+  outline-offset: 2px;
+}
+
+.ngs-radio:checked {
+  border-color: var(--ngs-primary);
+}
+
+.ngs-radio:checked::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 50%;
+  inset-block-start: 50%;
+  transform: translate(-50%, -50%);
+  inline-size: 10px;
+  block-size: 10px;
+  border-radius: 50%;
+  background: var(--ngs-primary);
+}
+
+.ngs-radio:disabled {
+  background: var(--ngs-bg-alt);
+  border-color: var(--ngs-border-light);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.ngs-radio-label {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ngs-text);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Radio Group / Checkbox Group */
+.ngs-radio-group,
+.ngs-checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Form Error */
+.ngs-form-error {
+  font-size: 14px;
+  color: var(--ngs-error);
+  margin-block-start: 8px;
+  display: none;
+  line-height: 1.5;
+  animation: ngsSlideDown 200ms ease;
+}
+
+.ngs-form-error::before {
+  content: "⚠ ";
+}
+
+.ngs-form-error--visible {
+  display: block;
+}
+
+@keyframes ngsSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form Hint */
+.ngs-form-hint {
+  font-size: 14px;
+  color: var(--ngs-text-secondary);
+  margin-block-start: 4px;
+  line-height: 1.5;
+}
+
+/* Form Success */
+.ngs-form-success {
+  font-size: 14px;
+  color: var(--ngs-success);
+  margin-block-start: 8px;
+  line-height: 1.5;
+}
+
+.ngs-form-success::before {
+  content: "✓ ";
+}
+
+/* Input Group (with icons or buttons) */
+.ngs-input-group {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+
+.ngs-input-group .ngs-input {
+  flex: 1;
+}
+
+.ngs-input-group__prepend,
+.ngs-input-group__append {
+  display: flex;
+  align-items: center;
+  padding-inline: 12px;
+  background: var(--ngs-bg-alt);
+  border: 1px solid var(--ngs-border-light);
+  font-size: 14px;
+  color: var(--ngs-text-secondary);
+  white-space: nowrap;
+}
+
+.ngs-input-group__prepend {
+  border-inline-end: none;
+  border-start-start-radius: var(--ngs-radius-sm);
+  border-end-start-radius: var(--ngs-radius-sm);
+}
+
+.ngs-input-group__append {
+  border-inline-start: none;
+  border-start-end-radius: var(--ngs-radius-sm);
+  border-end-end-radius: var(--ngs-radius-sm);
+}
+
+.ngs-input-group .ngs-input:not(:first-child) {
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+}
+
+.ngs-input-group .ngs-input:not(:last-child) {
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
+
+/* Icon Input */
+.ngs-input-icon {
+  position: relative;
+}
+
+.ngs-input-icon__icon {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 12px;
+  transform: translateY(-50%);
+  inline-size: 20px;
+  block-size: 20px;
+  color: var(--ngs-text-secondary);
+  pointer-events: none;
+}
+
+.ngs-input-icon .ngs-input {
+  padding-inline-start: 40px;
+}
+
+[dir="rtl"] .ngs-input-icon__icon {
+  inset-inline-start: auto;
+  inset-inline-end: 12px;
+}
+
+[dir="rtl"] .ngs-input-icon .ngs-input {
+  padding-inline-start: 16px;
+  padding-inline-end: 40px;
+}
+
+/* Form Row */
+.ngs-form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .ngs-input,
+  .ngs-select,
+  .ngs-textarea {
+    font-size: 16px;
+  }
+
+  .ngs-form-row {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,977 @@
+/**
+ * neogen - Unifi-Inspired Custom CSS
+ * Features: Dark/Light Mode + Arabic/English Support
+ * Add this to: Appearance → Customize → Additional CSS
+ * Version: 2.0
+ */
+
+/* ============================================
+   LIGHT MODE VARIABLES (Default)
+   ============================================ */
+:root,
+[data-theme="light"] {
+    /* Brand Colors */
+    --neogen-primary: #1F1EFB;
+    --neogen-secondary: #0D2175;
+    --neogen-accent: #4F4EFC;
+
+    /* Backgrounds */
+    --neogen-bg: #FFFFFF;
+    --neogen-bg-alt: #F8F9FA;
+    --neogen-bg-card: #FFFFFF;
+    --neogen-header-bg: #0a0a0a;
+    --neogen-footer-bg: #0D2175;
+
+    /* Text */
+    --neogen-text: #1a1a2e;
+    --neogen-text-secondary: #4B5563;
+    --neogen-text-muted: #6B7280;
+    --neogen-text-inverse: #FFFFFF;
+
+    /* Borders */
+    --neogen-border: #E5E7EB;
+    --neogen-border-hover: #1F1EFB;
+
+    /* Status */
+    --neogen-success: #10B981;
+    --neogen-warning: #F59E0B;
+    --neogen-error: #EF4444;
+
+    /* Effects */
+    --neogen-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --neogen-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --neogen-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+    --neogen-overlay: rgba(0, 0, 0, 0.5);
+
+    /* Gradients */
+    --neogen-gradient: linear-gradient(135deg, #0D2175 0%, #1F1EFB 100%);
+    --neogen-gradient-hover: linear-gradient(135deg, #1F1EFB 0%, #4F4EFC 100%);
+}
+
+/* ============================================
+   DARK MODE VARIABLES
+   ============================================ */
+[data-theme="dark"] {
+    /* Brand Colors - Keep same */
+    --neogen-primary: #4F4EFC;
+    --neogen-secondary: #1F1EFB;
+    --neogen-accent: #7C7CFF;
+
+    /* Backgrounds - Dark */
+    --neogen-bg: #0a0a0a;
+    --neogen-bg-alt: #111111;
+    --neogen-bg-card: #1a1a1a;
+    --neogen-header-bg: #000000;
+    --neogen-footer-bg: #000000;
+
+    /* Text - Light */
+    --neogen-text: #FFFFFF;
+    --neogen-text-secondary: #D1D5DB;
+    --neogen-text-muted: #9CA3AF;
+    --neogen-text-inverse: #0a0a0a;
+
+    /* Borders - Dark */
+    --neogen-border: #2a2a2a;
+    --neogen-border-hover: #4F4EFC;
+
+    /* Effects - Stronger for dark */
+    --neogen-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    --neogen-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    --neogen-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    --neogen-overlay: rgba(0, 0, 0, 0.7);
+
+    /* Gradients */
+    --neogen-gradient: linear-gradient(135deg, #1F1EFB 0%, #4F4EFC 100%);
+}
+
+/* Auto dark mode based on system preference */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --neogen-primary: #4F4EFC;
+        --neogen-bg: #0a0a0a;
+        --neogen-bg-alt: #111111;
+        --neogen-bg-card: #1a1a1a;
+        --neogen-text: #FFFFFF;
+        --neogen-text-secondary: #D1D5DB;
+        --neogen-text-muted: #9CA3AF;
+        --neogen-border: #2a2a2a;
+    }
+}
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body {
+    font-family: 'Tajawal', 'Inter', -apple-system, sans-serif;
+    background: var(--neogen-bg);
+    color: var(--neogen-text);
+    line-height: 1.7;
+    direction: rtl;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background: var(--neogen-primary);
+    color: white;
+}
+
+/* ============================================
+   THEME & LANGUAGE TOGGLE BUTTONS
+   ============================================ */
+.neogen-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.neogen-toggle-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: var(--neogen-shadow-lg);
+    transition: all 0.3s ease;
+}
+
+/* Theme toggle */
+.theme-toggle {
+    background: var(--neogen-bg-card);
+    color: var(--neogen-text);
+    border: 2px solid var(--neogen-border);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    border-color: var(--neogen-primary);
+}
+
+/* Light mode icon (sun) */
+[data-theme="light"] .theme-toggle::before,
+:root:not([data-theme]) .theme-toggle::before {
+    content: "🌙";
+}
+
+/* Dark mode icon (moon) */
+[data-theme="dark"] .theme-toggle::before {
+    content: "☀️";
+}
+
+/* Language toggle */
+.lang-toggle {
+    background: var(--neogen-primary);
+    color: white;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.lang-toggle:hover {
+    transform: scale(1.1);
+    background: var(--neogen-accent);
+}
+
+/* ============================================
+   HEADER - ALWAYS DARK (Unifi Style)
+   ============================================ */
+header[data-id="type-1"],
+.site-header,
+#masthead,
+.ct-header {
+    background: var(--neogen-header-bg) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Sticky header with blur */
+.site-header.sticky,
+.ct-header[data-sticky="yes"] {
+    backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Header links - always white */
+header a,
+.site-header a,
+.ct-header a,
+.main-navigation a {
+    color: #FFFFFF !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+header a:hover,
+.site-header a:hover {
+    color: var(--neogen-primary) !important;
+}
+
+/* Logo */
+.site-branding img,
+.custom-logo {
+    max-height: 45px;
+    width: auto;
+    filter: brightness(1);
+}
+
+/* Cart icon */
+.ct-cart-icon,
+.cart-link,
+.cart-icon {
+    color: #FFFFFF !important;
+    position: relative;
+}
+
+.cart-count,
+.ct-cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--neogen-primary) !important;
+    color: white !important;
+    font-size: 10px;
+    font-weight: 700;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Navigation */
+.main-navigation ul li a,
+.ct-menu > li > a {
+    padding: 12px 18px;
+    font-size: 0.95rem;
+}
+
+/* Dropdown */
+.sub-menu,
+.ct-menu .sub-menu {
+    background: #111 !important;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    box-shadow: var(--neogen-shadow-xl);
+    min-width: 200px;
+}
+
+.sub-menu a {
+    padding: 12px 20px !important;
+}
+
+.sub-menu a:hover {
+    background: rgba(31, 30, 251, 0.1) !important;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.button,
+.btn,
+.wp-block-button__link,
+button[type="submit"],
+input[type="submit"],
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.ct-button,
+.elementor-button {
+    background: var(--neogen-gradient) !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 14px 28px !important;
+    font-weight: 600 !important;
+    font-family: 'Tajawal', sans-serif !important;
+    cursor: pointer;
+    transition: all 0.3s ease !important;
+    box-shadow: var(--neogen-shadow) !important;
+    text-decoration: none !important;
+}
+
+.button:hover,
+.btn:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.elementor-button:hover {
+    background: var(--neogen-gradient-hover) !important;
+    transform: translateY(-3px);
+    box-shadow: var(--neogen-shadow-lg) !important;
+}
+
+/* Outline button */
+.btn-outline,
+.button.alt,
+.woocommerce a.button.alt {
+    background: transparent !important;
+    border: 2px solid var(--neogen-primary) !important;
+    color: var(--neogen-primary) !important;
+}
+
+.btn-outline:hover {
+    background: var(--neogen-primary) !important;
+    color: white !important;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero-section,
+.elementor-section.hero,
+[data-elementor-type="wp-page"] > .elementor-section:first-child {
+    background: var(--neogen-gradient) !important;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 20px !important;
+}
+
+.hero-section h1,
+.hero-section .elementor-heading-title {
+    color: #FFFFFF !important;
+    font-size: clamp(2.5rem, 6vw, 4rem) !important;
+    font-weight: 900 !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.hero-section p,
+.hero-section .elementor-text-editor {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 1.3rem !important;
+    margin-bottom: 2.5rem !important;
+}
+
+.hero-section .btn,
+.hero-section .elementor-button {
+    margin: 0 10px 10px 0;
+}
+
+/* ============================================
+   CONTENT SECTIONS
+   ============================================ */
+section,
+.elementor-section {
+    padding: 80px 20px;
+    background: var(--neogen-bg);
+}
+
+section:nth-child(even),
+.elementor-section:nth-child(even) {
+    background: var(--neogen-bg-alt);
+}
+
+.section-title,
+h2.elementor-heading-title {
+    color: var(--neogen-text) !important;
+    font-size: 2.2rem !important;
+    font-weight: 800 !important;
+    text-align: center;
+    margin-bottom: 3rem !important;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   PRODUCT CARDS
+   ============================================ */
+.woocommerce ul.products li.product,
+.product-card,
+.ct-woo-card-inner {
+    background: var(--neogen-bg-card) !important;
+    border: 1px solid var(--neogen-border) !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    transition: all 0.3s ease !important;
+    overflow: hidden;
+}
+
+.woocommerce ul.products li.product:hover,
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--neogen-shadow-xl) !important;
+    border-color: var(--neogen-border-hover) !important;
+}
+
+/* Product image */
+.woocommerce ul.products li.product img,
+.product-card img {
+    border-radius: 12px !important;
+    transition: transform 0.4s ease;
+}
+
+.woocommerce ul.products li.product:hover img {
+    transform: scale(1.08);
+}
+
+/* Product title */
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.product-card h3 {
+    color: var(--neogen-text) !important;
+    font-size: 1.05rem !important;
+    font-weight: 600 !important;
+    margin: 15px 0 10px !important;
+    line-height: 1.4;
+}
+
+/* Product price */
+.woocommerce ul.products li.product .price,
+.product-card .price {
+    color: var(--neogen-primary) !important;
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+}
+
+/* Sale badge */
+.woocommerce span.onsale {
+    background: var(--neogen-error) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 6px 14px !important;
+    font-weight: 700 !important;
+}
+
+/* Add to cart */
+.woocommerce ul.products li.product .button {
+    width: 100% !important;
+    margin-top: 15px !important;
+    padding: 12px 20px !important;
+}
+
+/* ============================================
+   SINGLE PRODUCT
+   ============================================ */
+.single-product .product {
+    padding: 50px 0;
+}
+
+.woocommerce div.product div.images {
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--neogen-bg-alt);
+}
+
+.woocommerce div.product .product_title {
+    color: var(--neogen-text) !important;
+    font-size: 2.2rem !important;
+    font-weight: 800 !important;
+}
+
+.woocommerce div.product p.price {
+    color: var(--neogen-primary) !important;
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+}
+
+.woocommerce div.product .woocommerce-product-details__short-description {
+    color: var(--neogen-text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* Product tabs */
+.woocommerce div.product .woocommerce-tabs {
+    margin-top: 50px;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+    padding: 0 !important;
+    border-bottom: 2px solid var(--neogen-border);
+    margin-bottom: 30px;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+    background: transparent !important;
+    border: none !important;
+    margin: 0 !important;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+    color: var(--neogen-text-muted) !important;
+    padding: 15px 25px !important;
+    font-weight: 600 !important;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
+    color: var(--neogen-primary) !important;
+    border-bottom-color: var(--neogen-primary);
+}
+
+/* ============================================
+   CART & CHECKOUT
+   ============================================ */
+.woocommerce-cart-form table {
+    background: var(--neogen-bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.woocommerce-cart-form table th {
+    background: var(--neogen-bg-alt) !important;
+    color: var(--neogen-text) !important;
+    font-weight: 600;
+    padding: 18px !important;
+}
+
+.woocommerce-cart-form table td {
+    padding: 20px !important;
+    color: var(--neogen-text);
+    border-color: var(--neogen-border) !important;
+}
+
+.cart_totals {
+    background: var(--neogen-bg-card) !important;
+    border-radius: 16px !important;
+    padding: 30px !important;
+    border: 1px solid var(--neogen-border);
+}
+
+/* Checkout form */
+.woocommerce form .form-row label {
+    color: var(--neogen-text) !important;
+    font-weight: 600 !important;
+    margin-bottom: 8px;
+}
+
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea,
+.woocommerce form .form-row select {
+    background: var(--neogen-bg-card) !important;
+    border: 2px solid var(--neogen-border) !important;
+    border-radius: 10px !important;
+    padding: 14px 18px !important;
+    color: var(--neogen-text) !important;
+}
+
+.woocommerce form .form-row input:focus,
+.woocommerce form .form-row textarea:focus {
+    border-color: var(--neogen-primary) !important;
+    box-shadow: 0 0 0 4px rgba(31, 30, 251, 0.1) !important;
+}
+
+.woocommerce-checkout-review-order {
+    background: var(--neogen-bg-card) !important;
+    border-radius: 16px !important;
+    padding: 30px !important;
+    border: 1px solid var(--neogen-border);
+}
+
+#place_order {
+    width: 100% !important;
+    padding: 18px !important;
+    font-size: 1.15rem !important;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer,
+.site-footer,
+#colophon {
+    background: var(--neogen-footer-bg) !important;
+    color: #FFFFFF !important;
+    padding: 70px 20px 30px !important;
+}
+
+.site-footer h4,
+.footer-widget h4 {
+    color: var(--neogen-accent) !important;
+    font-weight: 700 !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.site-footer a {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.site-footer a:hover {
+    color: var(--neogen-primary) !important;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 50px;
+    padding-top: 30px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ============================================
+   FORMS
+   ============================================ */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+textarea,
+select {
+    background: var(--neogen-bg-card) !important;
+    border: 2px solid var(--neogen-border) !important;
+    border-radius: 10px !important;
+    padding: 14px 18px !important;
+    color: var(--neogen-text) !important;
+    font-family: 'Tajawal', sans-serif !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--neogen-primary) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 4px rgba(31, 30, 251, 0.1) !important;
+}
+
+/* ============================================
+   CATEGORY CARDS
+   ============================================ */
+.category-card {
+    background: var(--neogen-bg-card);
+    border: 1px solid var(--neogen-border);
+    border-radius: 16px;
+    padding: 35px 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--neogen-shadow-lg);
+    border-color: var(--neogen-border-hover);
+}
+
+.category-card .icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.category-card h3 {
+    color: var(--neogen-text);
+    font-weight: 700;
+    margin: 0;
+}
+
+/* ============================================
+   TRUST BADGES
+   ============================================ */
+.trust-section {
+    background: var(--neogen-bg-alt);
+    padding: 60px 20px;
+}
+
+.trust-badges {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: var(--neogen-bg-card);
+    border-radius: 12px;
+    border: 1px solid var(--neogen-border);
+}
+
+.trust-badge .icon {
+    color: var(--neogen-success);
+    font-size: 1.8rem;
+}
+
+.trust-badge span {
+    color: var(--neogen-text);
+    font-weight: 600;
+}
+
+/* ============================================
+   TESTIMONIALS
+   ============================================ */
+.testimonial-card {
+    background: var(--neogen-bg-card);
+    border-radius: 16px;
+    padding: 35px;
+    border: 1px solid var(--neogen-border);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    box-shadow: var(--neogen-shadow-lg);
+}
+
+.testimonial-card .stars {
+    color: var(--neogen-warning);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.testimonial-card .quote {
+    color: var(--neogen-text-secondary);
+    font-style: italic;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.testimonial-card .author {
+    color: var(--neogen-text);
+    font-weight: 700;
+}
+
+/* ============================================
+   COMPARISON TABLE (Unifi-style)
+   ============================================ */
+.comparison-section {
+    background: var(--neogen-bg-alt);
+    padding: 80px 20px;
+}
+
+[data-theme="dark"] .comparison-section {
+    background: #111;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--neogen-bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--neogen-border);
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 20px 25px;
+    text-align: center;
+    border-bottom: 1px solid var(--neogen-border);
+}
+
+.comparison-table th {
+    background: var(--neogen-bg-alt);
+    color: var(--neogen-text);
+    font-weight: 700;
+}
+
+.comparison-table td {
+    color: var(--neogen-text-secondary);
+}
+
+.comparison-table tr:last-child td {
+    border-bottom: none;
+}
+
+.comparison-table .check {
+    color: var(--neogen-success);
+    font-size: 1.3rem;
+}
+
+.comparison-table .x-mark {
+    color: var(--neogen-text-muted);
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+.cta-section {
+    background: var(--neogen-gradient) !important;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.cta-section h2 {
+    color: #FFFFFF !important;
+    font-size: 2.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.cta-section p {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-section .btn {
+    background: #FFFFFF !important;
+    color: var(--neogen-secondary) !important;
+}
+
+.cta-section .btn:hover {
+    background: var(--neogen-bg-alt) !important;
+    transform: translateY(-3px);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 991px) {
+    .hero-section {
+        min-height: 60vh;
+        padding: 70px 20px !important;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2rem !important;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+
+    .neogen-controls {
+        bottom: 15px;
+        left: 15px;
+    }
+
+    .neogen-toggle-btn {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 767px) {
+    .woocommerce ul.products {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+    }
+
+    .hero-section h1 {
+        font-size: 1.8rem !important;
+    }
+
+    .hero-section p {
+        font-size: 1rem !important;
+    }
+
+    .trust-badges {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .woocommerce ul.products {
+        grid-template-columns: 1fr !important;
+    }
+
+    .section-title,
+    h2.elementor-heading-title {
+        font-size: 1.6rem !important;
+    }
+}
+
+/* ============================================
+   RTL ADJUSTMENTS
+   ============================================ */
+[dir="rtl"] body {
+    text-align: right;
+}
+
+[dir="rtl"] .neogen-controls {
+    left: auto;
+    right: 20px;
+}
+
+[dir="rtl"] .sub-menu {
+    right: 0;
+    left: auto;
+}
+
+/* LTR for English */
+[lang="en"] body,
+body.lang-en {
+    direction: ltr;
+    text-align: left;
+}
+
+[lang="en"] .neogen-controls,
+body.lang-en .neogen-controls {
+    right: auto;
+    left: 20px;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade {
+    animation: fadeIn 0.5s ease;
+}
+
+.animate-slide {
+    animation: slideUp 0.6s ease;
+}
+
+/* ============================================
+   SCROLLBAR (Dark Mode)
+   ============================================ */
+[data-theme="dark"] ::-webkit-scrollbar {
+    width: 10px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: #111;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 5px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}
+
+/* ============================================
+   LOADING SKELETON
+   ============================================ */
+.skeleton {
+    background: linear-gradient(90deg, var(--neogen-bg-alt) 25%, var(--neogen-border) 50%, var(--neogen-bg-alt) 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+    border-radius: 8px;
+}
+
+@keyframes skeleton-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
