@@ -6,86 +6,33 @@
 get_header();
 ?>
 
-<div class="container" style="padding: 4rem 1rem;">
-    <div style="max-width: 800px; margin: 0 auto;">
-        <h1>سياسة الخصوصية</h1>
-        <p style="color: #64748b; margin-bottom: 2rem;">آخر تحديث: يناير 2025</p>
-
-        <div class="entry-content" style="line-height: 1.8;">
-            <h2>مقدمة</h2>
-            <p>نحن في neogen نلتزم بحماية خصوصيتك. توضح هذه السياسة كيف نجمع ونستخدم ونحمي معلوماتك الشخصية وفقاً لنظام حماية البيانات الشخصية في المملكة العربية السعودية.</p>
-
-            <hr style="margin: 2rem 0; border-color: #e2e8f0;">
-
-            <h2>المعلومات التي نجمعها</h2>
-            <h3>1. معلومات تقدمها أنت:</h3>
-            <ul>
-                <li>الاسم الكامل</li>
-                <li>رقم الجوال</li>
-                <li>البريد الإلكتروني</li>
-                <li>عنوان الشحن</li>
-                <li>معلومات الدفع (تُعالج بشكل آمن عبر بوابات الدفع)</li>
-            </ul>
-
-            <h3>2. معلومات تُجمع تلقائياً:</h3>
-            <ul>
-                <li>عنوان IP</li>
-                <li>نوع المتصفح والجهاز</li>
-                <li>صفحات المنتجات التي تزورها</li>
-                <li>وقت وتاريخ الزيارة</li>
-            </ul>
-
-            <h3>3. ملفات تعريف الارتباط (Cookies):</h3>
-            <ul>
-                <li>لتحسين تجربة التصفح</li>
-                <li>لتذكر سلة التسوق</li>
-                <li>لتحليل سلوك المستخدمين</li>
-            </ul>
-
-            <hr style="margin: 2rem 0; border-color: #e2e8f0;">
-
-            <h2>كيف نستخدم معلوماتك</h2>
-            <p>نستخدم معلوماتك للأغراض التالية فقط:</p>
-            <ul>
-                <li>معالجة وشحن طلباتك</li>
-                <li>التواصل معك بخصوص طلبك</li>
-                <li>تقديم الدعم الفني</li>
-                <li>إرسال تحديثات المنتجات والعروض (بموافقتك)</li>
-                <li>تحسين موقعنا وخدماتنا</li>
-                <li>الامتثال للمتطلبات القانونية</li>
-            </ul>
-
-            <hr style="margin: 2rem 0; border-color: #e2e8f0;">
-
-            <h2>مشاركة المعلومات</h2>
-            <p>نشارك معلوماتك مع:</p>
-            <ul>
-                <li><strong>شركات الشحن:</strong> لتوصيل طلبك (الاسم، العنوان، الجوال)</li>
-                <li><strong>بوابات الدفع:</strong> لمعالجة المدفوعات بشكل آمن</li>
-                <li><strong>مقدمي الخدمات:</strong> لتحليل الموقع وتحسينه</li>
-            </ul>
-            <p><strong>لا نبيع أو نؤجر معلوماتك الشخصية لأي طرف ثالث.</strong></p>
-
-            <hr style="margin: 2rem 0; border-color: #e2e8f0;">
-
-            <h2>حماية المعلومات</h2>
-            <p>نحمي معلوماتك من خلال:</p>
-            <ul>
-                <li>تشفير SSL لجميع البيانات المنقولة</li>
-                <li>تخزين آمن للبيانات</li>
-                <li>وصول محدود للموظفين المخولين فقط</li>
-                <li>مراجعة دورية لإجراءات الأمان</li>
-            </ul>
-
-            <div style="background: #f1f5f9; padding: 1.5rem; border-radius: 0.5rem; margin-top: 2rem;">
-                <h3>تواصل معنا</h3>
-                <p>لأي استفسار عن الخصوصية:</p>
-                <p>البريد: privacy@neogen.store<br>
-                العنوان: الرياض، المملكة العربية السعودية</p>
+<main class="ngs-page-wrap" role="main">
+    <?php while ( have_posts() ) : the_post(); ?>
+        <section class="ngs-page-hero">
+            <div class="container">
+                <h1><?php the_title(); ?></h1>
+                <p>آخر تحديث: <?php echo esc_html( get_the_modified_date( 'F Y' ) ); ?></p>
             </div>
-        </div>
-    </div>
-</div>
+        </section>
+
+        <section class="ngs-page-content-section">
+            <div class="container">
+                <?php
+                $raw_content = trim( wp_strip_all_tags( get_post_field( 'post_content', get_the_ID() ) ) );
+                if ( '' === $raw_content ) :
+                ?>
+                    <div class="ngs-editor-note">
+                        أضف نص سياسة الخصوصية المعتمد من المحرر (مطابق لمتطلبات نظام حماية البيانات الشخصية).
+                    </div>
+                <?php else : ?>
+                    <article class="ngs-entry-content ngs-legal-content">
+                        <?php the_content(); ?>
+                    </article>
+                <?php endif; ?>
+            </div>
+        </section>
+    <?php endwhile; ?>
+</main>
 
 <?php
 get_footer();

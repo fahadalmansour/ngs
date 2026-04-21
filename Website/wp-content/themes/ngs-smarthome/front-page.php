@@ -7,13 +7,6 @@ get_header();
 ?>
 
 <main class="ngs-home-page" role="main">
-    <section class="ngs-page-hero ngs-page-hero-home">
-        <div class="container">
-            <h1><?php the_title(); ?></h1>
-            <p>صفحة رئيسية مُدارة من المحرر. أضف أقسامك من أنماط NGS واستخدم الشورت كود للعناصر الديناميكية.</p>
-        </div>
-    </section>
-
     <section class="ngs-page-content-section">
         <div class="container ngs-home-content">
             <?php if ( have_posts() ) : ?>

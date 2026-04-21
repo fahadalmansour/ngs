@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Terms & Conditions
+ * Template Name: NGS Landing Page
  */
 
 get_header();
@@ -11,7 +11,11 @@ get_header();
         <section class="ngs-page-hero">
             <div class="container">
                 <h1><?php the_title(); ?></h1>
-                <p>آخر تحديث: <?php echo esc_html( get_the_modified_date( 'F Y' ) ); ?></p>
+                <?php if ( has_excerpt() ) : ?>
+                    <p><?php echo esc_html( get_the_excerpt() ); ?></p>
+                <?php else : ?>
+                    <p>صفحة هبوط مخصصة للباقات أو الأقسام. المحتوى يُدار بالكامل من المحرر.</p>
+                <?php endif; ?>
             </div>
         </section>
 
@@ -22,10 +26,10 @@ get_header();
                 if ( '' === $raw_content ) :
                 ?>
                     <div class="ngs-editor-note">
-                        أضف نص الشروط والأحكام النهائي من المحرر، بما يشمل بيانات السجل التجاري والرقم الضريبي.
+                        أضف محتوى صفحة الهبوط من المحرر. يمكنك استخدام الأنماط الجاهزة ضمن فئة <strong>NGS Drafts</strong>.
                     </div>
                 <?php else : ?>
-                    <article class="ngs-entry-content ngs-legal-content">
+                    <article class="ngs-entry-content">
                         <?php the_content(); ?>
                     </article>
                 <?php endif; ?>

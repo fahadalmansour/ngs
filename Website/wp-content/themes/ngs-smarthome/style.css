@@ -1,15 +1,15 @@
 /*
-Theme Name: neogen Smart Home
-Theme URI: https://neogen.store
-Author: neogen Team
-Author URI: https://neogen.store
-Description: Custom lightweight Arabic-first theme for neogen Smart Home & Electronics store. Unifi-inspired design with dark header and light content areas.
-Version: 2.0.0
-Text Domain: neogen-smarthome
+Theme Name: NGS Smart Home
+Theme URI: https://ngs-smarthome.sa
+Author: NGS Team
+Author URI: https://ngs-smarthome.sa
+Description: Custom lightweight Arabic-first theme for NGS Smart Home store. Optimized for WooCommerce with RTL support.
+Version: 2.1.0
+Text Domain: ngs-smarthome
 */
 
 :root {
-    /* neogen Brand Colors */
+    /* NGS Brand Colors */
     --color-primary: #1F1EFB;      /* Bright Blue - Primary CTA */
     --color-secondary: #0D2175;    /* Dark Blue - Headers/Footer */
     --color-dark: #0a0a0a;         /* Near Black - Header */

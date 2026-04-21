@@ -5,12 +5,10 @@
 
 get_header();
 
-$whatsapp_raw = (string) get_option( 'neogen_whatsapp_number', '' );
-$whatsapp_digits = preg_replace( '/\D+/', '', $whatsapp_raw );
-$has_whatsapp = strlen( $whatsapp_digits ) >= 9;
-$whatsapp_display = $has_whatsapp ? '+' . $whatsapp_digits : '+966 5X XXX XXXX';
-$whatsapp_url = $has_whatsapp
-    ? 'https://wa.me/' . $whatsapp_digits . '?text=' . rawurlencode( 'مرحباً، أحتاج مساعدة بخصوص متجر NGS' )
+$has_whatsapp = function_exists( 'ngs_has_whatsapp_number' ) ? ngs_has_whatsapp_number() : false;
+$whatsapp_display = function_exists( 'ngs_get_whatsapp_display' ) ? ngs_get_whatsapp_display() : '+966 5X XXX XXXX';
+$whatsapp_url = function_exists( 'ngs_get_whatsapp_link' )
+    ? ngs_get_whatsapp_link( 'مرحباً، أحتاج مساعدة بخصوص متجر NGS' )
     : '#';
 ?>
 
