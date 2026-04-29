@@ -1,0 +1,38 @@
+/* NeoGen Store - Custom CSS (Fixed) */
+
+/* Frosted glass overlay effect */
+.ct-frosted-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(40px) brightness(150%);
+    -webkit-backdrop-filter: blur(40px) brightness(150%);
+}
+
+/* Subscribe form styling */
+.ct-subscribe-form {
+    --theme-form-field-height: 60px;
+    --theme-form-field-padding: 0 25px;
+    --theme-form-field-background-initial-color: #000;
+    --theme-form-field-background-focus-color: rgba(0, 0, 0, 0.4);
+    --theme-form-field-border-width: 0;
+    --theme-text-color: #fff;
+    --theme-button-min-height: 60px;
+    --theme-button-background-initial-color: var(--theme-palette-color-1);
+    --theme-button-text-initial-color: #fff;
+}
+
+/* Icon boxes hover effect */
+.ct-mainbox h5,
+.ct-mainbox h6,
+.ct-mainbox p {
+    transition: color 0.2s ease;
+}
+.ct-mainbox:hover h5,
+.ct-mainbox:hover h6,
+.ct-mainbox:hover p {
+    color: var(--theme-palette-color-8) !important;
+}
+
+/* Elementor product shortcode spacing */
+.elementor-shortcode [data-products] figure {
+    margin-bottom: var(--product-element-spacing, 10px) !important;
+}
