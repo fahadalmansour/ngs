@@ -34,3 +34,8 @@ __pycache__/
 
 # Screenshots (local testing artifacts)
 screenshots/
+
+
+# Organisation buckets
+_trash/
+_backups/
