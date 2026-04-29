@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NeoGen Store — المتجر · Operator Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Major+Mono+Display&family=Rakkas&family=Reem+Kufi:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F8FAFC;
+  --bg-alt:#EEF2F6;
+  --surface:#FFFFFF;
+  --surface-2:#F1F5F9;
+  --raised:#FFFFFF;
+
+  --accent:#38BDF8;
+  --accent-soft:#BAE6FD;
+  --accent-deep:#0284C7;
+  --accent-wash:rgba(56, 189, 248, 0.06);
+
+  --signal:#22C55E;
+  --alert:#EF4444;
+  --warn:#F59E0B;
+  --indigo:#1A2B4B;
+  --indigo-deep:#0F1A2E;
+
+  --ice:#0F172A;
+  --text:#0F172A;
+  --warm:#334155;
+  --muted:#64748B;
+  --dim:#94A3B8;
+
+  --line:rgba(15, 23, 42, 0.10);
+  --line-strong:rgba(15, 23, 42, 0.24);
+  --line-warm:rgba(15, 23, 42, 0.06);
+
+  --shadow-sm:0 1px 2px rgba(15,23,42,0.04), 0 1px 1px rgba(15,23,42,0.03);
+  --shadow-md:0 4px 12px rgba(15,23,42,0.06), 0 2px 4px rgba(15,23,42,0.04);
+  --shadow-lg:0 16px 40px -16px rgba(15,23,42,0.18), 0 4px 8px rgba(15,23,42,0.04);
+  --shadow-xl:0 32px 72px -32px rgba(15,23,42,0.28), 0 8px 16px rgba(15,23,42,0.06);
+  --shadow-accent:0 12px 32px -16px rgba(56,189,248,0.45), inset 0 1px 0 rgba(255,255,255,0.32);
+  --shadow-accent-hover:0 18px 40px -18px rgba(56,189,248,0.65), inset 0 1px 0 rgba(255,255,255,0.40);
+  --shadow-focus:0 0 0 3px rgba(56, 189, 248, 0.18);
+
+  --container:1240px;
+  --radius:8px;
+  --radius-lg:14px;
+  --radius-pill:999px;
+
+  --ease:cubic-bezier(0.2, 0, 0.2, 1);
+  --ease-out:cubic-bezier(0.16, 1, 0.3, 1);
+
+  --mx:50%;
+  --my:30%;
+
+  --font-wordmark:"Chakra Petch","IBM Plex Sans",system-ui,sans-serif;
+  --font-sans:"Manrope","IBM Plex Sans",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono","JetBrains Mono",monospace;
+  --font-ultra:"Major Mono Display",monospace;
+  --font-ar-display:"Rakkas",serif;
+  --font-ar-ui:"Reem Kufi","Tajawal",system-ui,sans-serif;
+  --font-ar-body:"Tajawal","Reem Kufi",system-ui,sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:var(--font-ar-body);
+  color:var(--text);
+  line-height:1.6;
+  background:
+    radial-gradient(600px circle at var(--mx) var(--my), rgba(56,189,248,0.05), transparent 60%),
+    linear-gradient(rgba(10,10,10,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10,10,10,0.04) 1px, transparent 1px),
+    var(--bg);
+  background-size:auto, 48px 48px, 48px 48px, auto;
+  min-height:100vh;
+}
+a{color:inherit}
+img{max-width:100%;display:block}
+
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity 500ms var(--ease-out), transform 500ms var(--ease-out)}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+/* ─────── Header ─────── */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(248,250,252,0.85);
+  backdrop-filter:saturate(140%) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.site-header .bar{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;padding:14px 0;
+}
+.lockup{display:flex;align-items:center;gap:12px}
+.lockup img{height:34px;width:auto}
+.lockup .wordmark{font-family:var(--font-wordmark);font-weight:600;font-size:17px;letter-spacing:0.18em;color:var(--ice);line-height:1}
+.lockup .sep{width:1px;height:22px;background:var(--line-strong)}
+.lockup .ar-tag{font-family:var(--font-ar-display);color:var(--warm);font-size:20px;line-height:1}
+
+.nav-top{display:flex;gap:6px;align-items:center}
+.nav-top a{
+  font-family:var(--font-ar-ui);font-size:14px;font-weight:500;
+  color:var(--warm);padding:8px 12px;border-radius:var(--radius);
+  text-decoration:none;transition:background 200ms var(--ease), color 200ms var(--ease);
+}
+.nav-top a:hover, .nav-top a.active{background:var(--accent-wash);color:var(--accent-deep)}
+.nav-top a.cart{display:inline-flex;align-items:center;gap:6px}
+.nav-top .cart-badge{font-family:var(--font-mono);font-size:11px;background:var(--accent);color:#fff;border-radius:var(--radius-pill);padding:2px 7px;line-height:1}
+
+.header-cta{display:flex;gap:10px;align-items:center}
+
+/* ─────── Buttons ─────── */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-ar-ui);font-weight:600;font-size:14px;
+  padding:11px 20px;border-radius:var(--radius);
+  cursor:pointer;border:1px solid transparent;
+  transition:transform 200ms var(--ease), box-shadow 200ms var(--ease), background 200ms var(--ease), color 200ms var(--ease);
+  text-decoration:none;line-height:1;
+}
+.btn-primary{background:var(--accent);color:#FFFFFF;box-shadow:var(--shadow-accent);border-color:var(--accent-deep)}
+.btn-primary:hover{background:var(--accent-deep);box-shadow:var(--shadow-accent-hover);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--ice);border-color:var(--line-strong)}
+.btn-ghost:hover{background:var(--accent-wash);border-color:var(--accent);color:var(--accent-deep)}
+.btn .arr{font-family:var(--font-mono);font-size:14px}
+
+/* ─────── Page header ─────── */
+.page-head{padding:36px 0 18px}
+.crumb{
+  font-family:var(--font-ar-ui);font-size:12.5px;color:var(--muted);
+  display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:14px;
+}
+.crumb a{color:var(--muted);text-decoration:none;transition:color 200ms var(--ease)}
+.crumb a:hover{color:var(--accent-deep)}
+.crumb .sep{font-family:var(--font-mono);color:var(--dim)}
+.crumb .here{color:var(--ice)}
+
+.page-h1-row{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:6px}
+.page-h1{font-family:var(--font-ar-display);font-weight:400;font-size:clamp(40px,5vw,64px);line-height:1.05;color:var(--ice);margin:0;text-wrap:balance}
+.page-sub{font-family:var(--font-mono);font-size:12px;color:var(--accent-deep);letter-spacing:0.08em;text-transform:uppercase;margin:0}
+.count-chip{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-ar-ui);font-size:12.5px;color:var(--warm);
+  background:var(--surface);border:1px solid var(--line);
+  padding:6px 12px;border-radius:var(--radius-pill);
+}
+.count-chip .n{font-family:var(--font-mono);color:var(--ice)}
+
+/* ─────── Sort row ─────── */
+.sort-row{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  margin:18px 0 22px;padding:12px 14px;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-sm);flex-wrap:wrap;
+}
+.sort-row label{font-family:var(--font-ar-ui);font-size:13px;color:var(--warm)}
+.sort-row select{
+  font-family:var(--font-ar-ui);font-size:13px;color:var(--ice);
+  background:var(--surface-2);border:1px solid var(--line);
+  padding:8px 12px;border-radius:var(--radius);min-width:180px;
+}
+.sort-row select:focus{outline:none;box-shadow:var(--shadow-focus);border-color:var(--accent)}
+.view-toggle{display:inline-flex;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface-2)}
+.view-toggle button{
+  font-family:var(--font-mono);font-size:11px;letter-spacing:0.08em;
+  background:transparent;border:0;padding:8px 12px;color:var(--muted);cursor:pointer;
+  transition:background 200ms var(--ease), color 200ms var(--ease);
+}
+.view-toggle button.on{background:var(--surface);color:var(--ice)}
+
+/* ─────── Layout ─────── */
+.shop-layout{display:grid;grid-template-columns:280px 1fr;gap:28px;align-items:start;padding-bottom:48px}
+
+/* ─────── Filter sidebar ─────── */
+.filters{
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);
+  padding:18px;position:sticky;top:84px;
+}
+.filters h3{font-family:var(--font-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin:0 0 12px;font-weight:500}
+.fgroup{border-bottom:1px solid var(--line-warm);padding:14px 0}
+.fgroup:first-of-type{padding-top:0}
+.fgroup:last-of-type{border-bottom:0;padding-bottom:0}
+.fgroup summary{
+  list-style:none;cursor:pointer;
+  font-family:var(--font-ar-ui);font-weight:600;font-size:14.5px;
+  color:var(--ice);display:flex;justify-content:space-between;align-items:center;
+}
+.fgroup summary::-webkit-details-marker{display:none}
+.fgroup summary::after{content:"−";font-family:var(--font-mono);color:var(--muted);font-size:16px}
+.fgroup:not([open]) summary::after{content:"+"}
+.fitems{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.fitem{display:flex;align-items:center;gap:8px;font-family:var(--font-ar-ui);font-size:13.5px;color:var(--warm);cursor:pointer}
+.fitem input{accent-color:var(--accent);width:14px;height:14px}
+.fitem .ct{margin-inline-start:auto;font-family:var(--font-mono);color:var(--muted);font-size:11.5px}
+.range-input{margin-top:12px;padding:10px 4px}
+.range-input input[type=range]{width:100%;accent-color:var(--accent)}
+.range-vals{display:flex;justify-content:space-between;margin-top:8px;font-family:var(--font-mono);font-size:11.5px;color:var(--warm)}
+.zero-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;padding-top:14px;border-top:1px dashed var(--line-warm)}
+.fpill{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--font-ar-ui);font-size:11.5px;color:var(--accent-deep);
+  background:var(--accent-wash);border:1px solid var(--accent-soft);
+  padding:4px 9px;border-radius:var(--radius-pill);cursor:pointer;
+}
+.fpill .x{font-family:var(--font-mono);color:var(--accent-deep)}
+
+/* ─────── Product grid ─────── */
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.pick{
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:box-shadow 200ms var(--ease), transform 200ms var(--ease);
+}
+.pick:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.pick-media{
+  position:relative;aspect-ratio:16/11;
+  background:
+    radial-gradient(120% 80% at 30% 20%, rgba(56,189,248,0.18), transparent 55%),
+    linear-gradient(180deg, var(--surface-2) 0%, var(--bg-alt) 100%);
+  border-bottom:1px solid var(--line-warm);overflow:hidden;
+}
+.pick-media::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(15,23,42,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,23,42,0.05) 1px, transparent 1px);
+  background-size:24px 24px;opacity:0.6;
+}
+.sku-pill{
+  display:inline-flex;align-items:center;
+  font-family:var(--font-mono);font-size:10.5px;font-weight:500;
+  color:var(--ice);background:var(--surface-2);
+  padding:4px 9px;border:1px solid var(--line);
+  border-radius:var(--radius-pill);letter-spacing:0.04em;
+}
+.pick-media .sku{position:absolute;top:10px;inset-inline-start:10px;z-index:2}
+.pick-media .stock{
+  position:absolute;top:10px;inset-inline-end:10px;z-index:2;
+  display:inline-flex;align-items:center;gap:6px;
+  padding:4px 9px;border-radius:var(--radius-pill);
+  background:var(--surface);border:1px solid var(--line);
+  font-family:var(--font-ar-ui);font-size:11px;color:var(--ice);
+  box-shadow:var(--shadow-sm);
+}
+.pick-media .stock .led{width:6px;height:6px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 3px rgba(34,197,94,0.18)}
+.pick-media .stock.low .led{background:var(--warn);box-shadow:0 0 0 3px rgba(245,158,11,0.18)}
+.pick-media .stock.out .led{background:var(--alert);box-shadow:0 0 0 3px rgba(239,68,68,0.18)}
+.pick-media .stock.new .led{background:var(--accent);box-shadow:0 0 0 3px var(--accent-wash)}
+.pick-media .ghost-mark{position:absolute;inset:0;display:grid;place-items:center;opacity:0.55;z-index:1}
+.pick-media .ghost-mark img{width:32%;max-width:110px;filter:drop-shadow(0 6px 16px rgba(2,132,199,0.18))}
+.pick-body{padding:13px 14px;display:flex;flex-direction:column;gap:10px}
+.pick-title{font-family:var(--font-ar-ui);font-weight:600;font-size:15px;color:var(--ice);margin:0;line-height:1.35;min-height:2.7em}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chip-spec{
+  display:inline-flex;align-items:center;
+  font-family:var(--font-ar-ui);font-size:11px;
+  color:var(--warm);background:var(--surface-2);
+  padding:3px 8px;border:1px solid var(--line-warm);
+  border-radius:var(--radius-pill);
+}
+.chip-spec .v{font-family:var(--font-mono);color:var(--ice);margin-inline-start:3px}
+.price-row{
+  display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+  border-top:1px dashed var(--line-warm);padding-top:10px;
+}
+.price-stack .amt{font-family:var(--font-mono);font-size:19px;font-weight:600;color:var(--ice);letter-spacing:-0.01em}
+.price-stack .unit{font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-inline-start:3px}
+.price-stack .vat{display:block;font-family:var(--font-ar-ui);font-size:10.5px;color:var(--muted);margin-top:2px}
+.btn-add{width:100%;justify-content:center;padding:10px 16px;font-size:13px}
+.btn-add[disabled]{background:var(--surface-2);color:var(--muted);border-color:var(--line);box-shadow:none;cursor:not-allowed}
+.btn-add[disabled]:hover{background:var(--surface-2);transform:none}
+
+/* ─────── Pagination ─────── */
+.pager{display:flex;justify-content:center;align-items:center;gap:6px;margin:32px 0 12px;flex-wrap:wrap}
+.pager a, .pager span{
+  font-family:var(--font-mono);font-size:13px;color:var(--warm);
+  background:var(--surface);border:1px solid var(--line);
+  padding:8px 12px;border-radius:var(--radius);
+  text-decoration:none;min-width:40px;text-align:center;
+  transition:background 200ms var(--ease), color 200ms var(--ease), border-color 200ms var(--ease);
+}
+.pager a:hover{background:var(--accent-wash);color:var(--accent-deep);border-color:var(--accent-soft)}
+.pager .here{background:var(--accent);color:#fff;border-color:var(--accent-deep)}
+.pager .arrow{font-family:var(--font-ar-ui)}
+
+/* ─────── Footer ─────── */
+.site-footer{
+  margin-top:48px;border-top:1px solid var(--line);
+  background:var(--surface-2);
+  padding:48px 0 24px;
+}
+.footer-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+.footer-col h4{font-family:var(--font-mono);font-size:11px;color:var(--muted);letter-spacing:0.16em;text-transform:uppercase;margin:0 0 14px;font-weight:500}
+.footer-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.footer-col a{font-family:var(--font-ar-ui);font-size:14px;color:var(--warm);text-decoration:none;transition:color 200ms var(--ease)}
+.footer-col a:hover{color:var(--accent-deep)}
+.footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.footer-brand img{height:32px}
+.footer-brand .wm{font-family:var(--font-wordmark);font-weight:600;font-size:15px;letter-spacing:0.18em;color:var(--ice)}
+.footer-blurb{font-family:var(--font-ar-body);font-size:13.5px;color:var(--warm);line-height:1.7;margin:0;max-width:36ch}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  margin-top:36px;padding-top:18px;border-top:1px solid var(--line);
+  font-family:var(--font-mono);font-size:11px;color:var(--muted);letter-spacing:0.06em;flex-wrap:wrap;
+}
+.pay-row{display:flex;gap:8px;flex-wrap:wrap}
+.pay{font-family:var(--font-mono);font-size:11px;color:var(--warm);padding:5px 10px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);letter-spacing:0.06em}
+
+/* ─────── Responsive ─────── */
+@media (max-width:1080px){
+  .products{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:920px){
+  .shop-layout{grid-template-columns:1fr}
+  .filters{position:static}
+  .products{grid-template-columns:repeat(2,1fr)}
+  .nav-top{display:none}
+  .footer-cols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .products{grid-template-columns:1fr}
+  .footer-cols{grid-template-columns:1fr}
+  .header-cta .btn-ghost{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <div class="lockup">
+      <img src="../../ng-mark.svg" onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'" alt="NeoGen mark">
+      <span class="wordmark">NEO·GEN&nbsp;STORE</span>
+      <span class="sep" aria-hidden="true"></span>
+      <span class="ar-tag">جيل التقنية القادم</span>
+    </div>
+    <nav class="nav-top" aria-label="القائمة الرئيسية">
+      <a href="homepage.html">الرئيسية</a>
+      <a href="shop.html" class="active">المتجر</a>
+      <a href="homepage.html#ng-cat">الفئات</a>
+      <a href="homepage.html#ng-service">خدمة التنفيذ</a>
+      <a href="contact.html">تواصل</a>
+      <a href="#" class="cart">السلة <span class="cart-badge" dir="ltr">3</span></a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-ghost" href="homepage.html#ng-service">ابنِ جهازك</a>
+      <a class="btn btn-primary" href="shop.html">تصفح المتجر <span class="arr" aria-hidden="true">←</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- Page header -->
+<section class="wrap page-head reveal">
+  <div class="crumb">
+    <a href="homepage.html">الرئيسية</a>
+    <span class="sep">/</span>
+    <span class="here">المتجر</span>
+  </div>
+  <div class="page-h1-row">
+    <div>
+      <p class="page-sub">CATALOGUE</p>
+      <h1 class="page-h1">المتجر.</h1>
+    </div>
+    <span class="count-chip">عرض <span class="n" dir="ltr">1–12</span> من <span class="n" dir="ltr">48</span> منتج</span>
+  </div>
+
+  <div class="sort-row">
+    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+      <label for="sort">الترتيب</label>
+      <select id="sort">
+        <option>الأحدث</option>
+        <option>الأكثر مبيعاً</option>
+        <option>السعر تصاعدي</option>
+        <option>السعر تنازلي</option>
+      </select>
+    </div>
+    <div class="view-toggle" role="tablist" aria-label="عرض">
+      <button class="on" type="button">شبكة</button>
+      <button type="button">قائمة</button>
+    </div>
+  </div>
+</section>
+
+<!-- Two-column layout -->
+<div class="wrap shop-layout">
+
+  <!-- Filters -->
+  <aside class="filters reveal" aria-label="عوامل التصفية">
+    <h3>عوامل التصفية</h3>
+
+    <details class="fgroup" open>
+      <summary>الفئة</summary>
+      <div class="fitems">
+        <label class="fitem"><input type="checkbox" checked> شبكات واتصالات <span class="ct" dir="ltr">37</span></label>
+        <label class="fitem"><input type="checkbox"> أتمتة المنزل الذكي <span class="ct" dir="ltr">28</span></label>
+        <label class="fitem"><input type="checkbox"> ألعاب وإكسسوارات <span class="ct" dir="ltr">22</span></label>
+        <label class="fitem"><input type="checkbox"> هوم لاب <span class="ct" dir="ltr">19</span></label>
+        <label class="fitem"><input type="checkbox"> تخزين <span class="ct" dir="ltr">31</span></label>
+      </div>
+    </details>
+
+    <details class="fgroup" open>
+      <summary>العلامة</summary>
+      <div class="fitems">
+        <label class="fitem"><input type="checkbox"> Aqara <span class="ct" dir="ltr">14</span></label>
+        <label class="fitem"><input type="checkbox"> Shelly <span class="ct" dir="ltr">9</span></label>
+        <label class="fitem"><input type="checkbox"> Home Assistant <span class="ct" dir="ltr">5</span></label>
+        <label class="fitem"><input type="checkbox" checked> MikroTik <span class="ct" dir="ltr">11</span></label>
+        <label class="fitem"><input type="checkbox"> Ubiquiti <span class="ct" dir="ltr">8</span></label>
+        <label class="fitem"><input type="checkbox"> Synology <span class="ct" dir="ltr">6</span></label>
+        <label class="fitem"><input type="checkbox"> TP-Link <span class="ct" dir="ltr">10</span></label>
+      </div>
+    </details>
+
+    <details class="fgroup" open>
+      <summary>التوفّر</summary>
+      <div class="fitems">
+        <label class="fitem"><input type="checkbox" checked> متوفّر <span class="ct" dir="ltr">38</span></label>
+        <label class="fitem"><input type="checkbox"> مخزون منخفض <span class="ct" dir="ltr">7</span></label>
+        <label class="fitem"><input type="checkbox"> نفد <span class="ct" dir="ltr">3</span></label>
+      </div>
+    </details>
+
+    <details class="fgroup" open>
+      <summary>السعر</summary>
+      <div class="range-input">
+        <input type="range" min="0" max="10000" value="3500">
+        <div class="range-vals"><span dir="ltr">0 SAR</span><span dir="ltr">3,500 SAR</span><span dir="ltr">10,000 SAR</span></div>
+      </div>
+    </details>
+
+    <div class="zero-row">
+      <span class="fpill">شبكات واتصالات <span class="x">×</span></span>
+      <span class="fpill">MikroTik <span class="x">×</span></span>
+      <span class="fpill">متوفّر <span class="x">×</span></span>
+    </div>
+  </aside>
+
+  <!-- Product grid -->
+  <section class="products reveal" aria-label="قائمة المنتجات">
+
+    <article class="pick">
+      <div class="pick-media">
+        <span class="sku-pill sku" dir="ltr">SKU NG-MK-RB5009</span>
+        <span class="stock"><span class="led"></span>متوفّر · <span dir="ltr" style="font-family:var(--font-mono);margin-inline-start:2px">8</span></span>
+        <div class="ghost-mark"><img src="../../ng-mark.svg" onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'" alt=""></div>
+      </div>
+      <div class="pick-body">
+        <h3 class="pick-title">راوتر MikroTik RB5009UG+S+IN</h3>
+        <div class="chips">
+          <span class="chip-spec">منفذ <span class="v" dir="ltr">7×2.5G</span></span>
+          <span class="chip-spec">SFP+ <span class="v" dir="ltr">10G</span></span>
+          <span class="chip-spec">معالج <span class="v" dir="ltr">ARM 4-core</span></span>
+        </div>
+        <div class="price-row">
+          <div class="price-stack"><span class="amt" dir="ltr">1,199</span><span class="unit" dir="ltr">SAR</span><span class="vat">شامل الضريبة · شحن 2-5 أيام</span></div>
+        </div>
+        <button class="btn btn-primary btn-add" type="button">أضف للسلة <span class="arr" aria-hidden="true">←</span></button>
+      </div>
+    </article>
+
+    <article class="pick">
+      <div class="pick-media">
+        <span class="sku-pill sku" dir="ltr">SKU NG-UBQ-U6L</span>
+        <span class="stock"><span class="led"></span>متوفّر · <span dir="ltr" style="font-family:var(--font-mono);margin-inline-start:2px">9</span></span>
+        <div class="ghost-mark"><img src="../../ng-mark.svg" onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'" alt=""></div>
+      </div>
+      <div class="pick-body">
+        <h3 class="pick-title">نقطة وصول Ubiquiti U6 LR</h3>
+        <div class="chips">
+          <span class="chip-spec">معيار <span class="v" dir="ltr">Wi-Fi 6</span></span>
+          <span class="chip-spec">سرعة <span class="v" dir="ltr">3.0 Gbps</span></span>
+          <span class="chip-spec">PoE+ <span class="v" dir="ltr">802.3at</span></span>
+        </div>
+        <div class="price-row">
+          <div class="price-stack"><span class="amt" dir="ltr">749</span><span class="unit" dir="ltr">SAR</span><span class="vat">شامل الضريبة · شحن 2-5 أيام</span></div>
+        </div>
+        <button class="btn btn-primary btn-add" type="button">أضف للسلة <span class="arr" aria-hidden="true">←</span></button>
+      </div>
+    </article>
+
+    <article class="pick">
+      <div class="pick-media">
+        <span class="sku-pill sku" dir="ltr">SKU NG-AQR-M2</span>
+        <span class="stock low"><span class="led"></span>مخزون منخفض · <span dir="ltr" style="font-family:var(--font-mono);margin-inline-start:2px">3</span></span>
+        <div class="ghost-mark"><img src="../../ng-mark.svg" onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'" alt=""></div>
+      </div>
+      <div class="pick-body">
+        <h3 class="pick-title">بوابة Aqara M2 Hub</h3>
+        <div class="chips">
+          <span class="chip-spec">بروتوكول <span class="v" dir="ltr">Zigbee 3.0</span></span>
+          <span class="chip-spec">Matter <span class="v" dir="ltr">جسر</span></span>
+          <span class="chip-spec">شبكة <span class="v" dir="ltr">Ethernet</span></span>
+        </div>
+        <div class="price-row">
+          <div class="price-stack"><span class="amt" dir="ltr">449</span><span class="unit" dir="ltr">SAR</span><span class="vat">شامل الضريبة · شحن 2-5 أيام</span></div>
+        </div>
+        <button class="btn btn-primary btn-add" type="button">أضف للسلة <span class="arr" aria-hidden="true">←</span></button>
+      </div>
+    </article>
+
+    <article class="pick">
+      <div class="pick-media">
+        <span class="sku-pill sku" dir="ltr">SKU NG-SHL-PRO3</span>
+        <span class="stock"><span class="led"></span>متوفّر · <span dir="ltr" style="font-family:var(--font-mono);margin-inline-start:2px">11</span></span>
+        <div class="ghost-mark"><img src="../../ng-mark.svg" onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'" alt=""></div>
+      </div>
+      <div class="pick-body">
+        <h3 class="pick-title">محول Shelly Pro 3 EM</h3>
+        <div class="chips">
+          <span class="chip-spec">قياس <span class="v" dir="ltr">3-Phase</span></span>
+          <span class="chip-spec">تيار <span class="v" dir="ltr">120A</span></span>
+          <span class="chip-spec">DIN <span class="v" dir="ltr">Rail</span></span>
+        </div>
+        <div class="price-row">
+          <div class="price-stack"><span class="amt" dir="ltr">999</span><span class="unit" dir="ltr">SAR</span><span class="vat">شامل الضريبة · شحن 2-5 أيام</span></div>
+        </div>
+        <button class="btn btn-primary btn-add" type="button">أضف للسلة <span class="arr" aria-hidden="true">←</span></button>
+      </div>
+    </article>
+
+    <article class="pick">
+      <div class="pick-media">
+        <span class="sku-pill sku" dir="ltr">SKU NG-SYN-DS923</span>
+        <span class="stock"><span class="led"></span>متوفّر · <span dir="ltr" style="font-family:var(--font-mono);margin-inline-start:2px">4</span></span>
+        <div class="ghost-mark"><img src="../../ng-mark.svg" onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'" alt=""></div>
+      </div>
+      <div class="pick-body">
+        <h3 class="pick-title">NAS Synology DS923+</h3>
+        <div class="chips">
+          <span class="chip-spec">خانات <span class="v" dir="ltr">4-Bay</span></span>
+          <span class="chip-spec">ذاكرة <span class="v" dir="ltr">4 GB ECC</span></span>
+          <span class="chip-spec">منفذ <span class="v" dir="ltr">2× 1GbE</span></span>
+        </div>
+        <div class="price-row">
+          <div class="price-stack"><span class="amt" dir="ltr">3,199</span><span class="unit" dir="ltr">SAR</span><span class="vat">شامل الضريبة · شحن 2-5 أيام</span></div>
+        </div>
+        <button class="btn btn-primary btn-add" type="button">أضف للسلة <span class="arr" aria-hidden="true">←</span></button>
+      </div>
+    </article>
+
+    <article class="pick">
+      <div class="pick-media">
+        <span class="sku-pill sku" dir="ltr">SKU NG-LG-G27</span>
+        <span class="stock low"><span class="led"></span>مخزون منخفض · <span dir="ltr" style="font-family:var(--font-mono);margin-inline-start:2px">2</span></span>
+        <div class="ghost-mark"><img src="../../ng-mark.svg" onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'" alt=""></div>
+      </div>
+      <div class="pick-body">
+        <h3 class="pick-title">شاشة LG UltraGear 27GP850</h3>
+        <div class="chips">
+          <span class="chip-spec">حجم <span class="v" dir="ltr">27"</span></span>
+          <span class="chip-spec">تحديث <span class="v" dir="ltr">180Hz</span></span>
+          <span class="chip-spec">دقة <span class="v" dir="ltr">QHD</span></span>
+        </div>
+        <div class="price-row">
+          <div class="price-stack"><span class="amt" dir="ltr">1,899</span><span class="unit" dir="ltr">SAR</span><span class="vat">شامل الضريبة · شحن 2-5 أيام</span></div>
+        </div>
+        <button class="btn btn-primary btn-add" type="button">أضف للسلة <span class="arr" aria-hidden="true">←</span></button>
+      </div>
+    </article>
+
+    <article class="pick">
+      <div class="pick-media">
+        <span class="sku-pill sku" dir="ltr">SKU NG-TPL-SX3008F</span>
+        <span class="stock"><span class="led"></span>متوفّر · <span dir="ltr" style="font-family:var(--font-mono);margin-inline-start:2px">6</span></span>
+        <div class="ghost-mark"><img src="../../ng-mark.svg" onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'" alt=""></div>
+      </div>
+      <div class="pick-body">
+        <h3 class="pick-title">مفتاح TP-Link Omada SX3008F</h3>
+        <div class="chips">
+          <span class="chip-spec">منفذ <span class="v" dir="ltr">8× SFP+</span></span>
+          <span class="chip-spec">سرعة <span class="v" dir="ltr">10G</span></span>
+          <span class="chip-spec">إدارة <span class="v" dir="ltr">L2+</span></span>
+        </div>
+        <div class="price-row">
+          <div class="price-stack"><span class="amt" dir="ltr">1,599</span><span class="unit" dir="ltr">SAR</span><span class="vat">شامل الضريبة · شحن 2-5 أيام</span></div>
+        </div>
+        <button class="btn btn-primary btn-add" type="button">أضف للسلة <span class="arr" aria-hidden="true">←</span></button>
+      </div>
+    </article>
+
+    <article class="pick">
+      <div class="pick-media">
+        <span class="sku-pill sku" dir="ltr">SKU NG-AQR-T1</span>
+        <span class="stock new"><span class="led"></span>جديد</span>
+        <div class="ghost-mark"><img src="../../ng-mark.svg" onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'" alt=""></div>
+      </div>
+      <div class="pick-body">
+        <h3 class="pick-title">قابس Aqara T1 Smart Plug</h3>
+        <div class="chips">
+          <span class="chip-spec">قياس <span class="v" dir="ltr">طاقة</span></span>
+          <span class="chip-spec">Zigbee <span class="v" dir="ltr">3.0</span></span>
+          <span class="chip-spec">حمل <span class="v" dir="ltr">16A</span></span>
+        </div>
+        <div class="price-row">
+          <div class="price-stack"><span class="amt" dir="ltr">89</span><span class="unit" dir="ltr">SAR</span><span class="vat">شامل الضريبة · شحن 2-5 أيام</span></div>
+        </div>
+        <button class="btn btn-primary btn-add" type="button">أضف للسلة <span class="arr" aria-hidden="true">←</span></button>
+      </div>
+    </article>
+
+    <article class="pick">
+      <div class="pick-media">
+        <span class="sku-pill sku" dir="ltr">SKU NG-WD-SN700</span>
+        <span class="stock"><span class="led"></span>متوفّر · <span dir="ltr" style="font-family:var(--font-mono);margin-inline-start:2px">15</span></span>
+        <div class="ghost-mark"><img src="../../ng-mark.svg" onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'" alt=""></div>
+      </div>
+      <div class="pick-body">
+        <h3 class="pick-title">قرص WD Red SN700 1TB</h3>
+        <div class="chips">
+          <span class="chip-spec">واجهة <span class="v" dir="ltr">NVMe</span></span>
+          <span class="chip-spec">تحمّل <span class="v" dir="ltr">2000 TBW</span></span>
+          <span class="chip-spec">قراءة <span class="v" dir="ltr">3,430 MB/s</span></span>
+        </div>
+        <div class="price-row">
+          <div class="price-stack"><span class="amt" dir="ltr">549</span><span class="unit" dir="ltr">SAR</span><span class="vat">شامل الضريبة · شحن 2-5 أيام</span></div>
+        </div>
+        <button class="btn btn-primary btn-add" type="button">أضف للسلة <span class="arr" aria-hidden="true">←</span></button>
+      </div>
+    </article>
+
+    <article class="pick">
+      <div class="pick-media">
+        <span class="sku-pill sku" dir="ltr">SKU NG-LG-YETIX</span>
+        <span class="stock out"><span class="led"></span>نفد</span>
+        <div class="ghost-mark"><img src="../../ng-mark.svg" onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'" alt=""></div>
+      </div>
+      <div class="pick-body">
+        <h3 class="pick-title">ميكروفون Logitech Yeti X</h3>
+        <div class="chips">
+          <span class="chip-spec">نوع <span class="v" dir="ltr">Condenser</span></span>
+          <span class="chip-spec">USB <span class="v" dir="ltr">Type-C</span></span>
+          <span class="chip-spec">عيّنة <span class="v" dir="ltr">48kHz</span></span>
+        </div>
+        <div class="price-row">
+          <div class="price-stack"><span class="amt" dir="ltr">779</span><span class="unit" dir="ltr">SAR</span><span class="vat">شامل الضريبة · شحن 2-5 أيام</span></div>
+        </div>
+        <button class="btn btn-primary btn-add" type="button" disabled>غير متوفّر حالياً</button>
+      </div>
+    </article>
+
+    <article class="pick">
+      <div class="pick-media">
+        <span class="sku-pill sku" dir="ltr">SKU NG-OCS-Q3</span>
+        <span class="stock"><span class="led"></span>متوفّر · <span dir="ltr" style="font-family:var(--font-mono);margin-inline-start:2px">5</span></span>
+        <div class="ghost-mark"><img src="../../ng-mark.svg" onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'" alt=""></div>
+      </div>
+      <div class="pick-body">
+        <h3 class="pick-title">نظارة VR Oculus Quest 3</h3>
+        <div class="chips">
+          <span class="chip-spec">سعة <span class="v" dir="ltr">128 GB</span></span>
+          <span class="chip-spec">دقة <span class="v" dir="ltr">2064×2208</span></span>
+          <span class="chip-spec">معالج <span class="v" dir="ltr">XR2 Gen 2</span></span>
+        </div>
+        <div class="price-row">
+          <div class="price-stack"><span class="amt" dir="ltr">2,499</span><span class="unit" dir="ltr">SAR</span><span class="vat">شامل الضريبة · شحن 2-5 أيام</span></div>
+        </div>
+        <button class="btn btn-primary btn-add" type="button">أضف للسلة <span class="arr" aria-hidden="true">←</span></button>
+      </div>
+    </article>
+
+    <article class="pick">
+      <div class="pick-media">
+        <span class="sku-pill sku" dir="ltr">SKU NG-HL-RACK12</span>
+        <span class="stock"><span class="led"></span>متوفّر · <span dir="ltr" style="font-family:var(--font-mono);margin-inline-start:2px">3</span></span>
+        <div class="ghost-mark"><img src="../../ng-mark.svg" onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'" alt=""></div>
+      </div>
+      <div class="pick-body">
+        <h3 class="pick-title">هوم لاب رف 12U</h3>
+        <div class="chips">
+          <span class="chip-spec">ارتفاع <span class="v" dir="ltr">12U</span></span>
+          <span class="chip-spec">عمق <span class="v" dir="ltr">600mm</span></span>
+          <span class="chip-spec">حمل <span class="v" dir="ltr">80kg</span></span>
+        </div>
+        <div class="price-row">
+          <div class="price-stack"><span class="amt" dir="ltr">2,199</span><span class="unit" dir="ltr">SAR</span><span class="vat">شامل الضريبة · شحن 2-5 أيام</span></div>
+        </div>
+        <button class="btn btn-primary btn-add" type="button">أضف للسلة <span class="arr" aria-hidden="true">←</span></button>
+      </div>
+    </article>
+
+    <!-- Pagination spans full width via grid-column -->
+    <nav class="pager" style="grid-column:1 / -1" aria-label="ترقيم الصفحات">
+      <a href="#" class="arrow">السابق</a>
+      <span class="here">1</span>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#" class="arrow">التالي</a>
+    </nav>
+
+  </section>
+</div>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <img src="../../ng-mark.svg" onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'" alt="NeoGen mark">
+          <span class="wm">NEO·GEN&nbsp;STORE</span>
+        </div>
+        <p class="footer-blurb">جيل التقنية القادم. متجر تقني سعودي معتمد لمحترفي الشبكات، الهوم لاب، البيوت الذكية، والألعاب.</p>
+      </div>
+      <div class="footer-col">
+        <h4>الفئات</h4>
+        <ul>
+          <li><a href="shop.html?cat=networking">شبكات واتصالات</a></li>
+          <li><a href="shop.html?cat=smart-home">أتمتة المنزل الذكي</a></li>
+          <li><a href="shop.html?cat=gaming">ألعاب وإكسسوارات</a></li>
+          <li><a href="shop.html?cat=homelab">هوم لاب</a></li>
+          <li><a href="shop.html?cat=storage">تخزين</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>العميل</h4>
+        <ul>
+          <li><a href="#">حسابي</a></li>
+          <li><a href="#">طلباتي</a></li>
+          <li><a href="#">سياسة الإرجاع — 14 يوم</a></li>
+          <li><a href="#">سياسة الشحن — 2-5 أيام</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>الشركة</h4>
+        <ul>
+          <li><a href="about.html">من نحن</a></li>
+          <li><a href="contact.html">تواصل</a></li>
+          <li><a href="https://wa.me/" target="_blank" rel="noopener">واتساب</a></li>
+          <li><a href="homepage.html#ng-service">مكتب الخدمة</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span dir="ltr">CR 7053130576 · VAT 15% · © 2026 NeoGen Store</span>
+      <div class="pay-row">
+        <span class="pay">Mada</span>
+        <span class="pay">Visa</span>
+        <span class="pay">Mastercard</span>
+        <span class="pay">Apple Pay</span>
+        <span class="pay">STC Pay</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var root = document.documentElement;
+    window.addEventListener('mousemove', function(e){
+      root.style.setProperty('--mx', e.clientX + 'px');
+      root.style.setProperty('--my', (e.clientY + window.scrollY) + 'px');
+    }, {passive:true});
+  })();
+  (function(){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}
+      });
+    },{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  })();
+</script>
+</body>
+</html>

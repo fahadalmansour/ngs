@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NeoGen Store — Style Tile · Saudi Linen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rakkas&family=Reem+Kufi:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&family=Chakra+Petch:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* === NeoGen Brand Tokens v2.0 (R6 Sky + Cool White) — linen warm override === */
+    --bg: #F7F5F1;            /* linen warm override */
+    --bg-alt: #EEEAE3;        /* linen warm override */
+    --surface: #FFFFFF;
+    --surface-2: #F1F5F9;
+    --raised: #FFFFFF;
+
+    /* Accent (Sky Blue) */
+    --accent: #38BDF8;
+    --accent-soft: #BAE6FD;
+    --accent-deep: #0284C7;
+    --accent-wash: rgba(56, 189, 248, 0.06);
+
+    /* Semantic */
+    --signal: #22C55E;
+    --alert: #EF4444;
+    --warn: #F59E0B;
+    --indigo: #1A2B4B;
+    --indigo-deep: #0F1A2E;
+
+    /* Text */
+    --ice: #0F172A;
+    --text: #0F172A;
+    --warm: #334155;
+    --muted: #64748B;
+    --dim: #94A3B8;
+
+    /* Borders */
+    --line: rgba(15, 23, 42, 0.10);
+    --line-strong: rgba(15, 23, 42, 0.24);
+    --line-warm: rgba(15, 23, 42, 0.06);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(15,23,42,0.04), 0 1px 1px rgba(15,23,42,0.03);
+    --shadow-md: 0 4px 12px rgba(15,23,42,0.06), 0 2px 4px rgba(15,23,42,0.04);
+    --shadow-lg: 0 16px 40px -16px rgba(15,23,42,0.18), 0 4px 8px rgba(15,23,42,0.04);
+    --shadow-xl: 0 32px 72px -32px rgba(15,23,42,0.28), 0 8px 16px rgba(15,23,42,0.06);
+    --shadow-accent: 0 12px 32px -16px rgba(56,189,248,0.45), inset 0 1px 0 rgba(255,255,255,0.32);
+    --shadow-accent-hover: 0 18px 40px -18px rgba(56,189,248,0.65), inset 0 1px 0 rgba(255,255,255,0.40);
+    --shadow-focus: 0 0 0 3px rgba(56, 189, 248, 0.18);
+
+    /* Layout */
+    --container: 1240px;
+    --radius: 8px;
+    --radius-lg: 14px;
+    --radius-pill: 999px;
+
+    /* Motion */
+    --ease: cubic-bezier(0.2, 0, 0.2, 1);
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Fonts */
+    --font-wordmark: 'Chakra Petch', 'IBM Plex Sans', system-ui;
+    --font-sans: 'Manrope', 'IBM Plex Sans', system-ui;
+    --font-mono: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+    --font-ar-display: 'Rakkas', serif;
+    --font-ar-ui: 'Reem Kufi', 'Tajawal', system-ui;
+    --font-ar-body: 'Tajawal', 'Reem Kufi', system-ui;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-ar-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100vh;
+    padding: 64px 32px;
+  }
+
+  .tile {
+    max-width: 1080px;
+    margin: 0 auto;
+    background: var(--surface);
+    border: 1px solid var(--line-warm);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Soft accent wash radial behind hero only */
+  .tile::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 720px; height: 520px;
+    background: radial-gradient(ellipse at 70% 20%, var(--accent-wash), transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .tile-inner {
+    position: relative;
+    z-index: 1;
+    padding: 72px 64px;
+  }
+
+  .panel {
+    margin-bottom: 80px;
+  }
+  .panel:last-child { margin-bottom: 0; }
+
+  .panel-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line-warm);
+    direction: ltr;
+    text-align: right;
+  }
+
+  /* ============ PANEL 1: BRAND BAR ============ */
+  .brand-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px 28px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .brand-lockup {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    direction: ltr;
+  }
+
+  .brand-mark {
+    width: 44px; height: 44px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .wordmark {
+    font-family: var(--font-wordmark);
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.16em;
+    color: var(--text);
+  }
+
+  .brand-tagline-ar {
+    font-family: var(--font-ar-ui);
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  /* ============ PANEL 2: SWATCHES ============ */
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+  }
+  .swatch {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .swatch-chip {
+    width: 100%;
+    height: 80px;
+    border-radius: var(--radius);
+    border: 1px solid var(--line-warm);
+    box-shadow: var(--shadow-sm);
+  }
+  .swatch-name {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text);
+    direction: ltr;
+    text-align: right;
+  }
+  .swatch-hex {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--muted);
+    direction: ltr;
+    text-align: right;
+  }
+
+  /* ============ PANEL 3: TYPOGRAPHY SPECIMEN ============ */
+  .type-specimen { display: flex; flex-direction: column; gap: 32px; }
+
+  .type-row {
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--line-warm);
+  }
+  .type-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .type-meta {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--muted);
+    direction: ltr;
+    text-align: right;
+    margin-bottom: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .type-ar-display {
+    font-family: var(--font-ar-display);
+    font-weight: 400;
+    font-size: 96px; /* 1.2x oversized */
+    line-height: 1.15;
+    color: var(--ice);
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+
+  .type-ar-ui {
+    font-family: var(--font-ar-ui);
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.4;
+    color: var(--text);
+  }
+
+  .type-ar-body {
+    font-family: var(--font-ar-body);
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--warm);
+    max-width: 60ch;
+    text-wrap: pretty;
+  }
+
+  .type-en-wordmark {
+    font-family: var(--font-wordmark);
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: 0.18em;
+    color: var(--text);
+    direction: ltr;
+  }
+
+  .type-en-body {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--warm);
+    direction: ltr;
+    max-width: 64ch;
+  }
+
+  .type-mono-sku {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--text);
+    direction: ltr;
+    letter-spacing: 0.04em;
+  }
+
+  /* ============ PANEL 4: OPERATOR PICK CARD ============ */
+  .pick-card {
+    max-width: 380px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: transform 250ms var(--ease), box-shadow 250ms var(--ease);
+  }
+  .pick-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .pick-image {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    background:
+      linear-gradient(135deg, rgba(56,189,248,0.10) 0%, transparent 60%),
+      linear-gradient(180deg, var(--surface-2) 0%, var(--bg-alt) 100%);
+    border-bottom: 1px solid var(--line-warm);
+  }
+  .pick-tags {
+    position: absolute;
+    top: 16px; left: 16px; right: 16px;
+    display: flex;
+    justify-content: space-between;
+    direction: ltr;
+  }
+  .sku-pill {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 500;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-pill);
+    padding: 5px 11px;
+    box-shadow: var(--shadow-sm);
+    letter-spacing: 0.04em;
+  }
+  .stock-pill {
+    font-family: var(--font-ar-ui);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--surface);
+    background: var(--signal);
+    border-radius: var(--radius-pill);
+    padding: 5px 12px;
+  }
+
+  .pick-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .pick-title {
+    font-family: var(--font-ar-ui);
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 1.45;
+    color: var(--text);
+  }
+  .pick-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .spec-chip {
+    font-family: var(--font-ar-ui);
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--warm);
+    background: var(--bg-alt);
+    border: 1px solid var(--line-warm);
+    border-radius: var(--radius-pill);
+    padding: 4px 10px;
+  }
+  .pick-price {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--line-warm);
+  }
+  .price-amount {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--ice);
+    direction: ltr;
+  }
+  .price-unit {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted);
+    direction: ltr;
+  }
+  .price-note {
+    font-family: var(--font-ar-body);
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-right: auto;
+  }
+  .pick-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-family: var(--font-ar-ui);
+    font-weight: 600;
+    font-size: 14.5px;
+    color: var(--surface);
+    background: var(--accent);
+    border: none;
+    border-radius: var(--radius);
+    padding: 13px 18px;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: background-color 250ms var(--ease), box-shadow 250ms var(--ease), transform 250ms var(--ease);
+  }
+  .pick-cta:hover {
+    background: var(--accent-deep);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-1px);
+  }
+
+  /* ============ PANEL 5: CATEGORIES RACK-UNIT ============ */
+  .rack-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .rack-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 250ms var(--ease), box-shadow 250ms var(--ease);
+  }
+  .rack-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .rack-photo {
+    aspect-ratio: 16 / 9;
+    background:
+      linear-gradient(135deg, rgba(56,189,248,0.12) 0%, transparent 55%),
+      linear-gradient(180deg, var(--surface-2) 0%, var(--bg-alt) 100%);
+    border-bottom: 1px solid var(--line-warm);
+    position: relative;
+    overflow: hidden;
+  }
+  .rack-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 30% 80%, rgba(15,23,42,0.04), transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(56,189,248,0.06), transparent 55%);
+  }
+
+  .rack-meta {
+    padding: 24px 24px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    direction: ltr;
+  }
+  .rack-id {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+  .rack-leds {
+    display: flex;
+    gap: 6px;
+  }
+  .rack-leds .led {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--dim);
+  }
+  .rack-leds .led.on { background: var(--accent); box-shadow: 0 0 6px rgba(56,189,248,0.5); }
+  .rack-leds .led.warn { background: var(--warn); }
+
+  .rack-body {
+    padding: 8px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .rack-title {
+    font-family: var(--font-ar-ui);
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--text);
+  }
+  .rack-desc {
+    font-family: var(--font-ar-body);
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--warm);
+  }
+  .rack-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line-warm);
+  }
+  .rack-count {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    background: var(--bg-alt);
+    border-radius: var(--radius-pill);
+    padding: 4px 10px;
+  }
+  .rack-link {
+    font-family: var(--font-ar-ui);
+    font-weight: 500;
+    font-size: 13.5px;
+    color: var(--accent-deep);
+    text-decoration: none;
+    transition: color 250ms var(--ease);
+  }
+  .rack-link:hover { color: var(--accent); }
+
+  /* ============ PANEL 6: BUTTONS + FORMS ============ */
+  .controls-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  .controls-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .controls-h {
+    font-family: var(--font-ar-ui);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: var(--font-ar-ui);
+    font-weight: 600;
+    font-size: 14.5px;
+    padding: 13px 24px;
+    border-radius: var(--radius);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 250ms var(--ease);
+    text-decoration: none;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--surface);
+    box-shadow: var(--shadow-md);
+  }
+  .btn-primary:hover {
+    background: var(--accent-deep);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--line-strong);
+  }
+  .btn-ghost:hover {
+    background: var(--accent-wash);
+    border-color: var(--accent);
+    color: var(--accent-deep);
+  }
+  .btn-pill {
+    border-radius: var(--radius-pill);
+    padding: 8px 16px;
+    font-size: 12px;
+    background: var(--bg-alt);
+    color: var(--warm);
+    border: 1px solid var(--line-warm);
+  }
+  .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .form-label {
+    font-family: var(--font-ar-ui);
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--text);
+  }
+  .form-input {
+    font-family: var(--font-ar-body);
+    font-size: 14.5px;
+    color: var(--text);
+    padding: 13px 16px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    transition: border-color 250ms var(--ease), box-shadow 250ms var(--ease);
+    outline: none;
+    width: 100%;
+  }
+  .form-input::placeholder { color: var(--muted); }
+  .form-input:focus {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-focus);
+  }
+  .form-input.error {
+    border-color: var(--alert);
+  }
+  .form-help {
+    font-family: var(--font-ar-body);
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .form-help.error {
+    color: var(--alert);
+  }
+
+  /* ============ SKU TICKER (DIMMED) ============ */
+  .sku-ticker {
+    margin-top: 32px;
+    padding: 14px 20px;
+    background: var(--bg-alt);
+    border: 1px solid var(--line-warm);
+    border-radius: var(--radius);
+    overflow: hidden;
+    direction: ltr;
+  }
+  .sku-ticker-inner {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .sku-ticker-inner span { margin: 0 14px; }
+  .sku-ticker-inner .stock-in { color: var(--signal); }
+
+  /* ============ HERO ENTRY ANIMATION ============ */
+  @keyframes hero-rise {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .type-ar-display, .type-ar-ui, .type-ar-body {
+    animation: hero-rise 600ms var(--ease-out) both;
+  }
+  .type-ar-ui { animation-delay: 80ms; }
+  .type-ar-body { animation-delay: 160ms; }
+
+  /* ============ Direction headline ============ */
+  .tile-header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 56px;
+  }
+  .tile-direction {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    direction: ltr;
+    text-align: right;
+  }
+  .tile-mood {
+    font-family: var(--font-ar-display);
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 1.15;
+    color: var(--ice);
+  }
+
+  @media (max-width: 720px) {
+    .tile-inner { padding: 40px 24px; }
+    .swatches { grid-template-columns: repeat(3, 1fr); }
+    .rack-grid, .controls-grid { grid-template-columns: 1fr; }
+    .type-ar-display { font-size: 56px; }
+    .tile-mood { font-size: 36px; }
+  }
+</style>
+</head>
+<body>
+  <div class="tile">
+    <div class="tile-inner">
+
+      <header class="tile-header">
+        <div class="tile-direction">Direction · Saudi Linen</div>
+        <h1 class="tile-mood">قماش سعودي. هدوء فاخر.</h1>
+      </header>
+
+      <!-- ============ PANEL 1: BRAND BAR ============ -->
+      <section class="panel">
+        <div class="panel-label">01 · Brand Bar</div>
+        <div class="brand-bar">
+          <div class="brand-lockup">
+            <img class="brand-mark" src="../ng-mark.svg" onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'" alt="NeoGen mark">
+            <span class="wordmark">NEO&middot;GEN STORE</span>
+          </div>
+          <span class="brand-tagline-ar">جيل التقنية القادم</span>
+        </div>
+      </section>
+
+      <!-- ============ PANEL 2: SWATCHES ============ -->
+      <section class="panel">
+        <div class="panel-label">02 · Palette · Linen Warm</div>
+        <div class="swatches">
+          <div class="swatch">
+            <div class="swatch-chip" style="background: var(--bg);"></div>
+            <div class="swatch-name">--bg</div>
+            <div class="swatch-hex">#F7F5F1</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background: var(--bg-alt);"></div>
+            <div class="swatch-name">--bg-alt</div>
+            <div class="swatch-hex">#EEEAE3</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background: var(--surface); border-color: var(--line);"></div>
+            <div class="swatch-name">--surface</div>
+            <div class="swatch-hex">#FFFFFF</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background: var(--accent);"></div>
+            <div class="swatch-name">--accent</div>
+            <div class="swatch-hex">#38BDF8</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background: var(--ice);"></div>
+            <div class="swatch-name">--text</div>
+            <div class="swatch-hex">#0F172A</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background: var(--muted);"></div>
+            <div class="swatch-name">--muted</div>
+            <div class="swatch-hex">#64748B</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PANEL 3: TYPOGRAPHY SPECIMEN ============ -->
+      <section class="panel">
+        <div class="panel-label">03 · Typography · Rakkas-led</div>
+        <div class="type-specimen">
+
+          <div class="type-row">
+            <div class="type-meta">AR DISPLAY · RAKKAS · 96PX · LH 1.15</div>
+            <h2 class="type-ar-display">جيل التقنية القادم.</h2>
+          </div>
+
+          <div class="type-row">
+            <div class="type-meta">AR UI · REEM KUFI · 28PX · 600</div>
+            <p class="type-ar-ui">متوفّرة. بمواصفات. جاهزة للشحن.</p>
+          </div>
+
+          <div class="type-row">
+            <div class="type-meta">AR BODY · TAJAWAL · 17PX · LH 1.7</div>
+            <p class="type-ar-body">متجر تقني سعودي لمحترفي الشبكات، الهوم لاب، البيوت الذكية، والألعاب. منتجات مختارة، مواصفات بدون مبالغة، شحن من داخل المملكة.</p>
+          </div>
+
+          <div class="type-row">
+            <div class="type-meta">EN WORDMARK · CHAKRA PETCH · 22PX · 600</div>
+            <p class="type-en-wordmark" dir="ltr">NEO&middot;GEN STORE</p>
+            <div class="type-meta" style="margin-top:18px;">EN BODY · MANROPE · 15PX · LH 1.7</div>
+            <p class="type-en-body" dir="ltr">A Saudi tech storefront for networking, homelab, smart-home, and gaming operators. Curated catalogue, no-hype specs, in-Kingdom shipping.</p>
+          </div>
+
+          <div class="type-row">
+            <div class="type-meta">MONO · IBM PLEX MONO · 14PX · 500 — SKUs / PRICES ONLY</div>
+            <p class="type-mono-sku" dir="ltr">SKU NG-AQ-FP2 &middot; STOCK 12 &middot; SAR 1,249.00</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============ PANEL 4: OPERATOR-PICK CARD ============ -->
+      <section class="panel">
+        <div class="panel-label">04 · Operator Pick · Card</div>
+        <article class="pick-card">
+          <div class="pick-image">
+            <div class="pick-tags">
+              <span class="sku-pill">NG-AQ-FP2</span>
+              <span class="stock-pill">متوفّر &middot; 12</span>
+            </div>
+          </div>
+          <div class="pick-body">
+            <h3 class="pick-title">لوحة Aqara FP2 لاستشعار الحضور — Wi-Fi، متعدّد المناطق</h3>
+            <div class="pick-specs">
+              <span class="spec-chip">mmWave</span>
+              <span class="spec-chip">Wi-Fi 2.4GHz</span>
+              <span class="spec-chip">HomeKit · Matter</span>
+              <span class="spec-chip">5 مناطق</span>
+            </div>
+            <div class="pick-price">
+              <span class="price-amount" dir="ltr">1,249.00</span>
+              <span class="price-unit" dir="ltr">SAR</span>
+              <span class="price-note">شامل الضريبة &middot; شحن 2-5 أيام</span>
+            </div>
+            <button class="pick-cta">أضف للسلة</button>
+          </div>
+        </article>
+
+        <!-- SKU ticker (dimmed) -->
+        <div class="sku-ticker">
+          <div class="sku-ticker-inner" dir="ltr">
+            <span>NG-AQ-FP2 PRESENCE-SENSOR FP2 STOCK <span class="stock-in">12</span></span>
+            <span>NG-MK-RB5009 ROUTER RB5009UG STOCK <span class="stock-in">IN</span></span>
+            <span>NG-SY-DS224 NAS DS224+ STOCK <span class="stock-in">3</span></span>
+            <span>NG-UB-U6PRO AP U6-PRO STOCK <span class="stock-in">IN</span></span>
+            <span>NG-SH-PROEM SHELLY PRO-EM STOCK <span class="stock-in">7</span></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PANEL 5: CATEGORIES RACK ============ -->
+      <section class="panel">
+        <div class="panel-label">05 · Categories · Rack Unit</div>
+        <div class="rack-grid">
+
+          <article class="rack-card">
+            <div class="rack-photo"></div>
+            <div class="rack-meta">
+              <span class="rack-id">01 · رف A</span>
+              <span class="rack-leds">
+                <span class="led on"></span>
+                <span class="led on"></span>
+                <span class="led"></span>
+              </span>
+            </div>
+            <div class="rack-body">
+              <h4 class="rack-title">شبكات واتصالات</h4>
+              <p class="rack-desc">شبكات واتصالات — راوتر، سويتش، نقاط وصول، ألياف.</p>
+              <div class="rack-foot">
+                <span class="rack-count">42 منتج</span>
+                <a href="#" class="rack-link">تصفّح ←</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="rack-card">
+            <div class="rack-photo"></div>
+            <div class="rack-meta">
+              <span class="rack-id">02 · رف B</span>
+              <span class="rack-leds">
+                <span class="led on"></span>
+                <span class="led warn"></span>
+                <span class="led on"></span>
+              </span>
+            </div>
+            <div class="rack-body">
+              <h4 class="rack-title">أتمتة المنزل الذكي</h4>
+              <p class="rack-desc">أتمتة المنزل الذكي — Aqara &middot; Shelly &middot; Home Assistant.</p>
+              <div class="rack-foot">
+                <span class="rack-count">28 منتج</span>
+                <a href="#" class="rack-link">تصفّح ←</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ============ PANEL 6: BUTTONS + FORM STATES ============ -->
+      <section class="panel">
+        <div class="panel-label">06 · Buttons &amp; Form States</div>
+        <div class="controls-grid">
+
+          <div class="controls-col">
+            <h5 class="controls-h">Buttons</h5>
+            <div class="btn-row">
+              <button class="btn btn-primary">تصفّح المتجر</button>
+              <button class="btn btn-ghost">ابنِ جهازك</button>
+            </div>
+            <div class="btn-row">
+              <span class="btn btn-pill">شبكات</span>
+              <span class="btn btn-pill">هوم لاب</span>
+              <span class="btn btn-pill">بيت ذكي</span>
+              <span class="btn btn-pill">ألعاب</span>
+            </div>
+          </div>
+
+          <div class="controls-col">
+            <h5 class="controls-h">Form &middot; States</h5>
+            <div class="form-field">
+              <label class="form-label">البريد الإلكتروني</label>
+              <input class="form-input" type="email" placeholder="name@example.sa">
+              <span class="form-help">سنرد خلال يوم عمل واحد.</span>
+            </div>
+            <div class="form-field">
+              <label class="form-label">رقم سجل تجاري (خطأ)</label>
+              <input class="form-input error" type="text" value="705313" dir="ltr">
+              <span class="form-help error">السجل يجب أن يكون 10 أرقام.</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </div>
+</body>
+</html>

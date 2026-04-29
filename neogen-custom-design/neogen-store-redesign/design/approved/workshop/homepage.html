@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NeoGen Store — Layout 3 · Sky Workshop (Homepage)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Major+Mono+Display&family=Rakkas&family=Reem+Kufi:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F8FAFC;
+  --bg-alt:#EEF2F6;
+  --surface:#FFFFFF;
+  --surface-2:#F1F5F9;
+  --raised:#FFFFFF;
+
+  --accent:#38BDF8;
+  --accent-soft:#BAE6FD;
+  --accent-deep:#0284C7;
+  --accent-wash:rgba(56, 189, 248, 0.06);
+
+  --signal:#22C55E;
+  --alert:#EF4444;
+  --warn:#F59E0B;
+  --indigo:#1A2B4B;
+  --indigo-deep:#0F1A2E;
+
+  --ice:#0F172A;
+  --text:#0F172A;
+  --warm:#334155;
+  --muted:#64748B;
+  --dim:#94A3B8;
+
+  --line:rgba(15, 23, 42, 0.10);
+  --line-strong:rgba(15, 23, 42, 0.24);
+  --line-warm:rgba(15, 23, 42, 0.06);
+
+  --shadow-sm:0 1px 2px rgba(15,23,42,0.04), 0 1px 1px rgba(15,23,42,0.03);
+  --shadow-md:0 4px 12px rgba(15,23,42,0.06), 0 2px 4px rgba(15,23,42,0.04);
+  --shadow-lg:0 16px 40px -16px rgba(15,23,42,0.18), 0 4px 8px rgba(15,23,42,0.04);
+  --shadow-xl:0 32px 72px -32px rgba(15,23,42,0.28), 0 8px 16px rgba(15,23,42,0.06);
+  --shadow-accent:0 12px 32px -16px rgba(56,189,248,0.45), inset 0 1px 0 rgba(255,255,255,0.32);
+  --shadow-accent-hover:0 18px 40px -18px rgba(56,189,248,0.65), inset 0 1px 0 rgba(255,255,255,0.40);
+  --shadow-focus:0 0 0 3px rgba(56, 189, 248, 0.18);
+
+  --container:1240px;
+  --radius:8px;
+  --radius-lg:14px;
+  --radius-pill:999px;
+
+  --ease:cubic-bezier(0.2, 0, 0.2, 1);
+  --ease-out:cubic-bezier(0.16, 1, 0.3, 1);
+
+  --font-wordmark:"Chakra Petch","IBM Plex Sans",system-ui,sans-serif;
+  --font-sans:"Manrope","IBM Plex Sans",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono","JetBrains Mono",monospace;
+  --font-ultra:"Major Mono Display",monospace;
+  --font-ar-display:"Rakkas",serif;
+  --font-ar-ui:"Reem Kufi","Tajawal",system-ui,sans-serif;
+  --font-ar-body:"Tajawal","Reem Kufi",system-ui,sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:var(--font-ar-body);
+  color:var(--text);
+  line-height:1.55;
+  background:
+    linear-gradient(rgba(10,10,10,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10,10,10,0.04) 1px, transparent 1px),
+    var(--bg);
+  background-size:48px 48px, 48px 48px, auto;
+  min-height:100vh;
+}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity 500ms var(--ease-out), transform 500ms var(--ease-out)}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+/* ─────── Header ─────── */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(248,250,252,0.88);
+  backdrop-filter:saturate(140%) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.site-header .bar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}
+.lockup{display:flex;align-items:center;gap:12px}
+.lockup img{height:36px;width:auto}
+.lockup .wordmark{font-family:var(--font-wordmark);font-weight:600;font-size:17px;letter-spacing:0.18em;color:var(--ice);line-height:1}
+.lockup .wordmark .dot{color:var(--accent-deep)}
+.lockup .sep{width:1px;height:22px;background:var(--line-strong)}
+.lockup .ar-tag{font-family:var(--font-ar-display);color:var(--warm);font-size:20px;line-height:1}
+
+.nav-top{display:flex;gap:6px;align-items:center}
+.nav-top a{
+  font-family:var(--font-ar-ui);font-size:14px;font-weight:500;
+  color:var(--warm);padding:8px 12px;border-radius:var(--radius);
+  text-decoration:none;transition:background 200ms var(--ease), color 200ms var(--ease);
+}
+.nav-top a:hover{background:var(--accent-wash);color:var(--accent-deep)}
+
+.header-cta{display:flex;gap:10px;align-items:center}
+
+/* ─────── Buttons ─────── */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-ar-ui);font-weight:600;font-size:14px;
+  padding:11px 20px;border-radius:var(--radius);
+  cursor:pointer;border:1px solid transparent;
+  transition:transform 200ms var(--ease), box-shadow 200ms var(--ease), background 200ms var(--ease), color 200ms var(--ease);
+  text-decoration:none;line-height:1;
+}
+.btn-primary{background:var(--accent);color:#FFFFFF;box-shadow:var(--shadow-accent);border-color:var(--accent-deep)}
+.btn-primary:hover{background:var(--accent-deep);box-shadow:var(--shadow-accent-hover);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--ice);border-color:var(--line-strong)}
+.btn-ghost:hover{background:var(--accent-wash);border-color:var(--accent);color:var(--accent-deep)}
+.btn .arr{font-family:var(--font-mono);font-size:14px}
+
+/* ─────── Hero — accent-wash lattice w/ extra radial ─────── */
+.hero{
+  position:relative;padding:48px 0 36px;overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(680px circle at 78% 14%, rgba(56,189,248,0.18), transparent 60%),
+    radial-gradient(540px circle at 22% 30%, rgba(56,189,248,0.10), transparent 65%);
+}
+.hero .wrap{position:relative;z-index:1}
+.hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:start}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--font-ar-ui);font-weight:500;font-size:13px;
+  color:var(--accent-deep);background:var(--accent-wash);
+  border:1px solid var(--accent-soft);
+  padding:6px 14px;border-radius:var(--radius-pill);
+  margin-bottom:18px;
+}
+.hero-kicker::before{
+  content:"";width:7px;height:7px;border-radius:50%;
+  background:var(--accent);box-shadow:0 0 0 4px rgba(56,189,248,0.18);
+  animation:pulse 1.6s var(--ease) infinite;
+}
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 4px rgba(56,189,248,0.18)}
+  50%{box-shadow:0 0 0 7px rgba(56,189,248,0.06)}
+}
+.hero-h1{
+  font-family:var(--font-ar-display);font-weight:400;
+  font-size:clamp(48px,6.4vw,82px);
+  line-height:1.05;letter-spacing:-0.01em;
+  color:var(--ice);margin:0 0 16px;text-wrap:balance;
+}
+.hero-h1 em{font-style:normal;color:var(--accent-deep)}
+.hero-lockup{
+  display:flex;align-items:center;gap:14px;margin:6px 0 18px;
+  padding:10px 14px;background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-md);width:max-content;max-width:100%;
+  position:relative;
+}
+.hero-lockup::before{
+  content:"";position:absolute;inset-inline:0;top:0;height:2px;
+  background:linear-gradient(90deg, var(--accent-deep), var(--accent));
+  border-radius:var(--radius-lg) var(--radius-lg) 0 0;
+}
+.hero-lockup img{height:34px}
+.hero-lockup .wm{font-family:var(--font-wordmark);font-weight:600;font-size:16px;letter-spacing:0.18em;color:var(--ice)}
+.hero-copy{font-family:var(--font-ar-body);font-size:17px;color:var(--warm);line-height:1.75;max-width:62ch;margin:0 0 14px;text-wrap:pretty}
+.hero-sub{font-family:var(--font-mono);font-size:12px;color:var(--accent-deep);letter-spacing:0.04em;margin:0 0 22px;direction:ltr;text-align:right}
+.hero-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+.trust-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.trust-chip{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 12px;border-radius:var(--radius-pill);
+  background:var(--surface);border:1px solid var(--line);
+  font-family:var(--font-ar-ui);font-size:12px;color:var(--warm);
+}
+.trust-chip .lbl{color:var(--muted)}
+.trust-chip .val{font-family:var(--font-mono);color:var(--ice);letter-spacing:0.04em}
+
+/* hero side — 4-tile collage with hover lift */
+.hero-side{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;height:480px}
+.htile{
+  position:relative;border-radius:var(--radius-lg);
+  border:1px solid var(--line);box-shadow:var(--shadow-md);
+  overflow:hidden;background:var(--surface);
+  transition:transform 250ms var(--ease), box-shadow 250ms var(--ease);
+}
+.htile::after{
+  content:"";position:absolute;inset-inline:0;top:0;height:2px;
+  background:linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity:0;transition:opacity 250ms var(--ease);
+}
+.htile:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.htile:hover::after{opacity:1}
+.htile::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(15,23,42,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,23,42,0.05) 1px, transparent 1px);
+  background-size:20px 20px;opacity:0.6;
+}
+.htile.t1{background:radial-gradient(120% 80% at 30% 20%, rgba(56,189,248,0.24), transparent 55%), linear-gradient(180deg, var(--surface-2) 0%, var(--bg-alt) 100%)}
+.htile.t2{background:radial-gradient(120% 80% at 70% 80%, rgba(2,132,199,0.22), transparent 55%), linear-gradient(180deg, var(--bg-alt) 0%, var(--surface-2) 100%)}
+.htile.t3{background:radial-gradient(120% 80% at 70% 20%, rgba(186,230,253,0.55), transparent 60%), linear-gradient(180deg, var(--surface-2) 0%, var(--surface) 100%)}
+.htile.t4{background:radial-gradient(120% 80% at 30% 80%, rgba(56,189,248,0.18), transparent 55%), linear-gradient(180deg, var(--surface) 0%, var(--bg-alt) 100%)}
+.htile .lab{
+  position:absolute;top:12px;inset-inline-start:12px;z-index:2;
+  font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--accent-deep);background:var(--surface);
+  border:1px solid var(--line);padding:4px 8px;border-radius:var(--radius-pill);
+}
+.htile .num{
+  position:absolute;bottom:10px;inset-inline-end:14px;z-index:2;
+  font-family:var(--font-ultra);font-size:32px;line-height:1;
+  color:var(--accent-deep);letter-spacing:-0.02em;opacity:0.85;
+}
+.htile .ghost{position:absolute;inset:0;display:grid;place-items:center;opacity:0.5;z-index:1}
+.htile .ghost img{width:38%;max-width:100px;filter:drop-shadow(0 6px 16px rgba(2,132,199,0.18))}
+
+/* ─────── SKU ticker — architectural strip ─────── */
+.ticker{
+  position:relative;background:var(--surface);
+  border-top:1px solid var(--accent-soft);
+  border-bottom:1px solid var(--accent-soft);
+  overflow:hidden;margin:24px 0;padding:16px 0;
+}
+.ticker::before,.ticker::after{
+  content:"";position:absolute;inset-inline:0;height:1px;background:var(--accent);opacity:0.3;
+}
+.ticker::before{top:0}.ticker::after{bottom:0}
+.ticker-track{
+  display:inline-flex;gap:0;white-space:nowrap;
+  animation:ticker 42s linear infinite;
+  font-family:var(--font-mono);font-size:12px;letter-spacing:0.06em;
+}
+.ticker-track .it{display:inline-flex;align-items:center;gap:10px;padding:0 18px;color:var(--warm)}
+.ticker-track .sku{color:var(--accent-deep);font-weight:600}
+.ticker-track .t{color:var(--ice);font-weight:500}
+.ticker-track .st{color:var(--signal)}
+.ticker-track .sep{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--accent-deep);opacity:0.7;flex:none;
+}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ─────── Section frame ─────── */
+.sec{padding:48px 0}
+.sec-head{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:24px;margin-bottom:28px;
+  border-bottom:1px solid var(--line-warm);padding-bottom:16px;
+}
+.sec-head-l{display:flex;align-items:flex-end;gap:18px}
+.sec-num-ultra{
+  font-family:var(--font-ultra);font-size:56px;line-height:1;
+  color:var(--accent-deep);letter-spacing:-0.02em;flex:none;
+}
+.sec-num{font-family:var(--font-mono);font-size:11px;color:var(--muted);letter-spacing:0.18em;text-transform:uppercase;display:block;margin-bottom:6px}
+.sec-h2{
+  font-family:var(--font-ar-display);font-weight:400;
+  font-size:clamp(28px,3vw,42px);line-height:1.1;color:var(--ice);
+  margin:0;text-wrap:balance;
+}
+.sec-sub{font-family:var(--font-ar-ui);font-size:15px;color:var(--warm);margin:8px 0 0}
+.sec-note{font-family:var(--font-ar-body);font-size:14.5px;color:var(--warm);max-width:74ch;margin:0;text-wrap:pretty}
+
+/* ─────── Operator Picks ─────── */
+.picks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pick{
+  position:relative;
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius-lg);box-shadow:var(--shadow-md);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:box-shadow 250ms var(--ease), transform 250ms var(--ease);
+}
+.pick::before{
+  content:"";position:absolute;inset-inline:0;top:0;height:2px;
+  background:linear-gradient(90deg, var(--accent-deep), var(--accent), var(--accent-soft));
+  z-index:3;
+}
+.pick:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.pick-media{
+  position:relative;aspect-ratio:16/9;
+  background:
+    radial-gradient(120% 80% at 30% 20%, rgba(56,189,248,0.22), transparent 55%),
+    linear-gradient(180deg, var(--surface-2) 0%, var(--bg-alt) 100%);
+  border-bottom:1px solid var(--line-warm);overflow:hidden;
+}
+.pick-media::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(15,23,42,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,23,42,0.05) 1px, transparent 1px);
+  background-size:24px 24px;opacity:0.6;
+}
+.sku-pill{
+  display:inline-flex;align-items:center;
+  font-family:var(--font-mono);font-size:11.5px;font-weight:500;
+  color:var(--ice);background:var(--surface);
+  padding:5px 10px;border:1px solid var(--line);
+  border-radius:var(--radius-pill);letter-spacing:0.04em;
+}
+.pick-media .sku{position:absolute;top:12px;inset-inline-start:12px;z-index:2}
+.pick-media .stock{
+  position:absolute;top:12px;inset-inline-end:12px;z-index:2;
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 10px;border-radius:var(--radius-pill);
+  background:var(--surface);border:1px solid var(--line);
+  font-family:var(--font-ar-ui);font-size:11.5px;color:var(--ice);
+  box-shadow:var(--shadow-sm);
+}
+.pick-media .stock .led{width:6px;height:6px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 3px rgba(34,197,94,0.18)}
+.pick-media .stock.low .led{background:var(--warn);box-shadow:0 0 0 3px rgba(245,158,11,0.18)}
+.pick-media .ghost-mark{position:absolute;inset:0;display:grid;place-items:center;opacity:0.55;z-index:1}
+.pick-media .ghost-mark img{width:32%;max-width:120px;filter:drop-shadow(0 6px 16px rgba(2,132,199,0.18))}
+.pick-body{padding:18px 20px 18px;display:flex;flex-direction:column;gap:12px}
+.pick-title{font-family:var(--font-ar-ui);font-weight:600;font-size:17.5px;color:var(--ice);margin:0;line-height:1.35}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip-spec{
+  display:inline-flex;align-items:center;
+  font-family:var(--font-ar-ui);font-size:11.5px;
+  color:var(--warm);background:var(--surface-2);
+  padding:4px 9px;border:1px solid var(--line-warm);
+  border-radius:var(--radius-pill);
+}
+.chip-spec .v{font-family:var(--font-mono);color:var(--ice);margin-inline-start:4px}
+.price-row{
+  display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  border-top:1px dashed var(--line-warm);padding-top:12px;
+}
+.price-stack .amt{font-family:var(--font-mono);font-size:22px;font-weight:600;color:var(--ice);letter-spacing:-0.01em}
+.price-stack .unit{font-family:var(--font-mono);font-size:12px;color:var(--muted);margin-inline-start:4px}
+.price-stack .vat{display:block;font-family:var(--font-ar-ui);font-size:11px;color:var(--muted);margin-top:2px}
+.btn-add{width:100%;justify-content:center}
+
+/* ─────── Categories rack — cyan-pulse on hover ─────── */
+.rack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rack{
+  position:relative;
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius-lg);box-shadow:var(--shadow-md);
+  padding:18px 20px 16px;display:flex;flex-direction:column;gap:12px;
+  overflow:hidden;
+  transition:box-shadow 250ms var(--ease), transform 250ms var(--ease);
+}
+.rack:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+.rack::before{
+  content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;
+  width:3px;background:linear-gradient(180deg,var(--accent),var(--accent-deep));opacity:0.85;
+}
+.rack-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.rack-id{font-family:var(--font-mono);font-size:11.5px;color:var(--muted);letter-spacing:0.06em}
+.rack-id .ar{font-family:var(--font-ar-ui);color:var(--warm);margin-inline-start:6px}
+.leds{display:inline-flex;gap:5px;align-items:center}
+.leds span{width:7px;height:7px;border-radius:50%;background:var(--dim);transition:all 250ms var(--ease)}
+.leds .on{background:var(--signal);box-shadow:0 0 0 3px rgba(34,197,94,0.18)}
+.leds .ck{background:var(--accent);box-shadow:0 0 0 3px var(--accent-wash)}
+.leds .wn{background:var(--warn);box-shadow:0 0 0 3px rgba(245,158,11,0.18)}
+.rack:hover .leds .ck{animation:cyanPulse 1.6s var(--ease) infinite}
+@keyframes cyanPulse{
+  0%,100%{box-shadow:0 0 0 3px var(--accent-wash);transform:scale(1)}
+  50%{box-shadow:0 0 0 7px rgba(56,189,248,0.18);transform:scale(1.15)}
+}
+.rack-body{display:flex;gap:14px;align-items:flex-start}
+.rack-icon{
+  width:48px;height:48px;border-radius:var(--radius);
+  background:var(--surface-2);border:1px solid var(--line-warm);
+  display:grid;place-items:center;color:var(--accent-deep);flex-shrink:0;
+}
+.rack-icon svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.rack-title{font-family:var(--font-ar-ui);font-weight:600;font-size:18px;color:var(--ice);margin:2px 0 4px;line-height:1.3}
+.rack-desc{font-family:var(--font-ar-body);font-size:13.5px;color:var(--warm);margin:0;line-height:1.55}
+.rack-foot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line-warm);padding-top:12px;margin-top:auto}
+.count-badge{font-family:var(--font-ar-ui);font-size:12px;color:var(--ice);background:var(--accent-wash);border:1px solid var(--accent-soft);padding:5px 10px;border-radius:var(--radius-pill)}
+.count-badge .n{font-family:var(--font-mono);font-weight:600;margin-inline-end:4px}
+.browse-link{font-family:var(--font-ar-ui);font-weight:500;color:var(--accent-deep);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 200ms var(--ease), color 200ms var(--ease)}
+.browse-link:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+/* ─────── Brands strip — chips w/ hover-glow ─────── */
+.brands-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:10px}
+.brand-chip{
+  display:flex;align-items:center;justify-content:center;
+  padding:18px 10px;background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--radius);
+  font-family:var(--font-wordmark);font-weight:500;font-size:14px;
+  letter-spacing:0.08em;color:var(--warm);
+  transition:color 250ms var(--ease), border-color 250ms var(--ease), box-shadow 250ms var(--ease), background 250ms var(--ease);
+}
+.brand-chip:hover{
+  color:var(--accent-deep);
+  border-color:var(--accent-soft);
+  background:var(--accent-wash);
+  box-shadow:0 0 0 3px var(--accent-wash);
+}
+
+/* ─────── Service strip — full-bleed indigo-deep ─────── */
+.service{
+  position:relative;
+  margin:48px 0 24px;padding:64px 40px 60px;
+  background:var(--indigo-deep);color:#FFFFFF;
+  border-radius:var(--radius-lg);
+  border:1px solid var(--indigo-deep);
+  overflow:hidden;
+}
+.service::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(640px circle at 80% 10%, rgba(56,189,248,0.32), transparent 60%),
+    radial-gradient(420px circle at 10% 100%, rgba(56,189,248,0.18), transparent 60%),
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size:auto, auto, 48px 48px, 48px 48px;
+  pointer-events:none;
+}
+.service-inner{position:relative;z-index:1;max-width:780px}
+.service-num-ultra{font-family:var(--font-ultra);font-size:72px;line-height:1;color:var(--accent);letter-spacing:-0.02em;margin-bottom:14px}
+.service .sec-num{color:rgba(255,255,255,0.6);margin-bottom:8px}
+.service .sec-h2{color:#FFFFFF}
+.service-copy{font-family:var(--font-ar-body);font-size:15.5px;color:rgba(255,255,255,0.78);margin:14px 0 24px;line-height:1.75;text-wrap:pretty}
+.service .btn-primary{box-shadow:0 12px 32px -8px rgba(56,189,248,0.55), inset 0 1px 0 rgba(255,255,255,0.32)}
+.service .btn-primary:hover{box-shadow:0 18px 40px -8px rgba(56,189,248,0.75), inset 0 1px 0 rgba(255,255,255,0.40)}
+.service .btn-ghost{color:#FFFFFF;border-color:rgba(255,255,255,0.32)}
+.service .btn-ghost:hover{background:rgba(56,189,248,0.16);border-color:var(--accent);color:#FFFFFF}
+
+/* ─────── Footer ─────── */
+.site-footer{
+  margin-top:48px;border-top:1px solid var(--line);
+  background:var(--surface-2);padding:48px 0 24px;
+}
+.footer-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+.footer-col h4{font-family:var(--font-mono);font-size:11px;color:var(--muted);letter-spacing:0.16em;text-transform:uppercase;margin:0 0 14px;font-weight:500}
+.footer-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.footer-col a{font-family:var(--font-ar-ui);font-size:14px;color:var(--warm);text-decoration:none;transition:color 200ms var(--ease)}
+.footer-col a:hover{color:var(--accent-deep)}
+.footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.footer-brand img{height:34px}
+.footer-brand .wm{font-family:var(--font-wordmark);font-weight:600;font-size:15px;letter-spacing:0.18em;color:var(--ice)}
+.footer-blurb{font-family:var(--font-ar-body);font-size:13.5px;color:var(--warm);line-height:1.7;margin:0;max-width:36ch}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  margin-top:36px;padding-top:18px;border-top:1px solid var(--line);
+  font-family:var(--font-mono);font-size:11px;color:var(--muted);letter-spacing:0.06em;flex-wrap:wrap;
+}
+.pay-row{display:flex;gap:8px;flex-wrap:wrap}
+.pay{font-family:var(--font-mono);font-size:11px;color:var(--warm);padding:5px 10px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);letter-spacing:0.06em}
+
+/* ─────── Responsive ─────── */
+@media (max-width:920px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-side{height:340px}
+  .picks-grid{grid-template-columns:1fr}
+  .rack-grid{grid-template-columns:1fr}
+  .brands-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-cols{grid-template-columns:1fr 1fr}
+  .nav-top{display:none}
+  .sec-num-ultra{font-size:42px}
+  .service-num-ultra{font-size:54px}
+}
+@media (max-width:560px){
+  .footer-cols{grid-template-columns:1fr}
+  .header-cta .btn-ghost{display:none}
+  .sec-head{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <div class="lockup">
+      <img src="../ng-mark.svg"
+           onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'"
+           alt="NeoGen mark">
+      <span class="wordmark">NEO<span class="dot">·</span>GEN&nbsp;STORE</span>
+      <span class="sep" aria-hidden="true"></span>
+      <span class="ar-tag">جيل التقنية القادم</span>
+    </div>
+    <nav class="nav-top" aria-label="القائمة الرئيسية">
+      <a href="/">الرئيسية</a>
+      <a href="/shop/">المتجر</a>
+      <a href="#ng-cat">الفئات</a>
+      <a href="#ng-service">خدمة التنفيذ</a>
+      <a href="/contact/">تواصل</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-ghost" href="#ng-service">ابنِ جهازك</a>
+      <a class="btn btn-primary" href="/shop/">تصفح المتجر <span class="arr" aria-hidden="true">←</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ─────── Hero ─────── -->
+<section class="hero" aria-label="هيرو">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-text reveal">
+        <span class="hero-kicker">متجر تقني سعودي · معتمد</span>
+        <h1 class="hero-h1">جيل التقنية <em>القادم.</em></h1>
+        <div class="hero-lockup">
+          <img src="../ng-mark.svg"
+               onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'"
+               alt="NeoGen mark">
+          <span class="wm">NEO·GEN&nbsp;·&nbsp;STORE</span>
+        </div>
+        <p class="hero-copy">متجر تقني سعودي لمحترفي الشبكات، الهوم لاب، البيوت الذكية، والألعاب. منتجات مختارة، مواصفات بدون مبالغة، شحن من داخل المملكة.</p>
+        <p class="hero-sub">// تقنية متخصصة · مهيّأة للمشغّلين · شحن من المملكة //</p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="/shop/">تصفح المتجر <span class="arr" aria-hidden="true">←</span></a>
+          <a class="btn btn-ghost" href="#ng-service">ابنِ جهازك</a>
+        </div>
+        <div class="trust-chips">
+          <span class="trust-chip"><span class="lbl">سجل تجاري</span><span class="val" dir="ltr">7053130576</span></span>
+          <span class="trust-chip"><span class="lbl">الضريبة</span><span class="val">15% شاملة</span></span>
+          <span class="trust-chip"><span class="lbl">الشحن</span><span class="val">2-5 أيام</span></span>
+          <span class="trust-chip"><span class="lbl">الإرجاع</span><span class="val">14 يوم</span></span>
+          <span class="trust-chip"><span class="lbl">الضمان</span><span class="val">12 شهر</span></span>
+        </div>
+      </div>
+      <aside class="hero-side reveal" aria-hidden="true">
+        <div class="htile t1"><span class="lab">NETWORKING</span><span class="num">01</span><div class="ghost"><img src="../ng-mark.svg" onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'" alt=""></div></div>
+        <div class="htile t2"><span class="lab">HOMELAB</span><span class="num">02</span><div class="ghost"><img src="../ng-mark.svg" onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'" alt=""></div></div>
+        <div class="htile t3"><span class="lab">SMART HOME</span><span class="num">03</span><div class="ghost"><img src="../ng-mark.svg" onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'" alt=""></div></div>
+        <div class="htile t4"><span class="lab">GAMING</span><span class="num">04</span><div class="ghost"><img src="../ng-mark.svg" onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'" alt=""></div></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── SKU ticker — architectural strip ─────── -->
+<section class="ticker" aria-label="شريط الـ SKU">
+  <div class="ticker-track" dir="ltr">
+    <span class="it"><span class="sku">NG-AQR-H1</span> <span class="t">AQARA M2 HUB</span> <span class="st">STOCK 14</span></span><span class="sep"></span>
+    <span class="it"><span class="sku">NG-MK-RB5009</span> <span class="t">MIKROTIK RB5009 7×2.5G</span> <span class="st">STOCK 6</span></span><span class="sep"></span>
+    <span class="it"><span class="sku">NG-UBQ-U6L</span> <span class="t">UBIQUITI U6 LR WIFI 6</span> <span class="st">STOCK 9</span></span><span class="sep"></span>
+    <span class="it"><span class="sku">NG-SYN-DS923</span> <span class="t">SYNOLOGY DS923+ NAS</span> <span class="st">STOCK 3</span></span><span class="sep"></span>
+    <span class="it"><span class="sku">NG-LG-G27</span> <span class="t">LG ULTRAGEAR G27 240HZ</span> <span class="st">STOCK IN</span></span><span class="sep"></span>
+    <span class="it"><span class="sku">NG-SHL-PRO3</span> <span class="t">SHELLY PRO 3EM</span> <span class="st">STOCK 11</span></span><span class="sep"></span>
+    <span class="it"><span class="sku">NG-TPL-AX73</span> <span class="t">TP-LINK ARCHER AX73</span> <span class="st">STOCK 8</span></span><span class="sep"></span>
+    <span class="it"><span class="sku">NG-AQR-H1</span> <span class="t">AQARA M2 HUB</span> <span class="st">STOCK 14</span></span><span class="sep"></span>
+    <span class="it"><span class="sku">NG-MK-RB5009</span> <span class="t">MIKROTIK RB5009 7×2.5G</span> <span class="st">STOCK 6</span></span><span class="sep"></span>
+    <span class="it"><span class="sku">NG-UBQ-U6L</span> <span class="t">UBIQUITI U6 LR WIFI 6</span> <span class="st">STOCK 9</span></span><span class="sep"></span>
+    <span class="it"><span class="sku">NG-SYN-DS923</span> <span class="t">SYNOLOGY DS923+ NAS</span> <span class="st">STOCK 3</span></span><span class="sep"></span>
+    <span class="it"><span class="sku">NG-LG-G27</span> <span class="t">LG ULTRAGEAR G27 240HZ</span> <span class="st">STOCK IN</span></span><span class="sep"></span>
+    <span class="it"><span class="sku">NG-SHL-PRO3</span> <span class="t">SHELLY PRO 3EM</span> <span class="st">STOCK 11</span></span><span class="sep"></span>
+    <span class="it"><span class="sku">NG-TPL-AX73</span> <span class="t">TP-LINK ARCHER AX73</span> <span class="st">STOCK 8</span></span><span class="sep"></span>
+  </div>
+</section>
+
+<!-- ─────── 01 · Operator Picks ─────── -->
+<section class="sec wrap reveal" id="ng-picks" aria-label="المختارات">
+  <div class="sec-head">
+    <div class="sec-head-l">
+      <span class="sec-num-ultra">01</span>
+      <div>
+        <span class="sec-num">المختارات · OPERATOR PICKS</span>
+        <h2 class="sec-h2">متوفّرة. بمواصفات. جاهزة للشحن.</h2>
+        <p class="sec-sub">مختارات المشغّلين. جاهزة للشحن.</p>
+      </div>
+    </div>
+    <p class="sec-note">وحدات مختارة من الكتالوج — اخترناها للموثوقية، وقابلية الإصلاح، وتوفّر القطع داخل المملكة. كل بطاقة تعرض الرمز، والمواصفات، وفعلًا واحدًا أساسيًا. لا أزرار خادعة.</p>
+  </div>
+
+  <div class="picks-grid">
+
+    <article class="pick">
+      <div class="pick-media">
+        <span class="sku-pill sku" dir="ltr">SKU NG-MK-RB5009</span>
+        <span class="stock"><span class="led"></span>متوفّر · <span dir="ltr" style="font-family:var(--font-mono);margin-inline-start:2px">6</span></span>
+        <div class="ghost-mark"><img src="../ng-mark.svg" onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'" alt=""></div>
+      </div>
+      <div class="pick-body">
+        <h3 class="pick-title">راوتر MikroTik RB5009 — 7 منافذ 2.5G</h3>
+        <div class="chips">
+          <span class="chip-spec">منفذ <span class="v" dir="ltr">7× 2.5GbE</span></span>
+          <span class="chip-spec">معالج <span class="v" dir="ltr">ARM 4-core</span></span>
+          <span class="chip-spec">ذاكرة <span class="v" dir="ltr">1 GB</span></span>
+          <span class="chip-spec">ضمان <span class="v" dir="ltr">12 شهر</span></span>
+        </div>
+        <div class="price-row">
+          <div class="price-stack">
+            <span class="amt" dir="ltr">1,649</span><span class="unit" dir="ltr">SAR</span>
+            <span class="vat">شامل الضريبة · شحن 2-5 أيام</span>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-add" type="button">أضف للسلة <span class="arr" aria-hidden="true">←</span></button>
+      </div>
+    </article>
+
+    <article class="pick">
+      <div class="pick-media">
+        <span class="sku-pill sku" dir="ltr">SKU NG-UBQ-U6L</span>
+        <span class="stock"><span class="led"></span>متوفّر · <span dir="ltr" style="font-family:var(--font-mono);margin-inline-start:2px">9</span></span>
+        <div class="ghost-mark"><img src="../ng-mark.svg" onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'" alt=""></div>
+      </div>
+      <div class="pick-body">
+        <h3 class="pick-title">نقطة وصول Ubiquiti U6 LR — Wi-Fi 6</h3>
+        <div class="chips">
+          <span class="chip-spec">معيار <span class="v" dir="ltr">Wi-Fi 6</span></span>
+          <span class="chip-spec">سرعة <span class="v" dir="ltr">3.0 Gbps</span></span>
+          <span class="chip-spec">PoE+ <span class="v" dir="ltr">802.3at</span></span>
+          <span class="chip-spec">مدى <span class="v" dir="ltr">~110m</span></span>
+        </div>
+        <div class="price-row">
+          <div class="price-stack">
+            <span class="amt" dir="ltr">739</span><span class="unit" dir="ltr">SAR</span>
+            <span class="vat">شامل الضريبة · شحن 2-5 أيام</span>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-add" type="button">أضف للسلة <span class="arr" aria-hidden="true">←</span></button>
+      </div>
+    </article>
+
+    <article class="pick">
+      <div class="pick-media">
+        <span class="sku-pill sku" dir="ltr">SKU NG-AQR-H1</span>
+        <span class="stock low"><span class="led"></span>مخزون منخفض · <span dir="ltr" style="font-family:var(--font-mono);margin-inline-start:2px">3</span></span>
+        <div class="ghost-mark"><img src="../ng-mark.svg" onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'" alt=""></div>
+      </div>
+      <div class="pick-body">
+        <h3 class="pick-title">بوابة Aqara M2 Hub — مع Zigbee 3.0</h3>
+        <div class="chips">
+          <span class="chip-spec">بروتوكول <span class="v" dir="ltr">Zigbee 3.0</span></span>
+          <span class="chip-spec">Matter <span class="v" dir="ltr">جسر</span></span>
+          <span class="chip-spec">شبكة <span class="v" dir="ltr">Ethernet</span></span>
+          <span class="chip-spec">HomeKit <span class="v" dir="ltr">مدعوم</span></span>
+        </div>
+        <div class="price-row">
+          <div class="price-stack">
+            <span class="amt" dir="ltr">389</span><span class="unit" dir="ltr">SAR</span>
+            <span class="vat">شامل الضريبة · شحن 2-5 أيام</span>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-add" type="button">أضف للسلة <span class="arr" aria-hidden="true">←</span></button>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ─────── 02 · Categories rack ─────── -->
+<section class="sec wrap reveal" id="ng-cat" aria-label="الفئات">
+  <div class="sec-head">
+    <div class="sec-head-l">
+      <span class="sec-num-ultra">02</span>
+      <div>
+        <span class="sec-num">الفئات · CATEGORIES RACK</span>
+        <h2 class="sec-h2">فئاتنا الـ 5 المختارة.</h2>
+        <p class="sec-sub">فئات مختارة. كل فئة لعمل تقني واضح.</p>
+      </div>
+    </div>
+    <p class="sec-note">كل فئة مهيّأة لنوع مشغّل محدّد. أعداد المنتجات تُسحب مباشرةً من الكتالوج — إذا لم يكن المنتج نافعًا في شبكة جادة، أو هوم لاب، أو بيت ذكي، أو إعداد ألعاب، أو خدمة تنفيذ — فلا نحمله.</p>
+  </div>
+
+  <div class="rack-grid">
+
+    <article class="rack">
+      <div class="rack-head">
+        <span class="rack-id"><span dir="ltr">01</span> · <span class="ar">رف A</span></span>
+        <span class="leds"><span class="on"></span><span class="ck"></span><span></span></span>
+      </div>
+      <div class="rack-body">
+        <div class="rack-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="3"/><path d="M16 13V5M16 19v8M13 16H5M19 16h8M10 10l-4-4M22 22l4 4M10 22l-4 4M22 10l4-4"/></svg>
+        </div>
+        <div style="flex:1;min-width:0">
+          <h3 class="rack-title">شبكات واتصالات</h3>
+          <p class="rack-desc">راوتر، سويتش، نقاط وصول، ألياف.</p>
+        </div>
+      </div>
+      <div class="rack-foot">
+        <span class="count-badge"><span class="n" dir="ltr">37</span>منتج</span>
+        <a href="/shop/?cat=networking" class="browse-link">تصفّح <span dir="ltr" style="font-family:var(--font-mono)">→</span></a>
+      </div>
+    </article>
+
+    <article class="rack">
+      <div class="rack-head">
+        <span class="rack-id"><span dir="ltr">02</span> · <span class="ar">رف B</span></span>
+        <span class="leds"><span class="on"></span><span class="ck"></span><span class="wn"></span></span>
+      </div>
+      <div class="rack-body">
+        <div class="rack-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><path d="M4 15 16 5l12 10M7 13v14h18V13"/><path d="M13 27v-7h6v7"/></svg>
+        </div>
+        <div style="flex:1;min-width:0">
+          <h3 class="rack-title">أتمتة المنزل الذكي</h3>
+          <p class="rack-desc">Aqara · Shelly · Home Assistant.</p>
+        </div>
+      </div>
+      <div class="rack-foot">
+        <span class="count-badge"><span class="n" dir="ltr">28</span>منتج</span>
+        <a href="/shop/?cat=smart-home" class="browse-link">تصفّح <span dir="ltr" style="font-family:var(--font-mono)">→</span></a>
+      </div>
+    </article>
+
+    <article class="rack">
+      <div class="rack-head">
+        <span class="rack-id"><span dir="ltr">03</span> · <span class="ar">رف C</span></span>
+        <span class="leds"><span class="on"></span><span class="ck"></span><span></span></span>
+      </div>
+      <div class="rack-body">
+        <div class="rack-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><rect x="3" y="10" width="26" height="14" rx="7"/><path d="M10 17h4M12 15v4"/><circle cx="22" cy="17" r="1.2" fill="currentColor"/><circle cx="20" cy="19" r="1.2" fill="currentColor"/></svg>
+        </div>
+        <div style="flex:1;min-width:0">
+          <h3 class="rack-title">ألعاب وإكسسوارات</h3>
+          <p class="rack-desc">يدّات، شاشات، صوت، كيبل.</p>
+        </div>
+      </div>
+      <div class="rack-foot">
+        <span class="count-badge"><span class="n" dir="ltr">22</span>منتج</span>
+        <a href="/shop/?cat=gaming" class="browse-link">تصفّح <span dir="ltr" style="font-family:var(--font-mono)">→</span></a>
+      </div>
+    </article>
+
+    <article class="rack">
+      <div class="rack-head">
+        <span class="rack-id"><span dir="ltr">04</span> · <span class="ar">رف D</span></span>
+        <span class="leds"><span class="on"></span><span class="ck"></span><span></span></span>
+      </div>
+      <div class="rack-body">
+        <div class="rack-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><rect x="5" y="6" width="22" height="6" rx="1"/><rect x="5" y="14" width="22" height="6" rx="1"/><rect x="5" y="22" width="22" height="4" rx="1"/><circle cx="9" cy="9" r="0.8" fill="currentColor"/><circle cx="9" cy="17" r="0.8" fill="currentColor"/></svg>
+        </div>
+        <div style="flex:1;min-width:0">
+          <h3 class="rack-title">هوم لاب</h3>
+          <p class="rack-desc">رفوف، سيرفرات، تخزين شبكة، NAS.</p>
+        </div>
+      </div>
+      <div class="rack-foot">
+        <span class="count-badge"><span class="n" dir="ltr">19</span>منتج</span>
+        <a href="/shop/?cat=homelab" class="browse-link">تصفّح <span dir="ltr" style="font-family:var(--font-mono)">→</span></a>
+      </div>
+    </article>
+
+    <article class="rack">
+      <div class="rack-head">
+        <span class="rack-id"><span dir="ltr">05</span> · <span class="ar">رف E</span></span>
+        <span class="leds"><span class="on"></span><span class="ck"></span><span class="wn"></span></span>
+      </div>
+      <div class="rack-body">
+        <div class="rack-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><rect x="5" y="6" width="22" height="6" rx="1"/><rect x="5" y="14" width="22" height="6" rx="1"/><rect x="5" y="22" width="22" height="4" rx="1"/><circle cx="9" cy="9" r="0.8" fill="currentColor"/><circle cx="9" cy="17" r="0.8" fill="currentColor"/></svg>
+        </div>
+        <div style="flex:1;min-width:0">
+          <h3 class="rack-title">تخزين</h3>
+          <p class="rack-desc">أقراص NVMe وSSD وHDD ومحطات NAS.</p>
+        </div>
+      </div>
+      <div class="rack-foot">
+        <span class="count-badge"><span class="n" dir="ltr">31</span>منتج</span>
+        <a href="/shop/?cat=storage" class="browse-link">تصفّح <span dir="ltr" style="font-family:var(--font-mono)">→</span></a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ─────── 02·ب · Brands ─────── -->
+<section class="sec wrap reveal" aria-label="العلامات">
+  <div class="sec-head">
+    <div class="sec-head-l">
+      <span class="sec-num-ultra" style="font-size:42px">02b</span>
+      <div>
+        <span class="sec-num">علامات موثّقة · BRANDS</span>
+        <h2 class="sec-h2">محمولة. مشحونة. مدعومة.</h2>
+        <p class="sec-sub">العلامات التي نحملها — كل واحدة بمواصفات نعرفها.</p>
+      </div>
+    </div>
+  </div>
+  <div class="brands-grid">
+    <span class="brand-chip">AQARA</span>
+    <span class="brand-chip">SHELLY</span>
+    <span class="brand-chip">HOME ASSISTANT</span>
+    <span class="brand-chip">MIKROTIK</span>
+    <span class="brand-chip">UBIQUITI</span>
+    <span class="brand-chip">SYNOLOGY</span>
+    <span class="brand-chip">TP-LINK</span>
+    <span class="brand-chip">LOGITECH</span>
+  </div>
+</section>
+
+<!-- ─────── 03 · Service strip — full-bleed indigo-deep ─────── -->
+<section class="wrap" id="ng-service">
+  <div class="service reveal">
+    <div class="service-inner">
+      <span class="service-num-ultra">03</span>
+      <span class="sec-num">مكتب الخدمة · SERVICE DESK</span>
+      <h2 class="sec-h2" style="margin-top:8px">اكتب لنا مواصفاتك. نرجع لك بخطة واضحة.</h2>
+      <p class="service-copy">شبكة لمكتب، تركيبة هوم لاب، بيت ذكي كامل، أو محطة ألعاب تنافسية — اشرح لنا الاحتياج، ونرد عليك بمخطط تنفيذ مفصّل، قائمة مكوّنات، وتقدير زمن الشحن والتركيب.</p>
+      <div class="hero-cta-row">
+        <a class="btn btn-primary" href="/contact/">أرسل المواصفات <span class="arr" aria-hidden="true">←</span></a>
+        <a class="btn btn-ghost" href="https://wa.me/" target="_blank" rel="noopener">واتساب</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ─────── Footer ─────── -->
+<footer class="site-footer" role="contentinfo">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <img src="../ng-mark.svg"
+               onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'"
+               alt="NeoGen mark">
+          <span class="wm">NEO·GEN&nbsp;STORE</span>
+        </div>
+        <p class="footer-blurb">جيل التقنية القادم. متجر تقني سعودي معتمد لمحترفي الشبكات، الهوم لاب، البيوت الذكية، والألعاب.</p>
+      </div>
+      <div class="footer-col">
+        <h4>الفئات</h4>
+        <ul>
+          <li><a href="/shop/?cat=networking">شبكات واتصالات</a></li>
+          <li><a href="/shop/?cat=smart-home">أتمتة المنزل الذكي</a></li>
+          <li><a href="/shop/?cat=gaming">ألعاب وإكسسوارات</a></li>
+          <li><a href="/shop/?cat=homelab">هوم لاب</a></li>
+          <li><a href="/shop/?cat=storage">تخزين</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>العميل</h4>
+        <ul>
+          <li><a href="/my-account/">حسابي</a></li>
+          <li><a href="/my-account/orders/">طلباتي</a></li>
+          <li><a href="/returns/">سياسة الإرجاع — 14 يوم</a></li>
+          <li><a href="/shipping/">سياسة الشحن — 2-5 أيام</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>الشركة</h4>
+        <ul>
+          <li><a href="/about/">من نحن</a></li>
+          <li><a href="/contact/">تواصل</a></li>
+          <li><a href="https://wa.me/" target="_blank" rel="noopener">واتساب</a></li>
+          <li><a href="#ng-service">مكتب الخدمة</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span dir="ltr">CR 7053130576 · VAT 15% · © 2026 NeoGen Store</span>
+      <div class="pay-row">
+        <span class="pay">Mada</span>
+        <span class="pay">Visa</span>
+        <span class="pay">Mastercard</span>
+        <span class="pay">Apple Pay</span>
+        <span class="pay">STC Pay</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  (function(){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}
+      });
+    },{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  })();
+</script>
+</body>
+</html>

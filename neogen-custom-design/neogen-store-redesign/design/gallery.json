@@ -1,0 +1,52 @@
+{
+  "project": "NeoGen Store Redesign",
+  "brief": "Local design exploration of neogen.store — a Saudi bilingual (AR/EN) e-commerce shop for next-generation tech and smart-home products. Inherits Brand Tokens v2.0 (R6 Sky + Cool White): light-mode, sky-blue accent #38BDF8, slate text, Chakra Petch / Manrope / IBM Plex Mono with Rakkas + Tajawal + Reem Kufi for Arabic. Tone: precise, technical, forward-looking; spec-led product copy; no marketing superlatives.",
+  "phase": "pages",
+  "startedAt": "2026-04-29",
+  "siteUrl": "http://localhost:8881",
+  "themeSlugs": [],
+  "tokens": null,
+  "artifacts": {
+    "styles": [
+      {
+        "version": "v1",
+        "label": "Operator Atlas",
+        "file": "styles/v1-tile1.html",
+        "description": "R6-faithful baseline. Strict Sky + Cool White, hairline-grid body texture, IBM Plex Mono SKU pills, dense 12px row rhythm. Reads like a clean technical datasheet."
+      },
+      {
+        "version": "v1",
+        "label": "Saudi Linen",
+        "file": "styles/v1-tile2.html",
+        "description": "Premium calm. Warm-shifted off-white surfaces (still neutral, no yellow), Rakkas Arabic hero at 1.2× scale, photographic categories rack, dimmed ticker. Catalogue not terminal."
+      },
+      {
+        "version": "v1",
+        "label": "Sky Workshop",
+        "file": "styles/v1-tile3.html",
+        "description": "R6 with embellishment turned up. Accent-wash hero lattice, --shadow-md cards lifting to --shadow-lg on hover, cyan-pulse LED rack rows, Major Mono Display for section numerals. Workshop-floor energy."
+      }
+    ],
+    "pages": [
+      {
+        "version": "v1",
+        "label": "Operator Atlas — full homepage",
+        "file": "pages/v1-layout1.html",
+        "description": "R6-faithful working ops console. 48px hairline body grid + cursor-tracked sky radial, dense 4-tile hero collage, neutral surface-2 ticker, monoline SVG rack icons, tight 3-col cards, dark indigo service band."
+      },
+      {
+        "version": "v1",
+        "label": "Saudi Linen — full homepage",
+        "file": "pages/v1-layout2.html",
+        "description": "Quiet editorial. Linen-warm bg, no body grid, single accent-wash radial behind hero, oversized Rakkas Arabic h1, single large hero panel, dimmed ticker, generous card padding, photographic category tiles, pill brand chips, light service band with accent stripe."
+      },
+      {
+        "version": "v1",
+        "label": "Sky Workshop — full homepage",
+        "file": "pages/v1-layout3.html",
+        "description": "Precision workshop console. Strict R6, lattice hero (grid + dual accent-wash radials), Major Mono Display section numerals, hover-lift hero collage, architectural ticker with accent-deep separators, cyan-pulse LED keyframes on rack hover, indigo-deep service band with sky CTA glow."
+      }
+    ],
+    "approved": []
+  }
+}

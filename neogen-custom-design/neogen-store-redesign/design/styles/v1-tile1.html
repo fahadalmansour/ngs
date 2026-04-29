@@ -1,0 +1,784 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NeoGen Store — Style Tile · Operator Atlas (v1-tile1)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Rakkas&family=Reem+Kufi:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Backgrounds */
+    --bg:#F8FAFC;
+    --bg-alt:#EEF2F6;
+    --surface:#FFFFFF;
+    --surface-2:#F1F5F9;
+    --raised:#FFFFFF;
+
+    /* Accent (Sky) */
+    --accent:#38BDF8;
+    --accent-soft:#BAE6FD;
+    --accent-deep:#0284C7;
+    --accent-wash:rgba(56, 189, 248, 0.06);
+
+    /* Semantic */
+    --signal:#22C55E;
+    --alert:#EF4444;
+    --warn:#F59E0B;
+    --indigo:#1A2B4B;
+    --indigo-deep:#0F1A2E;
+
+    /* Text */
+    --ice:#0F172A;
+    --text:#0F172A;
+    --warm:#334155;
+    --muted:#64748B;
+    --dim:#94A3B8;
+
+    /* Borders */
+    --line:rgba(15, 23, 42, 0.10);
+    --line-strong:rgba(15, 23, 42, 0.24);
+    --line-warm:rgba(15, 23, 42, 0.06);
+
+    /* Shadows */
+    --shadow-sm:0 1px 2px rgba(15,23,42,0.04), 0 1px 1px rgba(15,23,42,0.03);
+    --shadow-md:0 4px 12px rgba(15,23,42,0.06), 0 2px 4px rgba(15,23,42,0.04);
+    --shadow-lg:0 16px 40px -16px rgba(15,23,42,0.18), 0 4px 8px rgba(15,23,42,0.04);
+    --shadow-xl:0 32px 72px -32px rgba(15,23,42,0.28), 0 8px 16px rgba(15,23,42,0.06);
+    --shadow-accent:0 12px 32px -16px rgba(56,189,248,0.45), inset 0 1px 0 rgba(255,255,255,0.32);
+    --shadow-accent-hover:0 18px 40px -18px rgba(56,189,248,0.65), inset 0 1px 0 rgba(255,255,255,0.40);
+    --shadow-focus:0 0 0 3px rgba(56, 189, 248, 0.18);
+
+    /* Layout */
+    --container:1240px;
+    --radius:8px;
+    --radius-lg:14px;
+    --radius-pill:999px;
+
+    /* Motion */
+    --ease:cubic-bezier(0.2, 0, 0.2, 1);
+    --ease-out:cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Cursor-tracked radial origin (defaults centred) */
+    --mx:50%;
+    --my:30%;
+
+    /* Font stacks */
+    --font-wordmark:"Chakra Petch","IBM Plex Sans",system-ui,sans-serif;
+    --font-sans:"Manrope","IBM Plex Sans",system-ui,sans-serif;
+    --font-mono:"IBM Plex Mono","JetBrains Mono",monospace;
+    --font-ar-display:"Rakkas",serif;
+    --font-ar-ui:"Reem Kufi","Tajawal",system-ui,sans-serif;
+    --font-ar-body:"Tajawal","Reem Kufi",system-ui,sans-serif;
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:var(--font-ar-body);
+    color:var(--text);
+    line-height:1.6;
+    background:
+      radial-gradient(600px circle at var(--mx) var(--my), rgba(56,189,248,0.05), transparent 60%),
+      linear-gradient(rgba(10,10,10,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(10,10,10,0.04) 1px, transparent 1px),
+      var(--bg);
+    background-size:auto, 48px 48px, 48px 48px, auto;
+    min-height:100vh;
+  }
+
+  .frame{
+    max-width:var(--container);
+    margin:0 auto;
+    padding:32px 28px 80px;
+  }
+
+  /* ─── Brand bar ─── */
+  .brand-bar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:14px 20px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-sm);
+  }
+  .lockup{display:flex;align-items:center;gap:14px}
+  .lockup img{height:40px;width:auto;display:block}
+  .wordmark{
+    font-family:var(--font-wordmark);
+    font-weight:600;
+    font-size:20px;
+    letter-spacing:0.18em;
+    color:var(--ice);
+    line-height:1;
+  }
+  .lockup .sep{
+    width:1px;height:28px;background:var(--line-strong);
+  }
+  .ar-tag{
+    font-family:var(--font-ar-display);
+    color:var(--warm);
+    font-size:24px;
+    line-height:1;
+  }
+  .badges{display:flex;gap:8px;flex-wrap:wrap}
+  .pill{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:5px 11px;
+    border-radius:var(--radius-pill);
+    background:var(--surface-2);
+    border:1px solid var(--line);
+    font-family:var(--font-ar-ui);
+    font-size:12px;
+    color:var(--warm);
+  }
+  .pill .dot{width:6px;height:6px;border-radius:50%;background:var(--signal)}
+  .pill.mono{font-family:var(--font-mono);color:var(--ice);letter-spacing:0.04em}
+
+  /* ─── Section heading ─── */
+  .sec{
+    margin-top:36px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-md);
+    padding:28px 32px;
+  }
+  .sec > .sec-head{
+    display:flex;align-items:baseline;justify-content:space-between;
+    border-bottom:1px solid var(--line-warm);
+    padding-bottom:12px;margin-bottom:20px;
+  }
+  .sec-head h2{
+    margin:0;font-family:var(--font-ar-ui);font-weight:600;
+    font-size:18px;color:var(--ice);letter-spacing:0;
+  }
+  .sec-head .meta{
+    font-family:var(--font-mono);font-size:11px;color:var(--muted);
+    letter-spacing:0.08em;text-transform:uppercase;
+  }
+
+  /* ─── Swatch row ─── */
+  .swatches{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+    gap:14px;
+  }
+  .sw{
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:var(--surface);
+    box-shadow:var(--shadow-sm);
+  }
+  .sw .chip{height:64px;border-bottom:1px solid var(--line-warm)}
+  .sw .meta{padding:10px 12px}
+  .sw .name{
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    color:var(--ice);
+    line-height:1.2;
+  }
+  .sw .hex{
+    font-family:var(--font-mono);
+    font-size:10.5px;
+    color:var(--muted);
+    margin-top:3px;
+    letter-spacing:0.04em;
+  }
+
+  /* ─── Typography specimen ─── */
+  .specimen{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media (max-width:880px){.specimen{grid-template-columns:1fr}}
+  .spec-block{padding:0}
+  .spec-block .lbl{
+    font-family:var(--font-mono);font-size:10.5px;color:var(--muted);
+    letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;
+  }
+  .display-en{
+    font-family:var(--font-wordmark);
+    font-weight:500;
+    font-size:44px;
+    line-height:1.05;
+    letter-spacing:-0.005em;
+    color:var(--ice);
+    margin:0 0 14px;
+    text-wrap:balance;
+  }
+  .display-ar{
+    font-family:var(--font-ar-display);
+    font-size:60px;
+    line-height:1.0;
+    color:var(--ice);
+    margin:0 0 18px;
+    text-wrap:balance;
+  }
+  .h2-ar{
+    font-family:var(--font-ar-ui);
+    font-weight:600;
+    font-size:24px;
+    color:var(--ice);
+    margin:0 0 10px;
+    line-height:1.25;
+  }
+  .body-ar{
+    font-family:var(--font-ar-body);
+    font-size:15.5px;
+    color:var(--warm);
+    margin:0 0 14px;
+    text-wrap:pretty;
+  }
+  .body-ar a{color:var(--accent-deep);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;transition:color 200ms var(--ease)}
+  .body-ar a:hover{color:var(--accent)}
+  .mono-row{
+    display:flex;gap:14px;align-items:center;margin-top:10px;
+    flex-wrap:wrap;
+  }
+  .sku-pill{
+    display:inline-flex;align-items:center;
+    font-family:var(--font-mono);font-size:12px;font-weight:500;
+    color:var(--ice);background:var(--surface-2);
+    padding:5px 10px;border:1px solid var(--line);
+    border-radius:var(--radius-pill);
+    letter-spacing:0.04em;
+  }
+  .price-mono{
+    font-family:var(--font-mono);font-size:22px;font-weight:600;
+    color:var(--ice);letter-spacing:-0.01em;
+  }
+  .price-mono small{
+    font-family:var(--font-mono);font-size:12px;color:var(--muted);
+    margin-inline-start:6px;font-weight:400;
+  }
+
+  /* ─── Card mocks grid ─── */
+  .mocks{
+    display:grid;grid-template-columns:1.05fr 1fr;gap:20px;
+  }
+  @media (max-width:920px){.mocks{grid-template-columns:1fr}}
+
+  /* Operator Pick card */
+  .pick{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-md);
+    overflow:hidden;
+    display:flex;flex-direction:column;
+    transition:box-shadow 200ms var(--ease), transform 200ms var(--ease);
+  }
+  .pick:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+  .pick-media{
+    position:relative;
+    aspect-ratio:16/10;
+    background:
+      radial-gradient(120% 80% at 30% 20%, rgba(56,189,248,0.18), transparent 55%),
+      linear-gradient(180deg, var(--surface-2) 0%, var(--bg-alt) 100%);
+    border-bottom:1px solid var(--line-warm);
+    overflow:hidden;
+  }
+  .pick-media::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(15,23,42,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15,23,42,0.05) 1px, transparent 1px);
+    background-size:24px 24px;
+    opacity:0.6;
+  }
+  .pick-media .sku{
+    position:absolute;top:12px;inset-inline-start:12px;
+  }
+  .pick-media .stock{
+    position:absolute;top:12px;inset-inline-end:12px;
+    display:inline-flex;align-items:center;gap:6px;
+    padding:5px 10px;border-radius:var(--radius-pill);
+    background:var(--surface);border:1px solid var(--line);
+    font-family:var(--font-ar-ui);font-size:11.5px;color:var(--ice);
+    box-shadow:var(--shadow-sm);
+  }
+  .pick-media .stock .led{width:6px;height:6px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 3px rgba(34,197,94,0.18)}
+  .pick-media .stock.low .led{background:var(--warn);box-shadow:0 0 0 3px rgba(245,158,11,0.18)}
+  .pick-media .ghost-mark{
+    position:absolute;inset:0;display:grid;place-items:center;
+    opacity:0.55;
+  }
+  .pick-media .ghost-mark img{width:38%;max-width:140px;filter:drop-shadow(0 6px 16px rgba(2,132,199,0.18))}
+
+  .pick-body{padding:18px 18px 16px}
+  .pick-title{
+    font-family:var(--font-ar-ui);
+    font-weight:600;
+    font-size:18px;
+    color:var(--ice);
+    margin:0 0 10px;
+    line-height:1.35;
+  }
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+  .chip-spec{
+    display:inline-flex;align-items:center;
+    font-family:var(--font-ar-ui);font-size:11.5px;
+    color:var(--warm);background:var(--surface-2);
+    padding:4px 9px;border:1px solid var(--line-warm);
+    border-radius:var(--radius-pill);
+  }
+  .chip-spec .v{font-family:var(--font-mono);color:var(--ice);margin-inline-start:4px}
+  .price-row{
+    display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+    border-top:1px dashed var(--line-warm);
+    padding-top:12px;margin-top:4px;
+  }
+  .price-stack .amt{
+    font-family:var(--font-mono);font-size:22px;font-weight:600;
+    color:var(--ice);letter-spacing:-0.01em;
+  }
+  .price-stack .unit{
+    font-family:var(--font-mono);font-size:12px;color:var(--muted);
+    margin-inline-start:4px;
+  }
+  .price-stack .vat{
+    display:block;font-family:var(--font-ar-ui);font-size:11px;color:var(--muted);
+    margin-top:2px;
+  }
+
+  /* Categories rack-unit */
+  .rack{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-md);
+    padding:18px 18px 16px;
+    display:flex;flex-direction:column;gap:12px;
+    position:relative;
+    overflow:hidden;
+  }
+  .rack::before{
+    content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;
+    width:3px;background:linear-gradient(180deg,var(--accent),var(--accent-deep));
+    opacity:0.85;
+  }
+  .rack-head{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+  }
+  .rack-id{
+    font-family:var(--font-mono);font-size:11.5px;color:var(--muted);
+    letter-spacing:0.06em;
+  }
+  .rack-id .ar{font-family:var(--font-ar-ui);color:var(--warm);margin-inline-start:6px}
+  .leds{display:inline-flex;gap:5px;align-items:center}
+  .leds span{width:7px;height:7px;border-radius:50%;background:var(--dim)}
+  .leds .on{background:var(--signal);box-shadow:0 0 0 3px rgba(34,197,94,0.18)}
+  .leds .ck{background:var(--accent);box-shadow:0 0 0 3px var(--accent-wash)}
+  .leds .wn{background:var(--warn);box-shadow:0 0 0 3px rgba(245,158,11,0.18)}
+  .rack-icon{
+    width:48px;height:48px;border-radius:var(--radius);
+    background:var(--surface-2);border:1px solid var(--line-warm);
+    display:grid;place-items:center;color:var(--accent-deep);
+  }
+  .rack-title{
+    font-family:var(--font-ar-ui);font-weight:600;font-size:18px;
+    color:var(--ice);margin:2px 0 0;line-height:1.3;
+  }
+  .rack-desc{
+    font-family:var(--font-ar-body);font-size:14px;color:var(--warm);
+    margin:0;line-height:1.55;
+  }
+  .rack-foot{
+    display:flex;align-items:center;justify-content:space-between;
+    border-top:1px solid var(--line-warm);
+    padding-top:12px;
+  }
+  .count-badge{
+    font-family:var(--font-ar-ui);font-size:12px;
+    color:var(--ice);background:var(--accent-wash);
+    border:1px solid var(--accent-soft);
+    padding:5px 10px;border-radius:var(--radius-pill);
+  }
+  .count-badge .n{font-family:var(--font-mono);font-weight:600;margin-inline-end:4px}
+  .browse-link{
+    font-family:var(--font-ar-ui);font-weight:500;
+    color:var(--accent-deep);text-decoration:none;
+    border-bottom:1px solid transparent;transition:border-color 200ms var(--ease), color 200ms var(--ease);
+  }
+  .browse-link:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+  /* ─── Buttons ─── */
+  .btn-row{
+    display:flex;flex-wrap:wrap;gap:14px;align-items:center;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--font-ar-ui);font-weight:600;font-size:14px;
+    padding:11px 20px;border-radius:var(--radius);
+    cursor:pointer;border:1px solid transparent;
+    transition:transform 200ms var(--ease), box-shadow 200ms var(--ease), background-color 200ms var(--ease), color 200ms var(--ease);
+    text-decoration:none;line-height:1;
+  }
+  .btn-primary{
+    background:var(--accent);color:#FFFFFF;
+    box-shadow:var(--shadow-accent);
+    border-color:var(--accent-deep);
+  }
+  .btn-primary:hover{
+    background:var(--accent-deep);
+    box-shadow:var(--shadow-accent-hover);
+    transform:translateY(-1px);
+  }
+  .btn-primary:focus-visible,.btn-primary.focused{
+    outline:none;
+    box-shadow:var(--shadow-accent), var(--shadow-focus);
+  }
+  .btn-ghost{
+    background:transparent;color:var(--ice);
+    border-color:var(--line-strong);
+  }
+  .btn-ghost:hover{
+    background:var(--accent-wash);border-color:var(--accent);color:var(--accent-deep);
+  }
+  .btn-ghost:focus-visible,.btn-ghost.focused{
+    outline:none;border-color:var(--accent);
+    box-shadow:var(--shadow-focus);
+  }
+  .btn-add{
+    width:100%;justify-content:center;
+  }
+  .btn .arr{font-family:var(--font-mono);font-size:14px;line-height:1}
+
+  .state-row{
+    display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start;
+    margin-top:20px;
+  }
+  .state-stack{
+    display:flex;flex-direction:column;gap:8px;align-items:flex-start;
+  }
+  .state-stack .lbl{
+    font-family:var(--font-mono);font-size:10.5px;color:var(--muted);
+    letter-spacing:0.1em;text-transform:uppercase;
+  }
+
+  /* ─── Links + form ─── */
+  .util-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:24px;
+  }
+  @media (max-width:880px){.util-grid{grid-template-columns:1fr}}
+  .links-demo p{margin:0 0 10px}
+  .link-primary{
+    color:var(--accent-deep);text-decoration:underline;
+    text-underline-offset:3px;text-decoration-thickness:1px;
+    transition:color 200ms var(--ease);
+  }
+  .link-primary:hover{color:var(--accent)}
+  .link-ghost{
+    color:var(--ice);text-decoration:underline;text-decoration-color:var(--line-strong);
+    text-underline-offset:3px;text-decoration-thickness:1px;
+    transition:text-decoration-color 200ms var(--ease), color 200ms var(--ease);
+  }
+  .link-ghost:hover{color:var(--accent-deep);text-decoration-color:var(--accent)}
+
+  .form-block label{
+    display:block;font-family:var(--font-ar-ui);font-size:13px;
+    color:var(--warm);margin-bottom:6px;
+  }
+  .input{
+    width:100%;
+    font-family:var(--font-ar-body);font-size:15px;
+    padding:11px 14px;
+    background:var(--surface);
+    color:var(--ice);
+    border:1px solid var(--line-strong);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow-sm);
+    transition:border-color 200ms var(--ease), box-shadow 200ms var(--ease);
+  }
+  .input::placeholder{color:var(--muted)}
+  .input:focus,.input.focused{
+    outline:none;
+    border-color:var(--accent);
+    box-shadow:var(--shadow-focus);
+  }
+  .input-help{
+    font-family:var(--font-ar-ui);font-size:12px;color:var(--muted);
+    margin-top:6px;
+  }
+
+  /* ─── Footer note ─── */
+  .footnote{
+    margin-top:28px;display:flex;flex-wrap:wrap;justify-content:space-between;
+    gap:10px;
+    font-family:var(--font-mono);font-size:11px;color:var(--muted);
+    letter-spacing:0.04em;
+  }
+  .footnote .ar{font-family:var(--font-ar-ui)}
+</style>
+</head>
+<body>
+<div class="frame">
+
+  <!-- (1) Brand bar -->
+  <header class="brand-bar" aria-label="NeoGen brand bar">
+    <div class="lockup">
+      <img src="../ng-mark.svg"
+           onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'"
+           alt="NeoGen mark">
+      <span class="wordmark">NEO·GEN&nbsp;STORE</span>
+      <span class="sep" aria-hidden="true"></span>
+      <span class="ar-tag">جيل التقنية القادم</span>
+    </div>
+    <div class="badges" aria-label="trust badges">
+      <span class="pill mono">CR <span dir="ltr">7053130576</span></span>
+      <span class="pill">VAT 15% شامل</span>
+      <span class="pill"><span class="dot"></span>شحن من المملكة</span>
+    </div>
+  </header>
+
+  <!-- Tile meta -->
+  <section class="sec" aria-label="direction overview">
+    <div class="sec-head">
+      <h2>Operator Atlas — اتجاه التصميم</h2>
+      <span class="meta">v1 · TILE 01 · R6 SKY + COOL WHITE</span>
+    </div>
+    <p class="body-ar" style="max-width:780px;margin:0">
+      اتجاه أساسي مخلص لرموز R6: خلفية رمادية فاتحة، شبكة هادئة، لون مميّز سماوي، نوع تقني صريح. مزاج غرفة رفوف نظيفة، ودقّة جدول مواصفات. نقرأ هذا التايل كـ
+      <a href="#" class="link-primary">صفحة عمل لمشغّل تقني</a>
+      لا كـ صفحة تسويق.
+    </p>
+  </section>
+
+  <!-- (2) Swatch row -->
+  <section class="sec" aria-label="palette swatches">
+    <div class="sec-head">
+      <h2>اللوحة اللونية — كل رموز R6</h2>
+      <span class="meta">PALETTE · 18 TOKENS</span>
+    </div>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#F8FAFC;border-bottom:1px solid var(--line-warm)"></div><div class="meta"><div class="name">--bg</div><div class="hex">#F8FAFC</div></div></div>
+      <div class="sw"><div class="chip" style="background:#EEF2F6"></div><div class="meta"><div class="name">--bg-alt</div><div class="hex">#EEF2F6</div></div></div>
+      <div class="sw"><div class="chip" style="background:#FFFFFF"></div><div class="meta"><div class="name">--surface</div><div class="hex">#FFFFFF</div></div></div>
+      <div class="sw"><div class="chip" style="background:#F1F5F9"></div><div class="meta"><div class="name">--surface-2</div><div class="hex">#F1F5F9</div></div></div>
+      <div class="sw"><div class="chip" style="background:#38BDF8"></div><div class="meta"><div class="name">--accent</div><div class="hex">#38BDF8</div></div></div>
+      <div class="sw"><div class="chip" style="background:#BAE6FD"></div><div class="meta"><div class="name">--accent-soft</div><div class="hex">#BAE6FD</div></div></div>
+      <div class="sw"><div class="chip" style="background:#0284C7"></div><div class="meta"><div class="name">--accent-deep</div><div class="hex">#0284C7</div></div></div>
+      <div class="sw"><div class="chip" style="background:rgba(56,189,248,0.06)"></div><div class="meta"><div class="name">--accent-wash</div><div class="hex">rgba(56,189,248,.06)</div></div></div>
+      <div class="sw"><div class="chip" style="background:#22C55E"></div><div class="meta"><div class="name">--signal</div><div class="hex">#22C55E</div></div></div>
+      <div class="sw"><div class="chip" style="background:#EF4444"></div><div class="meta"><div class="name">--alert</div><div class="hex">#EF4444</div></div></div>
+      <div class="sw"><div class="chip" style="background:#F59E0B"></div><div class="meta"><div class="name">--warn</div><div class="hex">#F59E0B</div></div></div>
+      <div class="sw"><div class="chip" style="background:#1A2B4B"></div><div class="meta"><div class="name">--indigo</div><div class="hex">#1A2B4B</div></div></div>
+      <div class="sw"><div class="chip" style="background:#0F172A"></div><div class="meta"><div class="name">--ice / --text</div><div class="hex">#0F172A</div></div></div>
+      <div class="sw"><div class="chip" style="background:#334155"></div><div class="meta"><div class="name">--warm</div><div class="hex">#334155</div></div></div>
+      <div class="sw"><div class="chip" style="background:#64748B"></div><div class="meta"><div class="name">--muted</div><div class="hex">#64748B</div></div></div>
+      <div class="sw"><div class="chip" style="background:#94A3B8"></div><div class="meta"><div class="name">--dim</div><div class="hex">#94A3B8</div></div></div>
+      <div class="sw"><div class="chip" style="background:rgba(15,23,42,0.10)"></div><div class="meta"><div class="name">--line</div><div class="hex">rgba(15,23,42,.10)</div></div></div>
+      <div class="sw"><div class="chip" style="background:rgba(15,23,42,0.24)"></div><div class="meta"><div class="name">--line-strong</div><div class="hex">rgba(15,23,42,.24)</div></div></div>
+      <div class="sw"><div class="chip" style="background:rgba(15,23,42,0.06)"></div><div class="meta"><div class="name">--line-warm</div><div class="hex">rgba(15,23,42,.06)</div></div></div>
+    </div>
+  </section>
+
+  <!-- (3) Typography specimen -->
+  <section class="sec" aria-label="typography specimen">
+    <div class="sec-head">
+      <h2>الطباعة — Chakra Petch · Rakkas · Manrope · Plex Mono</h2>
+      <span class="meta">TYPE SPECIMEN</span>
+    </div>
+    <div class="specimen">
+      <div class="spec-block">
+        <div class="lbl">DISPLAY · EN — Chakra Petch 500</div>
+        <h1 class="display-en">The Next Generation of Tech.</h1>
+        <div class="lbl">H2 · AR — Reem Kufi 600</div>
+        <h2 class="h2-ar">متوفّرة. بمواصفات. جاهزة للشحن.</h2>
+        <div class="lbl">BODY · AR — Tajawal 400</div>
+        <p class="body-ar">
+          متجر تقني سعودي لمحترفي الشبكات، الهوم لاب، البيوت الذكية، والألعاب. منتجات مختارة، مواصفات بدون مبالغة، شحن من
+          <a href="#">داخل المملكة</a>.
+        </p>
+      </div>
+      <div class="spec-block">
+        <div class="lbl">DISPLAY · AR — Rakkas Regular</div>
+        <p class="display-ar">جيل التقنية القادم.</p>
+        <div class="lbl">MONO · TOKENS — IBM Plex Mono</div>
+        <div class="mono-row">
+          <span class="sku-pill" dir="ltr">SKU NG-RT-AX-3000</span>
+          <span class="price-mono"><span dir="ltr">1,249</span><small>SAR</small></span>
+          <span class="sku-pill" dir="ltr">v1.24.7</span>
+        </div>
+        <p class="body-ar" style="margin-top:14px">
+          الأرقام والـ SKU وأكواد الإصدار تكتب دائمًا بـ <span dir="ltr" style="font-family:var(--font-mono)">IBM Plex Mono</span> داخل عناصر <span dir="ltr" style="font-family:var(--font-mono)">dir="ltr"</span> حتى لا تنكسر في الوضع العربي.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- (4) + (5) Card mocks -->
+  <section class="sec" aria-label="component mocks">
+    <div class="sec-head">
+      <h2>المكوّنات — بطاقة مختارات + وحدة رف</h2>
+      <span class="meta">OPERATOR PICK · CATEGORY RACK</span>
+    </div>
+    <div class="mocks">
+
+      <!-- Operator Pick card -->
+      <article class="pick" aria-label="Operator Pick card mock">
+        <div class="pick-media">
+          <span class="sku-pill sku" dir="ltr">SKU NG-RT-AX-3000</span>
+          <span class="stock"><span class="led"></span>متوفّر · <span dir="ltr" style="font-family:var(--font-mono);margin-inline-start:2px">12</span></span>
+          <div class="ghost-mark" aria-hidden="true">
+            <img src="../ng-mark.svg"
+                 onerror="this.onerror=null;this.src='/?design-asset=ng-mark.svg'"
+                 alt="">
+          </div>
+        </div>
+        <div class="pick-body">
+          <h3 class="pick-title">راوتر شبكي AX3000 ثنائي النطاق — لمكاتب ومنازل المشغّلين</h3>
+          <div class="chips">
+            <span class="chip-spec">معيار <span class="v" dir="ltr">Wi-Fi 6</span></span>
+            <span class="chip-spec">سرعة <span class="v" dir="ltr">3.0 Gbps</span></span>
+            <span class="chip-spec">منافذ <span class="v" dir="ltr">4× 1GbE</span></span>
+            <span class="chip-spec">ضمان <span class="v" dir="ltr">12 شهر</span></span>
+          </div>
+          <div class="price-row">
+            <div class="price-stack">
+              <span class="amt" dir="ltr">1,249</span><span class="unit" dir="ltr">SAR</span>
+              <span class="vat">شامل الضريبة · شحن 2-5 أيام</span>
+            </div>
+            <span class="pill"><span class="dot" style="background:var(--accent)"></span>جديد</span>
+          </div>
+          <button class="btn btn-primary btn-add" type="button" style="margin-top:14px">
+            أضف للسلة <span class="arr" aria-hidden="true">←</span>
+          </button>
+        </div>
+      </article>
+
+      <!-- Categories rack-unit -->
+      <article class="rack" aria-label="Category rack-unit mock">
+        <div class="rack-head">
+          <span class="rack-id"><span dir="ltr">01</span> · <span class="ar">رف A</span></span>
+          <span class="leds" aria-label="rack LED row">
+            <span class="on" title="active"></span>
+            <span class="ck" title="link"></span>
+            <span class="wn" title="warn"></span>
+          </span>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start">
+          <div class="rack-icon" aria-hidden="true">
+            <!-- node-graph icon, monoline 32x32 -->
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="16" cy="6" r="2.6"/>
+              <circle cx="6" cy="22" r="2.6"/>
+              <circle cx="26" cy="22" r="2.6"/>
+              <circle cx="16" cy="26" r="2.6"/>
+              <path d="M16 8.6 L7.6 19.6 M16 8.6 L24.4 19.6 M8.4 23.4 L13.6 25.4 M23.6 23.4 L18.4 25.4"/>
+            </svg>
+          </div>
+          <div style="flex:1;min-width:0">
+            <h3 class="rack-title">شبكات واتصالات</h3>
+            <p class="rack-desc">راوتر، سويتش، نقاط وصول، ألياف. مكوّنات شبكة جادّة لمكاتب، ورش، ومنازل المشغّلين.</p>
+          </div>
+        </div>
+        <div class="rack-foot">
+          <span class="count-badge"><span class="n" dir="ltr">37</span>منتج</span>
+          <a href="#" class="browse-link">تصفّح <span class="arr" dir="ltr" style="font-family:var(--font-mono)">→</span></a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- (6) Buttons states -->
+  <section class="sec" aria-label="button states">
+    <div class="sec-head">
+      <h2>الأزرار — أساسي + شبحي</h2>
+      <span class="meta">PRIMARY · GHOST · REST / HOVER / FOCUS</span>
+    </div>
+
+    <div class="state-row">
+      <div class="state-stack">
+        <span class="lbl">PRIMARY · REST</span>
+        <button class="btn btn-primary" type="button">تصفح المتجر <span class="arr" aria-hidden="true">←</span></button>
+      </div>
+      <div class="state-stack">
+        <span class="lbl">PRIMARY · HOVER</span>
+        <button class="btn btn-primary" type="button" style="background:var(--accent-deep);box-shadow:var(--shadow-accent-hover);transform:translateY(-1px)">تصفح المتجر <span class="arr" aria-hidden="true">←</span></button>
+      </div>
+      <div class="state-stack">
+        <span class="lbl">PRIMARY · FOCUS</span>
+        <button class="btn btn-primary focused" type="button">تصفح المتجر <span class="arr" aria-hidden="true">←</span></button>
+      </div>
+
+      <div class="state-stack">
+        <span class="lbl">GHOST · REST</span>
+        <button class="btn btn-ghost" type="button">ابنِ جهازك</button>
+      </div>
+      <div class="state-stack">
+        <span class="lbl">GHOST · HOVER</span>
+        <button class="btn btn-ghost" type="button" style="background:var(--accent-wash);border-color:var(--accent);color:var(--accent-deep)">ابنِ جهازك</button>
+      </div>
+      <div class="state-stack">
+        <span class="lbl">GHOST · FOCUS</span>
+        <button class="btn btn-ghost focused" type="button">ابنِ جهازك</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- (7) + (8) Links and Form -->
+  <section class="sec" aria-label="links and form">
+    <div class="sec-head">
+      <h2>الروابط + حقل إدخال</h2>
+      <span class="meta">LINKS · FORM · FOCUS RING</span>
+    </div>
+    <div class="util-grid">
+
+      <div class="links-demo">
+        <div class="lbl" style="font-family:var(--font-mono);font-size:10.5px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px">LINK STYLES</div>
+        <p class="body-ar">
+          الرابط الأساسي يستخدم
+          <a href="#" class="link-primary">لون السماء العميق</a>
+          مع خط تحته بمسافة 3 بكسل، يتغيّر إلى السماوي عند التمرير.
+        </p>
+        <p class="body-ar">
+          الرابط الثانوي
+          <a href="#" class="link-ghost">يبقى بلون النص</a>
+          مع خط تحته خفيف، يتلوّن سماوي العميق عند التمرير — للحاشية والتذييل.
+        </p>
+        <p class="body-ar">
+          ضمن النص العربي، الـ
+          <span class="sku-pill" dir="ltr">SKU NG-RT-AX-3000</span>
+          والأسعار <span class="price-mono" style="font-size:15px"><span dir="ltr">1,249</span><small>SAR</small></span> تظل بالـمونوسبيس داخل قطع <span dir="ltr" style="font-family:var(--font-mono)">dir="ltr"</span>.
+        </p>
+      </div>
+
+      <div class="form-block">
+        <div class="lbl" style="font-family:var(--font-mono);font-size:10.5px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px">FORM INPUT · FOCUS</div>
+
+        <label for="qf">أرسل المواصفات</label>
+        <input id="qf" class="input" type="text" placeholder="اكتب احتياج المشروع — شبكة، هوم لاب، بيت ذكي…">
+        <div class="input-help">حقل في الراحة — حدّ <span dir="ltr" style="font-family:var(--font-mono)">--line-strong</span>، ظل خفيف.</div>
+
+        <label for="qf2" style="margin-top:18px">حقل في حالة التركيز</label>
+        <input id="qf2" class="input focused" type="text" value="شبكة لمكتب · 12 منفذ · Wi-Fi 6">
+        <div class="input-help">عند التركيز — حدّ <span dir="ltr" style="font-family:var(--font-mono)">--accent</span> + حلقة <span dir="ltr" style="font-family:var(--font-mono)">--shadow-focus</span>.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footnote" role="contentinfo">
+    <span class="ar">CR <span dir="ltr">7053130576</span> · VAT 15% شامل · شحن من المملكة 2-5 أيام عمل</span>
+    <span dir="ltr">v1-tile1 · OPERATOR ATLAS · NEOGEN.STORE</span>
+  </footer>
+
+</div>
+
+<script>
+  // Cursor-tracked radial glow per Brand Tokens v2.0 §Background Patterns
+  (function(){
+    var root = document.documentElement;
+    window.addEventListener('mousemove', function(e){
+      root.style.setProperty('--mx', e.clientX + 'px');
+      root.style.setProperty('--my', (e.clientY + window.scrollY) + 'px');
+    }, {passive:true});
+  })();
+</script>
+</body>
+</html>

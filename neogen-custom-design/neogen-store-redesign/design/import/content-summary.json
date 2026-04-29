@@ -1,0 +1,200 @@
+{
+  "source": "Two local sources of truth (live neogen.store currently 500-erroring): (a) /Users/fahadalmansour/ngs/neogen-custom/mu-plugins/neogen-theme-assets/templates/front-page.php for homepage section structure; (b) /Users/fahadalmansour/ngs/neogen_products_woocommerce_import.csv for the real bilingual product catalogue (210 products, 12 categories), with real product images cross-matched from /Users/fahadalmansour/ngs/WP files/uploads/ (10,581 indexed files, 209/210 image hits).",
+  "real_catalogue": {
+    "total_products": 210,
+    "categories_with_counts": {
+      "Smart Home & IoT | أتمتة المنزل الذكي": 50,
+      "Gaming | ألعاب": 39,
+      "Homelab | هوم لاب": 29,
+      "Networking | شبكات واتصالات": 26,
+      "Hardware | أجهزة PC": 12,
+      "Gift Cards & Software Keys | بطاقات رقمية ومفاتيح": 10,
+      "Drones & Robotics | درونز وروبوتات": 8,
+      "Cables & Adapters | كابلات ومحولات": 8,
+      "3D Printing & CNC | طباعة ثلاثية الأبعاد": 8,
+      "Security & Surveillance | أمن ومراقبة": 7,
+      "Accessories & Lifestyle | إكسسوارات": 7,
+      "Enthusiasts & Gamers | هواة التقنية": 6
+    },
+    "curated_subset": "design/products.json — 24 products spanning the top 6 categories, with real bilingual names, real SKUs, real prices in SAR, real images locally staged at design/products/. Use these for ALL product cards, hero collages, picks rows, and product-page mockups. Do NOT invent products.",
+    "category_taxonomy_note": "The real catalogue uses 12 categories. The deployed homepage's $copy_map shows top-5 (networking, smart-home, gaming, homelab, storage) plus hardware and gift-cards as fallbacks. 'storage' is not a separate category in the live catalogue — homelab subsumes it. Mockups should mirror the real top-5: smart-home, gaming, homelab, networking, hardware (in that count order)."
+  },
+  "site": {
+    "name": "NeoGen Store",
+    "wordmark": "NEO·GEN STORE",
+    "tagline_ar": "جيل التقنية القادم",
+    "tagline_en": "The Next Generation of Tech",
+    "direction": "rtl",
+    "primary_language": "ar",
+    "secondary_language": "en",
+    "voice": "precise, technical, forward-looking; spec-led; never marketing-superlative; bilingual but Arabic-first on customer-facing copy"
+  },
+  "merchant": {
+    "cr_number": "7053130576",
+    "vat_inclusive_pct": 15,
+    "shipping_window": "2-5 working days, from KSA",
+    "returns_window_days": 14,
+    "warranty_months": 12,
+    "channels": ["website", "WhatsApp"]
+  },
+  "navigation_top": [
+    {"label_ar": "الرئيسية", "label_en": "Home", "slug": "/"},
+    {"label_ar": "المتجر", "label_en": "Shop", "slug": "/shop/"},
+    {"label_ar": "الفئات", "label_en": "Categories", "slug": "#ng-cat"},
+    {"label_ar": "خدمة التنفيذ", "label_en": "Build Service", "slug": "#ng-service"},
+    {"label_ar": "تواصل", "label_en": "Contact", "slug": "/contact/"}
+  ],
+  "homepage_sections": [
+    {
+      "id": "hero",
+      "kicker_ar": "متجر تقني سعودي · معتمد",
+      "kicker_en": "Saudi tech storefront · CR-verified",
+      "h1_ar": "جيل التقنية القادم.",
+      "h1_en": "The Next Generation of Tech.",
+      "lockup": "ng-mark + NEO·GEN · STORE",
+      "copy_ar": "متجر تقني سعودي لمحترفي الشبكات، الهوم لاب، البيوت الذكية، والألعاب. منتجات مختارة، مواصفات بدون مبالغة، شحن من داخل المملكة.",
+      "copy_en": "A Saudi tech storefront for networking, homelab, smart-home, and gaming operators. Curated catalogue, no-hype specs, in-Kingdom shipping.",
+      "sub_ar": "// تقنية متخصصة · مهيّأة للمشغّلين · شحن من المملكة //",
+      "ctas": [
+        {"label_ar": "تصفح المتجر", "label_en": "Browse the catalogue", "primary": true, "href": "/shop/"},
+        {"label_ar": "ابنِ جهازك", "label_en": "Build your rig", "primary": false, "href": "#ng-service"}
+      ],
+      "hero_meta_chips": [
+        {"label_ar": "سجل تجاري", "value": "7053130576"},
+        {"label_ar": "الضريبة", "value": "15% شاملة"},
+        {"label_ar": "الشحن", "value": "2-5 أيام عمل"},
+        {"label_ar": "الإرجاع", "value": "14 يوم"},
+        {"label_ar": "الضمان", "value": "12 شهر"}
+      ],
+      "side_visual": "Either an explicit ng_hero_side_image_id, OR a 4-tile collage from the diversified Operator Picks (max 1 per primary category — no Amazon-reseller feel)."
+    },
+    {
+      "id": "sku-ticker",
+      "purpose": "Continuous marquee of latest 7 product SKUs with stock counts. Renders twice for seamless loop. Pure SKU/title/STOCK rhythm — no decoration.",
+      "format": "<SKU> <SHORT_TITLE_UPPER> STOCK <N|IN> · <SKU> ..."
+    },
+    {
+      "id": "operator-picks",
+      "label": "01 · المختارات",
+      "h2_ar": "متوفّرة. بمواصفات. جاهزة للشحن.",
+      "h2_en": "In stock. Spec-honest. Ship-ready.",
+      "subhead_ar": "مختارات المشغّلين. جاهزة للشحن.",
+      "note_ar": "وحدات مختارة من الكتالوج — اخترناها للموثوقية، وقابلية الإصلاح، وتوفّر القطع داخل المملكة. كل بطاقة تعرض الرمز، والمواصفات، وفعلًا واحدًا أساسيًا. لا أزرار خادعة.",
+      "card_count": 3,
+      "card_anatomy": [
+        "SKU pill (top-left)",
+        "Stock/new tag (top-right): متوفّر · N | جديد | مخزون منخفض · N | نفد",
+        "Featured image (with hover swap to first gallery image)",
+        "Arabic product title",
+        "Up to 4 spec chips (from product attributes / tags)",
+        "Price block: number + SAR unit + 'شامل الضريبة · شحن 2-5 أيام'",
+        "Single CTA: 'أضف للسلة' (simple+in-stock) or 'عرض'"
+      ],
+      "primary_category_diversity_rule": "1 card per primary category — gift-cards never monopolise the row."
+    },
+    {
+      "id": "categories-rack",
+      "label": "02 · الفئات",
+      "h2_ar": "فئاتنا الـ 5 المختارة.",
+      "h2_en": "Our 5 curated categories.",
+      "subhead_ar": "فئات مختارة. كل فئة لعمل تقني واضح.",
+      "note_ar": "كل فئة مهيّأة لنوع مشغّل محدّد. أعداد المنتجات تُسحب مباشرةً من الكتالوج — إذا لم يكن المنتج نافعًا في شبكة جادة، أو هوم لاب، أو بيت ذكي، أو إعداد ألعاب، أو خدمة تنفيذ — فلا نحمله.",
+      "categories": [
+        {"slug": "networking", "ar": "شبكات واتصالات — راوتر، سويتش، نقاط وصول، ألياف."},
+        {"slug": "smart-home", "ar": "أتمتة المنزل الذكي — Aqara · Shelly · Home Assistant."},
+        {"slug": "gaming",     "ar": "ألعاب وإكسسوارات — يدّات، شاشات، صوت، كيبل."},
+        {"slug": "homelab",    "ar": "هوم لاب — رفوف، سيرفرات، تخزين شبكة، NAS."},
+        {"slug": "storage",    "ar": "تخزين — أقراص NVMe وSSD وHDD ومحطات NAS."},
+        {"slug": "hardware",   "ar": "أجهزة وتجميعات PC مختارة — معالجات، لوحات، تخزين، تبريد."},
+        {"slug": "gift-cards", "ar": "بطاقات رقمية ومفاتيح برامج — تفعيل فوري."}
+      ],
+      "card_anatomy": [
+        "Rack ID: '01 · رف A' style",
+        "LED row (3 dots, varied: on/cyan/warn/off)",
+        "Photo or mono SVG icon",
+        "Arabic title",
+        "AR description (≤100 chars)",
+        "Product count badge: '<N> منتج'",
+        "Browse link: 'تصفّح →'"
+      ],
+      "icon_set": "monoline SVG, 32x32 viewBox, 1.4-stroke; per-category: networking=node-graph, smart-home=house, homelab/storage=rack-shelf, gaming=controller, services=clock-circle"
+    },
+    {
+      "id": "brands-strip",
+      "label": "02·ب · علامات موثّقة",
+      "h2_en": "Carried. Stocked. Backed.",
+      "subhead_ar": "العلامات التي نحملها — كل واحدة بمواصفات نعرفها.",
+      "brand_dirs_present": ["accessories", "gaming", "networking", "smart-home", "software", "storage"],
+      "treatment": "Single horizontal row of mono brand tiles, neutral wash so multiple logos read as one shelf."
+    },
+    {
+      "id": "service-strip",
+      "label": "03 · مكتب الخدمة",
+      "h2_ar": "اكتب لنا مواصفاتك. نرجع لك بخطة واضحة.",
+      "h2_en": "Send your spec. We'll return a build plan.",
+      "copy_ar": "شبكة لمكتب، تركيبة هوم لاب، بيت ذكي كامل، أو محطة ألعاب تنافسية — اشرح لنا الاحتياج، ونرد عليك بمخطط تنفيذ مفصّل، قائمة مكوّنات، وتقدير زمن الشحن والتركيب.",
+      "ctas": [
+        {"label_ar": "أرسل المواصفات", "primary": true, "href": "/contact/"},
+        {"label_ar": "واتساب", "primary": false, "href": "wa.me link", "external": true}
+      ]
+    }
+  ],
+  "shop_page_anatomy": {
+    "filters": ["Category", "Brand", "In stock", "Price range"],
+    "sort": ["Latest", "Best selling", "Price low→high", "Price high→low"],
+    "card_grid": "Same Operator-Pick anatomy at smaller density (4-up on desktop)",
+    "pagination": "Numbered, RTL-aware"
+  },
+  "product_page_anatomy": [
+    "Breadcrumb (RTL): الرئيسية / الفئة / المنتج",
+    "Gallery (left in RTL → right) with thumbnail strip",
+    "Title block: SKU pill, AR + EN title, brand chip, stock badge",
+    "Price block: amount + SAR + VAT-inclusive line",
+    "Specs table (full attribute list)",
+    "Add-to-cart row + WhatsApp ask-about-this CTA",
+    "Tabs: الوصف / المواصفات / الشحن والإرجاع / الأسئلة",
+    "Related: 4 cards from same primary category"
+  ],
+  "about_page_themes": [
+    "Saudi storefront, CR-verified — credibility first",
+    "Curation principle: only what helps a serious operator",
+    "Transparent specs — no marketing inflation",
+    "In-Kingdom shipping window",
+    "Service desk (build-to-spec offering)"
+  ],
+  "contact_page_themes": [
+    "Form: name, contact, project type (network / homelab / smart-home / gaming / services), brief",
+    "WhatsApp deep-link CTA",
+    "CR + VAT info in footer-ish strip",
+    "Address / city if applicable, working hours"
+  ],
+  "faq_page_themes": [
+    "Shipping windows + tracking",
+    "VAT and pricing display",
+    "Returns within 14 days",
+    "Warranty (12 months)",
+    "Custom build / spec service",
+    "Payment methods (Mada, cards, wallets)"
+  ],
+  "footer_anatomy": [
+    "Column 1: brand mark + tagline + short blurb",
+    "Column 2: Categories (mirror top categories)",
+    "Column 3: Customer (account, orders, returns, shipping policy)",
+    "Column 4: About + Contact + WhatsApp + service desk",
+    "Bottom strip: CR 7053130576 · VAT 15% · © NeoGen Store · payment mark row"
+  ],
+  "constraints": [
+    "no emojis anywhere",
+    "Arabic must use Rakkas (display) / Reem Kufi (UI) / Tajawal (body); Latin uses Chakra Petch (display/wordmark) / Manrope (UI/body) / IBM Plex Mono (SKUs, prices, codes)",
+    "RTL is the default reading direction; LTR fragments only for SKU/spec/code tokens",
+    "use var(--accent) for sky-blue, never the literal hex twice",
+    "stock states: متوفّر | متوفّر · N | مخزون منخفض · N | نفد | جديد",
+    "low/out-of-stock badge uses --warn (amber); error states only use --alert (red)"
+  ],
+  "gaps_to_mock": [
+    "Live product images (we'll use the staged ng-mark/wordmark + CSS gradients for placeholders)",
+    "Brand vendor logos (use mono brand chips with text — Aqara, Shelly, Home Assistant, Mikrotik, Ubiquiti, Synology, etc.)",
+    "About / Contact / FAQ copy (extrapolate from voice + constraints; keep AR-first)",
+    "Footer columns (mock with category list mirroring Categories Rack)"
+  ]
+}
