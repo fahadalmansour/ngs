@@ -2,10 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const csv = require('csv-parser');
 const { createObjectCsvWriter } = require('csv-writer');
-const XLSX = require('xlsx');
 
 const SYNC_RESULTS_FILE = 'output/sync/price-sync-live.csv';
-const BLUEPRINT_FILE = 'data/catalogs/master/Neogen_Master_Catalog_Blueprint.xlsx';
+const BLUEPRINT_FILE = 'data/catalogs/master/Neogen_Master_Catalog_Blueprint.csv';
 const OUTPUT_FILE = 'output/sync/price-sync-daily.csv';
 
 // NeoGen Pricing Rules
@@ -16,7 +15,7 @@ async function readSyncResults() {
     return new Promise((resolve) => {
         const results = {};
         if (!fs.existsSync(SYNC_RESULTS_FILE)) return resolve(results);
-        
+
         fs.createReadStream(SYNC_RESULTS_FILE)
             .pipe(csv())
             .on('data', (data) => {
@@ -29,49 +28,52 @@ async function readSyncResults() {
     });
 }
 
-function readBlueprint() {
-    if (!fs.existsSync(BLUEPRINT_FILE)) {
-        console.error(`Blueprint file ${BLUEPRINT_FILE} not found.`);
-        return [];
-    }
-    const workbook = XLSX.readFile(BLUEPRINT_FILE);
-    const sheetName = workbook.SheetNames[0];
-    const worksheet = workbook.Sheets[sheetName];
-    return XLSX.utils.sheet_to_json(worksheet);
+async function readBlueprint() {
+    return new Promise((resolve) => {
+        if (!fs.existsSync(BLUEPRINT_FILE)) {
+            console.error(`Blueprint file ${BLUEPRINT_FILE} not found.`);
+            return resolve([]);
+        }
+        const rows = [];
+        fs.createReadStream(BLUEPRINT_FILE)
+            .pipe(csv())
+            .on('data', (row) => rows.push(row))
+            .on('end', () => resolve(rows));
+    });
 }
 
 async function run() {
     console.log("🏛️ NeoGen Pricing Governor: Starting Decision Pipeline...");
-    
+
     const syncResults = await readSyncResults();
-    const blueprintRows = readBlueprint();
-    
+    const blueprintRows = await readBlueprint();
+
     const updates = [];
 
     blueprintRows.forEach(row => {
         const sku = row['SKU'];
         const pricingStatus = row['Pricing Status'];
-        
+
         if (pricingStatus === 'Needs Reprice' && syncResults[sku]) {
             const syncData = syncResults[sku];
             const landedCost = syncData.landedCost;
-            
+
             // Priority: Use scraped market ref, fallback to blueprint's 'Amazon SA Ref Price'
             const marketRef = syncData.marketRef || parseFloat(row['Amazon SA Ref Price']);
-            
+
             let suggestedSalePrice = landedCost * (1 + TARGET_MARGIN);
-            
+
             if (marketRef && !isNaN(marketRef)) {
                 const lowerBound = marketRef * (1 - MARKET_VARIANCE_THRESHOLD);
                 const upperBound = marketRef * (1 + MARKET_VARIANCE_THRESHOLD);
-                
+
                 if (suggestedSalePrice < lowerBound) {
                     suggestedSalePrice = lowerBound;
                 } else if (suggestedSalePrice > upperBound) {
                     suggestedSalePrice = upperBound;
                 }
             }
-            
+
             const absoluteFloor = landedCost * 1.05;
             if (suggestedSalePrice < absoluteFloor) {
                 suggestedSalePrice = absoluteFloor;
@@ -82,7 +84,7 @@ async function run() {
                 regular_price: (suggestedSalePrice * 1.15).toFixed(2),
                 sale_price: suggestedSalePrice.toFixed(2)
             });
-            
+
             console.log(`✅ Repriced [${sku}]: Landed ${landedCost.toFixed(2)} -> Sale ${suggestedSalePrice.toFixed(2)}`);
         }
     });
