@@ -1,0 +1,93 @@
+{
+  "name": "W3 — Imperial → Metric sweeper",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": { "interval": [{ "field": "cronExpression", "expression": "0 4 * * 1" }] }
+      },
+      "id": "cron",
+      "name": "Mondays 04:00 Riyadh",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://neogen.store/wp-json/wc/v3/products?per_page=100&search=inch",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "wooCommerceApi"
+      },
+      "id": "fetch-imperial",
+      "name": "Fetch products with 'inch'",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [420, 300],
+      "credentials": {
+        "wooCommerceApi": { "id": "neogen-wc", "name": "NeoGen WooCommerce" }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = ($json || []).filter(p => {\n  const t = (p.name || '') + ' ' + (p.short_description || '') + ' ' + (p.description || '');\n  // Skip monitor sizes (those genuinely use inches in AR e-commerce too)\n  if (/monitor|display|screen|tv|شاشة/i.test(p.name)) return false;\n  return /\\b\\d+(\\.\\d+)?\\s*(ft|feet|foot|in|inch|inches|lb|lbs|pound|pounds|oz|ounce|ounces|gal|gallon|gallons|mi|mile|miles)\\b/i.test(t);\n});\nreturn items.map(p => ({ json: p }));"
+      },
+      "id": "filter",
+      "name": "Filter true imperial",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [640, 300]
+    },
+    {
+      "parameters": {
+        "url": "http://192.168.8.106:11434/api/generate",
+        "method": "POST",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"qwen2.5:7b\",\n  \"prompt\": \"Convert imperial units to metric in this Arabic/English text. Rules: convert ft, inch, lb, oz, gal, miles to m, cm, kg, g, L, km. Round to 1 decimal. Output JSON only: { \\\"name\\\": <converted name>, \\\"description\\\": <converted description> }. Keep brand names, model numbers, and monitor screen sizes (e.g. 27\\\") unchanged.\\n\\nName: \" + $json.name + \"\\nDescription: \" + ($json.short_description || $json.description || '').slice(0, 1500),\n  \"stream\": false,\n  \"format\": \"json\",\n  \"options\": { \"temperature\": 0.05, \"num_predict\": 600 }\n}",
+        "options": { "timeout": 90000 }
+      },
+      "id": "ollama",
+      "name": "Ollama — convert units",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [860, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "let parsed; try { parsed = JSON.parse($json.response); } catch(e) { throw new Error('Bad JSON from LLM: ' + $json.response.slice(0,120)); }\nif (!parsed.name && !parsed.description) throw new Error('Empty result');\nreturn { json: { ...$('Filter true imperial').item.json, converted: parsed } };"
+      },
+      "id": "validate",
+      "name": "Parse LLM JSON",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1080, 300]
+    },
+    {
+      "parameters": {
+        "url": "=https://neogen.store/wp-json/wc/v3/products/{{ $json.id }}",
+        "method": "PUT",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "wooCommerceApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"name\": $json.converted.name,\n  \"description\": $json.converted.description,\n  \"meta_data\": [\n    { \"key\": \"_ng_metric_converted\", \"value\": \"1\" },\n    { \"key\": \"_ng_metric_converted_at\", \"value\": new Date().toISOString() }\n  ]\n}"
+      },
+      "id": "update",
+      "name": "Update product",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1300, 300],
+      "credentials": {
+        "wooCommerceApi": { "id": "neogen-wc", "name": "NeoGen WooCommerce" }
+      }
+    }
+  ],
+  "connections": {
+    "Mondays 04:00 Riyadh":      { "main": [[{ "node": "Fetch products with 'inch'", "type": "main", "index": 0 }]] },
+    "Fetch products with 'inch'":{ "main": [[{ "node": "Filter true imperial", "type": "main", "index": 0 }]] },
+    "Filter true imperial":      { "main": [[{ "node": "Ollama — convert units", "type": "main", "index": 0 }]] },
+    "Ollama — convert units":    { "main": [[{ "node": "Parse LLM JSON", "type": "main", "index": 0 }]] },
+    "Parse LLM JSON":            { "main": [[{ "node": "Update product", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" },
+  "tags": ["neogen", "i18n", "metric"]
+}

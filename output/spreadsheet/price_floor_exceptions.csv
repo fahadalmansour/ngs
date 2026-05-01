@@ -1,0 +1,198 @@
+﻿ID,SKU,Name,Categories,Regular price,Sale price,Effective sell price SAR,Real price floor SAR,Real price source,Reference URL,Status,Risk,Adjustment
+42,GC-SW-ACC1,Adobe Creative Cloud 1 Year,Gift Cards & Software Keys,2499,1999,1999,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+43,GC-SW-KTS1,Kaspersky Total Security 1 Year,Gift Cards & Software Keys,149,119,119,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+47,GC-XBX-GPU3,Xbox Game Pass Ultimate 3 Months,Gift Cards & Software Keys,179,149,149,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+50,GC-SW-OFF24,Microsoft Office 2024 Pro Plus,Gift Cards & Software Keys,399,349,349,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+51,GC-SW-WIN11,Windows 11 Pro License Key,Gift Cards & Software Keys,249,199,199,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+52,GM-RTR-ASU-001,ASUS ROG Rapture GT-BE19000AI (WiFi 7),Gaming,4799,,4799,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+53,GM-PGA-JSA-001,JSAUX 6-in-1 Dock (Steam Deck/ROG Ally),Gaming,529,459,459,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+54,GM-CMP-NZX-001,NZXT H9 Elite Mid-Tower ATX Case,Hardware,1349,,1349,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+55,GM-CMP-COR-001,Corsair iCUE H150i RGB Elite (360mm AIO),Hardware,1149,,1149,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+56,GM-GPU-GIG-001,Gigabyte AORUS RTX 5090 Master 32GB,Hardware,27999,,27999,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+57,GM-GPU-NVD-002,NVIDIA RTX 5080 Founders Edition (16GB),Hardware,6499,,6499,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+58,GM-GPU-NVD-001,NVIDIA RTX 5090 Founders Edition (32GB),Hardware,26449,22999,22999,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+60,GM-STR-ELG-001,Elgato Stream Deck MK.2,Gaming,1099,949,949,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+61,GM-CAP-AVR-001,AVerMedia Live Gamer Ultra S,Gaming,1049,,1049,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+62,GM-CAP-ELG-001,Elgato HD60 X Capture Card,Gaming,1099,,1099,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+63,GM-CTR-SON-001,Sony DualSense Edge Controller,Gaming,1559,1349,1349,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+66,GM-RGB-COR-001,Corsair iCUE LC100 Lighting Panels,Gaming,549,,549,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+67,GM-CHR-RAZ-001,Razer Iskur V2 NewGen,Gaming,3199,,3199,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+69,GM-HST-RAZ-001,Razer BlackShark V2 Pro 2023,Gaming,1149,999,999,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+71,GM-HST-HPX-001,HyperX Cloud Alpha Wireless (300hr),Gaming,1199,,1199,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+72,GM-MOU-RAZ-002,Razer Viper V3 Pro (54g Wireless),Gaming,1209,1049,1049,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+73,GM-MOU-LOG-001,Logitech G Pro X Superlight 2 DEX,Gaming,1099,,1099,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+74,GM-MOU-RAZ-001,Razer DeathAdder V4 Pro (57g Wireless),Gaming,1329,1149,1149,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+76,GM-KBD-LOG-001,Logitech G Pro X TKL LIGHTSPEED,Gaming,1379,1199,1199,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+77,GM-KBD-COR-001,Corsair K70 MAX RGB,Gaming,1299,,1299,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+78,GM-KBD-RAZ-001,Razer Huntsman V3 Pro TKL,Gaming,1559,1349,1349,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+79,GM-MON-DEL-001,"Dell Alienware AW2725DF (27"" QD-OLED 360Hz)",Gaming,5599,,5599,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+80,GM-MON-LGE-001,"LG UltraGear OLED 27GR95QE-B (27"" QHD 240Hz)",Gaming,5639,4899,4899,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+85,NT-MPC-BLK-002,Beelink EQ12 (Intel N100),Homelab,999,,999,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+86,NT-MPC-BLK-001,Beelink SER7 (Ryzen 7 7735HS),Homelab,2399,,2399,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+87,NT-MPC-MNF-001,MinisForum MS-01 (Homelab Server),Homelab,4599,3999,3999,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+88,NT-POE-TPL-001,TP-Link TL-SG1005P 5-Port PoE,Networking,299,,299,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+89,NT-POE-UBQ-001,Ubiquiti USW-Lite-8-PoE,Networking,849,,849,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+90,NT-KVM-ATN-001,ATEN CS1924M 4-Port DP KVM,Homelab,2399,,2399,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+91,NT-KVM-TES-001,TESmart HKS0401A1U 4-Port HDMI KVM,Homelab,689,599,599,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+92,NT-FWL-FTN-001,Fortinet FortiGate 60F,Homelab,6329,5499,5499,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+94,NT-FWL-NGT-001,Netgate 4200 MAX pfSense+ Gateway,Homelab,3399,,3399,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+97,NT-SFP-FSC-001,FS.com 10GBASE-SR SFP+ Transceiver,Networking,129,,129,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+98,NT-SRV-NVP-001,NavePoint 1U Cantilever Rack Shelf,Homelab,249,,249,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+99,NT-SRV-CBM-001,Cable Matters 24-Port Cat6 Patch Panel (1U),Homelab,239,,239,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+100,NT-SRV-STC-001,StarTech RK12WALLOA 12U Wall-Mount Rack,Homelab,1399,,1399,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+101,NT-UPS-APC-002,APC Back-UPS Pro BX1500M (Tower),Homelab,1839,1599,1599,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+102,NT-UPS-CYB-001,CyberPower OR1500LCDRM1U (1500VA 1U),Homelab,2419,2099,2099,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+103,NT-UPS-APC-001,APC Smart-UPS SMT1500RM2UC (1500VA Rack),Homelab,4899,,4899,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+104,NT-NAS-QNP-002,QNAP TS-262-4G (2-Bay),Homelab,1899,,1899,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+105,NT-NAS-QNP-001,QNAP TS-464-8G (4-Bay),Homelab,2799,,2799,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+106,NT-NAS-SYN-002,Synology DS925+ (4-Bay),Homelab,3499,,3499,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+107,NT-NAS-SYN-001,Synology DS225+ (2-Bay),Homelab,2419,2099,2099,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+108,NT-WAP-TPL-002,TP-Link Omada EAP650,Networking,919,799,799,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+109,NT-WAP-TPL-001,TP-Link Omada EAP610,Networking,689,599,599,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+110,NT-WAP-UBQ-002,Ubiquiti UniFi U7 Pro,Networking,1609,1399,1399,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+113,NT-NET-MKT-004,MikroTik CRS312-4C+8XG-RM,Networking,2799,,2799,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+114,NT-NET-MKT-003,MikroTik CRS328-24P-4S+RM (PoE),Networking,3109,2699,2699,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+115,NT-NET-MKT-002,MikroTik CRS326-24G-2S+RM,Networking,1199,,1199,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+116,NT-NET-MKT-001,MikroTik CRS305-1G-4S+IN,Networking,999,,999,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+117,SH-SWB-SWBT-003,SwitchBot Blind Tilt,Smart Home & IoT,479,,479,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+118,SH-SWB-SWBT-002,SwitchBot Bot (Smart Button Pusher),Smart Home & IoT,239,,239,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+119,SH-SWB-SWBT-001,SwitchBot Hub 2 (Matter Enabled),Smart Home & IoT,559,479,479,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+120,SH-HUB-HUBI-001,Hubitat Elevation C-8 Pro,Smart Home & IoT,1199,,1199,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+122,SH-HUB-AQRA-001,Aqara Hub M3,Smart Home & IoT,1039,899,899,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+123,SH-BLD-IKEA-001,IKEA FYRTUR Blackout Smart Roller Blind,Smart Home & IoT,1099,949,949,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+124,SH-BLD-SWBT-001,SwitchBot Curtain 3,Smart Home & IoT,649,,649,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+125,SH-VDB-EUFY-001,Eufy Video Doorbell E340 (Dual Camera),Smart Home & IoT,999,,999,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+126,SH-VDB-RING-001,Ring Battery Doorbell Plus,Smart Home & IoT,999,,999,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+127,SH-CAM-RELK-001,Reolink Argus 4 Pro (4K),Smart Home & IoT,1039,899,899,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+128,SH-CAM-EUFY-001,Eufy eufyCam 3 (4K + HomeBase 3 Kit),Smart Home & IoT,1649,,1649,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+129,SH-CAM-ARLO-001,Arlo Pro 5 2K Spotlight Camera,Smart Home & IoT,1549,,1549,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+130,SH-CAM-RING-001,Ring Indoor Cam (2nd Gen),Smart Home & IoT,479,,479,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+131,SH-PLG-MERS-001,Meross Smart Plug Mini MSS110 (HomeKit),Smart Home & IoT,159,,159,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+132,SH-PLG-TPLK-001,"TP-Link Tapo P125M Smart Plug (Matter, 2-pack)",Smart Home & IoT,149,,149,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+133,SH-THR-ECOB-001,Ecobee Smart Thermostat Premium,Smart Home & IoT,1549,,1549,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+134,SH-THR-NEST-001,Google Nest Learning Thermostat (4th Gen),Smart Home & IoT,1699,,1699,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+135,SH-RVC-ECVX-001,Ecovacs Deebot X9 Pro Omni,Smart Home & IoT,5699,,5699,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+136,SH-RVC-DREM-001,Dreame L50 Ultra,Smart Home & IoT,4599,,4599,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+137,SH-RVC-RBRC-001,Roborock Qrevo CurvX,Smart Home & IoT,4599,,4599,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+138,SH-LGT-GOVE-002,Govee Glide Hexagon Light Panels Ultra (10-pack),Smart Home & IoT,1499,1299,1299,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+139,SH-LGT-GOVE-001,Govee RGBIC LED Strip M1 (5m),Smart Home & IoT,459,399,399,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+140,SH-LGT-LIFX-001,LIFX Color A19 1100lm Bulb,Smart Home & IoT,329,279,279,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+141,SH-LGT-PHUE-002,Philips Hue Gradient Lightstrip (2m),Smart Home & IoT,1149,,1149,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+142,SH-LGT-PHUE-001,Philips Hue Starter Kit (3x A19 + Bridge),Smart Home & IoT,899,,899,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+143,SH-LCK-AUGS-001,August Wi-Fi Smart Lock (4th Gen),Smart Home & IoT,1499,1299,1299,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+144,SH-LCK-AQRA-001,Aqara Smart Lock U200,Smart Home & IoT,1439,1249,1249,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+145,SH-LCK-YALE-001,Yale Assure Lock 2 Wi-Fi,Smart Home & IoT,1549,,1549,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+146,SH-DSP-GGLE-001,Google Nest Hub (2nd Gen),Smart Home & IoT,699,,699,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+147,SH-DSP-AMZN-001,Amazon Echo Show 8 (3rd Gen),Smart Home & IoT,999,,999,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+148,SH-SPK-AMZN-002,Amazon Echo Dot (5th Gen),Smart Home & IoT,459,399,399,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+149,SH-SPK-GGLE-001,Google Nest Audio,Smart Home & IoT,809,699,699,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+150,SH-SPK-APPL-001,Apple HomePod Mini,Smart Home & IoT,699,,699,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+151,SH-SPK-AMZN-001,Amazon Echo (4th Gen),Smart Home & IoT,699,,699,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+152,NG-SEC-007,Eufy Video Doorbell S330 - Dual Camera Smart Doorbell (2K + Package Cam),Security & Surveillance,1449,,1449,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+153,NG-SEC-006,Ajax Hub 2 Plus - Professional Wireless Smart Alarm System,Security & Surveillance,2499,,2499,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+154,NG-SEC-005,Reolink 16-Channel PoE NVR (RLN16-410) - 4K Network Video Recorder,Security & Surveillance,1599,,1599,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+156,NG-SEC-003,Hikvision DS-2CD2143G2-I - 4MP AcuSense Dome Camera,Security & Surveillance,749,,749,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+157,NG-SEC-002,Reolink Argus 4 Pro - Solar-Powered Wireless 4K Security Camera,Security & Surveillance,1199,,1199,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+158,NG-SEC-001,Reolink RLC-810A - 4K PoE AI Security Camera,Security & Surveillance,549,,549,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+159,NG-DRN-008,DJI Pocket 3 - Pocket-Sized Gimbal Camera with 1-Inch Sensor,Drones & Robotics,3449,2999,2999,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+160,NG-DRN-007,"Roborock S8 MaxV Ultra - Smart Robot Vacuum with 10,000Pa Suction",Smart Home & IoT,8859,7699,7699,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+161,NG-DRN-006,FIMI X8 Mini V2 - 4K Drone at 245g with Competitive Pricing,Drones & Robotics,2399,,2399,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+162,NG-DRN-005,Insta360 X4 - 8K 360-Degree Camera,Drones & Robotics,3499,,3499,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+163,NG-DRN-004,DJI RS 4 - 3-Axis Gimbal Stabilizer for Professional Cameras,Drones & Robotics,3099,,3099,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+164,NG-DRN-003,DJI Osmo Action 5 Pro - 4K/120fps Waterproof Action Camera,Drones & Robotics,2499,,2499,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+165,NG-DRN-002,DJI Avata 2 - Immersive FPV Drone with Goggles,Drones & Robotics,4099,,4099,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+166,NG-DRN-001,DJI Mini 4 Pro - Sub-249g Drone with 4K/60fps Camera,Drones & Robotics,7019,6099,6099,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+167,NG-CBL-008,HDMI 2.1 8K Fiber Optic Cable (10m) - Zero Signal Loss,Cables & Adapters,359,,359,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+168,NG-CBL-007,DAC SFP+ 10G Direct Attach Cable (3m) - Direct Switch-to-Switch Connection,Cables & Adapters,229,,229,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+169,NG-CBL-006,Ugreen 5-in-1 USB-C Dock - HDMI 4K + Ethernet + USB 3.0,Cables & Adapters,289,249,249,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+170,NG-CBL-005,Baseus USB-C 100W Charging Cable (2m) - Fast Charge for Laptops and Phones,Cables & Adapters,109,,109,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+171,NG-CBL-004,Ugreen Cat 8 Ethernet Cable (5m) - 40Gbps Network Cable,Cables & Adapters,149,,149,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+172,NG-CBL-003,Cable Matters Thunderbolt 4 Cable (2m) - 40Gbps with 100W Charging,Cables & Adapters,419,,419,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+173,NG-CBL-002,Anker USB-C Hub 7-in-1 - Multi-Port Adapter for Laptops,Cables & Adapters,349,,349,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+174,NG-CBL-001,Ugreen USB-C to HDMI 2.1 Cable (2m) - 8K@60Hz Output,Cables & Adapters,219,,219,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+175,NG-3DP-008,Phrozen Sonic Mini 8K S - 22-Micron Pixel Resin 3D Printer,3D Printing & CNC,2899,,2899,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+176,NG-3DP-007,Creality Sonic Pad - Klipper Tablet to Supercharge Your 3D Printer,3D Printing & CNC,1049,,1049,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+178,NG-3DP-005,Elegoo Saturn 3 Ultra - 12K Resin 3D Printer with 10-inch Screen,3D Printing & CNC,3499,,3499,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+179,NG-3DP-004,eSUN PLA+ Filament 10-Color Pack - 10kg Total for 3D Printing,3D Printing & CNC,1299,,1299,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+182,NG-3DP-001,Bambu Lab P1S 3D Printer - Blazing Speed and Pro Quality in an Enclosed Design,3D Printing & CNC,5099,,5099,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+183,NG-ACC-010,WD Red Plus 8TB NAS Hard Drive - Built for Always-On NAS Systems,Hardware,1449,,1449,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+184,NG-ACC-009,Ugreen Nexode 100W GaN Charger - 4-Port Gallium Nitride Fast Charger,Accessories & Lifestyle,439,,439,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+186,NG-ACC-007,Anker PowerConf S330 USB Speakerphone - Smart Noise-Canceling Conference Speaker,Accessories & Lifestyle,599,,599,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+187,NG-ACC-006,"Samsung T7 Shield 2TB Portable SSD - Rugged, Fast, and Secure",Hardware,1299,,1299,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+188,NG-MKR-010,Elegoo Mars 4 Ultra Resin 3D Printer - 9K Resolution for Stunning Detail,Enthusiasts & Gamers,2399,,2399,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+189,NG-MKR-009,ESP32-S3 DevKit 10-Pack - Wi-Fi + Bluetooth 5 Microcontroller for Smart Projects,Hardware,809,699,699,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+191,NG-MKR-007,Prusa Mini+ 3D Printer - Professional Precision in a Compact Package,Enthusiasts & Gamers,3799,3299,3299,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+192,NG-MKR-006,Arduino Mega 2560 Rev3 - The Ultimate Microcontroller Board for Advanced Projects,Hardware,549,,549,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+193,NG-GAM-012,Elgato Wave:3 - Premium USB Condenser Microphone for Streaming,Gaming,1329,1149,1149,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+195,NG-GAM-010,BenQ Zowie XL2546K - 240Hz Esports Gaming Monitor,Gaming,3449,2999,2999,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+196,NG-GAM-009,Corsair K70 RGB Pro - Legendary Mechanical Gaming Keyboard,Gaming,999,,999,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+197,NG-GAM-008,Razer Basilisk V3 X HyperSpeed - Versatile Wireless Gaming Mouse,Gaming,649,,649,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+199,NG-GAM-006,SteelSeries Arctis Nova 7 - Multi-Platform Wireless Gaming Headset,Gaming,1199,,1199,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+200,NG-GAM-005,Elgato HD60 X - External Capture Card for Streaming and Recording,Gaming,1249,,1249,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+201,NG-GAM-004,Razer BlackWidow V4 75% - Compact Mechanical Gaming Keyboard,Gaming,1199,,1199,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+202,NG-GAM-003,HyperX Cloud III Wireless - Premium Wireless Gaming Headset,Gaming,1149,999,999,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+203,NG-GAM-002,Razer DeathAdder V3 HyperSpeed - Ultra-Light Wireless Gaming Mouse,Gaming,979,849,849,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+206,NG-NET-011,TP-Link Archer AXE75 - AXE5400 Tri-Band WiFi 6E Router,Networking,1499,1299,1299,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+207,NG-NET-010,Ubiquiti UniFi USW-Flex-Mini - Ultra-Compact 5-Port Managed Switch,Networking,219,,219,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+208,NG-NET-009,Netgear GS308E - 8-Port Gigabit Plus Smart Managed Switch,Networking,209,,209,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+209,NG-NET-008,MikroTik hEX S (RB760iGS) - 5-Port Gigabit Router with SFP and USB,Networking,649,,649,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+210,NG-NET-007,Ubiquiti EdgeRouter X - Advanced Gigabit Router in a Pocket-Sized Form,Networking,549,,549,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+211,NG-NET-006,TP-Link TL-SG108E - 8-Port Gigabit Easy Smart Managed Switch,Networking,229,,229,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+212,NG-NET-005,Ubiquiti UniFi 6 Lite - WiFi 6 Access Point (AX1500),Networking,849,,849,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+213,NG-NET-004,MikroTik CRS305-1G-4S+IN - 4-Port 10G SFP+ Desktop Switch,Networking,1149,,1149,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+214,NG-NET-003,Ubiquiti UniFi Switch Lite 16 PoE - 16-Port Managed Gigabit PoE+ Switch,Networking,1399,,1399,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+215,NG-NET-002,TP-Link Deco XE75 (3-Pack) - AXE5400 WiFi 6E Whole-Home Mesh System,Networking,2419,2099,2099,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+216,NG-NET-001,MikroTik hAP ax3 - WiFi 6 Router with RouterOS Power,Networking,799,,799,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+217,NG-SH-015,Sonoff SNZB-02D Zigbee Temperature &amp; Humidity Sensor with LCD Display,Smart Home & IoT,159,,159,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+218,NG-SH-014,MOES Zigbee Smart Thermostat (BHT-002-GCLZB) - Programmable HVAC Control,Smart Home & IoT,439,379,379,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+219,NG-SH-013,Zemismart Zigbee Smart Tubular Motor (ZM25TQ) - Heavy-Duty Roller Blind Motor,Smart Home & IoT,699,,699,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+220,NG-SH-012,Aqara Roller Shade Driver E1 (RSD-M01) - Smart Roller Blind Motor with HomeKit,Smart Home & IoT,689,599,599,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+221,NG-SH-011,SwitchBot Bot (S1) - Robotic Finger That Makes Any Button Smart,Smart Home & IoT,279,,279,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+222,NG-SH-010,Eve Energy Smart Plug (Matter/Thread) - Next-Gen Smart Plug with Power Monitoring,Smart Home & IoT,399,,399,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+223,NG-SH-009,Aqara Motion Sensor P1 (MS-S02) - Wide-Angle 170° Smart PIR Sensor,Smart Home & IoT,279,,279,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+224,NG-SH-008,Shelly Plus 1PM - Smart Wi-Fi Relay with Power Monitoring,Smart Home & IoT,189,,189,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+225,NG-SH-007,SwitchBot Curtain 3 (W2400000) - Turn Any Curtain Smart in Minutes,Smart Home & IoT,639,549,549,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+226,NG-SH-006,Aqara Hub M2 (HM2-G01) - Multi-Protocol Smart Home Gateway,Smart Home & IoT,499,,499,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+227,NG-ENT-010,Ubiquiti UniFi Switch Pro 24 PoE (USW-Pro-24-PoE) - Smart Managed PoE+ Switch,Homelab,4199,,4199,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+229,NG-ENT-008,APC Smart-UPS 1500VA LCD RM 2U (SMT1500RMI2U) - Pure Sine Wave Rack UPS,Homelab,4899,,4899,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+231,NG-ENT-006,Synology DiskStation DS1621+ 6-Bay NAS - Enterprise Storage Powerhouse,Homelab,5599,,5599,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+233,NG-ACC-004,Seagate IronWolf 18TB NAS Internal Hard Drive - Built for 24/7 Performance,Hardware,3109,2699,2699,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+234,NG-ACC-003,Mark Ryden Anti-theft Laptop Backpack - Maximum Protection for Your Tech,Accessories & Lifestyle,479,409,409,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+235,NG-ACC-002,Anker 735 GaN 65W Charger - Compact 3-Port Fast Charger,Accessories & Lifestyle,379,,379,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+236,NG-ACC-001,Baseus Blade 100W Power Bank - Ultra-Slim Laptop Portable Charger,Accessories & Lifestyle,499,,499,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+237,NG-MKR-005,Elgato Stream Deck MK.2 - Professional Productivity Console with 15 LCD Keys,Enthusiasts & Gamers,1439,1249,1249,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+239,NG-MKR-003,Keychron Q1 - Premium Full Aluminum Custom Mechanical Keyboard,Enthusiasts & Gamers,1449,,1449,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+240,NG-MKR-002,Raspberry Pi 5 Ultimate Starter Kit - Everything You Need in One Box,Hardware,1329,1149,1149,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+241,NG-MKR-001,Raspberry Pi 5 8GB - The New Standard in Single Board Computing,Hardware,1039,899,899,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+242,NG-SH-005,Sonoff TX Ultimate (T5) Smart Wall Switch - Interactive Elegance with RGB,Smart Home & IoT,309,269,269,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+243,NG-SH-004,Aqara Water Leak Sensor - Safeguard Your Home from Water Damage,Smart Home & IoT,259,219,219,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+244,NG-SH-003,Broadlink RM4 Pro - Universal Smart Remote for IR &amp; RF Devices,Smart Home & IoT,359,,359,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+246,NG-SH-001,Aqara Smart Door Lock A100 - Elite Security with Apple HomeKey Support,Smart Home & IoT,1649,,1649,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+247,NG-ENT-005,Asustor Flashstor 6 (FS6706T) - All-NVMe SSD NAS for Extreme Performance,Homelab,3099,,3099,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+250,NG-ENT-002,Asustor Lockerstor 4 (AS6604T) - Professional 4-Bay NAS for Creators,Homelab,3099,,3099,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+251,NG-ENT-001,"Dell PowerEdge R730 Refurbished Server - Enterprise Power, Smart Investment",Homelab,8099,,8099,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+577,SH-WIN-ECVX-001,Ecovacs WINBOT W2 OMNI - Robotic Window Cleaner,Smart Home & IoT,2299,,2299,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+578,SH-WIN-HBT-001,HOBOT-R3 - Window Cleaning Robot,Smart Home & IoT,1599,,1599,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+579,SH-LWN-MAM-001,Mammotion LUBA 2 AWD 5000H - Wireless Robotic Lawn Mower,Smart Home & IoT,14999,,14999,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+580,SH-LWN-WRX-001,Worx Landroid Vision M600 - Camera-Guided Robot Mower,Smart Home & IoT,6999,,6999,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+581,SH-POL-BBT-001,Beatbot AquaSense Pro - Cordless Pool Cleaning Robot,Smart Home & IoT,7499,,7499,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+582,SH-POL-DOL-001,Maytronics Dolphin Premier - Robotic Pool Cleaner,Smart Home & IoT,5999,,5999,,,,NO_REAL_PRICE_REFERENCE,Medium,Strict output unpublished until real price reference is filled
+522,GC-PBG-GLOBAL-60,PUBG Mobile UC 60 UC (Global),Gift Cards & Software Keys,5,,5,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+523,GC-PBG-GLOBAL-325,PUBG Mobile UC 325 UC (Global),Gift Cards & Software Keys,13,,13,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+524,GC-PBG-GLOBAL-660,PUBG Mobile UC 660 UC (Global),Gift Cards & Software Keys,26,,26,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+525,GC-PBG-GLOBAL-1800,PUBG Mobile UC 1800 UC (Global),Gift Cards & Software Keys,72,,72,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+526,GC-PBG-GLOBAL-3850,PUBG Mobile UC 3850 UC (Global),Gift Cards & Software Keys,154,,154,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+528,GC-FRF-GLOBAL-100,Free Fire Diamonds 100 Diamonds (Global),Gift Cards & Software Keys,5,,5,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+529,GC-FRF-GLOBAL-310,Free Fire Diamonds 310 Diamonds (Global),Gift Cards & Software Keys,12,,12,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+530,GC-FRF-GLOBAL-1080,Free Fire Diamonds 1080 Diamonds (Global),Gift Cards & Software Keys,43,,43,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+531,GC-FRF-GLOBAL-2200,Free Fire Diamonds 2200 Diamonds (Global),Gift Cards & Software Keys,88,,88,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+533,GC-MLB-GLOBAL-86,Mobile Legends Diamonds 86 Diamonds (Global),Gift Cards & Software Keys,5,,5,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+534,GC-MLB-GLOBAL-172,Mobile Legends Diamonds 172 Diamonds (Global),Gift Cards & Software Keys,7,,7,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+535,GC-MLB-GLOBAL-706,Mobile Legends Diamonds 706 Diamonds (Global),Gift Cards & Software Keys,28,,28,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+536,GC-MLB-GLOBAL-2195,Mobile Legends Diamonds 2195 Diamonds (Global),Gift Cards & Software Keys,88,,88,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+567,GC-PSP-US-1,PlayStation Plus 1 Months (US),Gift Cards & Software Keys,5,,5,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+568,GC-PSP-US-3,PlayStation Plus 3 Months (US),Gift Cards & Software Keys,5,,5,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+569,GC-PSP-US-12,PlayStation Plus 12 Months (US),Gift Cards & Software Keys,5,,5,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+570,GC-PSP-KSA-1,PlayStation Plus 1 Months (KSA),Gift Cards & Software Keys,5,,5,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+571,GC-PSP-KSA-3,PlayStation Plus 3 Months (KSA),Gift Cards & Software Keys,5,,5,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled
+572,GC-PSP-KSA-12,PlayStation Plus 12 Months (KSA),Gift Cards & Software Keys,5,,5,,,,NEEDS_REFERENCE,High,Strict output unpublished until real price reference is filled

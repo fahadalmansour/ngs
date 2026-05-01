@@ -1,0 +1,42 @@
+{
+  "name": "ngs",
+  "version": "1.0.0",
+  "description": "This project is an e-commerce platform for 'NGS' (Neogen Store), designed to showcase and sell Smart Home products and digital courses. It aims to provide a modern, clean, and tech-focused online shopping experience.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "woo:generate": "python3 scripts/generate_woo_csv.py",
+    "sourcing:generate": "python3 scripts/generate_supplier_sourcing.py",
+    "sourcing:queue": "python3 scripts/generate_supplier_price_queue.py",
+    "sourcing:merge": "python3 scripts/merge_supplier_price_queue.py",
+    "price:guard": "python3 scripts/price_floor_guard.py --unpublish-missing-reference",
+    "price:governor": "node scripts/price-governor.js",
+    "price:validate": "node scripts/price-validator.js",
+    "captures:merge": "node scripts/merge_site_captures.mjs --quarantine-raw --replace-target",
+    "captures:verify": "node scripts/verify_site_capture.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fahadalmansour/ngs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fahadalmansour/ngs/issues"
+  },
+  "homepage": "https://github.com/fahadalmansour/ngs#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "csv-parser": "^3.2.0",
+    "csv-writer": "^1.6.0",
+    "playwright": "^1.59.1",
+    "xlsx": "^0.18.5"
+  }
+}

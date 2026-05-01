@@ -1,0 +1,914 @@
+{
+  "Gift Cards & Software Keys": [
+    {
+      "sku": "GC-SW-ACC1",
+      "name": "Adobe Creative Cloud 1 Year",
+      "reg": "2499",
+      "sale": "1999"
+    },
+    {
+      "sku": "GC-SW-KTS1",
+      "name": "Kaspersky Total Security 1 Year",
+      "reg": "149",
+      "sale": "119"
+    },
+    {
+      "sku": "GC-APL-100",
+      "name": "Apple Gift Card $100",
+      "reg": "389",
+      "sale": "0"
+    },
+    {
+      "sku": "GC-GP-50",
+      "name": "Google Play $50 Gift Card",
+      "reg": "199",
+      "sale": "0"
+    },
+    {
+      "sku": "GC-NFX-100",
+      "name": "Netflix Gift Card $100",
+      "reg": "389",
+      "sale": "0"
+    },
+    {
+      "sku": "GC-XBX-GPU3",
+      "name": "Xbox Game Pass Ultimate 3 Months",
+      "reg": "179",
+      "sale": "149"
+    }
+  ],
+  "بطاقات رقمية ومفاتيح": [
+    {
+      "sku": "GC-SW-ACC1",
+      "name": "Adobe Creative Cloud 1 Year",
+      "reg": "2499",
+      "sale": "1999"
+    },
+    {
+      "sku": "GC-SW-KTS1",
+      "name": "Kaspersky Total Security 1 Year",
+      "reg": "149",
+      "sale": "119"
+    },
+    {
+      "sku": "GC-APL-100",
+      "name": "Apple Gift Card $100",
+      "reg": "389",
+      "sale": "0"
+    },
+    {
+      "sku": "GC-GP-50",
+      "name": "Google Play $50 Gift Card",
+      "reg": "199",
+      "sale": "0"
+    },
+    {
+      "sku": "GC-NFX-100",
+      "name": "Netflix Gift Card $100",
+      "reg": "389",
+      "sale": "0"
+    },
+    {
+      "sku": "GC-XBX-GPU3",
+      "name": "Xbox Game Pass Ultimate 3 Months",
+      "reg": "179",
+      "sale": "149"
+    }
+  ],
+  "Gaming": [
+    {
+      "sku": "GM-RTR-ASU-001",
+      "name": "ASUS ROG Rapture GT-BE19000AI (WiFi 7)",
+      "reg": "4799",
+      "sale": "0"
+    },
+    {
+      "sku": "GM-PGA-JSA-001",
+      "name": "JSAUX 6-in-1 Dock (Steam Deck/ROG Ally)",
+      "reg": "529",
+      "sale": "459"
+    },
+    {
+      "sku": "GM-STR-HPX-001",
+      "name": "HyperX QuadCast S USB Microphone",
+      "reg": "580",
+      "sale": ""
+    },
+    {
+      "sku": "GM-STR-ELG-001",
+      "name": "Elgato Stream Deck MK.2",
+      "reg": "1099",
+      "sale": "949"
+    },
+    {
+      "sku": "GM-CAP-AVR-001",
+      "name": "AVerMedia Live Gamer Ultra S",
+      "reg": "1049",
+      "sale": "0"
+    },
+    {
+      "sku": "GM-CAP-ELG-001",
+      "name": "Elgato HD60 X Capture Card",
+      "reg": "1099",
+      "sale": "0"
+    }
+  ],
+  "ألعاب": [
+    {
+      "sku": "GM-RTR-ASU-001",
+      "name": "ASUS ROG Rapture GT-BE19000AI (WiFi 7)",
+      "reg": "4799",
+      "sale": "0"
+    },
+    {
+      "sku": "GM-PGA-JSA-001",
+      "name": "JSAUX 6-in-1 Dock (Steam Deck/ROG Ally)",
+      "reg": "529",
+      "sale": "459"
+    },
+    {
+      "sku": "GM-STR-HPX-001",
+      "name": "HyperX QuadCast S USB Microphone",
+      "reg": "580",
+      "sale": ""
+    },
+    {
+      "sku": "GM-STR-ELG-001",
+      "name": "Elgato Stream Deck MK.2",
+      "reg": "1099",
+      "sale": "949"
+    },
+    {
+      "sku": "GM-CAP-AVR-001",
+      "name": "AVerMedia Live Gamer Ultra S",
+      "reg": "1049",
+      "sale": "0"
+    },
+    {
+      "sku": "GM-CAP-ELG-001",
+      "name": "Elgato HD60 X Capture Card",
+      "reg": "1099",
+      "sale": "0"
+    }
+  ],
+  "Hardware": [
+    {
+      "sku": "GM-CMP-NZX-001",
+      "name": "NZXT H9 Elite Mid-Tower ATX Case",
+      "reg": "1349",
+      "sale": "0"
+    },
+    {
+      "sku": "GM-CMP-COR-001",
+      "name": "Corsair iCUE H150i RGB Elite (360mm AIO)",
+      "reg": "1149",
+      "sale": "0"
+    },
+    {
+      "sku": "GM-GPU-GIG-001",
+      "name": "Gigabyte AORUS RTX 5090 Master 32GB",
+      "reg": "27999",
+      "sale": "0"
+    },
+    {
+      "sku": "GM-GPU-NVD-002",
+      "name": "NVIDIA RTX 5080 Founders Edition (16GB)",
+      "reg": "6499",
+      "sale": "0"
+    },
+    {
+      "sku": "GM-GPU-NVD-001",
+      "name": "NVIDIA RTX 5090 Founders Edition (32GB)",
+      "reg": "26449",
+      "sale": "22999"
+    },
+    {
+      "sku": "NG-ACC-010",
+      "name": "WD Red Plus 8TB NAS Hard Drive - Built for Always-On NAS Systems",
+      "reg": "1449",
+      "sale": "0"
+    }
+  ],
+  "أجهزة PC": [
+    {
+      "sku": "GM-CMP-NZX-001",
+      "name": "NZXT H9 Elite Mid-Tower ATX Case",
+      "reg": "1349",
+      "sale": "0"
+    },
+    {
+      "sku": "GM-CMP-COR-001",
+      "name": "Corsair iCUE H150i RGB Elite (360mm AIO)",
+      "reg": "1149",
+      "sale": "0"
+    },
+    {
+      "sku": "GM-GPU-GIG-001",
+      "name": "Gigabyte AORUS RTX 5090 Master 32GB",
+      "reg": "27999",
+      "sale": "0"
+    },
+    {
+      "sku": "GM-GPU-NVD-002",
+      "name": "NVIDIA RTX 5080 Founders Edition (16GB)",
+      "reg": "6499",
+      "sale": "0"
+    },
+    {
+      "sku": "GM-GPU-NVD-001",
+      "name": "NVIDIA RTX 5090 Founders Edition (32GB)",
+      "reg": "26449",
+      "sale": "22999"
+    },
+    {
+      "sku": "NG-ACC-010",
+      "name": "WD Red Plus 8TB NAS Hard Drive - Built for Always-On NAS Systems",
+      "reg": "1449",
+      "sale": "0"
+    }
+  ],
+  "Homelab": [
+    {
+      "sku": "NT-MPC-DEL-001",
+      "name": "Dell OptiPlex 7070 Micro (Refurb)",
+      "reg": "1610",
+      "sale": "0"
+    },
+    {
+      "sku": "NT-MPC-BLK-002",
+      "name": "Beelink EQ12 (Intel N100)",
+      "reg": "999",
+      "sale": "0"
+    },
+    {
+      "sku": "NT-MPC-BLK-001",
+      "name": "Beelink SER7 (Ryzen 7 7735HS)",
+      "reg": "2399",
+      "sale": ""
+    },
+    {
+      "sku": "NT-MPC-MNF-001",
+      "name": "MinisForum MS-01 (Homelab Server)",
+      "reg": "4599",
+      "sale": "3999"
+    },
+    {
+      "sku": "NT-KVM-ATN-001",
+      "name": "ATEN CS1924M 4-Port DP KVM",
+      "reg": "2399",
+      "sale": "0"
+    },
+    {
+      "sku": "NT-KVM-TES-001",
+      "name": "TESmart HKS0401A1U 4-Port HDMI KVM",
+      "reg": "689",
+      "sale": "599"
+    }
+  ],
+  "هوم لاب": [
+    {
+      "sku": "NT-MPC-DEL-001",
+      "name": "Dell OptiPlex 7070 Micro (Refurb)",
+      "reg": "1610",
+      "sale": "0"
+    },
+    {
+      "sku": "NT-MPC-BLK-002",
+      "name": "Beelink EQ12 (Intel N100)",
+      "reg": "999",
+      "sale": "0"
+    },
+    {
+      "sku": "NT-MPC-BLK-001",
+      "name": "Beelink SER7 (Ryzen 7 7735HS)",
+      "reg": "2399",
+      "sale": ""
+    },
+    {
+      "sku": "NT-MPC-MNF-001",
+      "name": "MinisForum MS-01 (Homelab Server)",
+      "reg": "4599",
+      "sale": "3999"
+    },
+    {
+      "sku": "NT-KVM-ATN-001",
+      "name": "ATEN CS1924M 4-Port DP KVM",
+      "reg": "2399",
+      "sale": "0"
+    },
+    {
+      "sku": "NT-KVM-TES-001",
+      "name": "TESmart HKS0401A1U 4-Port HDMI KVM",
+      "reg": "689",
+      "sale": "599"
+    }
+  ],
+  "Networking": [
+    {
+      "sku": "NT-POE-TPL-001",
+      "name": "TP-Link TL-SG1005P 5-Port PoE",
+      "reg": "299",
+      "sale": "0"
+    },
+    {
+      "sku": "NT-POE-UBQ-001",
+      "name": "Ubiquiti USW-Lite-8-PoE",
+      "reg": "849",
+      "sale": "0"
+    },
+    {
+      "sku": "NT-CBL-GEN-001",
+      "name": "Cat6a Shielded Bulk Cable (305m)",
+      "reg": "740",
+      "sale": "0"
+    },
+    {
+      "sku": "NT-CBL-FSC-001",
+      "name": "10G SFP+ DAC Twinax Cable (1m)",
+      "reg": "80",
+      "sale": "0"
+    },
+    {
+      "sku": "NT-SFP-FSC-001",
+      "name": "FS.com 10GBASE-SR SFP+ Transceiver",
+      "reg": "129",
+      "sale": "0"
+    },
+    {
+      "sku": "NT-WAP-TPL-002",
+      "name": "TP-Link Omada EAP650",
+      "reg": "919",
+      "sale": "799"
+    }
+  ],
+  "شبكات واتصالات": [
+    {
+      "sku": "NT-POE-TPL-001",
+      "name": "TP-Link TL-SG1005P 5-Port PoE",
+      "reg": "299",
+      "sale": "0"
+    },
+    {
+      "sku": "NT-POE-UBQ-001",
+      "name": "Ubiquiti USW-Lite-8-PoE",
+      "reg": "849",
+      "sale": "0"
+    },
+    {
+      "sku": "NT-CBL-GEN-001",
+      "name": "Cat6a Shielded Bulk Cable (305m)",
+      "reg": "740",
+      "sale": "0"
+    },
+    {
+      "sku": "NT-CBL-FSC-001",
+      "name": "10G SFP+ DAC Twinax Cable (1m)",
+      "reg": "80",
+      "sale": "0"
+    },
+    {
+      "sku": "NT-SFP-FSC-001",
+      "name": "FS.com 10GBASE-SR SFP+ Transceiver",
+      "reg": "129",
+      "sale": "0"
+    },
+    {
+      "sku": "NT-WAP-TPL-002",
+      "name": "TP-Link Omada EAP650",
+      "reg": "919",
+      "sale": "799"
+    }
+  ],
+  "Smart Home & IoT": [
+    {
+      "sku": "SH-SWB-SWBT-003",
+      "name": "SwitchBot Blind Tilt",
+      "reg": "479",
+      "sale": ""
+    },
+    {
+      "sku": "SH-SWB-SWBT-002",
+      "name": "SwitchBot Bot (Smart Button Pusher)",
+      "reg": "239",
+      "sale": ""
+    },
+    {
+      "sku": "SH-SWB-SWBT-001",
+      "name": "SwitchBot Hub 2 (Matter Enabled)",
+      "reg": "559",
+      "sale": "479"
+    },
+    {
+      "sku": "SH-HUB-HUBI-001",
+      "name": "Hubitat Elevation C-8 Pro",
+      "reg": "1199",
+      "sale": "0"
+    },
+    {
+      "sku": "SH-HUB-HASS-001",
+      "name": "Home Assistant Green",
+      "reg": "890",
+      "sale": "0"
+    },
+    {
+      "sku": "SH-HUB-AQRA-001",
+      "name": "Aqara Hub M3",
+      "reg": "1039",
+      "sale": "899"
+    }
+  ],
+  "أتمتة المنزل الذكي": [
+    {
+      "sku": "SH-SWB-SWBT-003",
+      "name": "SwitchBot Blind Tilt",
+      "reg": "479",
+      "sale": ""
+    },
+    {
+      "sku": "SH-SWB-SWBT-002",
+      "name": "SwitchBot Bot (Smart Button Pusher)",
+      "reg": "239",
+      "sale": ""
+    },
+    {
+      "sku": "SH-SWB-SWBT-001",
+      "name": "SwitchBot Hub 2 (Matter Enabled)",
+      "reg": "559",
+      "sale": "479"
+    },
+    {
+      "sku": "SH-HUB-HUBI-001",
+      "name": "Hubitat Elevation C-8 Pro",
+      "reg": "1199",
+      "sale": "0"
+    },
+    {
+      "sku": "SH-HUB-HASS-001",
+      "name": "Home Assistant Green",
+      "reg": "890",
+      "sale": "0"
+    },
+    {
+      "sku": "SH-HUB-AQRA-001",
+      "name": "Aqara Hub M3",
+      "reg": "1039",
+      "sale": "899"
+    }
+  ],
+  "Security & Surveillance": [
+    {
+      "sku": "NG-SEC-007",
+      "name": "Eufy Video Doorbell S330 - Dual Camera Smart Doorbell (2K + Package Cam)",
+      "reg": "1449",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-SEC-006",
+      "name": "Ajax Hub 2 Plus - Professional Wireless Smart Alarm System",
+      "reg": "2499",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-SEC-005",
+      "name": "Reolink 16-Channel PoE NVR (RLN16-410) - 4K Network Video Recorder",
+      "reg": "1599",
+      "sale": ""
+    },
+    {
+      "sku": "NG-SEC-004",
+      "name": "Ubiquiti UniFi Protect G4 Doorbell Pro - 5MP Smart Doorbell with Fingerprint Rea",
+      "reg": "3140",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-SEC-003",
+      "name": "Hikvision DS-2CD2143G2-I - 4MP AcuSense Dome Camera",
+      "reg": "749",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-SEC-002",
+      "name": "Reolink Argus 4 Pro - Solar-Powered Wireless 4K Security Camera",
+      "reg": "1199",
+      "sale": "0"
+    }
+  ],
+  "أمن ومراقبة": [
+    {
+      "sku": "NG-SEC-007",
+      "name": "Eufy Video Doorbell S330 - Dual Camera Smart Doorbell (2K + Package Cam)",
+      "reg": "1449",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-SEC-006",
+      "name": "Ajax Hub 2 Plus - Professional Wireless Smart Alarm System",
+      "reg": "2499",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-SEC-005",
+      "name": "Reolink 16-Channel PoE NVR (RLN16-410) - 4K Network Video Recorder",
+      "reg": "1599",
+      "sale": ""
+    },
+    {
+      "sku": "NG-SEC-004",
+      "name": "Ubiquiti UniFi Protect G4 Doorbell Pro - 5MP Smart Doorbell with Fingerprint Rea",
+      "reg": "3140",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-SEC-003",
+      "name": "Hikvision DS-2CD2143G2-I - 4MP AcuSense Dome Camera",
+      "reg": "749",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-SEC-002",
+      "name": "Reolink Argus 4 Pro - Solar-Powered Wireless 4K Security Camera",
+      "reg": "1199",
+      "sale": "0"
+    }
+  ],
+  "Drones & Robotics": [
+    {
+      "sku": "NG-DRN-008",
+      "name": "DJI Pocket 3 - Pocket-Sized Gimbal Camera with 1-Inch Sensor",
+      "reg": "3449",
+      "sale": "2999"
+    },
+    {
+      "sku": "NG-DRN-006",
+      "name": "FIMI X8 Mini V2 - 4K Drone at 245g with Competitive Pricing",
+      "reg": "2399",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-DRN-005",
+      "name": "Insta360 X4 - 8K 360-Degree Camera",
+      "reg": "3499",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-DRN-004",
+      "name": "DJI RS 4 - 3-Axis Gimbal Stabilizer for Professional Cameras",
+      "reg": "3099",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-DRN-003",
+      "name": "DJI Osmo Action 5 Pro - 4K/120fps Waterproof Action Camera",
+      "reg": "2499",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-DRN-002",
+      "name": "DJI Avata 2 - Immersive FPV Drone with Goggles",
+      "reg": "4099",
+      "sale": "0"
+    }
+  ],
+  "درونز وروبوتات": [
+    {
+      "sku": "NG-DRN-008",
+      "name": "DJI Pocket 3 - Pocket-Sized Gimbal Camera with 1-Inch Sensor",
+      "reg": "3449",
+      "sale": "2999"
+    },
+    {
+      "sku": "NG-DRN-006",
+      "name": "FIMI X8 Mini V2 - 4K Drone at 245g with Competitive Pricing",
+      "reg": "2399",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-DRN-005",
+      "name": "Insta360 X4 - 8K 360-Degree Camera",
+      "reg": "3499",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-DRN-004",
+      "name": "DJI RS 4 - 3-Axis Gimbal Stabilizer for Professional Cameras",
+      "reg": "3099",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-DRN-003",
+      "name": "DJI Osmo Action 5 Pro - 4K/120fps Waterproof Action Camera",
+      "reg": "2499",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-DRN-002",
+      "name": "DJI Avata 2 - Immersive FPV Drone with Goggles",
+      "reg": "4099",
+      "sale": "0"
+    }
+  ],
+  "Cables & Adapters": [
+    {
+      "sku": "NG-CBL-008",
+      "name": "HDMI 2.1 8K Fiber Optic Cable (10m) - Zero Signal Loss",
+      "reg": "359",
+      "sale": ""
+    },
+    {
+      "sku": "NG-CBL-007",
+      "name": "DAC SFP+ 10G Direct Attach Cable (3m) - Direct Switch-to-Switch Connection",
+      "reg": "229",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-CBL-006",
+      "name": "Ugreen 5-in-1 USB-C Dock - HDMI 4K + Ethernet + USB 3.0",
+      "reg": "289",
+      "sale": "249"
+    },
+    {
+      "sku": "NG-CBL-005",
+      "name": "Baseus USB-C 100W Charging Cable (2m) - Fast Charge for Laptops and Phones",
+      "reg": "109",
+      "sale": ""
+    },
+    {
+      "sku": "NG-CBL-004",
+      "name": "Ugreen Cat 8 Ethernet Cable (5m) - 40Gbps Network Cable",
+      "reg": "149",
+      "sale": ""
+    },
+    {
+      "sku": "NG-CBL-003",
+      "name": "Cable Matters Thunderbolt 4 Cable (2m) - 40Gbps with 100W Charging",
+      "reg": "419",
+      "sale": ""
+    }
+  ],
+  "كابلات ومحولات": [
+    {
+      "sku": "NG-CBL-008",
+      "name": "HDMI 2.1 8K Fiber Optic Cable (10m) - Zero Signal Loss",
+      "reg": "359",
+      "sale": ""
+    },
+    {
+      "sku": "NG-CBL-007",
+      "name": "DAC SFP+ 10G Direct Attach Cable (3m) - Direct Switch-to-Switch Connection",
+      "reg": "229",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-CBL-006",
+      "name": "Ugreen 5-in-1 USB-C Dock - HDMI 4K + Ethernet + USB 3.0",
+      "reg": "289",
+      "sale": "249"
+    },
+    {
+      "sku": "NG-CBL-005",
+      "name": "Baseus USB-C 100W Charging Cable (2m) - Fast Charge for Laptops and Phones",
+      "reg": "109",
+      "sale": ""
+    },
+    {
+      "sku": "NG-CBL-004",
+      "name": "Ugreen Cat 8 Ethernet Cable (5m) - 40Gbps Network Cable",
+      "reg": "149",
+      "sale": ""
+    },
+    {
+      "sku": "NG-CBL-003",
+      "name": "Cable Matters Thunderbolt 4 Cable (2m) - 40Gbps with 100W Charging",
+      "reg": "419",
+      "sale": ""
+    }
+  ],
+  "3D Printing & CNC": [
+    {
+      "sku": "NG-3DP-008",
+      "name": "Phrozen Sonic Mini 8K S - 22-Micron Pixel Resin 3D Printer",
+      "reg": "2899",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-3DP-007",
+      "name": "Creality Sonic Pad - Klipper Tablet to Supercharge Your 3D Printer",
+      "reg": "1049",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-3DP-006",
+      "name": "BIQU H2 V2S Direct Drive Extruder - Lightweight Upgrade for Your 3D Printer",
+      "reg": "540",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-3DP-005",
+      "name": "Elegoo Saturn 3 Ultra - 12K Resin 3D Printer with 10-inch Screen",
+      "reg": "3499",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-3DP-004",
+      "name": "eSUN PLA+ Filament 10-Color Pack - 10kg Total for 3D Printing",
+      "reg": "1299",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-3DP-003",
+      "name": "Creality K1 Max - Large Format 3D Printer at 600mm/s",
+      "reg": "3380",
+      "sale": "0"
+    }
+  ],
+  "طباعة ثلاثية الأبعاد": [
+    {
+      "sku": "NG-3DP-008",
+      "name": "Phrozen Sonic Mini 8K S - 22-Micron Pixel Resin 3D Printer",
+      "reg": "2899",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-3DP-007",
+      "name": "Creality Sonic Pad - Klipper Tablet to Supercharge Your 3D Printer",
+      "reg": "1049",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-3DP-006",
+      "name": "BIQU H2 V2S Direct Drive Extruder - Lightweight Upgrade for Your 3D Printer",
+      "reg": "540",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-3DP-005",
+      "name": "Elegoo Saturn 3 Ultra - 12K Resin 3D Printer with 10-inch Screen",
+      "reg": "3499",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-3DP-004",
+      "name": "eSUN PLA+ Filament 10-Color Pack - 10kg Total for 3D Printing",
+      "reg": "1299",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-3DP-003",
+      "name": "Creality K1 Max - Large Format 3D Printer at 600mm/s",
+      "reg": "3380",
+      "sale": "0"
+    }
+  ],
+  "Accessories & Lifestyle": [
+    {
+      "sku": "NG-ACC-009",
+      "name": "Ugreen Nexode 100W GaN Charger - 4-Port Gallium Nitride Fast Charger",
+      "reg": "439",
+      "sale": ""
+    },
+    {
+      "sku": "NG-ACC-008",
+      "name": "CalDigit TS4 Thunderbolt 4 Dock - 18-Port Professional Docking Station",
+      "reg": "2170",
+      "sale": ""
+    },
+    {
+      "sku": "NG-ACC-007",
+      "name": "Anker PowerConf S330 USB Speakerphone - Smart Noise-Canceling Conference Speaker",
+      "reg": "599",
+      "sale": ""
+    },
+    {
+      "sku": "NG-ACC-003",
+      "name": "Mark Ryden Anti-theft Laptop Backpack - Maximum Protection for Your Tech",
+      "reg": "479",
+      "sale": "409"
+    },
+    {
+      "sku": "NG-ACC-002",
+      "name": "Anker 735 GaN 65W Charger - Compact 3-Port Fast Charger",
+      "reg": "379",
+      "sale": ""
+    },
+    {
+      "sku": "NG-ACC-001",
+      "name": "Baseus Blade 100W Power Bank - Ultra-Slim Laptop Portable Charger",
+      "reg": "499",
+      "sale": ""
+    }
+  ],
+  "إكسسوارات": [
+    {
+      "sku": "NG-ACC-009",
+      "name": "Ugreen Nexode 100W GaN Charger - 4-Port Gallium Nitride Fast Charger",
+      "reg": "439",
+      "sale": ""
+    },
+    {
+      "sku": "NG-ACC-008",
+      "name": "CalDigit TS4 Thunderbolt 4 Dock - 18-Port Professional Docking Station",
+      "reg": "2170",
+      "sale": ""
+    },
+    {
+      "sku": "NG-ACC-007",
+      "name": "Anker PowerConf S330 USB Speakerphone - Smart Noise-Canceling Conference Speaker",
+      "reg": "599",
+      "sale": ""
+    },
+    {
+      "sku": "NG-ACC-003",
+      "name": "Mark Ryden Anti-theft Laptop Backpack - Maximum Protection for Your Tech",
+      "reg": "479",
+      "sale": "409"
+    },
+    {
+      "sku": "NG-ACC-002",
+      "name": "Anker 735 GaN 65W Charger - Compact 3-Port Fast Charger",
+      "reg": "379",
+      "sale": ""
+    },
+    {
+      "sku": "NG-ACC-001",
+      "name": "Baseus Blade 100W Power Bank - Ultra-Slim Laptop Portable Charger",
+      "reg": "499",
+      "sale": ""
+    }
+  ],
+  "Enthusiasts & Gamers": [
+    {
+      "sku": "NG-MKR-010",
+      "name": "Elegoo Mars 4 Ultra Resin 3D Printer - 9K Resolution for Stunning Detail",
+      "reg": "2399",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-MKR-008",
+      "name": "Creality Ender-3 V3 SE - The Best Entry-Level 3D Printer",
+      "reg": "1250",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-MKR-007",
+      "name": "Prusa Mini+ 3D Printer - Professional Precision in a Compact Package",
+      "reg": "3799",
+      "sale": "3299"
+    },
+    {
+      "sku": "NG-MKR-005",
+      "name": "Elgato Stream Deck MK.2 - Professional Productivity Console with 15 LCD Keys",
+      "reg": "1439",
+      "sale": "1249"
+    },
+    {
+      "sku": "NG-MKR-004",
+      "name": "Meta Quest 3 128GB - The Most Powerful Mixed Reality Headset",
+      "reg": "3060",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-MKR-003",
+      "name": "Keychron Q1 - Premium Full Aluminum Custom Mechanical Keyboard",
+      "reg": "1449",
+      "sale": "0"
+    }
+  ],
+  "هواة التقنية": [
+    {
+      "sku": "NG-MKR-010",
+      "name": "Elegoo Mars 4 Ultra Resin 3D Printer - 9K Resolution for Stunning Detail",
+      "reg": "2399",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-MKR-008",
+      "name": "Creality Ender-3 V3 SE - The Best Entry-Level 3D Printer",
+      "reg": "1250",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-MKR-007",
+      "name": "Prusa Mini+ 3D Printer - Professional Precision in a Compact Package",
+      "reg": "3799",
+      "sale": "3299"
+    },
+    {
+      "sku": "NG-MKR-005",
+      "name": "Elgato Stream Deck MK.2 - Professional Productivity Console with 15 LCD Keys",
+      "reg": "1439",
+      "sale": "1249"
+    },
+    {
+      "sku": "NG-MKR-004",
+      "name": "Meta Quest 3 128GB - The Most Powerful Mixed Reality Headset",
+      "reg": "3060",
+      "sale": "0"
+    },
+    {
+      "sku": "NG-MKR-003",
+      "name": "Keychron Q1 - Premium Full Aluminum Custom Mechanical Keyboard",
+      "reg": "1449",
+      "sale": "0"
+    }
+  ]
+}

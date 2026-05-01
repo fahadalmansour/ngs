@@ -1,0 +1,2445 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEOGEN STORE — دليل محتوى السوشيال ميديا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Tajawal:wght@300;400;500;700;800&family=Chakra+Petch:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --accent: #38BDF8;
+  --accent-deep: #0284C7;
+  --accent-soft: #BAE6FD;
+  --bg: #F8FAFC;
+  --bg-alt: #EEF2F6;
+  --surface: #FFFFFF;
+  --surface-2: #F1F5F9;
+  --text: #0F172A;
+  --warm: #334155;
+  --muted: #64748B;
+  --dim: #94A3B8;
+  --line: rgba(15,23,42,0.10);
+  --signal: #22C55E;
+
+  --mono: 'IBM Plex Mono', monospace;
+  --ar: 'Tajawal', sans-serif;
+  --en: 'Chakra Petch', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--ar);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  direction: rtl;
+}
+
+.header {
+  background: var(--text);
+  padding: 56px 40px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(56,189,248,0.10) 0%, transparent 60%);
+  pointer-events: none;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(56,189,248,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56,189,248,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+.header-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.header-kicker {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.header h1 {
+  font-family: var(--en);
+  font-weight: 700;
+  font-size: clamp(30px, 5vw, 56px);
+  color: #fff;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.header h1 span { color: var(--accent); }
+.header-sub {
+  font-family: var(--ar);
+  font-size: 16px;
+  color: #94A3B8;
+  max-width: 640px;
+}
+.header-meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+.header-badge {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid rgba(56,189,248,0.25);
+  padding: 6px 14px;
+  border-radius: 4px;
+}
+
+.nav-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav::-webkit-scrollbar { display: none; }
+.nav-btn {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 18px 22px;
+  border: none;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+.nav-btn:hover { color: var(--text); }
+.nav-btn.active { color: var(--text); border-bottom-color: var(--accent); }
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 40px 96px;
+}
+
+.section { display: none; animation: fadeIn 0.3s ease; }
+.section.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+.platform-header {
+  margin-bottom: 40px;
+  padding: 28px 32px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 12px rgba(15,23,42,0.05);
+  border-right: 4px solid var(--accent);
+}
+.platform-title {
+  font-family: var(--en);
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+.platform-sub {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.content-block {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 36px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 6px rgba(15,23,42,0.03);
+}
+.block-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.block-label::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+.block-title {
+  font-family: var(--ar);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.bio-box {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 24px 28px;
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+  position: relative;
+}
+.char-count {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--dim);
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  display: block;
+}
+.copy-btn {
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s;
+  display: block;
+}
+.copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+.about-box {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 28px;
+  font-family: var(--ar);
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.tips-box {
+  background: rgba(34,197,94,0.04);
+  border: 1px solid rgba(34,197,94,0.18);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-top: 18px;
+}
+.tips-title {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--signal);
+  margin-bottom: 10px;
+}
+.tips-body {
+  font-family: var(--ar);
+  font-size: 13px;
+  color: var(--warm);
+  line-height: 1.75;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 20px;
+  margin-top: 8px;
+}
+.post-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.post-card:hover {
+  box-shadow: 0 12px 32px rgba(15,23,42,0.09);
+  transform: translateY(-2px);
+}
+.post-card-header {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface-2);
+}
+.post-num {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  color: var(--accent);
+  font-weight: 600;
+}
+.post-type {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.post-body {
+  padding: 20px;
+}
+.post-caption {
+  font-family: var(--ar);
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.post-footer {
+  padding: 12px 20px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.post-visual-note {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+.post-timing {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+.tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--accent-deep);
+  background: rgba(56,189,248,0.07);
+  border: 1px solid rgba(56,189,248,0.18);
+  padding: 3px 9px;
+  border-radius: 99px;
+}
+
+/* Platform color overrides */
+.ig .platform-header { border-right-color: #E1306C; }
+.ig .block-label, .ig .post-num, .ig .post-timing { color: #E1306C; }
+.ig .block-label::before { background: #E1306C; }
+.ig .tag { color: #BE185D; background: rgba(225,48,108,0.06); border-color: rgba(225,48,108,0.18); }
+.ig .copy-btn:hover { color: #E1306C; border-color: #E1306C; }
+.ig .post-card:hover { box-shadow: 0 12px 32px rgba(225,48,108,0.10); }
+
+.tt .platform-header { border-right-color: #ff0050; }
+.tt .block-label, .tt .post-num, .tt .post-timing { color: #ff0050; }
+.tt .block-label::before { background: #ff0050; }
+.tt .tag { color: #be123c; background: rgba(255,0,80,0.06); border-color: rgba(255,0,80,0.18); }
+.tt .copy-btn:hover { color: #ff0050; border-color: #ff0050; }
+
+.sc .platform-header { border-right-color: #FFAB00; }
+.sc .block-label, .sc .post-num, .sc .post-timing { color: #FFAB00; }
+.sc .block-label::before { background: #FFAB00; }
+.sc .tag { color: #B45309; background: rgba(255,171,0,0.07); border-color: rgba(255,171,0,0.22); }
+.sc .copy-btn:hover { color: #FFAB00; border-color: #FFAB00; }
+
+.xw .platform-header { border-right-color: #1D9BF0; }
+.xw .block-label, .xw .post-num, .xw .post-timing { color: #1D9BF0; }
+.xw .block-label::before { background: #1D9BF0; }
+.xw .tag { color: #0369A1; background: rgba(29,155,240,0.06); border-color: rgba(29,155,240,0.18); }
+.xw .copy-btn:hover { color: #1D9BF0; border-color: #1D9BF0; }
+
+.li .platform-header { border-right-color: #0A66C2; }
+.li .block-label, .li .post-num, .li .post-timing { color: #0A66C2; }
+.li .block-label::before { background: #0A66C2; }
+.li .tag { color: #1E40AF; background: rgba(10,102,194,0.06); border-color: rgba(10,102,194,0.18); }
+.li .copy-btn:hover { color: #0A66C2; border-color: #0A66C2; }
+
+.footer {
+  background: var(--text);
+  padding: 32px 40px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #475569;
+  text-align: center;
+}
+.footer span { color: var(--accent); }
+
+@media (max-width: 768px) {
+  .header, .main { padding: 24px 20px; }
+  .nav { padding: 0 16px; }
+  .posts-grid { grid-template-columns: 1fr; }
+  .content-block { padding: 22px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="header-kicker">// NEOGEN STORE · SOCIAL MEDIA CONTENT GUIDE · 2025–2026</div>
+    <h1>دليل محتوى<br><span>السوشيال ميديا الكامل</span></h1>
+    <div class="header-sub">Bio + About Us + 10 منشور لكل منصة — مُصمَّم للجمهور السعودي، بدون رموز تعبيرية</div>
+    <div class="header-meta">
+      <div class="header-badge">5 منصات</div>
+      <div class="header-badge">50 منشور جاهز</div>
+      <div class="header-badge">B2C + B2B</div>
+      <div class="header-badge">CR 7053130576</div>
+    </div>
+  </div>
+</div>
+
+<div class="nav-wrap">
+  <nav class="nav">
+    <button class="nav-btn active" onclick="showTab('instagram', this)">Instagram</button>
+    <button class="nav-btn" onclick="showTab('tiktok', this)">TikTok</button>
+    <button class="nav-btn" onclick="showTab('snapchat', this)">Snapchat</button>
+    <button class="nav-btn" onclick="showTab('x', this)">X — Twitter</button>
+    <button class="nav-btn" onclick="showTab('linkedin', this)">LinkedIn</button>
+  </nav>
+</div>
+
+<div class="main">
+
+<!-- ===================== INSTAGRAM ===================== -->
+<div id="instagram" class="section ig active">
+
+  <div class="platform-header">
+    <div class="platform-title">Instagram</div>
+    <div class="platform-sub">محرك الوعي البصري · Reels + Stories + Carousel · 20M مستخدم في السعودية</div>
+  </div>
+
+  <div class="content-block">
+    <div class="block-label">01 // BIO</div>
+    <div class="block-title">Bio الحساب</div>
+    <span class="char-count">// 148 حرف تقريباً</span>
+    <div class="bio-box">NEOGEN STORE
+متجرك التقني المتخصص في السعودية
+شبكات · هوم لاب · سمارت هوم · جيمنق · طباعة 3D
+شحن داخل المملكة | ضمان معتمد
+رابط التسوق في الاسفل</div>
+    <button class="copy-btn" onclick="copyText('bio-ig')">نسخ النص</button>
+    <div class="tips-box">
+      <div class="tips-title">// ملاحظات التنفيذ</div>
+      <div class="tips-body">الرابط في البايو: neogen.store. استخدم Linktree أو صفحة مقصودة تجمع المنتجات الأكثر بحثاً. وثّق الحساب عبر Meta Business. أنشئ Highlights بهذا الترتيب: شبكات — سمارت هوم — جيمنق — شحن وإرجاع — تقييمات العملاء.</div>
+    </div>
+  </div>
+
+  <div class="content-block">
+    <div class="block-label">02 // ABOUT US</div>
+    <div class="block-title">نبذة عن المتجر</div>
+    <div class="about-box">NEOGEN STORE هو المتجر التقني السعودي المتخصص الذي يختار كل منتج بعناية.
+
+لسنا متجراً عاماً. نخدم محترفي الشبكات، مهندسي الهوم لاب، أصحاب البيوت الذكية، والمحترفين في عالم الجيمنق والطباعة ثلاثية الأبعاد.
+
+كل جهاز في كتالوجنا يخدم غرضاً تقنياً واضحاً — بدون مبالغة، وبدون أرقام مفبركة.
+
+شحن خلال 2-5 أيام عمل من الرياض
+ضمان 12 شهراً معتمد
+دفع آمن عبر PayLink
+سجل تجاري: 7053130576
+
+اكثر من 200 منتج متخصص — neogen.store</div>
+  </div>
+
+  <div class="content-block">
+    <div class="block-label">03 // 10 POSTS</div>
+    <div class="block-title">منشورات جاهزة للنشر</div>
+    <div class="posts-grid">
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 01</div>
+          <div class="post-type">Reel · Product Launch</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">انترنت بيتك يستحق اكثر من الراوتر الحالي.
+
+Wi-Fi 7 وصل لـ NEOGEN STORE
+سرعة تتجاوز 9.3 Gbps
+تغطية تصل لكل زاوية في الفيلا
+دعم Matter للسمارت هوم الكامل
+
+الراوتر مش مجرد علبة انترنت — هو قلب شبكتك بالكامل.
+
+رابط المنتج في البايو
+كود خصم الافتتاح: NEO10</div>
+          <div class="post-tags">
+            <span class="tag">#شبكات</span>
+            <span class="tag">#واي_فاي</span>
+            <span class="tag">#NEOGEN_STORE</span>
+            <span class="tag">#تقنية</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">Reel · 15-30 ثانية · Unboxing سريع</div>
+          <div class="post-timing">الاثنين · 8 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 02</div>
+          <div class="post-type">Carousel · Educational</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">دليل اختيار كاميرا المراقبة المنزلية — 6 اسئلة قبل الشراء
+
+[شريحة 1] السؤال الاول: IP Camera ام Analog؟
+[شريحة 2] ما الفرق بين 2K و4K في الواقع؟
+[شريحة 3] PoE ام بطارية — ايهما يناسبك؟
+[شريحة 4] التخزين المحلي ام السحابي؟
+[شريحة 5] هل تحتاج AI Detection؟
+[شريحة 6] ميزانيتك تحدد: 3 خيارات لكل فئة سعرية
+
+احفظ الكاروسيل لما تحتاجه</div>
+          <div class="post-tags">
+            <span class="tag">#امن_منزلي</span>
+            <span class="tag">#كاميرات_مراقبة</span>
+            <span class="tag">#دليل_الشراء</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">7 شرائح Carousel · تصميم معلوماتي</div>
+          <div class="post-timing">الاحد · 9 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 03</div>
+          <div class="post-type">Reel · Before / After</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">قبل: راوتر واحد في ركن البيت، WiFi ميت في غرف النوم.
+
+بعد: Mesh Network من Ubiquiti، تغطية كاملة لكل متر مربع.
+
+الفرق؟ 3 نقاط Mesh وتنصيب صحيح وضبط على الشبكة.
+
+ما تحتاج تحتمل ضعف الاشارة — نساعدك تختار وتنصّب.
+
+التفاصيل في البايو</div>
+          <div class="post-tags">
+            <span class="tag">#Mesh_Network</span>
+            <span class="tag">#شبكات</span>
+            <span class="tag">#هوم_لاب</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">Split screen قبل/بعد · 30 ثانية</div>
+          <div class="post-timing">الاربعاء · 8 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 04</div>
+          <div class="post-type">Story Poll</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">استطلاع Story:
+
+ما اهم شيء في راوترك؟
+— السرعة القصوى
+— قوة التغطية
+— سهولة الاعداد
+— السعر
+
+نتيجة الاستطلاع = محتوى المنشور القادم. ننشر التوصية لكل اجابة خلال 24 ساعة.</div>
+          <div class="post-tags">
+            <span class="tag">#استطلاع</span>
+            <span class="tag">#راوتر</span>
+            <span class="tag">#تقنية</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">Story بـ Poll Sticker تفاعلي</div>
+          <div class="post-timing">الثلاثاء · 7 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 05</div>
+          <div class="post-type">Reel · Tech Tip</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">اشتريت NAS جديد؟ اول شيء تسويه قبل اي اعداد اخر:
+
+حدّث الـ firmware فور الاستلام
+فعّل RAID 1 او RAID 5 من البداية
+اعمل نسخة احتياطية على كلاود من اليوم الاول
+قفّل بورت SSH بكلمة مرور قوية
+
+لا تعتمد على NAS كوحيد نسخك الاحتياطية — هذا الخطأ يكلف كثيراً.
+
+احفظ الـ Reel للرجوع اليه لاحقاً</div>
+          <div class="post-tags">
+            <span class="tag">#NAS</span>
+            <span class="tag">#هوم_لاب</span>
+            <span class="tag">#نصائح_تقنية</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">Screencast + Voiceover · 45 ثانية</div>
+          <div class="post-timing">الخميس · 9 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 06</div>
+          <div class="post-type">Carousel · Comparison</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">مقارنة صادقة: UniFi مقابل TP-Link Omada
+
+[شريحة 1] السعر: Omada ارخص بـ 30-40 بالمئة
+[شريحة 2] الاداء: UniFi يتفوق في البيئات المزدحمة
+[شريحة 3] سهولة الاعداد: Omada للمبتدئين
+[شريحة 4] التوسعة: UniFi لا مثيل له في الهوم لاب
+[شريحة 5] الخلاصة: جدول واضح لكل نوع بيت
+
+مقارنة بدون اعلانات — فقط الواقع</div>
+          <div class="post-tags">
+            <span class="tag">#UniFi</span>
+            <span class="tag">#TP_Link</span>
+            <span class="tag">#مقارنة</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">6 شرائح Carousel · جداول بصرية</div>
+          <div class="post-timing">الاحد · 10 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 07</div>
+          <div class="post-type">Reel · Customer Setup</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">عميلنا بنى Home Lab كامل من غرفة في بيته.
+
+المواصفات:
+Dell PowerEdge R730
+Synology NAS DS1621 Plus
+MikroTik CRS326 Switch
+UniFi Access Points × 3
+
+التكلفة الاجمالية؟ راسلنا في الـ DM — نساعدك تخطط ميزانيتك.
+
+شارك Setup تبعك بـ NEOGEN_SETUP</div>
+          <div class="post-tags">
+            <span class="tag">#هوم_لاب</span>
+            <span class="tag">#NEOGEN_SETUP</span>
+            <span class="tag">#سيرفر</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">فيديو من العميل + B-roll للاجهزة</div>
+          <div class="post-timing">الجمعة · 9 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 08</div>
+          <div class="post-type">Reel · Seasonal Promo</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">موسم رمضان مع NEOGEN STORE:
+
+Gaming Setup المثالي للسهرات
+شبكة تتحمل 4 شاشات وقت واحد
+Smart Home يديره من الجوال
+
+خصم 15 بالمئة على منتجات مختارة
+الكود: RAMADAN15
+العرض ينتهي الجمعة
+
+neogen.store</div>
+          <div class="post-tags">
+            <span class="tag">#رمضان</span>
+            <span class="tag">#عروض</span>
+            <span class="tag">#NEOGEN_STORE</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">Reel ترويجي · موشن جرافيك بسيط</div>
+          <div class="post-timing">اول ايام رمضان · 9 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 09</div>
+          <div class="post-type">Behind the Scenes</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">خلف الكواليس في NEOGEN STORE.
+
+كل منتج يوصلنا، نشغّله قبل ما يوصل اليك.
+
+نختبر: سرعة الاعداد، ثبات الاتصال، جودة البناء.
+
+اليوم فحصنا شحنة من UniFi U7 Pro.
+النتيجة؟ عايزك تشوفها بنفسك.
+
+الفيديو الكامل على القناة — رابط في البايو.</div>
+          <div class="post-tags">
+            <span class="tag">#خلف_الكواليس</span>
+            <span class="tag">#UniFi</span>
+            <span class="tag">#مراجعة</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">Reel خلف الكواليس · نبرة شخصية</div>
+          <div class="post-timing">الجمعة · 7 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 10</div>
+          <div class="post-type">Carousel · Buying Guide</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">قبل ما تشتري طابعة 3D — اقرأ هذا.
+
+[شريحة 1] FDM ام Resin؟ الفرق الحقيقي
+[شريحة 2] افضل خيار لاقل من 1,500 ريال
+[شريحة 3] افضل خيار من 1,500 الى 4,000 ريال
+[شريحة 4] ماذا تطبع؟ هو الذي يحدد نوع الطابعة
+[شريحة 5] الفيلامنت مقابل الراتنج — التكلفة الحقيقية
+[شريحة 6] توصيتنا لكل حالة
+
+احفظ الكاروسيل قبل ما تطلب</div>
+          <div class="post-tags">
+            <span class="tag">#طباعة_ثلاثية_الابعاد</span>
+            <span class="tag">#دليل_الشراء</span>
+            <span class="tag">#3D_Print</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">7 شرائح Carousel · انفوغرافيك</div>
+          <div class="post-timing">الاحد · 8 م</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ===================== TIKTOK ===================== -->
+<div id="tiktok" class="section tt">
+
+  <div class="platform-header">
+    <div class="platform-title">TikTok</div>
+    <div class="platform-sub">محرك الوعي الاول · 34M مستخدم · 70 دقيقة يومياً · الفيديو القصير يهيمن</div>
+  </div>
+
+  <div class="content-block">
+    <div class="block-label">01 // BIO</div>
+    <div class="block-title">Bio الحساب</div>
+    <span class="char-count">// 80 حرف تقريباً</span>
+    <div class="bio-box">NEOGEN STORE — متجرك التقني المتخصص في السعودية
+شبكات | هوم لاب | جيمنق | سمارت هوم
+neogen.store</div>
+    <button class="copy-btn" onclick="copyText('bio-tt')">نسخ النص</button>
+    <div class="tips-box">
+      <div class="tips-title">// استراتيجية تيك توك</div>
+      <div class="tips-body">الكمية تكافئها الخوارزمية: 1-2 فيديو يومياً كحد ادنى. اول 3 ثوانٍ هي الـ Hook — يجب ان تكون صادمة او مثيرة للفضول. افتح TikTok Shop بعد 1,000 متابع للمنتجات متوسطة وقليلة السعر مثل الاكسسوارات والاضاءة الذكية وبطاقات الهدايا.</div>
+    </div>
+  </div>
+
+  <div class="content-block">
+    <div class="block-label">02 // ABOUT US</div>
+    <div class="block-title">نبذة عن المتجر</div>
+    <div class="about-box">NEOGEN STORE — مش متجر عادي.
+
+نختار اجهزة الشبكات والتقنية المتخصصة بعناية للسوق السعودي.
+
+ستجد هنا اصدق المراجعات واسرع المقارنات واعمق النصائح التقنية — بدون مبالغة ولا اعلانات مدفوعة.
+
+شحن سريع من الرياض | ضمان معتمد
+
+neogen.store</div>
+  </div>
+
+  <div class="content-block">
+    <div class="block-label">03 // 10 POSTS</div>
+    <div class="block-title">سكريبتات جاهزة للتصوير</div>
+    <div class="posts-grid">
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 01</div>
+          <div class="post-type">Hook · Curiosity</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">Hook (0-3 ثوان): "اذا سرعة انترنتك فوق 100 ميغا — لا تشاهد هذا الفيديو"
+
+السكريبت:
+معظم الناس لديها 300 ميغا او اكثر، لكن بيتهم كله لا يستفيد الا من 50.
+
+السبب: الراوتر نفسه هو الـ Bottleneck.
+
+3 علامات تدل ان راوترك هو المشكلة:
+الاولى — الانترنت ممتاز بجانب الراوتر فقط.
+الثانية — اتصال غير مستقر في الغرف البعيدة.
+الثالثة — جهازك يقول 5G لكن الاشارة بار واحد.
+
+الحل؟ اكتب كلمة راوتر في الكومنت وبرسلك التوصية المناسبة.</div>
+          <div class="post-tags">
+            <span class="tag">#fyp</span>
+            <span class="tag">#تقنية</span>
+            <span class="tag">#راوتر</span>
+            <span class="tag">#شبكات</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">45 ثانية · Speed test screen recording</div>
+          <div class="post-timing">الاثنين · 9 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 02</div>
+          <div class="post-type">Unboxing · Product</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">Hook: "انتظر للنهاية — هذا الجهاز غيّر طريقة عملي بالكامل"
+
+السكريبت:
+[Unboxing تدريجي + صوت فتح الكرتون]
+هذا الـ NAS من Synology.
+
+تخيل: تخزين 40 تيرابايت في بيتك، بكلفة اشتراك شهر واحد Netflix فقط.
+
+ما يخزن: صور العائلة، مشاريع العمل، الالعاب.
+يشتغل 24/7 بصوت اقل من المكيف.
+
+الثمن؟ استثمار لمرة واحدة وبس.
+
+رابط التفاصيل في البايو.</div>
+          <div class="post-tags">
+            <span class="tag">#NAS</span>
+            <span class="tag">#Synology</span>
+            <span class="tag">#هوم_لاب</span>
+            <span class="tag">#fyp</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">60 ثانية · Unboxing هادئ</div>
+          <div class="post-timing">الثلاثاء · 8 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 03</div>
+          <div class="post-type">POV · Relatable</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">Hook (نص على الشاشة): "POV: طلبت كاميرا مراقبة وما ادري اش اشتري"
+
+السكريبت:
+هذا بالضبط اللي يحصل مع 90 بالمئة من الناس — السوق مليان خيارات والكل يقول الافضل.
+
+انا هنا ابسّط لك القرار:
+
+للاستخدام الخارجي: UniFi G4 Bullet.
+للداخل سواء البيت او المكتب: Reolink 4K PoE.
+لميزانية محدودة: Hikvision DS-2CD مع NVR.
+
+اكتب حالتك في الكومنت وبختار لك.</div>
+          <div class="post-tags">
+            <span class="tag">#كاميرات_مراقبة</span>
+            <span class="tag">#POV</span>
+            <span class="tag">#fyp</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">30 ثانية · مونولوج امام الكاميرا</div>
+          <div class="post-timing">الاربعاء · 7 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 04</div>
+          <div class="post-type">Setup Tour · Viral</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">Hook: "بنيت Home Server في غرفة ملابسي — التكلفة صدمتني"
+
+السكريبت:
+[Tour سريع للغرفة]
+هذا مش سيرفر شركة — هذا بيتي العادي.
+
+Dell PowerEdge R730 مجدد
+Synology NAS رفوف متعددة
+MikroTik Managed Switch
+UniFi Wi-Fi 6 × 3 نقاط
+
+المشروع بدأ بتجربة بسيطة وانتهى بـ Home Lab كامل.
+
+التكلفة الكاملة في البايو.</div>
+          <div class="post-tags">
+            <span class="tag">#هوم_لاب</span>
+            <span class="tag">#setup</span>
+            <span class="tag">#fyp</span>
+            <span class="tag">#فايلكم</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">60 ثانية · Tour سينمائي + موسيقى تقنية</div>
+          <div class="post-timing">الجمعة · 10 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 05</div>
+          <div class="post-type">Challenge · Speed Setup</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">Hook: "تحديت نفسي: Smart Home في 60 ثانية"
+
+السكريبت:
+[Timelapse]
+00:00 — نبدأ بالـ Hub
+00:15 — نضيف المفاتيح الذكية
+00:30 — نربط الاضاءة
+00:45 — نبرمج الاتمتة
+01:00 — Alexa، اطفئ كل شيء
+
+البيت تحكّم فيه من جوالك الان.
+
+قائمة المنتجات في البايو.</div>
+          <div class="post-tags">
+            <span class="tag">#سمارت_هوم</span>
+            <span class="tag">#Smart_Home</span>
+            <span class="tag">#تحدي</span>
+            <span class="tag">#fyp</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">60 ثانية · Timelapse Setup</div>
+          <div class="post-timing">الاثنين · 9 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 06</div>
+          <div class="post-type">Stitch / Problem Solve</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">Hook: "هذا الشخص جرّب يوفر بالراوتر — شاهد ما حصل"
+
+السكريبت:
+[Stitch على فيديو شخص يشتكي من انترنت بطيء]
+انا افهم الاحباط تماماً، لكن في الغالب المشكلة مو مزود الانترنت — المشكلة في الـ infrastructure الداخلية.
+
+3 اسباب رئيسية:
+راوتر اقل من مستوى الاشتراك.
+نقاط Dead Zone غير معالجة.
+تداخل Channels مع الجيران.
+
+الحل؟ خطوة بخطوة في التعليقات.</div>
+          <div class="post-tags">
+            <span class="tag">#stitch</span>
+            <span class="tag">#شبكات</span>
+            <span class="tag">#fyp</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">45 ثانية · Stitch format</div>
+          <div class="post-timing">الثلاثاء · 9 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 07</div>
+          <div class="post-type">Single Feature · Demo</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">Hook (نص على الشاشة): "هذه الكاميرا ترى في الظلام الكامل — بدون Flash"
+
+السكريبت:
+[ظلام كامل — الكاميرا تشتغل]
+هذا مش سحر — هذه تقنية Starlight Sensor.
+
+UniFi G4 Pro:
+تسجيل 4K بدون اضاءة اضافية.
+ما تحتاج كاشفات ضوء اضافية.
+توفير في الكابلات والكهرباء.
+
+رابط المنتج في البايو.</div>
+          <div class="post-tags">
+            <span class="tag">#كاميرا_مراقبة</span>
+            <span class="tag">#UniFi</span>
+            <span class="tag">#fyp</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">30 ثانية · Night vision demo مرئي</div>
+          <div class="post-timing">الاربعاء · 8 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 08</div>
+          <div class="post-type">Comparison · Humorous</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">Hook: "لما تقول للناس خليتها Home Lab بدل ما تشتري Cloud"
+
+السكريبت:
+محمد يدفع 200 ريال شهرياً لـ Cloud Storage.
+[نظرة جانبية ساخرة]
+
+Synology DS223j:
+20TB تخزين.
+دفعة واحدة.
+ما فيه اشتراك شهري للابد.
+
+بعد سنتين توفير: [حساب رياضي على الشاشة].
+
+هل اقنعنا محمد؟ اكتب لا في الكومنت.</div>
+          <div class="post-tags">
+            <span class="tag">#هوم_لاب</span>
+            <span class="tag">#Synology</span>
+            <span class="tag">#fyp</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">20 ثانية · حساب بسيط على الشاشة</div>
+          <div class="post-timing">الجمعة · 10 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 09</div>
+          <div class="post-type">Educational · Security</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">Hook: "كيف تحمي شبكة بيتك من الاختراق — 5 دقائق وبس"
+
+السكريبت:
+5 اعدادات تمنع 95 بالمئة من محاولات الاختراق:
+
+الاولى — غيّر كلمة مرور الراوتر الافتراضية الان.
+الثانية — فعّل WPA3 اذا كان راوترك يدعمه.
+الثالثة — انشئ شبكة Guest منفصلة للزوار.
+الرابعة — اوقف WPS — هذه ثغرة كبيرة.
+الخامسة — تحقق من الاجهزة المتصلة كل شهر.
+
+احفظ الفيديو = بيت اكثر اماناً.</div>
+          <div class="post-tags">
+            <span class="tag">#امن_الشبكات</span>
+            <span class="tag">#تقنية</span>
+            <span class="tag">#fyp</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">60 ثانية · Screencast + خطوات مرقمة</div>
+          <div class="post-timing">الخميس · 9 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 10</div>
+          <div class="post-type">Reveal · Transformation</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">Hook: "بنيت Gaming Setup بـ 5,000 ريال — النتيجة فوق التوقعات"
+
+السكريبت:
+[Reveal تدريجي]
+ما يحدث لما تصرف بذكاء وليس بكثرة:
+
+كرسي Gaming من Secretlab — مريح 8 ساعات.
+شاشة 144Hz Samsung — بدون تمزق الصورة.
+سماعة SteelSeries Arctis Nova — صوت محيطي.
+ماوس Razer DeathAdder — دقة وخفة.
+كيبورد Keychron K10 — ضغط مريح.
+
+الاجمالي؟ 4,850 ريال.
+
+قائمة التسوق الكاملة في البايو.</div>
+          <div class="post-tags">
+            <span class="tag">#Gaming_Setup</span>
+            <span class="tag">#جيمنق</span>
+            <span class="tag">#fyp</span>
+            <span class="tag">#اكسبلور</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">45 ثانية · Cinematic Reveal + Trending Audio</div>
+          <div class="post-timing">السبت · 10 م</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SNAPCHAT ===================== -->
+<div id="snapchat" class="section sc">
+
+  <div class="platform-header">
+    <div class="platform-title">Snapchat</div>
+    <div class="platform-sub">اقوى محرك تحويل محلي · 87.7 بالمئة من البالغين السعوديين · يومياً بلا توقف</div>
+  </div>
+
+  <div class="content-block">
+    <div class="block-label">01 // BIO</div>
+    <div class="block-title">Bio الحساب</div>
+    <span class="char-count">// 90 حرف تقريباً</span>
+    <div class="bio-box">NEOGEN STORE — تقنية متخصصة من السعودية
+شبكات | هوم لاب | سمارت هوم | جيمنق
+شحن خلال 2-5 ايام | ضمان معتمد
+neogen.store</div>
+    <button class="copy-btn" onclick="copyText('bio-sc')">نسخ النص</button>
+    <div class="tips-box">
+      <div class="tips-title">// استراتيجية سناب</div>
+      <div class="tips-body">سناب في السعودية هو الديوانية اليومية الرقمية. انشر 5-8 سنابات يومياً بدون انقطاع — الانتظام اهم من الجودة على هذه المنصة. الـ Spotlight هو المصدر الاكبر للمشاهدات المجانية. الاعلانات المدفوعة: ابدأ بـ 500-1,500 ريال يومياً، استهدف الفئة 18-34 في الرياض وجدة والدمام اولاً.</div>
+    </div>
+  </div>
+
+  <div class="content-block">
+    <div class="block-label">02 // ABOUT US</div>
+    <div class="block-title">نبذة عن المتجر</div>
+    <div class="about-box">NEOGEN STORE — المتجر اللي يفهم اللي تحتاجه.
+
+مش بس نبيع — نختار الصح ونوصيك بالانسب لاحتياجك.
+
+شبكات | هوم لاب | بيت ذكي | جيمنق
+
+كل منتج مجرب قبل ما يوصلك
+شحن سريع من الرياض
+دعم فني حقيقي — مو بوت
+
+تابعنا كل يوم للعروض والنصائح اليومية</div>
+  </div>
+
+  <div class="content-block">
+    <div class="block-label">03 // 10 POSTS</div>
+    <div class="block-title">سنابات وSpotlight جاهزة</div>
+    <div class="posts-grid">
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 01</div>
+          <div class="post-type">Daily Story · Flash Deal</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">عرض اليوم فقط — 24 ساعة
+
+UniFi U7 Pro Wi-Fi 7
+خصم 8 بالمئة
+السعر: [السعر] ريال شامل VAT
+
+وصلت 12 قطعة فقط — الطلب الاول يحجز.
+
+neogen.store
+او راسلنا هنا مباشرة.</div>
+          <div class="post-tags">
+            <span class="tag">#عرض_اليوم</span>
+            <span class="tag">#UniFi</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">Story + عداد تنازلي 24 ساعة</div>
+          <div class="post-timing">يومياً · 10 ص</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 02</div>
+          <div class="post-type">Unboxing · Fresh Arrival</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">وصلت الشحنة.
+
+[فيديو Unboxing فوري من المستودع]
+
+اليوم وصلنا:
+Synology DS1621 Plus — 6-Bay NAS
+Ubiquiti UniFi Cloud Gateway Ultra
+Creality K1C 3D Printer
+
+هل تبي اعمل مراجعة لاي واحد منها؟
+ردّ على القصة مباشرة.</div>
+          <div class="post-tags">
+            <span class="tag">#وصل_جديد</span>
+            <span class="tag">#Unboxing</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">Video Story · خلف الكواليس المستودع</div>
+          <div class="post-timing">يوم الشحنة · 2 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 03</div>
+          <div class="post-type">Quiz · Interactive</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">سؤال تقني سريع:
+ما الفرق بين Throughput وBandwidth؟
+
+الخيار الاول: نفس الشيء
+الخيار الثاني: مختلفان — Throughput هو الفعلي
+
+[في القصة التالية]:
+الاجابة الصحيحة هي الثانية.
+
+Bandwidth = الحد الاقصى النظري
+Throughput = ما يصل فعلاً لجهازك
+
+هذا الفرق سبب 90 بالمئة من خيبات امل شراء الانترنت.</div>
+          <div class="post-tags">
+            <span class="tag">#تقنية</span>
+            <span class="tag">#اختبار</span>
+            <span class="tag">#شبكات</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">Story + Quiz Sticker تفاعلي</div>
+          <div class="post-timing">الثلاثاء · 4 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 04</div>
+          <div class="post-type">Spotlight · Transformation</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">نص على الشاشة: "شاهد ما يحدث لما تصلح ضعف الواي فاي بطريقة صح"
+
+[Timelapse: تركيب Mesh Network + قياس قبل وبعد]
+
+قبل: 12 Mbps في غرفة النوم
+بعد: 248 Mbps في نفس المكان
+
+فرق واحد: استبدال الراوتر التقليدي بـ Mesh System.
+
+neogen.store — رابط في البايو.</div>
+          <div class="post-tags">
+            <span class="tag">#Spotlight</span>
+            <span class="tag">#شبكات</span>
+            <span class="tag">#واي_فاي</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">Spotlight · 45 ثانية · نص بدون كلام</div>
+          <div class="post-timing">الجمعة · 9 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 05</div>
+          <div class="post-type">Customer Moment</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">[رسالة من عميل]:
+"ركّبت الـ Mesh وصرت اشتغل من غرفتي بدون انقطاع."
+— عميل من الرياض.
+
+هذا هو المتجر اللي نبي نكونه — مش بس نبيع، نضمن انك تشتغل.
+
+اذا عندك تجربة معنا، شاركها هنا.
+افضل قصة في التعليقات تحصل كوبون 50 ريال.</div>
+          <div class="post-tags">
+            <span class="tag">#تقييم</span>
+            <span class="tag">#عملاء</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">Screenshot + نص + CTA واضح</div>
+          <div class="post-timing">الخميس · 5 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 06</div>
+          <div class="post-type">Daily Life · Behind Scenes</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">يوم عادي في NEOGEN:
+
+[سلسلة Stories طوال اليوم]
+
+9 ص — استلام شحنة Ubiquiti
+11 ص — فحص الاجهزة قبل الشحن للعملاء
+2 م — ردود على استفسارات التركيب
+5 م — تحضير العروض القادمة
+9 م — نشوفكم في قصص الليل
+
+هذا ما يحصل خلف الكواليس كل يوم.</div>
+          <div class="post-tags">
+            <span class="tag">#خلف_الكواليس</span>
+            <span class="tag">#يوم_عمل</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">سلسلة Stories يومية · 6-8 مقاطع</div>
+          <div class="post-timing">يومياً · متقطعة طوال اليوم</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 07</div>
+          <div class="post-type">Seasonal · National Day</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">عيد الوطن قادم.
+
+اجمل هدية للمتحمس التقني في بيتك؟ بطاقة هدية NEOGEN STORE.
+
+100 ريال — مثالية للاكسسوارات
+500 ريال — لمكونات الشبكة
+1,000 ريال وفوق — لبداية هوم لاب
+
+ترسل فوراً على واتساب او بريد الكتروني.
+
+neogen.store او راسلنا مباشرة.</div>
+          <div class="post-tags">
+            <span class="tag">#اليوم_الوطني</span>
+            <span class="tag">#هدية</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">Story مصمم بالوان وطنية + CTA</div>
+          <div class="post-timing">اسبوع قبل اليوم الوطني</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 08</div>
+          <div class="post-type">Quick Comparison</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">مقارنة سريعة:
+
+Aqara Hub M3:
+سهل التركيب — يدعم HomeKit وAlexa — محدود في التخصيص.
+
+Home Assistant Green:
+تحكم كامل بدون حدود — يعمل محلياً بدون Cloud — يحتاج خبرة تقنية.
+
+اي منهما يناسبك؟ اضغط على الاستطلاع.</div>
+          <div class="post-tags">
+            <span class="tag">#سمارت_هوم</span>
+            <span class="tag">#مقارنة</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">2-3 Stories متسلسلة + Poll</div>
+          <div class="post-timing">الثلاثاء · 9 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 09</div>
+          <div class="post-type">Influencer Collab</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">[Story لمعايشة مع مؤثر]
+
+[اسم المؤثر] جرّب المنتج بنفسه.
+
+"صدقوني ما توقعت ان الـ NAS يغير حياتي هكذا. بكرة اشرح كل شي بالتفصيل."
+
+المنتج: Synology DS923 Plus.
+المراجعة الكاملة الجمعة على قناته.
+
+متاح الان على neogen.store</div>
+          <div class="post-tags">
+            <span class="tag">#كولاب</span>
+            <span class="tag">#مراجعة</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">Story مشترك مع مؤثر تقني متخصص</div>
+          <div class="post-timing">قبل المراجعة بيومين</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 10</div>
+          <div class="post-type">Countdown · Product Launch</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">[Story مع عداد]
+منتج جديد قادم لـ NEOGEN.
+
+افضل جهاز Smart Doorbell في السوق السعودي — بكاميرا مزدوجة ورؤية ليلية 4K.
+
+الاطلاق الرسمي: الغد الساعة 8 م.
+
+الذين يشاهدون هذا الـ Story يحصلون على سعر اول 48 ساعة.
+
+اضف المتجر لتنبيهاتك.</div>
+          <div class="post-tags">
+            <span class="tag">#اطلاق_منتج</span>
+            <span class="tag">#NEOGEN</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">Countdown Story + رابط مباشر</div>
+          <div class="post-timing">يوم قبل الاطلاق · 9 م</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ===================== X (TWITTER) ===================== -->
+<div id="x" class="section xw">
+
+  <div class="platform-header">
+    <div class="platform-title">X — Twitter</div>
+    <div class="platform-sub">محرك السلطة المعرفية · نقاشات التقنية الجادة · 17M مستخدم سعودي</div>
+  </div>
+
+  <div class="content-block">
+    <div class="block-label">01 // BIO</div>
+    <div class="block-title">Bio الحساب</div>
+    <span class="char-count">// 155 حرف تقريباً</span>
+    <div class="bio-box">NEOGEN STORE — متجر التقنية المتخصص في السعودية
+شبكات · هوم لاب · سمارت هوم · جيمنق · طباعة 3D
+توصيات صادقة · بدون اعلانات مدفوعة
+neogen.store | CR: 7053130576</div>
+    <button class="copy-btn" onclick="copyText('bio-x')">نسخ النص</button>
+    <div class="tips-box">
+      <div class="tips-title">// استراتيجية X</div>
+      <div class="tips-body">الثريدات هي العملة الاقوى في خوارزمية X 2025 — حوّل كل دليل شراء لثريد من 8 الى 12 تغريدة. النقاش التقني يبلغ ذروته بين 9 م ومنتصف الليل، خصوصاً بعد اطلاقات Apple وCES. اشترك في Premium لمضاعفة الظهور في الردود ونتائج البحث.</div>
+    </div>
+  </div>
+
+  <div class="content-block">
+    <div class="block-label">02 // ABOUT US</div>
+    <div class="block-title">نبذة عن المتجر</div>
+    <div class="about-box">NEOGEN STORE هو المتجر التقني السعودي المتخصص الذي يتحدث بلغة المحترفين.
+
+نؤمن بثلاثة اشياء: كل توصية يجب ان تستند لبيانات حقيقية لا اعلانات. السوق السعودي يستحق منتجات حقيقية بدون وسطاء. الجمهور التقني يريد معلومة، لا مبالغة.
+
+اكثر من 200 منتج متخصص | شحن داخل المملكة | CR: 7053130576
+neogen.store</div>
+  </div>
+
+  <div class="content-block">
+    <div class="block-label">03 // 10 POSTS</div>
+    <div class="block-title">تغريدات وثريدات جاهزة</div>
+    <div class="posts-grid">
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 01</div>
+          <div class="post-type">Thread · Buying Guide</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">ثريد: 7 اخطاء يرتكبها 90 بالمئة من السعوديين عند شراء راوتر
+
+[1] يشترون بناءً على السعر فقط. السرعة الحقيقية التي تحتاجها لا تساوي الرقم على الكرتون.
+[2] يتجاهلون معيار Wi-Fi — هل هو 6 ام 7؟
+[3] يجهلون مفهوم MU-MIMO و4×4 Streams.
+[4] لا يحسبون عدد الاجهزة المتصلة.
+[5] يشترون راوتر واحد لفيلا 400 متر.
+[6] يهملون اعداد QoS بعد الشراء.
+[7] لا يحدّثون الـ Firmware ابداً.
+
+كل نقطة بالتفصيل في الثريد ادناه.</div>
+          <div class="post-tags">
+            <span class="tag">#تقنية</span>
+            <span class="tag">#شبكات</span>
+            <span class="tag">#راوتر</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">Thread 8 تغريدات + صورة لكل نقطة</div>
+          <div class="post-timing">الاحد · 10 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 02</div>
+          <div class="post-type">Poll · Opinion</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">سؤال جدي للمهتمين بالشبكات:
+
+لو ميزانيتك 3,000 ريال لترقية شبكة البيت، ايهما تختار؟
+
+— UniFi Dream Router مع Controller
+— TP-Link Deco XE75 Mesh ثلاث وحدات
+— Netgate 2100 مع MikroTik Switch
+— ابني حسب احتياجي الفعلي
+
+النتائج وتوصيتي التفصيلية غداً.</div>
+          <div class="post-tags">
+            <span class="tag">#شبكات</span>
+            <span class="tag">#استطلاع</span>
+            <span class="tag">#تقنية</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">Poll 4 خيارات · 24 ساعة</div>
+          <div class="post-timing">الثلاثاء · 9 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 03</div>
+          <div class="post-type">Industry Take</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">رأي صريح في Wi-Fi 7:
+
+الجميع يتحدث عن 36 Gbps، لكن لماذا لا احد يذكر الشروط؟
+
+حتى تستفيد من Wi-Fi 7 فعلاً تحتاج: راوتر 6GHz يدعم 320 MHz channels، واجهزة تدعم المعيار الجديد وهي قليلة حتى الان، واشتراك انترنت يتجاوز 1 Gbps، وبنية منزلية بدون تداخل Mesh.
+
+الواقع: 90 بالمئة من المنازل ستستفيد بشكل طفيف جداً.
+
+الاذكى؟ Wi-Fi 6E الان والانتظار حتى ينضج المعيار.
+
+رأيكم في التعليقات.</div>
+          <div class="post-tags">
+            <span class="tag">#WiFi7</span>
+            <span class="tag">#شبكات</span>
+            <span class="tag">#رأي</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">تغريدة رأي مدعومة ببيانات</div>
+          <div class="post-timing">الاثنين · 9 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 04</div>
+          <div class="post-type">Quick Tip · Saves</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">نصيحة تقنية — احفظها لنفسك.
+
+اجهزتك تستهلك كهرباء وانت نائم. Smart Plug مع Home Automation يحل هذا:
+
+برمج ايقاف الشاشات بعد 11 م.
+اوقف الـ NAS خلال ساعات العمل.
+فعّل Eco Mode على الراوتر ليلاً.
+اربط مكيّف الغرفة بمستشعر الحركة.
+
+النتيجة: توفير يصل لـ 25 بالمئة في فاتورة الكهرباء.
+
+الادوات كلها متاحة على neogen.store.</div>
+          <div class="post-tags">
+            <span class="tag">#سمارت_هوم</span>
+            <span class="tag">#توفير</span>
+            <span class="tag">#نصائح</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">تغريدة + صورة مخطط</div>
+          <div class="post-timing">الاربعاء · 12 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 05</div>
+          <div class="post-type">Thread · B2B Value</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">اذا شركتك الصغيرة لا تزال تستخدم Wi-Fi 5، اقرأ هذا الثريد.
+
+ترقية الشبكة المكتبية ليست رفاهية — هي استثمار يُقاس بساعات الانتاجية الضائعة.
+
+في 2025، كل انقطاع انترنت في المكتب يساوي خسارة حقيقية قابلة للقياس.
+
+حسبنا لشركة 10 موظفين:
+ساعة انقطاع اسبوعياً مضروبة في 52 اسبوع، مضروبة في 10 موظفين، مضروبة في متوسط الراتب الساعي = خسارة سنوية تتجاوز تكلفة الترقية بمراحل.
+
+الحل الكامل في الثريد ادناه.</div>
+          <div class="post-tags">
+            <span class="tag">#B2B</span>
+            <span class="tag">#شبكات</span>
+            <span class="tag">#تقنية_الاعمال</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">Thread B2B · 10 تغريدات</div>
+          <div class="post-timing">السبت · 10 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 06</div>
+          <div class="post-type">Live Event Coverage</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">لحظة لحظة من مؤتمر Apple:
+
+12:00 — بدأ الـ Keynote
+12:15 — iPhone 17 رسمياً بـ A19 Chip
+12:30 — ماذا يعني هذا لمستخدمي الهوم لاب؟
+12:45 — Wi-Fi 7 للجميع اخيراً؟
+
+[بعد الحدث]:
+ما يهمك فعلاً من كل ما اُعلن اليوم:
+[تحليل مختصر موجه للجمهور التقني]
+
+آراؤكم في الثريد.</div>
+          <div class="post-tags">
+            <span class="tag">#Apple</span>
+            <span class="tag">#تقنية</span>
+            <span class="tag">#مباشر</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">Live-tweeting اثناء الحدث</div>
+          <div class="post-timing">خلال الاحداث التقنية الكبرى</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 07</div>
+          <div class="post-type">Customer Support · Public</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">سؤال وصلنا كثيراً هذا الاسبوع: "كيف اعرف ان NAS يناسبني؟"
+
+الاجابة الصريحة:
+
+NAS يناسبك اذا كان عندك اكثر من 1 TB تحتاج نسخ احتياطي، او تعمل من البيت وتحتاج شيئاً اسرع من Cloud، او تريد مشاركة ملفات داخل البيت.
+
+NAS لا يناسبك اذا كنت تحتاج وصولاً متكرراً من اماكن كثيرة جداً، او لا تريد اي صيانة تقنية، او ميزانيتك تحت 1,500 ريال.
+
+السؤال اعمق؟ راسلنا على DM.</div>
+          <div class="post-tags">
+            <span class="tag">#NAS</span>
+            <span class="tag">#هوم_لاب</span>
+            <span class="tag">#سؤال_وجواب</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">تغريدة سؤال+جواب موجهة للجمهور</div>
+          <div class="post-timing">الجمعة · 12 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 08</div>
+          <div class="post-type">Infographic Tweet</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">مقارنة واضحة: Wi-Fi 5 مقابل 6 مقابل 7 في الواقع.
+
+[صورة جدول مفصّل]:
+المعيار — Wi-Fi 5 — Wi-Fi 6 — Wi-Fi 7
+السرعة — 3.5G — 9.6G — 46G
+Latency — عالي — منخفض — منخفض جداً
+عدد الاجهزة — 30 — 75 وفوق — 100 وفوق
+البيئة المزدحمة — ضعيف — ممتاز — استثنائي
+السعر 2025 — 200-500 ر — 500-1200 ر — 900-2500 ر
+
+التوصية حسب الحالة في الثريد ادناه.</div>
+          <div class="post-tags">
+            <span class="tag">#WiFi</span>
+            <span class="tag">#شبكات</span>
+            <span class="tag">#مقارنة</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">تغريدة + انفوغرافيك جدول عالي الجودة</div>
+          <div class="post-timing">الاربعاء · 1 م</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 09</div>
+          <div class="post-type">Vision 2030 Connect</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">رؤية 2030 تتسارع، والمنزل الذكي جزء منها.
+
+تقرير هيئة الاتصالات: 78 بالمئة من الاسر السعودية ستكون متصلة بـ IoT بحلول 2030.
+
+ما يعنيه ذلك الان: بنية شبكة البيت يجب ان تتحمل 50 جهاز IoT وفوق. الامان الرقمي المنزلي اصبح ضرورة لا اختياراً. الاستثمار في Home Lab اليوم يساوي توفيراً كبيراً غداً.
+
+NEOGEN STORE — نساعدك تبني الجاهزية الرقمية لبيتك.
+
+neogen.store</div>
+          <div class="post-tags">
+            <span class="tag">#رؤية_2030</span>
+            <span class="tag">#سمارت_هوم</span>
+            <span class="tag">#تحول_رقمي</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">تغريدة رؤية استراتيجية + ارقام رسمية</div>
+          <div class="post-timing">قرب اليوم الوطني او بعد اخبار رؤية 2030</div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 10</div>
+          <div class="post-type">Offer · Direct</div>
+        </div>
+        <div class="post-body">
+          <div class="post-caption">عرض الجمعة البيضاء — NEOGEN STORE.
+
+هذا اقل مرة نعلن فيها عن عرض لأن: "اذا كان العرض حقيقياً، الارقام تتكلم."
+
+UniFi Dream Machine SE:
+السعر المعتاد: 3,599 ريال
+سعر الجمعة البيضاء: 2,999 ريال
+الوفر: 600 ريال
+
+الكمية: 8 اجهزة فقط.
+لا عداد تنازلي مزيف — فقط اول 8 طلبات.
+
+neogen.store/black-friday</div>
+          <div class="post-tags">
+            <span class="tag">#الجمعة_البيضاء</span>
+            <span class="tag">#UniFi</span>
+            <span class="tag">#NEOGEN</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">تغريدة عرض صادق + رابط مباشر</div>
+          <div class="post-timing">صباح الجمعة البيضاء · 9 ص</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ===================== LINKEDIN ===================== -->
+<div id="linkedin" class="section li">
+
+  <div class="platform-header">
+    <div class="platform-title">LinkedIn</div>
+    <div class="platform-sub">ذراع B2B · 8.9M مستخدم سعودي · صنّاع القرار والمحترفون · اعلى قيمة عميل · كل منشور بالعربية والانجليزية</div>
+  </div>
+
+  <!-- BIO -->
+  <div class="content-block">
+    <div class="block-label">01 // BIO</div>
+    <div class="block-title">Bio صفحة الشركة — عربي وانجليزي</div>
+
+    <div style="margin-bottom:8px;font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;">// النسخة العربية</div>
+    <span class="char-count">// 200 حرف تقريباً</span>
+    <div class="bio-box" dir="rtl">NeoGen Store — متجر التقنية المتخصص في المملكة العربية السعودية
+
+نخدم مدراء تقنية المعلومات ومهندسي الشبكات وبناة البيت الذكي بمعدات احترافية مختارة بعناية.
+
+التخصصات: شبكات (Ubiquiti, MikroTik) | هوم لاب (Synology, QNAP, Dell) | سمارت هوم | جيمنق | طباعة 3D
+
+شحن من الرياض | ضمان 12 شهراً | سجل تجاري: 7053130576
+neogen.store</div>
+    <button class="copy-btn" onclick="copyBlockText(this)">نسخ النص العربي</button>
+
+    <div style="margin-top:24px;margin-bottom:8px;font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;">// English Version</div>
+    <span class="char-count">// ~200 characters</span>
+    <div class="bio-box" dir="ltr">NeoGen Store — Saudi Arabia's Specialized Technology Retailer
+
+We serve IT professionals, network engineers, and smart-home builders with curated, enterprise-grade hardware across the Kingdom.
+
+Specialties: Networking (Ubiquiti, MikroTik) | Home Lab (Synology, QNAP, Dell) | Smart Home & IoT | Gaming | 3D Printing
+
+Shipping from Riyadh | 12-Month Warranty | CR: 7053130576
+neogen.store</div>
+    <button class="copy-btn" onclick="copyBlockText(this)">Copy English Text</button>
+
+    <div class="tips-box">
+      <div class="tips-title">// استراتيجية لينكدإن</div>
+      <div class="tips-body">المنشورات الشخصية من حساب المؤسس تتفوق بـ 5 اضعاف على منشورات الصفحة الرسمية — انشر 2-3 مرات اسبوعياً من حسابك الشخصي مع وسم صفحة الشركة. استخدم Sales Navigator لاستهداف: IT Managers وOperations Directors وProcurement في شركات من 10 الى 500 موظف، في الرياض وجدة والخبر. كل منشور ينشر بالعربية اولاً ثم الانجليزية في نفس المنشور — هذا يضاعف الوصول ويستهدف الجمهورين معاً.</div>
+    </div>
+  </div>
+
+  <!-- ABOUT US -->
+  <div class="content-block">
+    <div class="block-label">02 // ABOUT US</div>
+    <div class="block-title">نبذة عن المتجر — عربي وانجليزي</div>
+
+    <div style="margin-bottom:8px;font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;">// النسخة العربية</div>
+    <div class="about-box" dir="rtl">NeoGen Store هو المتجر التقني السعودي المتخصص، مبني للمشغّلين والمحترفين الذين يطلبون الاداء لا الوعود التسويقية.
+
+نختار المعدات عبر 8 فئات متخصصة: شبكات المؤسسات، بنية الهوم لاب، انظمة المنزل الذكي، الامن والمراقبة، معدات الجيمنق، الطباعة ثلاثية الابعاد، والاكسسوارات الاحترافية — كل منتج مختار لغرض تقني محدد.
+
+لماذا تختار الشركات NeoGen:
+مواصفات موثقة بدون مبالغة. فحص الاجهزة قبل الشحن. ضمان داخل المملكة لمدة 12 شهراً. استشارة تقنية لمشتريات B2B. فواتير متوافقة مع هيئة الزكاة والضريبة والجمارك شاملة VAT.
+
+عملاؤنا: مدراء IT في الشركات الصغيرة والمتوسطة، مهندسو الشبكات، مدراء التقنية في الشركات الناشئة، ومدراء التشغيل في الرياض وجدة والدمام.
+
+سجل تجاري: 7053130576 | hello@neogen.store | neogen.store</div>
+    <button class="copy-btn" onclick="copyBlockText(this)">نسخ النص العربي</button>
+
+    <div style="margin-top:24px;margin-bottom:8px;font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;">// English Version</div>
+    <div class="about-box" dir="ltr">NeoGen Store is Saudi Arabia's specialized technology retailer, built for operators and professionals who demand performance over marketing claims.
+
+We curate hardware across 8 categories: enterprise networking, home lab infrastructure, smart home automation, security and surveillance, gaming peripherals, 3D printing, and professional accessories — every product selected for a defined technical use case.
+
+Why companies choose NeoGen:
+Verified specs with no inflated benchmarks. Pre-shipment hardware testing. In-country warranty valid for 12 months. Technical advisory for B2B procurement. ZATCA-compliant invoicing with VAT included.
+
+Our clients include IT managers at SMEs, network architects, startup CTOs, and facility managers across Riyadh, Jeddah, and Dammam.
+
+CR: 7053130576 | hello@neogen.store | neogen.store</div>
+    <button class="copy-btn" onclick="copyBlockText(this)">Copy English Text</button>
+  </div>
+
+  <!-- 10 POSTS -->
+  <div class="content-block">
+    <div class="block-label">03 // 10 POSTS</div>
+    <div class="block-title">منشورات B2B جاهزة — كل منشور بنسختين</div>
+    <div class="posts-grid" style="grid-template-columns:1fr;">
+
+      <!-- POST 01 -->
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 01</div>
+          <div class="post-type">Thought Leadership · Arabic + English</div>
+        </div>
+        <div class="post-body">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">// العربية</div>
+          <div class="post-caption" dir="rtl">شركات صغيرة ومتوسطة في السعودية لا تزال تستخدم شبكات تقنتها من 2018.
+
+المشكلة ليست التكلفة — بل الوعي.
+
+ثلاثة تحولات رقمية قادمة ستجعل البنية التحتية القديمة عائقاً:
+
+التوسع في العمل الهجين يتطلب Wi-Fi 6E كحد ادنى. كاميرات المراقبة الذكية تستهلك Bandwidth يتجاوز قدرة الـ PoE القديمة. تكامل انظمة IoT مع منصات رؤية 2030 يستلزم بنية Zero-Trust جاهزة.
+
+في NeoGen Store نقدم خدمة تقييم البنية الشبكية المجانية للشركات في الرياض وجدة والدمام.
+
+هل شركتك جاهزة للعقد القادم؟
+
+#تقنية_الاعمال #رؤية_2030 #تحول_رقمي #السعودية</div>
+          <div style="border-top:1px solid var(--line);margin:18px 0;"></div>
+          <div style="font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">// English</div>
+          <div class="post-caption" dir="ltr">Many Saudi SMEs are still running networks built on 2018-era hardware.
+
+The problem is not cost — it is awareness.
+
+Three digital shifts are coming that will make outdated infrastructure a bottleneck:
+
+Hybrid work expansion requires Wi-Fi 6E as a baseline. AI-powered surveillance cameras consume Bandwidth that exceeds legacy PoE capacity. IoT integration with Vision 2030 platforms demands a Zero-Trust-ready architecture.
+
+At NeoGen Store, we offer a free network infrastructure assessment for companies across Riyadh, Jeddah, and Dammam.
+
+Is your company ready for the decade ahead?
+
+#SaudiTech #Vision2030 #DigitalTransformation #B2B</div>
+          <div class="post-tags">
+            <span class="tag">#تقنية_الاعمال</span>
+            <span class="tag">#رؤية_2030</span>
+            <span class="tag">#SaudiTech</span>
+            <span class="tag">#B2B</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">منشور نصي + Carousel اختياري</div>
+          <div class="post-timing">الثلاثاء · 8 ص</div>
+        </div>
+      </div>
+
+      <!-- POST 02 -->
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 02</div>
+          <div class="post-type">Case Study · Arabic + English</div>
+        </div>
+        <div class="post-body">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">// العربية</div>
+          <div class="post-caption" dir="rtl">دراسة حالة: شركة استشارات في الرياض — 12 موظف
+
+التحدي: اجتماعات Teams تقطع كل 20 دقيقة، والعملاء يفقدون الثقة.
+التشخيص: راوتر مستهلك، تداخل Channels، لا QoS.
+
+الحل المنفذ:
+UniFi Dream Router كـ Gateway
+UniFi U6 Pro × 2 لطابقين
+TP-Link TL-SG1008PE لضمان PoE
+
+النتيجة بعد 3 اسابيع:
+صفر انقطاعات في اجتماعات شهر كامل.
+السرعة الفعلية ارتفعت من 34 الى 287 Mbps.
+تكلفة الترقية: 4,200 ريال.
+
+بدل خسارة عميل واحد تساوي اضعاف هذا الرقم.
+
+هل شركتك تعاني من نفس التحدي؟
+
+#دراسة_حالة #شبكات #B2B</div>
+          <div style="border-top:1px solid var(--line);margin:18px 0;"></div>
+          <div style="font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">// English</div>
+          <div class="post-caption" dir="ltr">Case Study: Riyadh Consulting Firm — 12 Employees
+
+Challenge: Microsoft Teams calls dropping every 20 minutes, clients losing confidence.
+Diagnosis: Exhausted router, channel interference, no QoS configuration.
+
+Solution deployed:
+UniFi Dream Router as the core gateway
+UniFi U6 Pro x2 across two floors
+TP-Link TL-SG1008PE for reliable PoE
+
+Results after 3 weeks:
+Zero call drops across a full month of meetings.
+Effective speed increased from 34 to 287 Mbps in meeting rooms.
+Total upgrade cost: 4,200 SAR.
+
+That is less than the value of losing a single client.
+
+Is your company experiencing the same issue?
+
+#CaseStudy #Networking #B2B #SaudiTech</div>
+          <div class="post-tags">
+            <span class="tag">#Case_Study</span>
+            <span class="tag">#Networking</span>
+            <span class="tag">#B2B</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">منشور + صورة ارقام قبل/بعد</div>
+          <div class="post-timing">الاربعاء · 9 ص</div>
+        </div>
+      </div>
+
+      <!-- POST 03 -->
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 03</div>
+          <div class="post-type">Document Carousel · Arabic + English</div>
+        </div>
+        <div class="post-body">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">// العربية</div>
+          <div class="post-caption" dir="rtl">دليل: 5 معايير اختيار حلول الشبكات للمنشآت الصغيرة والمتوسطة
+
+[Carousel Document — 8 شرائح]:
+1. معيار Coverage — كيف تحسب نقاط الوصول اللازمة؟
+2. معيار Throughput — ما الفارق بين الرقم الاعلاني والواقعي؟
+3. معيار PoE — لماذا PoE Plus وليس PoE فقط؟
+4. معيار Management — Cloud مقابل On-premise
+5. معيار Security — WPA3 Enterprise وجدران الحماية
+6. معيار Scalability — اشترِ لـ 3 سنوات قادمة
+7. معيار Support — من يصلح اذا حصل عطل؟
+8. توصيتنا النهائية — جدول القرار
+
+تحميل الدليل كاملاً: رابط في التعليقات.
+
+#IT #شبكات #دليل_تقني #SME</div>
+          <div style="border-top:1px solid var(--line);margin:18px 0;"></div>
+          <div style="font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">// English</div>
+          <div class="post-caption" dir="ltr">Guide: 5 Criteria for Choosing Network Solutions for Small and Medium Enterprises
+
+[Carousel Document — 8 Slides]:
+1. Coverage — How to calculate the access points you actually need
+2. Throughput — The gap between advertised and real-world performance
+3. PoE — Why PoE+ matters and PoE alone often falls short
+4. Management — Cloud vs On-premise: which fits your team?
+5. Security — WPA3 Enterprise and firewall essentials
+6. Scalability — Buy for your next three years, not just today
+7. Support — Who fixes it when something breaks?
+8. Final Recommendation — A clear decision matrix
+
+Full guide available for download — link in comments.
+
+#IT #Networking #SME #TechGuide</div>
+          <div class="post-tags">
+            <span class="tag">#IT</span>
+            <span class="tag">#Networking</span>
+            <span class="tag">#SME</span>
+            <span class="tag">#دليل_تقني</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">Document Carousel 8 شرائح + PDF مرفق</div>
+          <div class="post-timing">الخميس · 12 م</div>
+        </div>
+      </div>
+
+      <!-- POST 04 -->
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 04</div>
+          <div class="post-type">Founder's Voice · Arabic + English</div>
+        </div>
+        <div class="post-body">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">// العربية</div>
+          <div class="post-caption" dir="rtl">لماذا اسست NeoGen Store؟
+
+صراحة تامة:
+
+رأيت الكثير من اصحاب الاعمال الصغيرة في الرياض يدفعون ثمناً باهظاً لمعدات لا تلبي احتياجاتهم — اما بسبب مبيعات تعتمد على المبالغة، او بسبب الشراء من متاجر عامة لا خبرة لها في التقنية المتخصصة.
+
+قررت ان يكون هناك خيار مختلف: متجر يتحدث لغة المحترف، يوصي بصدق، ويبقى موجوداً بعد البيع.
+
+هذا ما نبنيه كل يوم في NeoGen Store.
+
+اذا كنت تدير فريقاً تقنياً او شركة ناشئة وتبحث عن شريك موثوق للمعدات، انا هنا.
+
+فهد المنصور — مؤسس NeoGen Store
+hello@neogen.store
+
+#ريادة_اعمال #تقنية #السعودية</div>
+          <div style="border-top:1px solid var(--line);margin:18px 0;"></div>
+          <div style="font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">// English</div>
+          <div class="post-caption" dir="ltr">Why I founded NeoGen Store.
+
+Complete honesty:
+
+I watched too many small business owners in Riyadh pay a high price for hardware that did not serve their needs — either because of sales tactics built on exaggeration, or because they bought from general retailers with no expertise in specialized technology.
+
+I decided there needed to be a different option: a store that speaks the professional's language, recommends honestly, and remains available after the sale.
+
+That is what we build every day at NeoGen Store.
+
+If you manage a technical team or a startup and are looking for a trusted hardware partner, I am here.
+
+Fahad Almansour — Founder, NeoGen Store
+hello@neogen.store
+
+#Entrepreneurship #SaudiTech #B2B</div>
+          <div class="post-tags">
+            <span class="tag">#قصة_مؤسس</span>
+            <span class="tag">#ريادة_اعمال</span>
+            <span class="tag">#Entrepreneurship</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">منشور شخصي من حساب المؤسس</div>
+          <div class="post-timing">الاثنين · 8 ص</div>
+        </div>
+      </div>
+
+      <!-- POST 05 -->
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 05</div>
+          <div class="post-type">Market Data · Arabic + English</div>
+        </div>
+        <div class="post-body">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">// العربية</div>
+          <div class="post-caption" dir="rtl">رقم يستحق التوقف عنده:
+
+نمو سوق IoT في السعودية تجاوز 23 بالمئة سنوياً وفق تقرير هيئة الاتصالات وتقنية المعلومات 2024.
+
+ما يعنيه هذا للمدير التقني:
+كل جهاز IoT يضيف حمولة على الشبكة.
+انظمة الامن الذكية وحدها تستهلك من 2 الى 5 Mbps لكل كاميرا.
+شركة بـ 30 كاميرا واجهزة IoT تحتاج Backbone جديداً تماماً.
+
+الحل ليس شراء راوتر اسرع — الحل بنية متكاملة: Access Layer ثم Distribution ثم Core.
+
+في NeoGen نقدم تقييم شبكة مجاني للشركات. راسلني مباشرة لجدولة موعد.
+
+#IoT #شبكات #B2B #رؤية_2030</div>
+          <div style="border-top:1px solid var(--line);margin:18px 0;"></div>
+          <div style="font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">// English</div>
+          <div class="post-caption" dir="ltr">A number worth pausing on:
+
+Saudi Arabia's IoT market grew by over 23% annually, according to the Communications, Space and Technology Commission 2024 report.
+
+What this means for every IT decision-maker:
+Every IoT device adds load to the network.
+Smart security systems alone consume 2 to 5 Mbps per camera.
+A company running 30 cameras alongside IoT devices needs an entirely new backbone.
+
+The answer is not a faster router — it is an integrated architecture: Access Layer, then Distribution, then Core.
+
+At NeoGen, we provide a free network assessment for businesses. Message me directly to schedule a conversation.
+
+#IoT #Networking #B2B #Vision2030</div>
+          <div class="post-tags">
+            <span class="tag">#IoT</span>
+            <span class="tag">#B2B</span>
+            <span class="tag">#رؤية_2030</span>
+            <span class="tag">#Networking</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">منشور + رسم بياني بيانات السوق</div>
+          <div class="post-timing">الثلاثاء · 12 م</div>
+        </div>
+      </div>
+
+      <!-- POST 06 -->
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 06</div>
+          <div class="post-type">Webinar Invite · Arabic + English</div>
+        </div>
+        <div class="post-body">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">// العربية</div>
+          <div class="post-caption" dir="rtl">ندوة مجانية — 45 دقيقة
+
+"كيف تختار حلول الشبكات لشركتك الناشئة — بدون انفاق زائد"
+
+ما ستتعلمه:
+كيف تحسب احتياجك الفعلي من Bandwidth.
+الفرق بين منتجات SMB وEnterprise — متى كل منها.
+كيف تبني شبكة تتوسع معك لثلاث سنوات.
+امثلة حقيقية من الرياض وجدة.
+
+التاريخ: [الاسبوع القادم]
+الوقت: 7:30 م بتوقيت الرياض
+التسجيل: رابط في التعليقات
+
+المقاعد محدودة — 50 شركة فقط.
+
+#Webinar #IT #B2B #شبكات</div>
+          <div style="border-top:1px solid var(--line);margin:18px 0;"></div>
+          <div style="font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">// English</div>
+          <div class="post-caption" dir="ltr">Free Webinar — 45 Minutes
+
+"How to Choose Network Solutions for Your Growing Business — Without Overspending"
+
+What you will learn:
+How to calculate your actual Bandwidth requirement.
+The difference between SMB and Enterprise-grade products — and when each applies.
+How to build a network that scales with you for three years.
+Real examples from Riyadh and Jeddah.
+
+Date: [Next Week]
+Time: 7:30 PM Riyadh Time
+Registration: Link in comments
+
+Seats are limited — 50 companies only.
+
+#Webinar #IT #B2B #Networking</div>
+          <div class="post-tags">
+            <span class="tag">#Webinar</span>
+            <span class="tag">#IT</span>
+            <span class="tag">#B2B</span>
+            <span class="tag">#شبكات</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">منشور ندوة + صورة تصميم احترافي</div>
+          <div class="post-timing">اسبوع قبل الندوة · الثلاثاء</div>
+        </div>
+      </div>
+
+      <!-- POST 07 -->
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 07</div>
+          <div class="post-type">Product Spotlight · Arabic + English</div>
+        </div>
+        <div class="post-body">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">// العربية</div>
+          <div class="post-caption" dir="rtl">لماذا يختار مدراء IT الـ Ubiquiti UniFi لمكاتبهم؟
+
+ثلاثة اسباب عملية لا تسمعها في الاعلانات:
+
+الاول — نظام ادارة مركزي عبر UniFi Network App يدير كل نقاط الوصول والسويتشات من لوحة واحدة، مما يوفر ساعات من التشخيص.
+
+الثاني — تحديثات Firmware آلية ومجانية للابد. لا اشتراكات سنوية مخفية. تدفع مرة واحدة فقط.
+
+الثالث — قابلية التوسع الكاملة. تبدأ بنقطة وصول واحدة وتضيف بلا حدود مع نفس نظام الادارة.
+
+متاح الان على neogen.store مع ضمان 12 شهراً. تقييم مجاني للمكتب عند الطلب.
+
+#Ubiquiti #UniFi #IT #شبكات</div>
+          <div style="border-top:1px solid var(--line);margin:18px 0;"></div>
+          <div style="font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">// English</div>
+          <div class="post-caption" dir="ltr">Why IT managers choose Ubiquiti UniFi for their offices.
+
+Three practical reasons you rarely hear in marketing:
+
+First — Centralized management via the UniFi Network App. Every access point and switch controlled from a single dashboard, saving hours of troubleshooting time.
+
+Second — Automatic firmware updates, free forever. No hidden annual subscriptions. One purchase, ongoing support.
+
+Third — Unlimited scalability. Start with a single access point and expand without limit, all within the same management system.
+
+Available now at neogen.store with a 12-month warranty. Free office assessment available on request.
+
+#Ubiquiti #UniFi #IT #Networking</div>
+          <div class="post-tags">
+            <span class="tag">#Ubiquiti</span>
+            <span class="tag">#UniFi</span>
+            <span class="tag">#IT_Manager</span>
+            <span class="tag">#Networking</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">منشور تقني + صورة Dashboard UniFi</div>
+          <div class="post-timing">الخميس · 9 ص</div>
+        </div>
+      </div>
+
+      <!-- POST 08 -->
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 08</div>
+          <div class="post-type">ROI Calculator · Arabic + English</div>
+        </div>
+        <div class="post-body">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">// العربية</div>
+          <div class="post-caption" dir="rtl">حاسبة ROI للاجتماع القادم مع الادارة.
+
+السؤال: لماذا ننفق 15,000 ريال على ترقية الشبكة؟
+
+الجواب المبني على ارقام:
+
+شركة 20 موظف، متوسط الراتب الساعي 150 ريال.
+ساعة انقطاع اسبوعية × 52 اسبوع × 20 موظف = 156,000 ريال خسارة سنوية في الانتاجية.
+
+تكلفة الترقية الكاملة: 15,000 ريال.
+فترة استرداد الاستثمار: اقل من شهر واحد.
+العائد السنوي على الاستثمار: 940 بالمئة.
+
+هل تريد الحسابات التفصيلية لشركتك؟ راسلني بعدد موظفيك.
+
+#ROI #IT #B2B #تقنية_الاعمال</div>
+          <div style="border-top:1px solid var(--line);margin:18px 0;"></div>
+          <div style="font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">// English</div>
+          <div class="post-caption" dir="ltr">An ROI calculator for your next board meeting.
+
+The question: Why spend 15,000 SAR on a network upgrade?
+
+The answer, in numbers:
+
+A company with 20 employees and an average hourly salary of 150 SAR.
+One hour of downtime per week x 52 weeks x 20 employees = 156,000 SAR in lost annual productivity.
+
+Full upgrade cost: 15,000 SAR.
+Payback period: under one month.
+Annual return on investment: 940%.
+
+Want a detailed calculation for your specific company? Send me your headcount.
+
+#ROI #ITInvestment #B2B #Productivity</div>
+          <div class="post-tags">
+            <span class="tag">#ROI</span>
+            <span class="tag">#IT_Investment</span>
+            <span class="tag">#B2B</span>
+            <span class="tag">#تقنية_الاعمال</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">منشور + جدول حاسبة مرئي</div>
+          <div class="post-timing">الاربعاء · 12 م</div>
+        </div>
+      </div>
+
+      <!-- POST 09 -->
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 09</div>
+          <div class="post-type">Customer Testimonial · Arabic + English</div>
+        </div>
+        <div class="post-body">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">// العربية</div>
+          <div class="post-caption" dir="rtl">شهادة عميل B2B:
+
+"تواصلت مع NeoGen لتجهيز مكتبنا الجديد في الرياض. ما توقعت ان يعطوني تقييم مجاني ودراسة احتياج قبل ما يبيعوا لي شيئاً.
+
+النتيجة: شبكة تعمل بكامل طاقتها منذ 6 اشهر — صفر مشاكل. السعر كان منافساً ومعهم ضمان 12 شهر حقيقي لا وعود.
+
+انصح كل شركة ناشئة تحتاج بنية شبكية احترافية."
+
+— مدير تشغيل، شركة استشارات (الرياض)
+
+هل شركتك تحتاج نفس الخدمة؟
+hello@neogen.store | neogen.store
+
+#شهادة_عميل #B2B #شبكات</div>
+          <div style="border-top:1px solid var(--line);margin:18px 0;"></div>
+          <div style="font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">// English</div>
+          <div class="post-caption" dir="ltr">B2B Client Testimonial:
+
+"I reached out to NeoGen to set up our new office in Riyadh. I did not expect them to offer a free assessment and a needs analysis before selling me anything.
+
+The result: a network that has operated at full capacity for six months — zero issues. The pricing was competitive, and the 12-month warranty is genuine, not just a promise.
+
+I recommend NeoGen to any growing business that needs a professional network foundation."
+
+— Operations Manager, Consulting Firm (Riyadh)
+
+Does your company need the same?
+hello@neogen.store | neogen.store
+
+#CustomerSuccess #B2B #Networking</div>
+          <div class="post-tags">
+            <span class="tag">#Testimonial</span>
+            <span class="tag">#CustomerSuccess</span>
+            <span class="tag">#B2B</span>
+            <span class="tag">#شهادة_عميل</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">منشور شهادة عميل + صورة احترافية</div>
+          <div class="post-timing">الاثنين · 10 ص</div>
+        </div>
+      </div>
+
+      <!-- POST 10 -->
+      <div class="post-card">
+        <div class="post-card-header">
+          <div class="post-num">POST 10</div>
+          <div class="post-type">Industry Event · Arabic + English</div>
+        </div>
+        <div class="post-body">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">// العربية</div>
+          <div class="post-caption" dir="rtl">ثلاثة اتجاهات رصدناها في LEAP ستغير مشتريات IT للشركات الصغيرة والمتوسطة:
+
+الاول — AI on the Edge: معالجة البيانات محلياً بدون Cloud باتت افضل اداءً وامناً. هذا يتطلب NAS عالي الاداء في كل مكتب.
+
+الثاني — Zero Trust Architecture: لم يعد حكراً على المؤسسات الكبيرة. الادوات متاحة للـ SME باسعار معقولة مثل pfSense وFortinet 60F.
+
+الثالث — Matter وThread لتوحيد IoT: البروتوكول الجديد سيلزم ترقية Hubs القديمة — ابدأ التخطيط الان.
+
+NeoGen Store يوفر هذه الحلول مع دعم تقني متخصص. تواصل معنا لجلسة استشارية مجانية.
+
+#LEAP2026 #IT #B2B #رؤية_2030</div>
+          <div style="border-top:1px solid var(--line);margin:18px 0;"></div>
+          <div style="font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">// English</div>
+          <div class="post-caption" dir="ltr">Three trends from LEAP that will reshape IT procurement for Saudi SMEs:
+
+First — AI on the Edge: Local data processing without Cloud dependency is now faster and more secure. This demands high-performance NAS infrastructure in every office.
+
+Second — Zero Trust Architecture: No longer exclusive to large enterprises. The tools are accessible to SMEs at reasonable cost — pfSense, Fortinet 60F, and comparable solutions.
+
+Third — Matter and Thread for IoT unification: The new protocol will require legacy Hub upgrades across facilities. Planning should begin now.
+
+NeoGen Store provides all of these solutions with dedicated technical support. Reach out for a free advisory session.
+
+#LEAP2026 #Innovation #B2B #Vision2030</div>
+          <div class="post-tags">
+            <span class="tag">#LEAP</span>
+            <span class="tag">#Innovation</span>
+            <span class="tag">#B2B</span>
+            <span class="tag">#رؤية_2030</span>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-visual-note">منشور رؤية صناعية بعد LEAP</div>
+          <div class="post-timing">خلال LEAP او بعده بيومين</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</div><!-- end main -->
+
+<div class="footer">
+  <div>NEOGEN STORE // SOCIAL MEDIA CONTENT GUIDE // <span>2025–2026</span> // CR 7053130576 // neogen.store</div>
+</div>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function copyText(id) {
+  const btn = event.target;
+  const box = btn.previousElementSibling;
+  navigator.clipboard.writeText(box.innerText.trim()).then(() => {
+    btn.textContent = 'تم النسخ';
+    setTimeout(() => btn.textContent = 'نسخ النص', 2000);
+  });
+}
+
+function copyBlockText(btn) {
+  const box = btn.previousElementSibling;
+  navigator.clipboard.writeText(box.innerText.trim()).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = 'Copied';
+    setTimeout(() => btn.textContent = orig, 2000);
+  });
+}
+</script>
+</body>
+</html>

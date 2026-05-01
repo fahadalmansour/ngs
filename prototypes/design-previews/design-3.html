@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>NeoGen Store — Editorial Black & Cream</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,800;9..144,900&family=DM+Sans:wght@400;500;700&family=Marhey:wght@400;700&family=Tajawal:wght@400;500;700&family=Major+Mono+Display&family=Chakra+Petch:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F5F0E6;
+    --surface:#FBF7EC;
+    --ink:#0B0B0A;
+    --slate:#3F3B33;
+    --hairline:#1F1B14;
+    --accent:#06B6D4;       /* editorial cyan accent (in-stock) */
+    --logo-cyan:#00D1FF;    /* locked logo cyan */
+    --logo-beige:#CFC9BB;   /* locked logo beige */
+    --signal:#16A34A;
+    --alert:#DC2626;
+    --warn:#CA8A04;
+    --content-size: 800px;
+    --wide-size: 1280px;
+    --gutter: 24px;
+    --side: clamp(20px, 5vw, 64px);
+  }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; background:var(--cream); color:var(--ink); }
+  body{
+    font-family:'DM Sans', system-ui, sans-serif;
+    font-size:16px; line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    /* Subtle newsprint grain via layered radial gradients */
+    background:
+      radial-gradient(1200px 800px at 80% -10%, rgba(31,27,20,0.04), transparent 60%),
+      radial-gradient(900px 600px at -10% 110%, rgba(31,27,20,0.05), transparent 60%),
+      var(--cream);
+  }
+
+  .wide-width{
+    max-width: var(--wide-size);
+    margin-left:auto; margin-right:auto;
+    padding-left: var(--side); padding-right: var(--side);
+  }
+
+  /* ==================== SYSBAR (top news ticker) ==================== */
+  .sysbar{
+    background: var(--ink);
+    color: var(--cream);
+    border-bottom: 1px solid var(--hairline);
+    overflow:hidden;
+    position:relative;
+  }
+  .sysbar-inner{
+    display:flex; align-items:center; gap:24px;
+    height: 28px;
+    font-family: 'DM Sans', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .sysbar-fixed{
+    flex:0 0 auto;
+    display:flex; gap:18px; align-items:center;
+    padding-right: 18px;
+    border-right: 1px solid rgba(245,240,230,0.18);
+    height:100%;
+  }
+  .sysbar-fixed span{ display:inline-flex; align-items:center; height:100%; }
+  .sysbar-fixed .live-dot{
+    width:6px; height:6px; border-radius:50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+    margin-right:6px; display:inline-block;
+  }
+  .ticker-window{
+    flex:1 1 auto; overflow:hidden; height:100%;
+    position:relative;
+  }
+  .ticker-track{
+    display:inline-flex; gap:48px;
+    white-space:nowrap;
+    height:100%; align-items:center;
+    animation: ticker-slide 30s linear infinite;
+    padding-left: 24px;
+    color: rgba(245,240,230,0.78);
+  }
+  .ticker-track span b{
+    color: var(--cream);
+    font-weight:500;
+    letter-spacing:0.22em;
+  }
+  .ticker-track .sep{
+    color: rgba(245,240,230,0.35);
+    padding:0 4px;
+  }
+  @keyframes ticker-slide{
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ==================== HEADER ==================== */
+  .header{
+    background: var(--cream);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .header-inner{
+    display:grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items:center;
+    padding-top: 22px; padding-bottom: 22px;
+    gap: 24px;
+  }
+  .header-left, .header-right{
+    display:flex; gap: 26px; align-items:center;
+  }
+  .header-right{ justify-content:flex-end; }
+
+  .navlink{
+    font-family:'DM Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 4px 2px;
+    border-bottom: 1px solid transparent;
+  }
+  /* Snappy ink-invert hover, no transition (instant) */
+  .navlink:hover{
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .navlink--ar{
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0;
+    text-transform:none;
+  }
+
+  /* Centered lockup */
+  .lockup{
+    display:flex; align-items:baseline; gap: 10px;
+    user-select:none; text-decoration:none; color:inherit;
+  }
+  .lockup .ng{
+    font-family: 'Major Mono Display', monospace;
+    font-size: 28px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    /* Per spec: N=beige, G=cyan */
+  }
+  .lockup .ng .n{ color: var(--logo-beige); }
+  .lockup .ng .g{ color: var(--logo-cyan); }
+  .lockup .word{
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.14em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  .lockup .word .neo{ color: var(--logo-beige); }
+  .lockup .word .gen{ color: var(--logo-cyan); }
+  .lockup .div{
+    width:1px; height:22px;
+    background: var(--hairline);
+    margin: 0 4px;
+  }
+  /* Cyan against cream pops; beige against cream is intentionally subtle.
+     We add a faint ink shadow to keep the beige glyphs legible without
+     pushing them toward white. */
+  .lockup .word .neo,
+  .lockup .ng .n{
+    text-shadow: 0 0 0.4px rgba(11,11,10,0.55);
+  }
+
+  .header-utility{
+    display:flex; align-items:center; gap:14px;
+  }
+  .util-btn{
+    font-family:'DM Sans', sans-serif;
+    font-size: 11px; letter-spacing:0.22em; text-transform:uppercase;
+    padding: 8px 14px;
+    border: 1px solid var(--ink);
+    background: transparent; color: var(--ink);
+    text-decoration:none;
+    cursor:pointer;
+  }
+  .util-btn:hover{ background: var(--ink); color: var(--cream); }
+  .util-btn--solid{ background: var(--ink); color: var(--cream); }
+  .util-btn--solid:hover{ background: var(--cream); color: var(--ink); }
+
+  /* Thin black rule under header (per spec: header above a thin black rule) */
+  .header-rule{
+    height:1px; background: var(--hairline); width:100%;
+  }
+
+  /* ==================== HERO ==================== */
+  .hero{
+    position:relative;
+    background: var(--cream);
+    padding-top: clamp(48px, 7vw, 96px);
+    padding-bottom: 0;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: var(--gutter);
+    position:relative;
+  }
+
+  /* Vertical hairline rule at 70% boundary (between col 6 and col 7) */
+  .hero-grid::before{
+    content:"";
+    position:absolute;
+    top: -8px; bottom: -24px;
+    /* place between col6 and col7: 6/8 = 75%; visually approximate 70% target */
+    left: calc(75% - (var(--gutter) / 2));
+    width: 1px;
+    background: var(--hairline);
+    opacity: 0.55;
+  }
+
+  .hero-headline-zone{
+    grid-column: 1 / span 6;
+    position:relative;
+  }
+  .hero-meta-zone{
+    grid-column: 7 / span 2;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    min-height: 280px;
+    padding-left: 8px;
+  }
+
+  .eyebrow{
+    font-family:'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 28px;
+    display:inline-flex;
+    align-items:center; gap:12px;
+  }
+  .eyebrow .bar{
+    display:inline-block; width:36px; height:1px; background: var(--ink);
+  }
+
+  .display{
+    font-family: 'Fraunces', serif;
+    font-optical-sizing:auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: clamp(64px, 9vw, 128px);
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: 0 0 28px 0;
+  }
+  .display .ital{
+    font-style: italic;
+    font-weight: 700;
+    font-variation-settings: "SOFT" 50;
+  }
+  .display .period{
+    color: var(--accent);
+  }
+
+  .arabic-sub{
+    font-family: 'Marhey', 'Tajawal', sans-serif;
+    font-weight: 700;
+    font-size: clamp(18px, 1.6vw, 22px);
+    color: var(--slate);
+    line-height: 1.5;
+    text-align: right;
+    direction: rtl;
+    max-width: 560px;
+    margin-left: auto; /* float right inside LTR layout */
+    margin-right: 0;
+    border-right: 2px solid var(--ink);
+    padding: 6px 14px 6px 0;
+  }
+  .arabic-sub .accent{
+    color: var(--ink);
+  }
+
+  /* Hero meta column (right 30%) */
+  .issue-cartouche{
+    border: 1px solid var(--hairline);
+    padding: 10px 12px;
+    align-self: flex-end;
+    width: 100%;
+    max-width: 220px;
+    margin-left: auto;
+    background: var(--surface);
+  }
+  .issue-cartouche .row{
+    display:flex; justify-content:space-between; align-items:center;
+    font-family: 'DM Sans', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--slate);
+  }
+  .issue-cartouche .row + .row{ margin-top: 6px; }
+  .issue-cartouche .big{
+    font-family:'Fraunces', serif;
+    font-weight: 800;
+    font-size: 26px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-top: 8px;
+    line-height: 1;
+  }
+  .issue-cartouche .hairline-x{
+    height:1px; background: var(--hairline); margin: 10px 0;
+    opacity: 0.5;
+  }
+
+  .stock-chip{
+    display:inline-flex; align-items:center; gap: 10px;
+    margin-left: auto;
+    padding: 10px 14px;
+    background: var(--ink);
+    color: var(--cream);
+    font-family:'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    border-radius: 0;
+    align-self: flex-end;
+  }
+  .stock-chip .dot{
+    width:8px; height:8px; border-radius:50%;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+  }
+  .stock-chip .num{
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* Trust strip below hero, above the thick rule */
+  .trust-strip{
+    grid-column: 1 / span 8;
+    margin-top: clamp(48px, 7vw, 96px);
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--gutter);
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+    padding: 18px 0;
+  }
+  .trust-item{
+    font-family:'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--slate);
+    display:flex; align-items:center; gap:10px;
+  }
+  .trust-item b{
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .trust-item .num{
+    font-family: 'Chakra Petch', monospace;
+    letter-spacing: 0.14em;
+  }
+
+  /* Thick black rule + section number bleed */
+  .section-divider{
+    position:relative;
+    margin-top: clamp(40px, 6vw, 80px);
+    margin-bottom: 0;
+  }
+  .section-divider .rule{
+    height: 3px;
+    background: var(--ink);
+    width: 100%;
+  }
+  .section-divider .num{
+    position:absolute;
+    left: var(--side);
+    bottom: -6px; /* bleeds past the rule */
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: clamp(96px, 14vw, 200px);
+    line-height: 0.85;
+    color: var(--ink);
+    letter-spacing: -0.04em;
+    transform: translateY(20%);
+    pointer-events:none;
+  }
+  .section-divider .label{
+    position:absolute;
+    right: var(--side);
+    bottom: 14px;
+    font-family:'DM Sans', monospace;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--slate);
+  }
+
+  /* ==================== ENTRANCE STAGGER ==================== */
+  .stagger{
+    opacity: 0;
+    transform: translateY(12px);
+    animation: rise 200ms linear forwards;
+  }
+  .stagger.s1{ animation-delay: 0ms; }
+  .stagger.s2{ animation-delay: 200ms; }
+  .stagger.s3{ animation-delay: 400ms; }
+  .stagger.s4{ animation-delay: 600ms; }
+  @keyframes rise{
+    from{ opacity:0; transform: translateY(12px); }
+    to  { opacity:1; transform: translateY(0); }
+  }
+
+  /* ==================== REDUCED MOTION ==================== */
+  @media (prefers-reduced-motion: reduce){
+    .ticker-track{ animation: none; transform: none; }
+    .stagger{ animation: none; opacity:1; transform:none; }
+  }
+
+  /* ==================== RESPONSIVE ==================== */
+  @media (max-width: 900px){
+    .header-inner{ grid-template-columns: auto 1fr; }
+    .header-left{ display:none; }
+    .header-right{ justify-content:flex-end; }
+    .hero-grid{ grid-template-columns: repeat(8, 1fr); }
+    .hero-headline-zone{ grid-column: 1 / span 8; }
+    .hero-meta-zone{ grid-column: 1 / span 8; padding-left:0; min-height:0; margin-top: 24px; }
+    .hero-grid::before{ display:none; }
+    .arabic-sub{ margin-left: 0; margin-right: auto; }
+    .trust-strip{ grid-template-columns: repeat(2, 1fr); }
+    .stock-chip{ margin-left: 0; align-self: flex-start; }
+    .issue-cartouche{ margin-left: 0; }
+  }
+  @media (max-width: 540px){
+    .display{ font-size: 56px; }
+    .lockup .word{ font-size: 18px; }
+    .lockup .ng{ font-size: 24px; }
+    .header-utility .util-btn:not(.util-btn--solid){ display:none; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============== SYSBAR ============== -->
+  <div class="sysbar" role="region" aria-label="System status">
+    <div class="wide-width sysbar-inner">
+      <div class="sysbar-fixed" aria-hidden="false">
+        <span><i class="live-dot" aria-hidden="true"></i>LIVE</span>
+        <span>RIYADH · 14:02 AST</span>
+        <span>MON 28 APR 2026</span>
+      </div>
+      <div class="ticker-window" aria-hidden="true">
+        <div class="ticker-track">
+          <span><b>CR</b> 7053130576</span><span class="sep">/</span>
+          <span><b>VAT</b> REGISTERED · KSA</span><span class="sep">/</span>
+          <span><b>WARRANTY</b> 12 MONTHS</span><span class="sep">/</span>
+          <span><b>RETURNS</b> 14-DAY</span><span class="sep">/</span>
+          <span><b>SHIPS FROM</b> RIYADH · DAMMAM</span><span class="sep">/</span>
+          <span><b>ISSUE</b> 04/2026</span><span class="sep">/</span>
+          <!-- duplicate set for seamless loop -->
+          <span><b>CR</b> 7053130576</span><span class="sep">/</span>
+          <span><b>VAT</b> REGISTERED · KSA</span><span class="sep">/</span>
+          <span><b>WARRANTY</b> 12 MONTHS</span><span class="sep">/</span>
+          <span><b>RETURNS</b> 14-DAY</span><span class="sep">/</span>
+          <span><b>SHIPS FROM</b> RIYADH · DAMMAM</span><span class="sep">/</span>
+          <span><b>ISSUE</b> 04/2026</span><span class="sep">/</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== HEADER ============== -->
+  <header class="header" role="banner">
+    <div class="wide-width header-inner">
+      <nav class="header-left" aria-label="Primary">
+        <a class="navlink" href="#">Catalogue</a>
+        <a class="navlink" href="#">Homelab</a>
+        <a class="navlink" href="#">Smart Home</a>
+        <a class="navlink" href="#">Gaming</a>
+        <a class="navlink" href="#">3D Print</a>
+      </nav>
+
+      <a class="lockup" href="#" aria-label="NeoGen Store">
+        <span class="ng" aria-hidden="true">
+          <span class="n">N</span><span class="g">G</span>
+        </span>
+        <span class="div" aria-hidden="true"></span>
+        <span class="word">
+          <span class="neo">NEO</span><span class="gen">GEN</span>
+        </span>
+      </a>
+
+      <div class="header-right header-utility">
+        <a class="navlink navlink--ar" href="#" dir="rtl" lang="ar">العربية</a>
+        <a class="util-btn" href="#">Search</a>
+        <a class="util-btn util-btn--solid" href="#">Cart · 0</a>
+      </div>
+    </div>
+    <div class="header-rule" aria-hidden="true"></div>
+  </header>
+
+  <!-- ============== HERO ============== -->
+  <section class="hero" aria-label="Hero">
+    <div class="wide-width">
+      <div class="hero-grid">
+
+        <!-- LEFT 70% : headline + arabic -->
+        <div class="hero-headline-zone">
+          <div class="eyebrow stagger s1">
+            <span class="bar" aria-hidden="true"></span>
+            VOL. 01 · TECHNOLOGY · KSA
+          </div>
+
+          <h1 class="display stagger s1">
+            The operator&rsquo;s <span class="ital">catalogue</span><span class="period">.</span>
+          </h1>
+
+          <p class="arabic-sub stagger s2" dir="rtl" lang="ar">
+            <span class="accent">كتالوج المُشغِّل</span> · جيل التقنية القادم — مختار بدقّة، مشحون من المملكة.
+          </p>
+        </div>
+
+        <!-- RIGHT 30% : issue cartouche + chip -->
+        <aside class="hero-meta-zone" aria-label="Issue meta">
+          <div class="issue-cartouche stagger s3">
+            <div class="row">
+              <span>Issue</span>
+              <span>No.</span>
+            </div>
+            <div class="big">04 / 2026</div>
+            <div class="hairline-x" aria-hidden="true"></div>
+            <div class="row">
+              <span>Edition</span>
+              <span>KSA · GCC</span>
+            </div>
+            <div class="row">
+              <span>Curated</span>
+              <span>Riyadh</span>
+            </div>
+          </div>
+
+          <div class="stock-chip stagger s4" role="status" aria-live="polite">
+            <span class="dot" aria-hidden="true"></span>
+            <span><span class="num">215</span> Products Live</span>
+          </div>
+        </aside>
+
+        <!-- Trust strip -->
+        <div class="trust-strip" aria-label="Trust signals">
+          <div class="trust-item"><b>CR</b> <span class="num" dir="ltr">7053130576</span></div>
+          <div class="trust-item"><b>VAT</b> Registered · KSA</div>
+          <div class="trust-item"><b>Warranty</b> 12 Months</div>
+          <div class="trust-item"><b>Returns</b> 14-Day · Ships from KSA</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thick black rule + section number bleed -->
+    <div class="section-divider" aria-hidden="true">
+      <div class="rule"></div>
+      <div class="num">01</div>
+      <div class="label">— The Front Page</div>
+    </div>
+  </section>
+
+</body>
+</html>

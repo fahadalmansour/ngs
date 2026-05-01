@@ -1,0 +1,100 @@
+{
+  "name": "W1 — AR title backfill",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            { "field": "cronExpression", "expression": "0 3 * * *" }
+          ]
+        }
+      },
+      "id": "cron",
+      "name": "Daily 03:00 Riyadh",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://neogen.store/wp-json/neogen/v1/products?missing=ar_title&limit=10",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpBasicAuth",
+        "options": {}
+      },
+      "id": "fetch-pending",
+      "name": "Fetch 10 pending products",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [420, 300],
+      "credentials": {
+        "httpBasicAuth": { "id": "neogen-rest", "name": "neogen-rest n8n-bot" }
+      }
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "items",
+        "options": {}
+      },
+      "id": "split",
+      "name": "Per product",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [640, 300]
+    },
+    {
+      "parameters": {
+        "url": "http://192.168.8.106:11434/api/generate",
+        "method": "POST",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"qwen2.5:7b\",\n  \"prompt\": \"Translate this product title to Modern Standard Arabic. Keep brand names and model numbers in Latin script. Output one line only, no quotes, no preamble.\\n\\nTitle: \" + $json.title_en,\n  \"stream\": false,\n  \"options\": { \"temperature\": 0.1, \"num_predict\": 80 }\n}",
+        "options": { "timeout": 60000 }
+      },
+      "id": "ollama",
+      "name": "Ollama — translate",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [860, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const ar = ($json.response || '').trim().replace(/^[\"'`]|[\"'`]$/g, '');\nconst arChars = (ar.match(/[\\u0600-\\u06FF]/g) || []).length;\nif (arChars < 3) {\n  throw new Error('Output has <3 Arabic chars: ' + ar);\n}\nreturn { json: { ...$('Per product').item.json, ar_title: ar } };"
+      },
+      "id": "validate",
+      "name": "Validate AR output",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1080, 300]
+    },
+    {
+      "parameters": {
+        "url": "=https://neogen.store/wp-json/neogen/v1/products/{{ $json.id }}/ar-title",
+        "method": "POST",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpBasicAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"ar_title\": $json.ar_title,\n  \"source\": \"ollama-qwen2.5:7b\"\n}",
+        "options": {}
+      },
+      "id": "post-back",
+      "name": "POST ar-title",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1300, 300],
+      "credentials": {
+        "httpBasicAuth": { "id": "neogen-rest", "name": "neogen-rest n8n-bot" }
+      }
+    }
+  ],
+  "connections": {
+    "Daily 03:00 Riyadh":   { "main": [[{ "node": "Fetch 10 pending products", "type": "main", "index": 0 }]] },
+    "Fetch 10 pending products": { "main": [[{ "node": "Per product", "type": "main", "index": 0 }]] },
+    "Per product":          { "main": [[{ "node": "Ollama — translate", "type": "main", "index": 0 }]] },
+    "Ollama — translate":   { "main": [[{ "node": "Validate AR output", "type": "main", "index": 0 }]] },
+    "Validate AR output":   { "main": [[{ "node": "POST ar-title", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" },
+  "tags": ["neogen", "ar-content"]
+}

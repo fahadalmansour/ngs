@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NeoGen Store — Najdi Modernism</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Reem+Kufi:wght@300;400;500&family=Cormorant:ital,wght@0,500;0,600;1,500;1,600&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&family=Major+Mono+Display&family=Chakra+Petch:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F8F1E5;
+    --surface: #FFFFFF;
+    --ochre: #C8893E;
+    --ochre-deep: #A86F2C;
+    --sand: #E8D9C0;
+    --charcoal: #1F1A14;
+    --muted: #7A6B58;
+    --cobalt: #1E40AF;
+    --cobalt-deep: #16307F;
+    --signal: #15803D;
+    --alert: #B91C1C;
+    --warn: #CA8A04;
+
+    /* Logo locked colors */
+    --logo-beige: #CFC9BB;
+    --logo-cyan: #00D1FF;
+
+    --wide: 1280px;
+    --max: 1100px;
+
+    --ease-slow: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: 'Tajawal', 'Source Serif Pro', serif;
+    font-weight: 400;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  /* ----- Najdi 8-point star pattern (inline SVG, very subtle) ----- */
+  .najdi-pattern {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><g fill='none' stroke='%23C8893E' stroke-width='1.1' opacity='0.55'><path d='M60 8 L72 36 L100 36 L78 56 L88 84 L60 68 L32 84 L42 56 L20 36 L48 36 Z'/><path d='M60 8 L48 36 L20 36 L42 56 L32 84 L60 68 L88 84 L78 56 L100 36 L72 36 Z'/><circle cx='60' cy='52' r='6'/><path d='M0 0 L120 120 M120 0 L0 120' stroke-dasharray='2 6' opacity='0.35'/></g></svg>");
+    background-size: 240px 240px;
+    background-repeat: repeat;
+    opacity: 0.07;
+    mix-blend-mode: multiply;
+    animation: drift 18s linear infinite;
+  }
+
+  @keyframes drift {
+    0%   { background-position: 0 0; }
+    50%  { background-position: 60px 30px; }
+    100% { background-position: 0 0; }
+  }
+
+  /* ----- Soft sandstone glow behind hero ----- */
+  .sandstone-glow {
+    position: absolute;
+    inset: -10% -5% auto -5%;
+    height: 70%;
+    background:
+      radial-gradient(60% 70% at 50% 30%, rgba(232, 217, 192, 0.85) 0%, rgba(248, 241, 229, 0) 70%),
+      radial-gradient(40% 50% at 80% 60%, rgba(200, 137, 62, 0.18) 0%, rgba(248, 241, 229, 0) 70%),
+      radial-gradient(35% 45% at 18% 65%, rgba(30, 64, 175, 0.10) 0%, rgba(248, 241, 229, 0) 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ===================== HEADER ===================== */
+  .top-strip {
+    background: var(--charcoal);
+    color: var(--sand);
+    font-family: 'Reem Kufi', 'Tajawal', sans-serif;
+    font-weight: 300;
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+  }
+  .top-strip-inner {
+    max-width: var(--wide);
+    margin: 0 auto;
+    padding: 8px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .top-strip .ltr {
+    direction: ltr;
+    font-family: 'Source Serif Pro', serif;
+    font-size: 12px;
+    color: #cfc9bb;
+    letter-spacing: 0.04em;
+  }
+  .top-strip .pip {
+    display: inline-block;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--logo-cyan);
+    margin: 0 8px;
+    vertical-align: middle;
+    box-shadow: 0 0 8px rgba(0, 209, 255, 0.6);
+  }
+
+  header.site-header {
+    position: relative;
+    border-bottom: 1px solid rgba(31, 26, 20, 0.10);
+    background: var(--cream);
+  }
+  .header-inner {
+    max-width: var(--wide);
+    margin: 0 auto;
+    padding: 18px 28px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  /* ===== Logo lockup ===== */
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    user-select: none;
+    direction: ltr;
+  }
+  .logo-mono {
+    font-family: 'Major Mono Display', monospace;
+    font-size: 30px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    display: inline-flex;
+    padding: 6px 10px;
+    border: 1px solid rgba(31, 26, 20, 0.15);
+    border-radius: 4px;
+    background: linear-gradient(180deg, #ffffff 0%, #f5ecdb 100%);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.7) inset, 0 2px 6px rgba(31,26,20,0.06);
+  }
+  .logo-mono .n { color: var(--logo-beige); text-shadow: 0 0 1px rgba(122,107,88,0.45); }
+  .logo-mono .g { color: var(--logo-cyan); text-shadow: 0 0 8px rgba(0,209,255,0.35); }
+
+  .logo-word {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.14em;
+    line-height: 1;
+  }
+  .logo-word .neo { color: var(--logo-beige); }
+  .logo-word .gen { color: var(--logo-cyan); }
+
+  /* ===== Nav ===== */
+  nav.primary {
+    grid-column: 2;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Reem Kufi', 'Tajawal', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+  }
+  nav.primary a {
+    position: relative;
+    color: var(--charcoal);
+    text-decoration: none;
+    padding: 6px 2px;
+    transition: color 400ms var(--ease-slow);
+  }
+  nav.primary a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1.5px;
+    background: var(--ochre);
+    transform: translateX(-50%);
+    transition: width 400ms var(--ease-slow);
+  }
+  nav.primary a:hover { color: var(--ochre-deep); }
+  nav.primary a:hover::after { width: 100%; }
+
+  .header-utility {
+    grid-column: 3;
+    display: flex;
+    gap: 18px;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 14px;
+  }
+  .header-utility a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 300ms var(--ease-slow);
+  }
+  .header-utility a:hover { color: var(--charcoal); }
+  .lang-toggle {
+    direction: ltr;
+    font-family: 'Source Serif Pro', serif;
+    font-style: italic;
+    font-size: 13px;
+    padding: 4px 10px;
+    border: 1px solid rgba(31,26,20,0.18);
+    border-radius: 999px;
+    color: var(--charcoal) !important;
+  }
+  .cart-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--charcoal);
+    color: var(--sand) !important;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+  }
+  .cart-pill .count {
+    direction: ltr;
+    font-family: 'Source Serif Pro', serif;
+    color: var(--logo-cyan);
+    font-weight: 600;
+  }
+
+  /* ===================== HERO ===================== */
+  section.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 90px 28px 110px;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: var(--max);
+    margin: 0 auto;
+    text-align: center;
+    animation: fadeUp 950ms var(--ease-slow) both;
+  }
+  .hero-inner > * { animation: fadeUp 950ms var(--ease-slow) both; }
+  .hero-inner > *:nth-child(1) { animation-delay: 50ms; }
+  .hero-inner > *:nth-child(2) { animation-delay: 200ms; }
+  .hero-inner > *:nth-child(3) { animation-delay: 360ms; }
+  .hero-inner > *:nth-child(4) { animation-delay: 520ms; }
+  .hero-inner > *:nth-child(5) { animation-delay: 680ms; }
+  .hero-inner > *:nth-child(6) { animation-delay: 820ms; }
+
+  @keyframes fadeUp {
+    0%   { opacity: 0; transform: translateY(18px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Eyebrow announcement */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    direction: ltr;
+    font-family: 'Cormorant', 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin-bottom: 28px;
+  }
+  .eyebrow .diamond {
+    width: 7px; height: 7px;
+    background: var(--ochre);
+    transform: rotate(45deg);
+    display: inline-block;
+  }
+  .eyebrow .ar {
+    font-family: 'Reem Kufi', sans-serif;
+    font-style: normal;
+    color: var(--charcoal);
+    direction: rtl;
+  }
+
+  /* Massive Arabic headline */
+  h1.display-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 800;
+    font-size: clamp(48px, 8vw, 104px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--ochre-deep);
+    margin: 0 0 18px;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+  }
+  h1.display-ar .accent {
+    color: var(--charcoal);
+    position: relative;
+  }
+  h1.display-ar .accent::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 -4px 0;
+    height: 6px;
+    background: linear-gradient(90deg, transparent 0%, var(--ochre) 30%, var(--ochre) 70%, transparent 100%);
+    opacity: 0.55;
+  }
+
+  /* Italic Latin tagline */
+  .tagline-en {
+    font-family: 'Cormorant', 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(18px, 2vw, 24px);
+    color: var(--muted);
+    letter-spacing: 0.01em;
+    margin: 0 auto 42px;
+    max-width: 640px;
+  }
+
+  /* Logo lockup as authentication seal */
+  .seal {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 22px 30px;
+    margin: 0 auto 44px;
+    background: var(--surface);
+    border: 1px solid rgba(31,26,20,0.10);
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.9) inset,
+      0 18px 40px -24px rgba(31,26,20,0.25),
+      0 2px 6px rgba(31,26,20,0.05);
+    position: relative;
+  }
+  .seal::before, .seal::after {
+    content: "";
+    position: absolute;
+    width: 10px; height: 10px;
+    border: 1px solid var(--ochre);
+    transform: rotate(45deg);
+    background: var(--cream);
+  }
+  .seal::before { top: -6px; left: 50%; margin-left: -5px; }
+  .seal::after  { bottom: -6px; left: 50%; margin-left: -5px; background: var(--logo-cyan); border-color: var(--logo-cyan); box-shadow: 0 0 10px rgba(0,209,255,0.4); }
+
+  .seal .lockup {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    direction: ltr;
+  }
+  .seal .lockup .logo-mono { font-size: 38px; padding: 8px 12px; }
+  .seal .lockup .logo-word { font-size: 28px; letter-spacing: 0.18em; }
+  .seal .seal-meta {
+    direction: ltr;
+    font-family: 'Source Serif Pro', serif;
+    font-style: italic;
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  /* CTAs */
+  .cta-row {
+    display: inline-flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto 56px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    border-radius: 2px;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 500ms var(--ease-slow);
+    cursor: pointer;
+    border: 1px solid transparent;
+    letter-spacing: 0.01em;
+  }
+  .btn-primary {
+    background: var(--ochre);
+    color: var(--cream);
+    box-shadow: 0 8px 24px -10px rgba(200,137,62,0.55);
+  }
+  .btn-primary:hover {
+    background: var(--ochre-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -12px rgba(168,111,44,0.6);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--cobalt);
+    border-color: var(--cobalt);
+    font-family: 'Source Serif Pro', serif;
+    font-style: italic;
+    font-weight: 600;
+  }
+  .btn-outline:hover {
+    background: var(--cobalt);
+    color: var(--cream);
+  }
+
+  /* Trust strip */
+  .trust-strip {
+    direction: ltr;
+    display: inline-flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: 'Source Serif Pro', serif;
+    font-size: 12.5px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  .trust-strip .ar {
+    font-family: 'Reem Kufi', sans-serif;
+    direction: rtl;
+    color: var(--charcoal);
+  }
+  .trust-dot {
+    width: 4px; height: 4px;
+    background: var(--ochre);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  /* Page-break: gold rule with diamond */
+  .gold-rule {
+    margin: 80px auto 0;
+    max-width: var(--max);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--ochre);
+  }
+  .gold-rule .line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--ochre) 50%, transparent 100%);
+    opacity: 0.55;
+  }
+  .gold-rule .diamond {
+    width: 10px; height: 10px;
+    background: var(--ochre);
+    transform: rotate(45deg);
+    display: inline-block;
+  }
+
+  /* Decorative side mihrab arches (very subtle) */
+  .mihrab {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 140px;
+    height: 360px;
+    opacity: 0.10;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .mihrab.left  { left: 2%; }
+  .mihrab.right { right: 2%; transform: translateY(-50%) scaleX(-1); }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .header-inner {
+      grid-template-columns: 1fr auto;
+    }
+    nav.primary { display: none; }
+    .header-utility { grid-column: 2; }
+    .top-strip-inner { padding: 8px 16px; font-size: 11.5px; gap: 0.75rem; }
+    .top-strip .ltr-hide { display: none; }
+    section.hero { padding: 60px 20px 80px; }
+    .mihrab { display: none; }
+    .seal .lockup .logo-mono { font-size: 30px; }
+    .seal .lockup .logo-word { font-size: 22px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .najdi-pattern { animation: none; }
+    .hero-inner, .hero-inner > * { animation: none !important; }
+    .btn { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Top informational strip -->
+<div class="top-strip" role="region" aria-label="Store information">
+  <div class="top-strip-inner">
+    <div>
+      <span>الشحن من داخل المملكة</span>
+      <span class="pip" aria-hidden="true"></span>
+      <span>ضمان ١٢ شهراً</span>
+      <span class="pip" aria-hidden="true"></span>
+      <span>إرجاع خلال ١٤ يوماً</span>
+    </div>
+    <div class="ltr ltr-hide" dir="ltr">
+      CR <span style="color:#fff;letter-spacing:0.06em">7053130576</span>
+      &nbsp;&middot;&nbsp; VAT registered &nbsp;&middot;&nbsp; Riyadh, KSA
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+
+    <!-- Logo lockup -->
+    <a class="logo" href="#" aria-label="NeoGen Store">
+      <span class="logo-mono" aria-hidden="true"><span class="n">N</span><span class="g">G</span></span>
+      <span class="logo-word"><span class="neo">NEO</span><span class="gen">GEN</span></span>
+    </a>
+
+    <!-- Primary navigation (Arabic, RTL) -->
+    <nav class="primary" aria-label="Primary">
+      <a href="#">المتجر</a>
+      <a href="#">الفئات</a>
+      <a href="#">المنزل الذكي</a>
+      <a href="#">الشبكات</a>
+      <a href="#">بطاقات رقمية</a>
+      <a href="#">المدوّنة</a>
+    </nav>
+
+    <!-- Utility -->
+    <div class="header-utility">
+      <a class="lang-toggle" href="#" dir="ltr" aria-label="Switch language">EN / AR</a>
+      <a href="#" aria-label="Account">الحساب</a>
+      <a class="cart-pill" href="#" aria-label="Cart">
+        <span>السلة</span>
+        <span class="count" dir="ltr">02</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" aria-label="Najdi Modernism hero">
+
+  <div class="sandstone-glow" aria-hidden="true"></div>
+  <div class="najdi-pattern" aria-hidden="true"></div>
+
+  <!-- Subtle mihrab arches on the sides -->
+  <svg class="mihrab left" viewBox="0 0 140 360" aria-hidden="true">
+    <path d="M70 8 C 130 8, 130 80, 130 120 L 130 352 L 10 352 L 10 120 C 10 80, 10 8, 70 8 Z"
+          fill="none" stroke="#C8893E" stroke-width="1"/>
+    <path d="M70 30 C 110 30, 110 90, 110 122 L 110 332 L 30 332 L 30 122 C 30 90, 30 30, 70 30 Z"
+          fill="none" stroke="#C8893E" stroke-width="1" opacity="0.7"/>
+    <circle cx="70" cy="120" r="3" fill="#1E40AF" opacity="0.7"/>
+  </svg>
+  <svg class="mihrab right" viewBox="0 0 140 360" aria-hidden="true">
+    <path d="M70 8 C 130 8, 130 80, 130 120 L 130 352 L 10 352 L 10 120 C 10 80, 10 8, 70 8 Z"
+          fill="none" stroke="#C8893E" stroke-width="1"/>
+    <path d="M70 30 C 110 30, 110 90, 110 122 L 110 332 L 30 332 L 30 122 C 30 90, 30 30, 70 30 Z"
+          fill="none" stroke="#C8893E" stroke-width="1" opacity="0.7"/>
+    <circle cx="70" cy="120" r="3" fill="#1E40AF" opacity="0.7"/>
+  </svg>
+
+  <div class="hero-inner">
+
+    <!-- Eyebrow announcement -->
+    <div class="eyebrow">
+      <span class="diamond" aria-hidden="true"></span>
+      <span class="ar" dir="rtl">إصدار ربيع ١٤٤٧</span>
+      <span aria-hidden="true">/</span>
+      <span dir="ltr">A curated bazaar for the post-2030 home</span>
+      <span class="diamond" aria-hidden="true"></span>
+    </div>
+
+    <!-- Massive Arabic display headline -->
+    <h1 class="display-ar" dir="rtl">
+      تقنية. <span class="accent">كما يجب</span> أن تكون.
+    </h1>
+
+    <!-- Italic Latin tagline -->
+    <p class="tagline-en" dir="ltr">
+      Technology, as it should be — shipped from the Kingdom.
+    </p>
+
+    <!-- Logo seal -->
+    <div class="seal" role="img" aria-label="NeoGen authenticated lockup">
+      <div class="lockup">
+        <span class="logo-mono" aria-hidden="true"><span class="n">N</span><span class="g">G</span></span>
+        <span class="logo-word"><span class="neo">NEO</span><span class="gen">GEN</span></span>
+      </div>
+      <span class="seal-meta" dir="ltr">Sealed &middot; Authenticated in Riyadh</span>
+    </div>
+
+    <!-- CTAs -->
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#" dir="rtl">تصفّح المتجر</a>
+      <a class="btn btn-outline" href="#" dir="ltr">FAQ &amp; Shipping</a>
+    </div>
+
+    <!-- Trust strip -->
+    <div class="trust-strip" dir="ltr" aria-label="Trust signals">
+      <span class="ar" dir="rtl">سجل تجاري</span>
+      <span dir="ltr">CR 7053130576</span>
+      <span class="trust-dot" aria-hidden="true"></span>
+      <span dir="ltr">VAT Registered</span>
+      <span class="trust-dot" aria-hidden="true"></span>
+      <span class="ar" dir="rtl">ضمان ١٢ شهراً</span>
+      <span class="trust-dot" aria-hidden="true"></span>
+      <span dir="ltr">14-Day Returns</span>
+      <span class="trust-dot" aria-hidden="true"></span>
+      <span dir="ltr">Ships from KSA</span>
+    </div>
+
+    <!-- Section break: gold rule -->
+    <div class="gold-rule" aria-hidden="true">
+      <span class="line"></span>
+      <span class="diamond"></span>
+      <span class="line"></span>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

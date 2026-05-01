@@ -1,0 +1,25 @@
+id,name,sku,status,price,regular_price,sale_price,stock_status,stock_quantity,short_description,permalink
+3234,NZXT H9 Elite Mid-Tower ATX Case,GM-CMP-NZX-001,publish,1349,1349,,instock,,"<p>NZXT H9 Elite Mid-Tower ATX Case &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/nzxt-h9-elite-mid-tower-atx-case/
+3233,Corsair iCUE H150i RGB Elite (360mm AIO),GM-CMP-COR-001,publish,1149,1149,,instock,,"<p>Corsair iCUE H150i RGB Elite (360mm AIO) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/corsair-icue-h150i-rgb-elite-360mm-aio/
+3232,Gigabyte AORUS RTX 5090 Master 32GB,GM-GPU-GIG-001,publish,27999,27999,,instock,,"<p>Gigabyte AORUS RTX 5090 Master 32GB &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/gigabyte-aorus-rtx-5090-master-32gb/
+3231,NVIDIA RTX 5080 Founders Edition (16GB),GM-GPU-NVD-002,publish,6499,6499,,instock,,"<p>NVIDIA RTX 5080 Founders Edition (16GB) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/nvidia-rtx-5080-founders-edition-16gb/
+3230,NVIDIA RTX 5090 Founders Edition (32GB),GM-GPU-NVD-001,publish,22999,26449,22999,instock,,"<p>NVIDIA RTX 5090 Founders Edition (32GB) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/nvidia-rtx-5090-founders-edition-32gb/
+3105,WD Red Plus 8TB NAS Hard Drive - Built for Always-On NAS Systems,NG-ACC-010,publish,1449,1449,,instock,,"<p>8TB hard drive designed for 24/7 operation in NAS systems. CMR recording technology for consistent performance and NASware 3.0 firmware for optimal compatibility. 3-year Western Digital warranty.</p>
+",https://neogen.store/product/wd-red-plus-8tb-nas-hard-drive-built-for-always-on-nas-systems/
+3101,"Samsung T7 Shield 2TB Portable SSD - Rugged, Fast, and Secure",NG-ACC-006,publish,1299,1299,,instock,,"<p>2TB portable SSD with read speeds up to 1,050MB/s. IP65 water and dust resistant with 3-meter drop protection. Perfect for photographers and content creators on the go.</p>
+",https://neogen.store/product/samsung-t7-shield-2tb-portable-ssd-rugged-fast-and-secure/
+3099,ESP32-S3 DevKit 10-Pack - Wi-Fi + Bluetooth 5 Microcontroller for Smart Projects,NG-MKR-009,publish,699,809,699,instock,,"<p>Ten ESP32-S3 development boards with dual-core processor, Wi-Fi, and Bluetooth 5 LE. Perfect for IoT projects and home automation. Massive savings compared to buying individually.</p>
+",https://neogen.store/product/esp32-s3-devkit-10-pack-wi-fi-bluetooth-5-microcontroller-for-smart-projects/
+3096,Arduino Mega 2560 Rev3 - The Ultimate Microcontroller Board for Advanced Projects,NG-MKR-006,publish,549,549,,instock,,"<p>Official Arduino Mega 2560 with 54 digital I/O pins and 16 analog inputs. ATmega2560 processor at 16MHz with 256KB flash memory. The go-to board for large-scale projects, robotics, and 3D printers.</p>
+",https://neogen.store/product/arduino-mega-2560-rev3-the-ultimate-microcontroller-board-for-advanced-projects/
+3055,Seagate IronWolf 18TB NAS Internal Hard Drive - Built for 24/7 Performance,NG-ACC-004,publish,2699,3109,2699,instock,,"<p>Massive 18TB capacity optimized for NAS environments. CMR technology, 7200 RPM, and 3 years of free Rescue Data Recovery. The professional choice for storage servers.</p>
+",https://neogen.store/product/seagate-ironwolf-18tb-nas-internal-hard-drive-built-for-24-7-performance/
+3048,Raspberry Pi 5 Ultimate Starter Kit - Everything You Need in One Box,NG-MKR-002,publish,1149,1329,1149,instock,,"<p>The complete Pi 5 experience. Includes 8GB board, official 27W PSU, active cooler, case, and pre-loaded 128GB SD card. Plug and play excellence.</p>
+",https://neogen.store/product/raspberry-pi-5-ultimate-starter-kit-everything-you-need-in-one-box/
+3047,Raspberry Pi 5 8GB - The New Standard in Single Board Computing,NG-MKR-001,publish,899,1039,899,instock,,"<p>The latest evolution of Raspberry Pi with 3x the performance. 8GB RAM, dual 4K display support, and a new PCIe interface. The ultimate engine for your next tech project.</p>
+",https://neogen.store/product/raspberry-pi-5-8gb-the-new-standard-in-single-board-computing/

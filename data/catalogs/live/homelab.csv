@@ -1,0 +1,59 @@
+id,name,sku,status,price,regular_price,sale_price,stock_status,stock_quantity,short_description,permalink
+3204,Dell OptiPlex 7070 Micro (Refurb),NT-MPC-DEL-001,publish,1549,1549,,instock,,"<p>Dell OptiPlex 7070 Micro (Refurb) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/dell-optiplex-7070-micro-refurb/
+3203,Beelink EQ12 (Intel N100),NT-MPC-BLK-002,publish,999,999,,instock,,"<p>Beelink EQ12 (Intel N100) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/beelink-eq12-intel-n100/
+3202,Beelink SER7 (Ryzen 7 7735HS),NT-MPC-BLK-001,publish,2399,2399,,instock,,"<p>Beelink SER7 (Ryzen 7 7735HS) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/beelink-ser7-ryzen-7-7735hs/
+3201,MinisForum MS-01 (Homelab Server),NT-MPC-MNF-001,publish,3999,4599,3999,instock,,"<p>MinisForum MS-01 (Homelab Server) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/minisforum-ms-01-homelab-server/
+3198,ATEN CS1924M 4-Port DP KVM,NT-KVM-ATN-001,publish,2399,2399,,instock,,"<p>ATEN CS1924M 4-Port DP KVM &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/aten-cs1924m-4-port-dp-kvm/
+3197,TESmart HKS0401A1U 4-Port HDMI KVM,NT-KVM-TES-001,publish,599,689,599,instock,,"<p>TESmart HKS0401A1U 4-Port HDMI KVM &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/tesmart-hks0401a1u-4-port-hdmi-kvm/
+3196,Fortinet FortiGate 60F,NT-FWL-FTN-001,publish,5499,6329,5499,instock,,"<p>Fortinet FortiGate 60F &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/fortinet-fortigate-60f/
+3195,Netgate 2100 MAX pfSense+ Gateway,NT-FWL-NGT-002,publish,2499,2499,,instock,,"<p>Netgate 2100 MAX pfSense+ Gateway &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/netgate-2100-max-pfsense-gateway/
+3194,Netgate 4200 MAX pfSense+ Gateway,NT-FWL-NGT-001,publish,3399,3399,,instock,,"<p>Netgate 4200 MAX pfSense+ Gateway &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/netgate-4200-max-pfsense-gateway/
+3190,NavePoint 1U Cantilever Rack Shelf,NT-SRV-NVP-001,publish,249,249,,instock,,"<p>NavePoint 1U Cantilever Rack Shelf &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/navepoint-1u-cantilever-rack-shelf/
+3189,Cable Matters 24-Port Cat6 Patch Panel (1U),NT-SRV-CBM-001,publish,239,239,,instock,,"<p>Cable Matters 24-Port Cat6 Patch Panel (1U) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/cable-matters-24-port-cat6-patch-panel-1u/
+3188,StarTech RK12WALLOA 12U Wall-Mount Rack,NT-SRV-STC-001,publish,1399,1399,,instock,,"<p>StarTech RK12WALLOA 12U Wall-Mount Rack &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/startech-rk12walloa-12u-wall-mount-rack/
+3187,APC Back-UPS Pro BX1500M (Tower),NT-UPS-APC-002,publish,1599,1839,1599,instock,,"<p>APC Back-UPS Pro BX1500M (Tower) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/apc-back-ups-pro-bx1500m-tower/
+3186,CyberPower OR1500LCDRM1U (1500VA 1U),NT-UPS-CYB-001,publish,2099,2419,2099,instock,,"<p>CyberPower OR1500LCDRM1U (1500VA 1U) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/cyberpower-or1500lcdrm1u-1500va-1u/
+3185,APC Smart-UPS SMT1500RM2UC (1500VA Rack),NT-UPS-APC-001,publish,4899,4899,,instock,,"<p>APC Smart-UPS SMT1500RM2UC (1500VA Rack) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/apc-smart-ups-smt1500rm2uc-1500va-rack/
+3184,QNAP TS-262-4G (2-Bay),NT-NAS-QNP-002,publish,1899,1899,,instock,,"<p>QNAP TS-262-4G (2-Bay) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/qnap-ts-262-4g-2-bay/
+3183,QNAP TS-464-8G (4-Bay),NT-NAS-QNP-001,publish,2799,2799,,instock,,"<p>QNAP TS-464-8G (4-Bay) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/qnap-ts-464-8g-4-bay/
+3182,Synology DS925+ (4-Bay),NT-NAS-SYN-002,publish,3499,3499,,instock,,"<p>Synology DS925+ (4-Bay) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/synology-ds925-4-bay/
+3181,Synology DS225+ (2-Bay),NT-NAS-SYN-001,publish,2099,2419,2099,instock,,"<p>Synology DS225+ (2-Bay) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/synology-ds225-2-bay/
+3061,Ubiquiti UniFi Switch Pro 24 PoE (USW-Pro-24-PoE) - Smart Managed PoE+ Switch,NG-ENT-010,publish,4199,4199,,instock,,"<p>Fully managed 24-port Gigabit PoE+ switch from Ubiquiti with 2x 10Gbps SFP+ uplinks. Delivers a 400W PoE budget to power access points, cameras, and VoIP phones through Ethernet cables. Seamlessly integrates with the UniFi ecosystem for centralized management.</p>
+",https://neogen.store/product/ubiquiti-unifi-switch-pro-24-poe-usw-pro-24-poe-smart-managed-poe-switch/
+3060,HPE ProLiant DL380 Gen10 Server (Refurbished) - Data Center Power at Smart Pricing,NG-ENT-009,publish,6499,6499,,instock,,"<p>Fully tested refurbished HPE DL380 Gen10 with Intel Xeon Silver 4114 10-core CPU and 32GB DDR4 ECC RAM. Supports up to 24x 2.5&#8243; SFF drives with HPE Smart Array P408i-a RAID controller. The ideal choice for data center-grade compute on a reasonable budget.</p>
+",https://neogen.store/product/hpe-proliant-dl380-gen10-server-refurbished-data-center-power-at-smart-pricing/
+3059,APC Smart-UPS 1500VA LCD RM 2U (SMT1500RMI2U) - Pure Sine Wave Rack UPS,NG-ENT-008,publish,4899,4899,,instock,,"<p>Professional 1500VA/1000W UPS from APC with interactive LCD display and 2U rackmount/tower design. Line-Interactive technology with pure sine wave output protects servers and network equipment from power outages and voltage fluctuations. Hot-swappable batteries for zero-downtime maintenance.</p>
+",https://neogen.store/product/apc-smart-ups-1500va-lcd-rm-2u-smt1500rmi2u-pure-sine-wave-rack-ups/
+3058,MikroTik CRS326-24G-2S+RM 24-Port Managed Gigabit Switch with 10G SFP+,NG-ENT-007,publish,1649,1649,,instock,,"<p>Managed switch with 24 Gigabit Ethernet ports and 2x 10Gbps SFP+ uplinks from MikroTik. 1U rackmount design running RouterOS/SwOS for full network control. Enterprise-grade features at a fraction of the cost of competing brands.</p>
+",https://neogen.store/product/mikrotik-crs326-24g-2srm-24-port-managed-gigabit-switch-with-10g-sfp/
+3057,Synology DiskStation DS1621+ 6-Bay NAS - Enterprise Storage Powerhouse,NG-ENT-006,publish,5599,5599,,instock,,"<p>Professional 6-bay NAS powered by AMD Ryzen V1500B quad-core CPU with 4GB DDR4 ECC RAM (expandable to 32GB). Supports up to 108TB raw storage with NVMe SSD caching and Btrfs data protection. Expandable to 16 bays with two DX517 units.</p>
+",https://neogen.store/product/synology-diskstation-ds1621-6-bay-nas-enterprise-storage-powerhouse/
+3041,Asustor Flashstor 6 (FS6706T) - All-NVMe SSD NAS for Extreme Performance,NG-ENT-005,publish,3099,3099,,instock,,"<p>The world&#8217;s first all-M.2 NVMe NAS. 6x NVMe slots, dual 2.5GbE ports, and a silent, ultra-slim design. Pure speed for professionals and creative artists.</p>
+",https://neogen.store/product/asustor-flashstor-6-fs6706t-all-nvme-ssd-nas-for-extreme-performance/
+3040,UniFi 6 Long-Range (U6-LR) - High-Performance WiFi 6 Access Point,NG-ENT-004,publish,1649,1649,,instock,,"<p>Enterprise-grade WiFi 6 AP with extended coverage. 3.0 Gbps aggregate speed, 4&#215;4 MU-MIMO, and support for 350+ concurrent clients. Perfect for large venues and high-density environments.</p>
+",https://neogen.store/product/unifi-6-long-range-u6-lr-high-performance-wifi-6-access-point/
+3039,Ubiquiti UniFi Dream Machine Pro (UDM-Pro) - All-in-One Enterprise Network Console,NG-ENT-003,publish,3099,3569,3099,instock,,"<p>The ultimate networking hub. Combines a 10G router, security gateway, switch, and NVR storage in a sleek 1U rackmount design. Professional-grade control for your home or office.</p>
+",https://neogen.store/product/ubiquiti-unifi-dream-machine-pro-udm-pro-all-in-one-enterprise-network-console/
+3038,Asustor Lockerstor 4 (AS6604T) - Professional 4-Bay NAS for Creators,NG-ENT-002,publish,3099,3099,,instock,,"<p>High-performance NAS with Intel Quad-Core power. Dual 2.5GbE ports and M.2 NVMe caching for extreme speed. The ultimate storage solution for creative professionals and SMBs.</p>
+",https://neogen.store/product/asustor-lockerstor-4-as6604t-professional-4-bay-nas-for-creators/
+3037,"Dell PowerEdge R730 Refurbished Server - Enterprise Power, Smart Investment",NG-ENT-001,publish,8099,8099,,instock,,"<p>Professional-grade refurbished server. Dual Intel Xeon processors, up to 3TB RAM, full remote management via iDRAC8. Ideal for startups, IT labs, and growing businesses across the GCC.</p>
+",https://neogen.store/product/dell-poweredge-r730-refurbished-server-enterprise-power-smart-investment/

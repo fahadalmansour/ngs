@@ -1,0 +1,101 @@
+id,name,sku,status,price,regular_price,sale_price,stock_status,stock_quantity,short_description,permalink
+3171,SwitchBot Blind Tilt,SH-SWB-SWBT-003,publish,479,479,,instock,,"<p>SwitchBot Blind Tilt &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/switchbot-blind-tilt/
+3170,SwitchBot Bot (Smart Button Pusher),SH-SWB-SWBT-002,publish,239,239,,instock,,"<p>SwitchBot Bot (Smart Button Pusher) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/switchbot-bot-smart-button-pusher/
+3169,SwitchBot Hub 2 (Matter Enabled),SH-SWB-SWBT-001,publish,479,559,479,instock,,"<p>SwitchBot Hub 2 (Matter Enabled) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/switchbot-hub-2-matter-enabled/
+3168,Hubitat Elevation C-8 Pro,SH-HUB-HUBI-001,publish,1199,1199,,instock,,"<p>Hubitat Elevation C-8 Pro &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/hubitat-elevation-c-8-pro/
+3167,Home Assistant Green,SH-HUB-HASS-001,publish,699,699,,instock,,"<p>Home Assistant Green &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/home-assistant-green/
+3166,Aqara Hub M3,SH-HUB-AQRA-001,publish,899,1039,899,instock,,"<p>Aqara Hub M3 &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/aqara-hub-m3/
+3165,IKEA FYRTUR Blackout Smart Roller Blind,SH-BLD-IKEA-001,publish,949,1099,949,instock,,"<p>IKEA FYRTUR Blackout Smart Roller Blind &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/ikea-fyrtur-blackout-smart-roller-blind/
+3164,SwitchBot Curtain 3,SH-BLD-SWBT-001,publish,649,649,,instock,,"<p>SwitchBot Curtain 3 &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/switchbot-curtain-3/
+3163,Eufy Video Doorbell E340 (Dual Camera),SH-VDB-EUFY-001,publish,999,999,,instock,,"<p>Eufy Video Doorbell E340 (Dual Camera) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/eufy-video-doorbell-e340-dual-camera/
+3162,Ring Battery Doorbell Plus,SH-VDB-RING-001,publish,999,999,,instock,,"<p>Ring Battery Doorbell Plus &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/ring-battery-doorbell-plus/
+3161,Reolink Argus 4 Pro (4K),SH-CAM-RELK-001,publish,899,1039,899,instock,,"<p>Reolink Argus 4 Pro (4K) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/reolink-argus-4-pro-4k/
+3160,Eufy eufyCam 3 (4K + HomeBase 3 Kit),SH-CAM-EUFY-001,publish,1649,1649,,instock,,"<p>Eufy eufyCam 3 (4K + HomeBase 3 Kit) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/eufy-eufycam-3-4k-homebase-3-kit/
+3159,Arlo Pro 5 2K Spotlight Camera,SH-CAM-ARLO-001,publish,1549,1549,,instock,,"<p>Arlo Pro 5 2K Spotlight Camera &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/arlo-pro-5-2k-spotlight-camera/
+3158,Ring Indoor Cam (2nd Gen),SH-CAM-RING-001,publish,479,479,,instock,,"<p>Ring Indoor Cam (2nd Gen) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/ring-indoor-cam-2nd-gen/
+3157,Meross Smart Plug Mini MSS110 (HomeKit),SH-PLG-MERS-001,publish,159,159,,instock,,"<p>Meross Smart Plug Mini MSS110 (HomeKit) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/meross-smart-plug-mini-mss110-homekit/
+3156,"TP-Link Tapo P125M Smart Plug (Matter, 2-pack)",SH-PLG-TPLK-001,publish,149,149,,instock,,"<p>TP-Link Tapo P125M Smart Plug (Matter, 2-pack) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/tp-link-tapo-p125m-smart-plug-matter-2-pack/
+3155,Ecobee Smart Thermostat Premium,SH-THR-ECOB-001,publish,1549,1549,,instock,,"<p>Ecobee Smart Thermostat Premium &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/ecobee-smart-thermostat-premium/
+3154,Google Nest Learning Thermostat (4th Gen),SH-THR-NEST-001,publish,1699,1699,,instock,,"<p>Google Nest Learning Thermostat (4th Gen) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/google-nest-learning-thermostat-4th-gen/
+3153,Ecovacs Deebot X9 Pro Omni,SH-RVC-ECVX-001,publish,5699,5699,,instock,,"<p>Ecovacs Deebot X9 Pro Omni &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/ecovacs-deebot-x9-pro-omni/
+3152,Dreame L50 Ultra,SH-RVC-DREM-001,publish,4599,4599,,instock,,"<p>Dreame L50 Ultra &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/dreame-l50-ultra/
+3151,Roborock Qrevo CurvX,SH-RVC-RBRC-001,publish,4599,4599,,instock,,"<p>Roborock Qrevo CurvX &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/roborock-qrevo-curvx/
+3150,Govee Glide Hexagon Light Panels Ultra (10-pack),SH-LGT-GOVE-002,publish,1299,1499,1299,instock,,"<p>Govee Glide Hexagon Light Panels Ultra (10-pack) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/govee-glide-hexagon-light-panels-ultra-10-pack/
+3149,Govee RGBIC LED Strip M1 (5m),SH-LGT-GOVE-001,publish,399,459,399,instock,,"<p>Govee RGBIC LED Strip M1 (5m) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/govee-rgbic-led-strip-m1-5m/
+3148,LIFX Color A19 1100lm Bulb,SH-LGT-LIFX-001,publish,279,329,279,instock,,"<p>LIFX Color A19 1100lm Bulb &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/lifx-color-a19-1100lm-bulb/
+3147,Philips Hue Gradient Lightstrip (2m),SH-LGT-PHUE-002,publish,1149,1149,,instock,,"<p>Philips Hue Gradient Lightstrip (2m) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/philips-hue-gradient-lightstrip-2m/
+3146,Philips Hue Starter Kit (3x A19 + Bridge),SH-LGT-PHUE-001,publish,899,899,,instock,,"<p>Philips Hue Starter Kit (3x A19 + Bridge) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/philips-hue-starter-kit-3x-a19-bridge/
+3145,August Wi-Fi Smart Lock (4th Gen),SH-LCK-AUGS-001,publish,1299,1499,1299,instock,,"<p>August Wi-Fi Smart Lock (4th Gen) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/august-wi-fi-smart-lock-4th-gen/
+3144,Aqara Smart Lock U200,SH-LCK-AQRA-001,publish,1249,1439,1249,instock,,"<p>Aqara Smart Lock U200 &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/aqara-smart-lock-u200/
+3143,Yale Assure Lock 2 Wi-Fi,SH-LCK-YALE-001,publish,1549,1549,,instock,,"<p>Yale Assure Lock 2 Wi-Fi &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/yale-assure-lock-2-wi-fi/
+3142,Google Nest Hub (2nd Gen),SH-DSP-GGLE-001,publish,699,699,,instock,,"<p>Google Nest Hub (2nd Gen) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/google-nest-hub-2nd-gen/
+3141,Amazon Echo Show 8 (3rd Gen),SH-DSP-AMZN-001,publish,999,999,,instock,,"<p>Amazon Echo Show 8 (3rd Gen) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/amazon-echo-show-8-3rd-gen/
+3140,Amazon Echo Dot (5th Gen),SH-SPK-AMZN-002,publish,399,459,399,instock,,"<p>Amazon Echo Dot (5th Gen) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/amazon-echo-dot-5th-gen/
+3139,Google Nest Audio,SH-SPK-GGLE-001,publish,699,809,699,instock,,"<p>Google Nest Audio &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/google-nest-audio/
+3138,Apple HomePod Mini,SH-SPK-APPL-001,publish,699,699,,instock,,"<p>Apple HomePod Mini &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/apple-homepod-mini/
+3137,Amazon Echo (4th Gen),SH-SPK-AMZN-001,publish,699,699,,instock,,"<p>Amazon Echo (4th Gen) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/amazon-echo-4th-gen/
+3071,Sonoff SNZB-02D Zigbee Temperature &amp; Humidity Sensor with LCD Display,NG-SH-015,publish,159,159,,instock,,"<p>Temperature and humidity sensor from Sonoff with Zigbee 3.0 and a large built-in LCD display showing readings clearly. Swiss-made Sensirion sensor for high accuracy with CR2477 battery lasting up to 2 years. Smaller and more accurate than the previous generation.</p>
+",https://neogen.store/product/sonoff-snzb-02d-zigbee-temperature-humidity-sensor-with-lcd-display/
+3070,MOES Zigbee Smart Thermostat (BHT-002-GCLZB) - Programmable HVAC Control,NG-SH-014,publish,379,439,379,instock,,"<p>Smart thermostat from MOES with Zigbee 3.0 and LCD touchscreen for home temperature regulation. Supports water/electric underfloor heating and Fan Coil central air conditioning. Weekly programmable scheduling with Tuya and Home Assistant compatibility.</p>
+",https://neogen.store/product/moes-zigbee-smart-thermostat-bht-002-gclzb-programmable-hvac-control/
+3069,Zemismart Zigbee Smart Tubular Motor (ZM25TQ) - Heavy-Duty Roller Blind Motor,NG-SH-013,publish,699,699,,instock,,"<p>Smart tubular motor from Zemismart with Zigbee 3.0 designed for roller blinds and blackout shades. 1.2Nm torque handles blinds up to 8kg quietly. Direct 100-240V AC power eliminates battery concerns, with full Tuya and Home Assistant compatibility.</p>
+",https://neogen.store/product/zemismart-zigbee-smart-tubular-motor-zm25tq-heavy-duty-roller-blind-motor/
+3068,Aqara Roller Shade Driver E1 (RSD-M01) - Smart Roller Blind Motor with HomeKit,NG-SH-012,publish,599,689,599,instock,,"<p>Smart motor from Aqara for roller shades/blinds using Zigbee 3.0 with full Apple HomeKit compatibility. Supports manual pull control, app control, and voice control. Built-in 6000mAh battery charges via USB-C and lasts up to one year.</p>
+",https://neogen.store/product/aqara-roller-shade-driver-e1-rsd-m01-smart-roller-blind-motor-with-homekit/
+3067,SwitchBot Bot (S1) - Robotic Finger That Makes Any Button Smart,NG-SH-011,publish,279,279,,instock,,"<p>Tiny robotic arm from SwitchBot that physically presses any button or switch remotely. Sticks to any surface with 3M adhesive and connects via Bluetooth with timer and scheduling support. The simplest solution to make non-smart devices smart without any wiring.</p>
+",https://neogen.store/product/switchbot-bot-s1-robotic-finger-that-makes-any-button-smart/
+3066,Eve Energy Smart Plug (Matter/Thread) - Next-Gen Smart Plug with Power Monitoring,NG-SH-010,publish,399,399,,instock,,"<p>Smart plug from Eve with Matter over Thread protocol for reliable connectivity without Wi-Fi dependency. Accurately monitors power consumption with historical usage data. Sleek design supporting Apple HomeKit, Google Home, and Samsung SmartThings via Matter.</p>
+",https://neogen.store/product/eve-energy-smart-plug-matter-thread-next-gen-smart-plug-with-power-monitoring/
+3065,Aqara Motion Sensor P1 (MS-S02) - Wide-Angle 170° Smart PIR Sensor,NG-SH-009,publish,279,279,,instock,,"<p>Advanced PIR motion sensor from Aqara with 170-degree detection angle and 7-meter range. Zigbee 3.0 connectivity with 3-level adjustable sensitivity and built-in light sensor. Compatible with Apple HomeKit and all major smart home platforms.</p>
+",https://neogen.store/product/aqara-motion-sensor-p1-ms-s02-wide-angle-170-smart-pir-sensor/
+3064,Shelly Plus 1PM - Smart Wi-Fi Relay with Power Monitoring,NG-SH-008,publish,189,189,,instock,,"<p>Compact smart relay from Shelly that fits behind any light switch or appliance. Monitors real-time power consumption with direct Wi-Fi connectivity &#8211; no hub required. Ultra-compact form factor (42x36x15mm) with 16A capacity for heavy loads.</p>
+",https://neogen.store/product/shelly-plus-1pm-smart-wi-fi-relay-with-power-monitoring/
+3063,SwitchBot Curtain 3 (W2400000) - Turn Any Curtain Smart in Minutes,NG-SH-007,publish,549,639,549,instock,,"<p>Smart curtain motor from SwitchBot that converts any existing curtain into a smart curtain without replacing the rail. Bluetooth connectivity with Matter support via SwitchBot Hub. Tool-free installation with battery lasting up to 8 months, with optional solar panel charging.</p>
+",https://neogen.store/product/switchbot-curtain-3-w2400000-turn-any-curtain-smart-in-minutes/
+3062,Aqara Hub M2 (HM2-G01) - Multi-Protocol Smart Home Gateway,NG-SH-006,publish,499,499,,instock,,"<p>Smart home hub from Aqara supporting Zigbee 3.0, Wi-Fi, Bluetooth, and built-in IR blaster with integrated speaker. Compatible with Apple HomeKit, Google Home, and Amazon Alexa. Serves as the central gateway for all Aqara smart devices.</p>
+",https://neogen.store/product/aqara-hub-m2-hm2-g01-multi-protocol-smart-home-gateway/
+3046,Sonoff TX Ultimate (T5) Smart Wall Switch - Interactive Elegance with RGB,NG-SH-005,publish,269,309,269,instock,,"<p>The next generation of smart switches. Full-surface touch control, haptic feedback, and customizable RGB ambient lighting. Fully compatible with GCC 220V standards.</p>
+",https://neogen.store/product/sonoff-tx-ultimate-t5-smart-wall-switch-interactive-elegance-with-rgb/
+3045,Aqara Water Leak Sensor - Safeguard Your Home from Water Damage,NG-SH-004,publish,219,259,219,instock,,"<p>Small but powerful sensor that detects leaks instantly. Receive mobile notifications and trigger alarms to prevent costly water damage.</p>
+",https://neogen.store/product/aqara-water-leak-sensor-safeguard-your-home-from-water-damage/
+3044,Broadlink RM4 Pro - Universal Smart Remote for IR &amp; RF Devices,NG-SH-003,publish,359,359,,instock,,"<p>The ultimate smart remote hub. Control your TV, AC, and motorized curtains from your smartphone. Supports 50,000+ IR and RF devices with voice control compatibility.</p>
+",https://neogen.store/product/broadlink-rm4-pro-universal-smart-remote-for-ir-rf-devices/
+3043,UniFi Protect G4 Pro Camera - 4K Ultra HD Surveillance Excellence,NG-SH-002,publish,2899,2899,,instock,,"<p>The pinnacle of UniFi surveillance. 4K resolution, 3x optical zoom, and superior IR night vision in a weatherproof IP67 housing. Uncompromising detail for maximum security.</p>
+",https://neogen.store/product/unifi-protect-g4-pro-camera-4k-ultra-hd-surveillance-excellence/
+3042,Aqara Smart Door Lock A100 - Elite Security with Apple HomeKey Support,NG-SH-001,publish,1649,1649,,instock,,"<p>Premium smart lock featuring 9 unlocking methods, including Fingerprint and Apple HomeKey. 18-month battery life and seamless integration with HomeKit, Google, and Alexa.</p>
+",https://neogen.store/product/aqara-smart-door-lock-a100-elite-security-with-apple-homekey-support/

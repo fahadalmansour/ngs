@@ -1,0 +1,53 @@
+id,name,sku,status,price,regular_price,sale_price,stock_status,stock_quantity,short_description,permalink
+3200,TP-Link TL-SG1005P 5-Port PoE,NT-POE-TPL-001,publish,299,299,,instock,,"<p>TP-Link TL-SG1005P 5-Port PoE &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/tp-link-tl-sg1005p-5-port-poe/
+3199,Ubiquiti USW-Lite-8-PoE,NT-POE-UBQ-001,publish,849,849,,instock,,"<p>Ubiquiti USW-Lite-8-PoE &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/ubiquiti-usw-lite-8-poe/
+3193,Cat6a Shielded Bulk Cable (305m),NT-CBL-GEN-001,publish,849,849,,instock,,"<p>Cat6a Shielded Bulk Cable (305m) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/cat6a-shielded-bulk-cable-305m/
+3192,10G SFP+ DAC Twinax Cable (1m),NT-CBL-FSC-001,publish,139,139,,instock,,"<p>10G SFP+ DAC Twinax Cable (1m) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/10g-sfp-dac-twinax-cable-1m/
+3191,FS.com 10GBASE-SR SFP+ Transceiver,NT-SFP-FSC-001,publish,129,129,,instock,,"<p>FS.com 10GBASE-SR SFP+ Transceiver &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/fs-com-10gbase-sr-sfp-transceiver/
+3180,TP-Link Omada EAP650,NT-WAP-TPL-002,publish,799,919,799,instock,,"<p>TP-Link Omada EAP650 &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/tp-link-omada-eap650/
+3179,TP-Link Omada EAP610,NT-WAP-TPL-001,publish,599,689,599,instock,,"<p>TP-Link Omada EAP610 &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/tp-link-omada-eap610/
+3178,Ubiquiti UniFi U7 Pro,NT-WAP-UBQ-002,publish,1399,1609,1399,instock,,"<p>Ubiquiti UniFi U7 Pro &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/ubiquiti-unifi-u7-pro/
+3177,Ubiquiti UniFi U6 Pro,NT-WAP-UBQ-001,publish,999,1149,999,instock,,"<p>Ubiquiti UniFi U6 Pro &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/ubiquiti-unifi-u6-pro/
+3176,Ubiquiti USW-Pro-24-PoE,NT-NET-UBQ-001,publish,3999,3999,,instock,,"<p>Ubiquiti USW-Pro-24-PoE &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/ubiquiti-usw-pro-24-poe/
+3175,MikroTik CRS312-4C+8XG-RM,NT-NET-MKT-004,publish,2799,2799,,instock,,"<p>MikroTik CRS312-4C+8XG-RM &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/mikrotik-crs312-4c8xg-rm/
+3174,MikroTik CRS328-24P-4S+RM (PoE),NT-NET-MKT-003,publish,2699,3109,2699,instock,,"<p>MikroTik CRS328-24P-4S+RM (PoE) &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/mikrotik-crs328-24p-4srm-poe/
+3173,MikroTik CRS326-24G-2S+RM,NT-NET-MKT-002,publish,1199,1199,,instock,,"<p>MikroTik CRS326-24G-2S+RM &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/mikrotik-crs326-24g-2srm/
+3172,MikroTik CRS305-1G-4S+IN,NT-NET-MKT-001,publish,999,999,,instock,,"<p>MikroTik CRS305-1G-4S+IN &#8211; Available at NeoGen Store</p>
+",https://neogen.store/product/mikrotik-crs305-1g-4sin/
+3083,Ubiquiti UniFi Cloud Gateway Ultra - All-in-One UniFi Gateway,NG-NET-012,publish,899,899,,instock,,"<p>Compact UniFi gateway combining router and UniFi Controller in one device. 2.5GbE WAN port, 4x GbE LAN ports with IDS/IPS support. The ideal heart of any UniFi network.</p>
+",https://neogen.store/product/ubiquiti-unifi-cloud-gateway-ultra-all-in-one-unifi-gateway/
+3082,TP-Link Archer AXE75 - AXE5400 Tri-Band WiFi 6E Router,NG-NET-011,publish,1299,1499,1299,instock,,"<p>Tri-band WiFi 6E router with 5400Mbps total speed. Supports the new 6GHz band with 4 external antennas and USB 3.0 port. Ideal for gaming and 4K streaming without lag.</p>
+",https://neogen.store/product/tp-link-archer-axe75-axe5400-tri-band-wifi-6e-router/
+3081,Ubiquiti UniFi USW-Flex-Mini - Ultra-Compact 5-Port Managed Switch,NG-NET-010,publish,219,219,,instock,,"<p>Palm-sized 5-port Gigabit managed switch. Powered by USB-C or PoE. Full UniFi management platform integration. Perfect for expanding your network anywhere.</p>
+",https://neogen.store/product/ubiquiti-unifi-usw-flex-mini-ultra-compact-5-port-managed-switch/
+3080,Netgear GS308E - 8-Port Gigabit Plus Smart Managed Switch,NG-NET-009,publish,209,209,,instock,,"<p>8-port Gigabit smart managed switch from Netgear with VLAN, QoS, and Port Mirroring. Metal housing, fanless design. Reliable performance at a competitive price.</p>
+",https://neogen.store/product/netgear-gs308e-8-port-gigabit-plus-smart-managed-switch/
+3079,MikroTik hEX S (RB760iGS) - 5-Port Gigabit Router with SFP and USB,NG-NET-008,publish,649,649,,instock,,"<p>MikroTik router with 5 Gigabit ports, SFP cage, and USB port. Dual-core 880MHz processor with hardware encryption support. Combines power and flexibility at a great price.</p>
+",https://neogen.store/product/mikrotik-hex-s-rb760igs-5-port-gigabit-router-with-sfp-and-usb/
+3078,Ubiquiti EdgeRouter X - Advanced Gigabit Router in a Pocket-Sized Form,NG-NET-007,publish,549,549,,instock,,"<p>Advanced router with 5 Gigabit ports and PoE passthrough. Supports VPN, firewall, and VLAN with up to 1 million packets per second throughput. Enterprise features at an unbeatable price.</p>
+",https://neogen.store/product/ubiquiti-edgerouter-x-advanced-gigabit-router-in-a-pocket-sized-form/
+3077,TP-Link TL-SG108E - 8-Port Gigabit Easy Smart Managed Switch,NG-NET-006,publish,229,229,,instock,,"<p>8-port Gigabit managed switch with VLAN, QoS, and IGMP Snooping. Metal housing with fanless design. Get managed switch features at an unmanaged switch price.</p>
+",https://neogen.store/product/tp-link-tl-sg108e-8-port-gigabit-easy-smart-managed-switch/
+3076,Ubiquiti UniFi 6 Lite - WiFi 6 Access Point (AX1500),NG-NET-005,publish,849,849,,instock,,"<p>WiFi 6 ceiling-mount access point with speeds up to 1500Mbps. PoE-powered and managed through the UniFi platform. The ideal way to extend professional-grade wireless coverage.</p>
+",https://neogen.store/product/ubiquiti-unifi-6-lite-wifi-6-access-point-ax1500/
+3075,MikroTik CRS305-1G-4S+IN - 4-Port 10G SFP+ Desktop Switch,NG-NET-004,publish,1149,1149,,instock,,"<p>Compact desktop switch with four 10Gbps SFP+ ports and one Gigabit management port. Dual OS support (RouterOS/SwOS). The most affordable way to bring 10G speeds to your network.</p>
+",https://neogen.store/product/mikrotik-crs305-1g-4sin-4-port-10g-sfp-desktop-switch/
+3074,Ubiquiti UniFi Switch Lite 16 PoE - 16-Port Managed Gigabit PoE+ Switch,NG-NET-003,publish,1399,1399,,instock,,"<p>16-port managed Gigabit switch with 8 PoE+ ports delivering 45W total PoE budget. Fully managed through the UniFi platform. Ideal for powering access points, cameras, and VoIP phones.</p>
+",https://neogen.store/product/ubiquiti-unifi-switch-lite-16-poe-16-port-managed-gigabit-poe-switch/
+3073,TP-Link Deco XE75 (3-Pack) - AXE5400 WiFi 6E Whole-Home Mesh System,NG-NET-002,publish,2099,2419,2099,instock,,"<p>Tri-band WiFi 6E mesh system covering up to 7,200 sq ft. Harness the new 6GHz band with speeds up to 5400Mbps total. The ultimate solution for large homes with zero dead zones.</p>
+",https://neogen.store/product/tp-link-deco-xe75-3-pack-axe5400-wifi-6e-whole-home-mesh-system/
+3072,MikroTik hAP ax3 - WiFi 6 Router with RouterOS Power,NG-NET-001,publish,799,799,,instock,,"<p>WiFi 6 router from MikroTik featuring a quad-core processor and speeds up to 1800Mbps. Four Gigabit Ethernet ports with the advanced RouterOS platform. Ideal for power users who demand full network control.</p>
+",https://neogen.store/product/mikrotik-hap-ax3-wifi-6-router-with-routeros-power/

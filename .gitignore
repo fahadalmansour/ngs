@@ -1,5 +1,5 @@
 node_modules/
-negt/wp-content/
+archive/wordpress-exports/negt/wp-content/
 .DS_Store
 ._.DS_Store
 ._*
@@ -8,7 +8,7 @@ negt/wp-content/
 .env
 .env.*
 *.env
-Products/.env
+archive/products-legacy/Products/.env
 
 # API credentials and secrets
 *credentials*
@@ -16,16 +16,16 @@ Products/.env
 
 # Backup files
 *.backup-*
-negt.zip
+archive/wordpress-exports/negt.zip
 
 # Product images (large binary files)
-Products/images/
+archive/products-legacy/Products/images/
 
 # Progress/state files (local to each developer)
 *_progress.json
 *.log
-Products/omnichannel_hub.db
-Products/output/
+archive/products-legacy/Products/omnichannel_hub.db
+archive/products-legacy/Products/output/
 
 # Python
 __pycache__/
@@ -33,9 +33,17 @@ __pycache__/
 *.pyo
 
 # Screenshots (local testing artifacts)
-screenshots/
+output/screenshots/
 
 
 # Organisation buckets
-_trash/
-_backups/
+archive/trash/
+archive/backups/
+archive/site-captures/*/
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/

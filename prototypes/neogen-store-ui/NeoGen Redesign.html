@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>NeoGen Store · Redesign</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="tokens.css">
+<style>
+  body { background:#1a1a18; margin:0; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="ios-frame.jsx"></script>
+<script type="text/babel" src="shared.jsx"></script>
+<script type="text/babel" src="homepage.jsx"></script>
+<script type="text/babel" src="gift-cards.jsx"></script>
+<script type="text/babel" src="shop.jsx"></script>
+<script type="text/babel" src="pdp.jsx"></script>
+<script type="text/babel" src="cart.jsx"></script>
+<script type="text/babel" src="checkout.jsx"></script>
+<script type="text/babel" src="order-confirm.jsx"></script>
+<script type="text/babel" src="search.jsx"></script>
+<script type="text/babel" src="account.jsx"></script>
+<script type="text/babel" src="auth.jsx"></script>
+<script type="text/babel" src="tracking.jsx"></script>
+<script type="text/babel" src="support.jsx"></script>
+<script type="text/babel" src="missing-states.jsx"></script>
+<script type="text/babel" src="comparison.jsx"></script>
+<script type="text/babel" src="notifications.jsx"></script>
+<script type="text/babel" src="admin.jsx"></script>
+<script type="text/babel" src="deck.jsx"></script>
+<script type="text/babel" src="mobile.jsx"></script>
+<script type="text/babel" src="about.jsx"></script>
+<script type="text/babel" src="contact.jsx"></script>
+<script type="text/babel" src="faq.jsx"></script>
+<script type="text/babel" src="shipping.jsx"></script>
+<script type="text/babel" src="returns.jsx"></script>
+<script type="text/babel" src="warranty.jsx"></script>
+<script type="text/babel" src="terms.jsx"></script>
+<script type="text/babel" src="category.jsx"></script>
+<script type="text/babel" src="pricing.jsx"></script>
+
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "accent": "sky",
+  "density": "compact",
+  "lang": "ar"
+}/*EDITMODE-END*/;
+
+const App = () => {
+  const [tw, setTw] = useTweaks(TWEAK_DEFAULTS);
+
+  React.useEffect(() => {
+    const accents = {
+      najdi: '#22C55E',
+      sky:   '#38BDF8',
+      sand:  '#F59E0B',
+      rose:  '#F43F5E',
+    };
+    const root = document.documentElement;
+    const col = accents[tw.accent] || accents.sky;
+    root.style.setProperty('--accent', col);
+    // derive soft/deep from accent
+    root.style.setProperty('--accent-soft', tw.accent==='sky'?'#BAE6FD': tw.accent==='najdi'?'#DCFCE7': tw.accent==='sand'?'#FEF3C7':'#FFE4E6');
+    root.style.setProperty('--accent-deep', tw.accent==='sky'?'#0284C7': tw.accent==='najdi'?'#16A34A': tw.accent==='sand'?'#D97706':'#E11D48');
+    root.style.setProperty('--accent-ink',  tw.accent==='sky'?'#0369A1': tw.accent==='najdi'?'#15803D': tw.accent==='sand'?'#B45309':'#BE123C');
+    root.style.setProperty('--accent-wash', tw.accent==='sky'?'rgba(56,189,248,0.08)': tw.accent==='najdi'?'rgba(34,197,94,0.08)': tw.accent==='sand'?'rgba(245,158,11,0.08)':'rgba(244,63,94,0.08)');
+    // density
+    const dens = {compact:'12px 20px', comfortable:'18px 32px', spacious:'28px 48px'};
+    root.style.setProperty('--section-pad', dens[tw.density]||dens.comfortable);
+    // lang direction — just flag for now, pages are already RTL
+    root.setAttribute('dir', tw.lang==='en' ? 'ltr' : 'rtl');
+  }, [tw.accent, tw.density, tw.lang]);
+
+  return (
+    <>
+      <DesignCanvas title="NeoGen Store · Redesign" subtitle="بيع التقنية للخليج · sober premium · bilingual RTL">
+        <DCSection id="store" title="Store · المتجر">
+          <DCArtboard id="home" label="01 · Homepage (hero gallery)" width={1440} height={3800}>
+            <Homepage/>
+          </DCArtboard>
+          <DCArtboard id="shop" label="02 · Shop / Listing" width={1440} height={2200}>
+            <Shop/>
+          </DCArtboard>
+          <DCArtboard id="pdp" label="03 · Product Detail" width={1440} height={2600}>
+            <PDP/>
+          </DCArtboard>
+        </DCSection>
+        <DCSection id="cards" title="Gift Cards · بطاقات رقمية">
+          <DCArtboard id="gift" label="04 · Gift Cards (10 regions)" width={1440} height={2600}>
+            <GiftCards/>
+          </DCArtboard>
+        </DCSection>
+        <DCSection id="checkout" title="Cart & Checkout">
+          <DCArtboard id="cart" label="05 · Cart" width={1440} height={1400}>
+            <Cart/>
+          </DCArtboard>
+          <DCArtboard id="check" label="06 · Checkout" width={1440} height={1500}>
+            <Checkout/>
+          </DCArtboard>
+          <DCArtboard id="confirm" label="07 · Order Confirmation" width={1440} height={1600}>
+            <OrderConfirmation/>
+          </DCArtboard>
+        </DCSection>
+        <DCSection id="search" title="Search, Account & Auth">
+          <DCArtboard id="srch" label="08 · Search + Quick View" width={1440} height={1800}>
+            <SearchResults/>
+          </DCArtboard>
+          <DCArtboard id="acct" label="09 · User Account (Gift Cards default)" width={1440} height={2200}>
+            <Account/>
+          </DCArtboard>
+          <DCArtboard id="auth" label="10 · Login / Signup (phone default)" width={1440} height={900}>
+            <Auth/>
+          </DCArtboard>
+          <DCArtboard id="track" label="11 · Shipment Tracking" width={1440} height={1800}>
+            <ShipmentTracking/>
+          </DCArtboard>
+          <DCArtboard id="supp" label="12 · Support & Messaging" width={1440} height={1800}>
+            <Support/>
+          </DCArtboard>
+          <DCArtboard id="pay" label="13 · Payment Step (Checkout step 3)" width={1440} height={1400}>
+            <PaymentStep/>
+          </DCArtboard>
+          <DCArtboard id="empty" label="14 · Empty & Error States" width={1440} height={900}>
+            <EmptyStates/>
+          </DCArtboard>
+          <DCArtboard id="forgot" label="15 · Forgot Password" width={1440} height={700}>
+            <ForgotPassword/>
+          </DCArtboard>
+          <DCArtboard id="compare" label="16 · Product Comparison" width={1440} height={1600}>
+            <Comparison/>
+          </DCArtboard>
+          <DCArtboard id="notifs" label="17 · Notifications Center" width={1440} height={1600}>
+            <Notifications/>
+          </DCArtboard>
+          <DCArtboard id="admin" label="18 · Admin Dashboard" width={1440} height={1200}>
+            <AdminDashboard/>
+          </DCArtboard>
+        </DCSection>
+        <DCSection id="pages" title="Info & Policies · صفحات المعلومات">
+          <DCArtboard id="about" label="23 · About Us" width={1440} height={2200}>
+            <About/>
+          </DCArtboard>
+          <DCArtboard id="contact" label="24 · Contact" width={1440} height={1400}>
+            <Contact/>
+          </DCArtboard>
+          <DCArtboard id="faq" label="25 · FAQ" width={1440} height={2400}>
+            <FAQ/>
+          </DCArtboard>
+          <DCArtboard id="shipping" label="26 · Shipping & Delivery" width={1440} height={1800}>
+            <Shipping/>
+          </DCArtboard>
+          <DCArtboard id="returns" label="27 · Returns & Refunds" width={1440} height={2200}>
+            <Returns/>
+          </DCArtboard>
+          <DCArtboard id="warranty" label="28 · Warranty" width={1440} height={2000}>
+            <Warranty/>
+          </DCArtboard>
+          <DCArtboard id="terms" label="29 · Terms & Conditions" width={1440} height={2400}>
+            <Terms/>
+          </DCArtboard>
+          <DCArtboard id="cat" label="30 · Category Page" width={1440} height={2200}>
+            <Category/>
+          </DCArtboard>
+          <DCArtboard id="pricing" label="31 · Services & Pricing" width={1440} height={2600}>
+            <Pricing/>
+          </DCArtboard>
+        </DCSection>
+        <DCSection id="mobile" title="Mobile · iPhone frames">
+          <DCArtboard id="mob-home" label="19 · Mobile Homepage" width={430} height={932}>
+            <IOSDevice><MobileHomepage/></IOSDevice>
+          </DCArtboard>
+          <DCArtboard id="mob-gc" label="20 · Mobile Gift Cards" width={430} height={932}>
+            <IOSDevice><MobileGiftCards/></IOSDevice>
+          </DCArtboard>
+          <DCArtboard id="mob-pdp" label="21 · Mobile PDP" width={430} height={932}>
+            <IOSDevice><MobilePDP/></IOSDevice>
+          </DCArtboard>
+        </DCSection>
+        <DCSection id="deck" title="Pitch Deck · 6 slides">
+          <DCArtboard id="pitch" label="22 · Investor Deck" width={1280} height={4600}>
+            <PitchDeck/>
+          </DCArtboard>
+        </DCSection>
+      </DesignCanvas>
+
+      <TweaksPanel title="Tweaks · إعدادات التصميم">
+        <TweakSection title="لون الإيحاء · Accent">
+          <TweakRadio
+            value={tw.accent}
+            onChange={v => setTw('accent', v)}
+            options={[
+              {value:'sky',   label:'Sky'},
+              {value:'najdi', label:'Najdi'},
+              {value:'sand',  label:'Sand'},
+              {value:'rose',  label:'Rose'},
+            ]}
+          />
+        </TweakSection>
+        <TweakSection title="الكثافة · Density">
+          <TweakRadio
+            value={tw.density}
+            onChange={v => setTw('density', v)}
+            options={[
+              {value:'compact',     label:'Compact'},
+              {value:'comfortable', label:'Default'},
+              {value:'spacious',    label:'Airy'},
+            ]}
+          />
+        </TweakSection>
+        <TweakSection title="اللغة · Language">
+          <TweakRadio
+            value={tw.lang}
+            onChange={v => setTw('lang', v)}
+            options={[
+              {value:'ar', label:'عربي'},
+              {value:'en', label:'English'},
+            ]}
+          />
+        </TweakSection>
+      </TweaksPanel>
+    </>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

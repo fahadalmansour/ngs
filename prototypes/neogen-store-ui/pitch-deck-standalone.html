@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>NeoGen · Pitch Deck 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,400&family=Tajawal:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; background: #080F1C; font-family: 'Tajawal', sans-serif; }
+
+deck-stage { --slide-bg: #0F1A2E; }
+
+section {
+  width: 1280px; height: 720px;
+  background: linear-gradient(135deg, #0F1A2E 0%, #1A2B4B 100%);
+  color: #fff;
+  padding: 52px 60px;
+  display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+  font-family: 'Tajawal', sans-serif;
+}
+section.light {
+  background: #F8FAFC;
+  color: #0F172A;
+}
+
+/* Grid overlay */
+section::before {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+section.light::before {
+  background:
+    linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Slide header */
+.slide-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 36px; position: relative; z-index: 1;
+}
+.slide-logo { display: flex; align-items: center; gap: 10px; }
+.slide-logo img { height: 22px; filter: brightness(0) invert(1); }
+.slide-logo.dark img { filter: none; }
+.slide-wordmark {
+  font-family: 'Chakra Petch', monospace; font-weight: 700; font-size: 13px;
+  color: rgba(255,255,255,0.9);
+}
+.slide-wordmark.dark { color: #1A2B4B; }
+.slide-num {
+  font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.28);
+}
+.slide-num.dark { color: #94A3B8; }
+
+/* Slide footer */
+.slide-footer {
+  display: flex; justify-content: space-between; margin-top: auto;
+  padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08);
+  font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.22); position: relative; z-index: 1;
+}
+.slide-footer.dark { border-top-color: rgba(15,23,42,0.1); color: #94A3B8; }
+
+.slide-content { flex: 1; position: relative; z-index: 1; display: flex; flex-direction: column; }
+
+/* Accent line */
+.accent-bar { width: 56px; height: 3px; background: #38BDF8; border-radius: 2px; }
+
+/* Mono tag */
+.tag {
+  font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.32); margin-bottom: 16px; display: block;
+}
+.tag.dark { color: #64748B; }
+
+/* Numbers */
+.big-num {
+  font-family: 'Chakra Petch', monospace; font-weight: 700;
+  font-size: 56px; line-height: 1; color: #38BDF8;
+  letter-spacing: -0.02em;
+}
+
+.grid-border {
+  border: 1px solid rgba(255,255,255,0.10); border-radius: 8px; overflow: hidden;
+}
+.grid-border.dark { border-color: rgba(15,23,42,0.12); }
+.grid-cell {
+  padding: 24px 28px;
+  border-inline-end: 1px solid rgba(255,255,255,0.10);
+}
+.grid-cell:last-child { border-inline-end: none; }
+.grid-cell.dark { border-inline-end-color: rgba(15,23,42,0.1); }
+
+h1.display {
+  font-family: 'Chakra Petch', monospace; font-weight: 700;
+  font-size: 92px; line-height: 0.9; letter-spacing: -0.03em; margin: 0;
+}
+h2.display {
+  font-family: 'Tajawal', sans-serif; font-weight: 700;
+  font-size: 52px; line-height: 1.0; margin: 0 0 32px;
+}
+</style>
+</head>
+<body>
+<script src="deck-stage.js"></script>
+<deck-stage>
+
+  <!-- 01 COVER -->
+  <section data-screen-label="01 Cover">
+    <div class="slide-header">
+      <div class="slide-logo">
+        <img src="assets/ng-mark.png" alt="NG">
+        <span class="slide-wordmark">NEOGEN STORE</span>
+      </div>
+      <span class="slide-num">01 / 06 · COVER</span>
+    </div>
+    <div class="slide-content" style="justify-content:center">
+      <span class="tag">عرض تقديمي · INVESTOR DECK · Q2 2026</span>
+      <h1 class="display">
+        جيل<br>
+        <span style="color:#38BDF8;font-style:italic;font-weight:400">النِّقلة</span><br>
+        التقنية.
+      </h1>
+      <div class="accent-bar" style="margin:28px 0"></div>
+      <p style="font-size:19px;color:rgba(255,255,255,0.6);max-width:580px;line-height:1.6;margin:0 0 32px">
+        متجر تقني سعودي لمحترفي الشبكات، الهوم لاب، البيوت الذكية، والألعاب.<br>
+        شحن من المملكة لكل دول الخليج.
+      </p>
+      <div style="display:flex;gap:10px;font-size:28px">🇸🇦 🇦🇪 🇰🇼 🇧🇭 🇴🇲 🇶🇦</div>
+    </div>
+    <div class="slide-footer">
+      <span>متجر تقني سعودي · GCC · 2026</span>
+      <span>neogen.store</span>
+    </div>
+  </section>
+
+  <!-- 02 PROBLEM -->
+  <section data-screen-label="02 Problem">
+    <div class="slide-header">
+      <div class="slide-logo"><img src="assets/ng-mark.png" alt="NG"><span class="slide-wordmark">NEOGEN STORE</span></div>
+      <span class="slide-num">02 / 06 · المشكلة</span>
+    </div>
+    <div class="slide-content" style="display:grid;grid-template-columns:1fr 1.3fr;gap:60px;align-items:center">
+      <div>
+        <span class="tag">01 · المشكلة</span>
+        <h2 class="display" style="font-size:44px">المشغّل المحترف في الخليج بلا متجر يفهمه.</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="display:grid;grid-template-columns:32px 1fr;gap:16px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:18px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(255,255,255,0.28);padding-top:3px">01</span>
+          <div><h3 style="margin:0 0 5px;font-size:20px;font-weight:700">متاجر عامة</h3><p style="margin:0;font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6">تبيع كل شيء، لا تختار، لا تختبر. المشغّل يضيع في الضوضاء.</p></div>
+        </div>
+        <div style="display:grid;grid-template-columns:32px 1fr;gap:16px;border-bottom:1px solid rgba(255,255,255,0.07);padding-bottom:18px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(255,255,255,0.28);padding-top:3px">02</span>
+          <div><h3 style="margin:0 0 5px;font-size:20px;font-weight:700">طلب من الخارج</h3><p style="margin:0;font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6">أسابيع شحن، جمارك، بدون ضمان محلي. تجربة محبطة.</p></div>
+        </div>
+        <div style="display:grid;grid-template-columns:32px 1fr;gap:16px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(255,255,255,0.28);padding-top:3px">03</span>
+          <div><h3 style="margin:0 0 5px;font-size:20px;font-weight:700">بائعون أفراد</h3><p style="margin:0;font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6">بدون فاتورة، بدون ضريبة، بدون دعم. مخاطرة غير محسوبة.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer"><span>متجر تقني سعودي · GCC · 2026</span><span>neogen.store</span></div>
+  </section>
+
+  <!-- 03 SOLUTION -->
+  <section data-screen-label="03 Solution">
+    <div class="slide-header">
+      <div class="slide-logo"><img src="assets/ng-mark.png" alt="NG"><span class="slide-wordmark">NEOGEN STORE</span></div>
+      <span class="slide-num">03 / 06 · الحل</span>
+    </div>
+    <div class="slide-content">
+      <span class="tag">02 · الحل</span>
+      <h2 class="display" style="font-size:48px;margin-bottom:36px">كتالوج مختار. خدمة محلية. مواصفات مفهومة.</h2>
+      <div class="grid-border" style="display:grid;grid-template-columns:1fr 1fr 1fr;flex:1">
+        <div class="grid-cell">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(255,255,255,0.28)">01</span>
+          <div class="accent-bar" style="margin:14px 0"></div>
+          <h3 style="margin:0 0 6px;font-size:22px;font-weight:700">كل وحدة مختارة</h3>
+          <span style="font-family:'Chakra Petch',monospace;font-size:11px;color:#38BDF8;display:block;margin-bottom:10px">Curated Catalog</span>
+          <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6">٢١٥ منتج عبر ٦ فئات. كل وحدة اختبرناها. لا حشو، لا تكرار.</p>
+        </div>
+        <div class="grid-cell">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(255,255,255,0.28)">02</span>
+          <div class="accent-bar" style="margin:14px 0"></div>
+          <h3 style="margin:0 0 6px;font-size:22px;font-weight:700">شحن من المملكة</h3>
+          <span style="font-family:'Chakra Petch',monospace;font-size:11px;color:#38BDF8;display:block;margin-bottom:10px">Ships from KSA</span>
+          <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6">مستودعات في الرياض. شحن 2–5 أيام لكل دول الخليج.</p>
+        </div>
+        <div class="grid-cell" style="border-inline-end:none">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:rgba(255,255,255,0.28)">03</span>
+          <div class="accent-bar" style="margin:14px 0"></div>
+          <h3 style="margin:0 0 6px;font-size:22px;font-weight:700">دعم المشغّل</h3>
+          <span style="font-family:'Chakra Petch',monospace;font-size:11px;color:#38BDF8;display:block;margin-bottom:10px">Operator Support</span>
+          <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6">مكتب خدمة لتنفيذ الشبكات والبيوت الذكية بالموقع.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer"><span>متجر تقني سعودي · GCC · 2026</span><span>neogen.store</span></div>
+  </section>
+
+  <!-- 04 MARKET -->
+  <section data-screen-label="04 Market">
+    <div class="slide-header">
+      <div class="slide-logo"><img src="assets/ng-mark.png" alt="NG"><span class="slide-wordmark">NEOGEN STORE</span></div>
+      <span class="slide-num">04 / 06 · السوق</span>
+    </div>
+    <div class="slide-content" style="display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center">
+      <div>
+        <span class="tag">03 · السوق · GCC TAM</span>
+        <h2 class="display" style="font-size:44px;margin-bottom:28px">سوق الخليج.<br>٦ دول. فرصة واحدة.</h2>
+        <div class="grid-border" style="display:grid;grid-template-columns:1fr 1fr 1fr">
+          <div class="grid-cell" style="padding:16px 18px;border-bottom:1px solid rgba(255,255,255,0.08)"><div style="font-size:20px;margin-bottom:4px">🇸🇦</div><div style="font-family:'Chakra Petch',monospace;font-weight:700;font-size:16px">SA</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px">36M</div></div>
+          <div class="grid-cell" style="padding:16px 18px;border-bottom:1px solid rgba(255,255,255,0.08)"><div style="font-size:20px;margin-bottom:4px">🇦🇪</div><div style="font-family:'Chakra Petch',monospace;font-weight:700;font-size:16px">AE</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px">10M</div></div>
+          <div class="grid-cell" style="padding:16px 18px;border-bottom:1px solid rgba(255,255,255,0.08);border-inline-end:none"><div style="font-size:20px;margin-bottom:4px">🇰🇼</div><div style="font-family:'Chakra Petch',monospace;font-weight:700;font-size:16px">KW</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px">4.3M</div></div>
+          <div class="grid-cell" style="padding:16px 18px"><div style="font-size:20px;margin-bottom:4px">🇶🇦</div><div style="font-family:'Chakra Petch',monospace;font-weight:700;font-size:16px">QA</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px">3M</div></div>
+          <div class="grid-cell" style="padding:16px 18px"><div style="font-size:20px;margin-bottom:4px">🇴🇲</div><div style="font-family:'Chakra Petch',monospace;font-weight:700;font-size:16px">OM</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px">5.1M</div></div>
+          <div class="grid-cell" style="padding:16px 18px;border-inline-end:none"><div style="font-size:20px;margin-bottom:4px">🇧🇭</div><div style="font-family:'Chakra Petch',monospace;font-weight:700;font-size:16px">BH</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px">1.7M</div></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:16px"><div class="big-num">60M+</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.4);margin-top:6px">إجمالي السكان GCC</div></div>
+        <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:16px"><div class="big-num">$45B</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.4);margin-top:6px">سوق الإلكترونيات</div></div>
+        <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:16px"><div class="big-num">72%</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.4);margin-top:6px">معدل اعتماد التقنية</div></div>
+        <div><div class="big-num">18–45</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.4);margin-top:6px">الفئة المستهدفة</div></div>
+      </div>
+    </div>
+    <div class="slide-footer"><span>متجر تقني سعودي · GCC · 2026</span><span>neogen.store</span></div>
+  </section>
+
+  <!-- 05 TRACTION -->
+  <section data-screen-label="05 Traction">
+    <div class="slide-header">
+      <div class="slide-logo"><img src="assets/ng-mark.png" alt="NG"><span class="slide-wordmark">NEOGEN STORE</span></div>
+      <span class="slide-num">05 / 06 · النتائج</span>
+    </div>
+    <div class="slide-content">
+      <span class="tag">04 · النتائج · H1 2026</span>
+      <h2 class="display" style="font-size:44px;margin-bottom:28px">النصف الأول. الأرقام تتكلّم.</h2>
+      <div class="grid-border" style="display:grid;grid-template-columns:repeat(4,1fr);margin-bottom:20px">
+        <div class="grid-cell"><div class="big-num">215</div><div style="font-size:14px;color:rgba(255,255,255,0.8);margin-top:8px">منتج في الكتالوج</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:4px">+40% Q/Q</div></div>
+        <div class="grid-cell"><div class="big-num">16</div><div style="font-size:14px;color:rgba(255,255,255,0.8);margin-top:8px">علامة موثّقة</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:4px">أصلية 100%</div></div>
+        <div class="grid-cell"><div class="big-num">1,247</div><div style="font-size:14px;color:rgba(255,255,255,0.8);margin-top:8px">طلب مكتمل</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:4px">98% رضا</div></div>
+        <div class="grid-cell" style="border-inline-end:none"><div class="big-num">6/6</div><div style="font-size:14px;color:rgba(255,255,255,0.8);margin-top:8px">دول الخليج</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:4px">مغطّاة</div></div>
+      </div>
+      <!-- Bar chart -->
+      <div style="display:flex;gap:8px;align-items:flex-end;height:100px;border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:12px 20px;background:rgba(255,255,255,0.02)">
+        <div style="display:flex;gap:8px;align-items:flex-end;width:100%;height:100%">
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%"><div style="width:100%;background:#38BDF8;border-radius:2px;height:35%;opacity:0.75;margin-top:auto"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,0.3);text-transform:uppercase">Jan</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%"><div style="width:100%;background:#38BDF8;border-radius:2px;height:47%;opacity:0.8;margin-top:auto"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,0.3);text-transform:uppercase">Feb</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%"><div style="width:100%;background:#38BDF8;border-radius:2px;height:60%;opacity:0.85;margin-top:auto"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,0.3);text-transform:uppercase">Mar</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%"><div style="width:100%;background:#38BDF8;border-radius:2px;height:72%;opacity:0.9;margin-top:auto"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,0.3);text-transform:uppercase">Apr</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%"><div style="width:100%;background:#38BDF8;border-radius:2px;height:84%;opacity:0.95;margin-top:auto"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,0.3);text-transform:uppercase">May</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%"><div style="width:100%;background:#38BDF8;border-radius:2px;height:100%;margin-top:auto"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,0.3);text-transform:uppercase">Jun</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer"><span>متجر تقني سعودي · GCC · 2026</span><span>neogen.store</span></div>
+  </section>
+
+  <!-- 06 CLOSE -->
+  <section data-screen-label="06 Close">
+    <div class="slide-header">
+      <div class="slide-logo"><img src="assets/ng-mark.png" alt="NG"><span class="slide-wordmark">NEOGEN STORE</span></div>
+      <span class="slide-num">06 / 06 · CLOSE</span>
+    </div>
+    <div class="slide-content" style="justify-content:space-between">
+      <div>
+        <h2 style="font-family:'Tajawal',sans-serif;font-size:76px;font-weight:700;line-height:0.95;margin:0 0 28px;letter-spacing:-0.02em">
+          نبني البنية التقنية للخليج.<br>
+          <span style="color:rgba(255,255,255,0.28)">مشغّل واحد. ست دول.</span>
+        </h2>
+        <div class="accent-bar" style="margin-bottom:36px"></div>
+      </div>
+      <div class="grid-border" style="display:grid;grid-template-columns:1fr 1fr 1fr">
+        <div class="grid-cell">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.28);margin-bottom:8px">تواصل</div>
+          <div style="font-family:'Chakra Petch',monospace;font-size:17px;font-weight:600;color:#38BDF8">support@neogen.store</div>
+        </div>
+        <div class="grid-cell">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.28);margin-bottom:8px">واتساب</div>
+          <div style="font-family:'Chakra Petch',monospace;font-size:17px;font-weight:600;color:#38BDF8">+966 57 013 1122</div>
+        </div>
+        <div class="grid-cell" style="border-inline-end:none">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.28);margin-bottom:8px">الموقع</div>
+          <div style="font-family:'Chakra Petch',monospace;font-size:17px;font-weight:600;color:#38BDF8">neogen.store</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer"><span>متجر تقني سعودي · GCC · 2026</span><span>neogen.store</span></div>
+  </section>
+
+</deck-stage>
+</body>
+</html>

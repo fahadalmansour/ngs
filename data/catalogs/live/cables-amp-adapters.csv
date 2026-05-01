@@ -1,0 +1,17 @@
+id,name,sku,status,price,regular_price,sale_price,stock_status,stock_quantity,short_description,permalink
+3121,HDMI 2.1 8K Fiber Optic Cable (10m) - Zero Signal Loss,NG-CBL-008,publish,359,359,,instock,,"<p>HDMI 2.1 fiber optic cable supporting 8K@60Hz and 4K@120Hz. 10-meter length with zero signal degradation. Supports eARC, VRR, and ALLM. Perfect for long-distance runs.</p>
+",https://neogen.store/product/hdmi-2-1-8k-fiber-optic-cable-10m-zero-signal-loss/
+3120,DAC SFP+ 10G Direct Attach Cable (3m) - Direct Switch-to-Switch Connection,NG-CBL-007,publish,229,229,,instock,,"<p>Direct Attach Copper (DAC) cable with dual SFP+ connectors for 10Gbps speed. 3-meter length. Cost-effective alternative to optical SFP+ modules. Compatible with Mikrotik, Ubiquiti, Cisco, and more.</p>
+",https://neogen.store/product/dac-sfp-10g-direct-attach-cable-3m-direct-switch-to-switch-connection/
+3119,Ugreen 5-in-1 USB-C Dock - HDMI 4K + Ethernet + USB 3.0,NG-CBL-006,publish,249,289,249,instock,,"<p>USB-C adapter with five ports: HDMI 4K@60Hz, Gigabit Ethernet, 2x USB-A 3.0, and USB-C PD 100W. Compact fanless design. Perfect for work and presentations.</p>
+",https://neogen.store/product/ugreen-5-in-1-usb-c-dock-hdmi-4k-ethernet-usb-3-0/
+3118,Baseus USB-C 100W Charging Cable (2m) - Fast Charge for Laptops and Phones,NG-CBL-005,publish,109,109,,instock,,"<p>USB-C to USB-C cable with 100W charging and 480Mbps data transfer. 2-meter nylon braided design. Supports PD 3.0 and QC 4.0 for ultra-fast charging.</p>
+",https://neogen.store/product/baseus-usb-c-100w-charging-cable-2m-fast-charge-for-laptops-and-phones/
+3117,Ugreen Cat 8 Ethernet Cable (5m) - 40Gbps Network Cable,NG-CBL-004,publish,149,149,,instock,,"<p>Cat 8 Ethernet cable with 40Gbps speed and 2000MHz bandwidth. Gold-plated RJ45 connectors with dual S/FTP shielding. 5-meter length. Perfect for 10G home and office networks.</p>
+",https://neogen.store/product/ugreen-cat-8-ethernet-cable-5m-40gbps-network-cable/
+3116,Cable Matters Thunderbolt 4 Cable (2m) - 40Gbps with 100W Charging,NG-CBL-003,publish,419,419,,instock,,"<p>Intel-certified Thunderbolt 4 cable with 40Gbps speed and 100W PD charging. Supports dual 4K or single 8K display. Compatible with USB4 and Thunderbolt 3. 2-meter length.</p>
+",https://neogen.store/product/cable-matters-thunderbolt-4-cable-2m-40gbps-with-100w-charging/
+3115,Anker USB-C Hub 7-in-1 - Multi-Port Adapter for Laptops,NG-CBL-002,publish,349,349,,instock,,"<p>7-in-1 USB-C hub: HDMI 4K, 2x USB-A 3.0, USB-C PD 100W, SD/microSD, and USB-C data. Sleek aluminum design. The perfect laptop companion.</p>
+",https://neogen.store/product/anker-usb-c-hub-7-in-1-multi-port-adapter-for-laptops/
+3114,Ugreen USB-C to HDMI 2.1 Cable (2m) - 8K@60Hz Output,NG-CBL-001,publish,219,219,,instock,,"<p>USB-C to HDMI 2.1 cable supporting 8K@60Hz and 4K@120Hz. 2-meter length with gold-plated connectors. Compatible with MacBook, iPad Pro, and Samsung DeX devices.</p>
+",https://neogen.store/product/ugreen-usb-c-to-hdmi-2-1-cable-2m-8k60hz-output/
