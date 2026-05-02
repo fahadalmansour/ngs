@@ -1,0 +1,128 @@
+{
+  "name": "W-BOT-RECV — Telegram Bot Intent Router",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "telegram-bot",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "bot-webhook",
+      "name": "Telegram Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [260, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const body = $input.first().json.body;\nconst msg = body?.message || body?.edited_message;\nif (!msg) return [];\n\nconst text = (msg.text || '').trim();\nconst chatId = msg.chat.id;\nconst userId = msg.from?.id;\nconst username = msg.from?.username || 'unknown';\n\n// Intent classification\nlet intent = 'ai';\nconst lower = text.toLowerCase();\n\nif (/^\\/?start$/i.test(text)) {\n  intent = 'start';\n} else if (/طلب|order|#[0-9]+|رقم الطلب|حالة|status/i.test(text)) {\n  intent = 'order';\n} else if (/بطاقة|كود|سعر|product|catalog|ps|xbox|steam|apple|google|fortnite|pubg|minecraft/i.test(text)) {\n  intent = 'catalog';\n}\n\nreturn [{ json: { intent, text, chatId, userId, username, raw: body } }];"
+      },
+      "id": "classify-intent",
+      "name": "Classify Intent",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [480, 300]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "rules": [
+            { "conditions": { "options": {"caseSensitive": false}, "conditions": [{"leftValue": "={{ $json.intent }}", "rightValue": "start", "operator": {"type": "string", "operation": "equals"}}]}, "renameOutput": true, "outputKey": "start" },
+            { "conditions": { "options": {"caseSensitive": false}, "conditions": [{"leftValue": "={{ $json.intent }}", "rightValue": "order", "operator": {"type": "string", "operation": "equals"}}]}, "renameOutput": true, "outputKey": "order" },
+            { "conditions": { "options": {"caseSensitive": false}, "conditions": [{"leftValue": "={{ $json.intent }}", "rightValue": "catalog", "operator": {"type": "string", "operation": "equals"}}]}, "renameOutput": true, "outputKey": "catalog" }
+          ]
+        },
+        "options": { "fallbackOutput": "extra" }
+      },
+      "id": "route-intent",
+      "name": "Route Intent",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [700, 300]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.chatId }}",
+        "text": "مرحبا بك في NovaKeys Store!\n\nاكتب:\n- اسم المنتج للبحث (مثال: PS Plus، Steam)\n- رقم الطلب للاستعلام (مثال: #1234)\n- اي سؤال اخر وسيجيبك مساعدنا الذكي\n\nنحن هنا للمساعدة 24/7",
+        "additionalFields": { "parse_mode": "HTML" }
+      },
+      "id": "send-welcome",
+      "name": "Send Welcome",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [920, 140],
+      "credentials": { "telegramApi": { "id": "5QJU3KIwtEpU6myF", "name": "NeoGenstoreAlertsBot" } }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:5678/webhook/telegram-bot-order",
+        "sendBody": true,
+        "bodyParameters": { "parameters": [{"name": "chatId", "value": "={{ $json.chatId }}"}, {"name": "text", "value": "={{ $json.text }}"}] }
+      },
+      "id": "forward-order",
+      "name": "Forward to Order Bot",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [920, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:5678/webhook/telegram-bot-catalog",
+        "sendBody": true,
+        "bodyParameters": { "parameters": [{"name": "chatId", "value": "={{ $json.chatId }}"}, {"name": "text", "value": "={{ $json.text }}"}] }
+      },
+      "id": "forward-catalog",
+      "name": "Forward to Catalog Bot",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [920, 460]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:5678/webhook/telegram-bot-ai",
+        "sendBody": true,
+        "bodyParameters": { "parameters": [{"name": "chatId", "value": "={{ $json.chatId }}"}, {"name": "text", "value": "={{ $json.text }}"}] }
+      },
+      "id": "forward-ai",
+      "name": "Forward to AI Bot",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [920, 620]
+    },
+    {
+      "parameters": { "respondWith": "noData", "options": {} },
+      "id": "respond-ok",
+      "name": "Respond OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1140, 300]
+    }
+  ],
+  "connections": {
+    "Telegram Webhook": { "main": [[{"node": "Classify Intent", "type": "main", "index": 0}]] },
+    "Classify Intent": { "main": [[{"node": "Route Intent", "type": "main", "index": 0}]] },
+    "Route Intent": {
+      "main": [
+        [{"node": "Send Welcome", "type": "main", "index": 0}],
+        [{"node": "Forward to Order Bot", "type": "main", "index": 0}],
+        [{"node": "Forward to Catalog Bot", "type": "main", "index": 0}],
+        [{"node": "Forward to AI Bot", "type": "main", "index": 0}]
+      ]
+    },
+    "Send Welcome": { "main": [[{"node": "Respond OK", "type": "main", "index": 0}]] },
+    "Forward to Order Bot": { "main": [[{"node": "Respond OK", "type": "main", "index": 0}]] },
+    "Forward to Catalog Bot": { "main": [[{"node": "Respond OK", "type": "main", "index": 0}]] },
+    "Forward to AI Bot": { "main": [[{"node": "Respond OK", "type": "main", "index": 0}]] }
+  },
+  "settings": { "executionOrder": "v1" },
+  "tags": [{"name": "telegram-bot"}],
+  "_meta": {
+    "description": "Receives all Telegram messages, classifies intent (start/order/catalog/ai), routes to sub-workflows via internal HTTP calls.",
+    "webhook_url": "https://n8n.yourdomain.com/webhook/telegram-bot",
+    "telegram_set_webhook": "POST https://api.telegram.org/bot8768777836:AAF_2g_r8FbDll_B9m_h4gqkp2C7GcoXqsg/setWebhook?url=https://n8n.yourdomain.com/webhook/telegram-bot"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "name": "W-BOT-AI — Claude Haiku Customer Support Bot",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "telegram-bot-ai",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "ai-webhook",
+      "name": "AI Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [260, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const body = $input.first().json.body || $input.first().json;\nconst userMessage = (body.text || '').trim();\nconst chatId = body.chatId;\n\nconst systemPrompt = `You are a customer support assistant for NovaKeys Store (neogen.store), a digital gift card store based in Saudi Arabia.\n\nKEY FACTS:\n- Store: NovaKeys Store (neogen.store)\n- CR: 7053130576 | VAT: 3145127947\n- Phone/WhatsApp: 0570131122\n- Location: Riyadh, Saudi Arabia\n- Delivery: Instant digital delivery within 60 seconds of payment\n\nPRODUCTS (digital codes only, no physical goods):\n- PlayStation Plus: Essential 29 SAR/mo, Extra 55 SAR/mo, Premium 69 SAR/mo\n- Xbox Game Pass Ultimate: 48 SAR/mo, 130 SAR/3mo, 469 SAR/year\n- Steam Gift Cards: 75/188/375 SAR (20/50/100 USD)\n- Apple App Store KSA: 25/50/100 SAR\n- Google Play: available\n- Fortnite V-Bucks: 1000/2800/5000 V-Bucks\n- PUBG UC: 325/660/1800 UC\n- Windows 11 Pro Key: 199 SAR\n\nPAYMENT METHODS: Mada, Visa, Mastercard, STC Pay, Apple Pay\n\nWARRANTY POLICY:\n- All codes are verified before delivery\n- Defective codes replaced within 24 hours\n- No returns after code activation (this is final)\n- Codes are delivered via WhatsApp or email after payment confirmation\n\nREFUND POLICY:\n- Refund only if code is proven defective/invalid before use\n- No refund after activation\n- Contact WhatsApp 0570131122 for support\n\nVAT: All prices include 15% VAT as required by ZATCA\n\nIMPORTANT RULES:\n- Always respond in the same language the customer uses (Arabic or English)\n- Keep responses concise and helpful\n- For complex issues, direct to WhatsApp: 0570131122\n- Never make up prices not listed above\n- If unsure, say so and direct to WhatsApp`;\n\nreturn [{ json: { chatId, userMessage, systemPrompt } }];"
+      },
+      "id": "build-prompt",
+      "name": "Build Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [480, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {"name": "x-api-key", "value": "={{ $vars.ANTHROPIC_API_KEY }}"},
+            {"name": "anthropic-version", "value": "2023-06-01"},
+            {"name": "content-type", "value": "application/json"}
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"claude-haiku-4-5-20251001\",\n  \"max_tokens\": 512,\n  \"system\": {{ JSON.stringify($json.systemPrompt) }},\n  \"messages\": [{\"role\": \"user\", \"content\": {{ JSON.stringify($json.userMessage) }}}]\n}",
+        "options": {}
+      },
+      "id": "call-claude",
+      "name": "Call Claude Haiku",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [700, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const chatId = $('Build Prompt').first().json.chatId;\nconst response = $input.first().json;\nconst text = response?.content?.[0]?.text || 'عذراً، حدث خطأ. يرجى التواصل عبر واتساب: 0570131122';\nreturn [{ json: { chatId, message: text } }];"
+      },
+      "id": "extract-reply",
+      "name": "Extract Reply",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [920, 300]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.chatId }}",
+        "text": "={{ $json.message }}",
+        "additionalFields": {}
+      },
+      "id": "send-ai-reply",
+      "name": "Send AI Reply",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [1140, 300],
+      "credentials": { "telegramApi": { "id": "5QJU3KIwtEpU6myF", "name": "NeoGenstoreAlertsBot" } }
+    }
+  ],
+  "connections": {
+    "AI Webhook": { "main": [[{"node": "Build Prompt", "type": "main", "index": 0}]] },
+    "Build Prompt": { "main": [[{"node": "Call Claude Haiku", "type": "main", "index": 0}]] },
+    "Call Claude Haiku": { "main": [[{"node": "Extract Reply", "type": "main", "index": 0}]] },
+    "Extract Reply": { "main": [[{"node": "Send AI Reply", "type": "main", "index": 0}]] }
+  },
+  "settings": { "executionOrder": "v1" },
+  "tags": [{"name": "telegram-bot"}],
+  "_meta": {
+    "description": "Handles general Q&A via Claude Haiku. System prompt contains full store knowledge base (products, prices, policies).",
+    "setup": "Set n8n variable ANTHROPIC_API_KEY with your Anthropic API key via n8n Settings > Variables",
+    "model": "claude-haiku-4-5-20251001"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "name": "W-BOT-ORDER — Order Status Lookup Bot",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "telegram-bot-order",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "order-webhook",
+      "name": "Order Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [260, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const body = $input.first().json.body || $input.first().json;\nconst text = (body.text || '').trim();\nconst chatId = body.chatId;\n\n// Extract order number: #1234 or just 1234\nconst match = text.match(/#?(\\d+)/);\nconst orderId = match ? match[1] : null;\n\nif (!orderId) {\n  return [{ json: { chatId, orderId: null, error: 'no_id' } }];\n}\n\nreturn [{ json: { chatId, orderId } }];"
+      },
+      "id": "extract-order",
+      "name": "Extract Order ID",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [480, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": false},
+          "conditions": [
+            {"leftValue": "={{ $json.orderId }}", "operator": {"type": "string", "operation": "exists"}}
+          ]
+        }
+      },
+      "id": "check-has-id",
+      "name": "Has Order ID?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [700, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://neogen.store/wp-json/wc/v3/orders/{{ $json.orderId }}",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {"name": "consumer_key", "value": "ck_d7b7a9c1e2ab80d2da3a04d5b40fcf8a1f2d62e4"},
+            {"name": "consumer_secret", "value": "cs_a1b9f58c4e2d7f3a6e8b0c1d5e4f3a2b1c0d9e8f"}
+          ]
+        }
+      },
+      "id": "fetch-order",
+      "name": "Fetch Order",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [920, 200]
+    },
+    {
+      "parameters": {
+        "jsCode": "const order = $input.first().json;\nconst chatId = $('Extract Order ID').first().json.chatId;\n\nconst statusMap = {\n  pending: 'في الانتظار',\n  processing: 'قيد المعالجة',\n  'on-hold': 'معلّق',\n  completed: 'مكتمل',\n  cancelled: 'ملغي',\n  refunded: 'مُسترجع',\n  failed: 'فشل'\n};\n\nconst status = statusMap[order.status] || order.status;\nconst total = order.total;\nconst date = order.date_created?.split('T')[0] || '';\nconst items = (order.line_items || []).map(i=>`- ${i.name} x${i.quantity}`).join('\\n');\n\nconst message = `حالة الطلب #${order.id}\\n\\nالحالة: ${status}\\nالإجمالي: ${total} ر.س\\nالتاريخ: ${date}\\n\\nالمنتجات:\\n${items}\\n\\nللمساعدة: واتساب 0570131122`;\n\nreturn [{ json: { chatId, message } }];"
+      },
+      "id": "format-order",
+      "name": "Format Order Status",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1140, 200]
+    },
+    {
+      "parameters": {
+        "jsCode": "const chatId = $input.first().json.chatId;\nreturn [{ json: { chatId, message: 'لم أجد رقم الطلب في رسالتك.\\n\\nالرجاء إرسال رقم الطلب مثل:\\n#1234' } }];"
+      },
+      "id": "no-id-msg",
+      "name": "No Order ID Message",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [920, 420]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.chatId }}",
+        "text": "={{ $json.message }}",
+        "additionalFields": {}
+      },
+      "id": "send-order-status",
+      "name": "Send Order Status",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [1360, 300],
+      "credentials": { "telegramApi": { "id": "5QJU3KIwtEpU6myF", "name": "NeoGenstoreAlertsBot" } }
+    }
+  ],
+  "connections": {
+    "Order Webhook": { "main": [[{"node": "Extract Order ID", "type": "main", "index": 0}]] },
+    "Extract Order ID": { "main": [[{"node": "Has Order ID?", "type": "main", "index": 0}]] },
+    "Has Order ID?": {
+      "main": [
+        [{"node": "Fetch Order", "type": "main", "index": 0}],
+        [{"node": "No Order ID Message", "type": "main", "index": 0}]
+      ]
+    },
+    "Fetch Order": { "main": [[{"node": "Format Order Status", "type": "main", "index": 0}]] },
+    "Format Order Status": { "main": [[{"node": "Send Order Status", "type": "main", "index": 0}]] },
+    "No Order ID Message": { "main": [[{"node": "Send Order Status", "type": "main", "index": 0}]] }
+  },
+  "settings": { "executionOrder": "v1" },
+  "tags": [{"name": "telegram-bot"}],
+  "_meta": {
+    "description": "Extracts order number from message text, looks up WooCommerce order, returns status, total, and items list.",
+    "note": "Replace consumer_key and consumer_secret with actual WooCommerce API keys."
+  }
+}

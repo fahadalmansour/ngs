@@ -1,0 +1,76 @@
+{
+  "name": "W-BOT-CATALOG — Product Search Bot",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "telegram-bot-catalog",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "catalog-webhook",
+      "name": "Catalog Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [260, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://neogen.store/wp-json/wc/v3/products",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {"name": "search", "value": "={{ $json.body?.text || $json.text }}"},
+            {"name": "per_page", "value": "5"},
+            {"name": "status", "value": "publish"},
+            {"name": "consumer_key", "value": "ck_d7b7a9c1e2ab80d2da3a04d5b40fcf8a1f2d62e4"},
+            {"name": "consumer_secret", "value": "cs_a1b9f58c4e2d7f3a6e8b0c1d5e4f3a2b1c0d9e8f"}
+          ]
+        },
+        "options": {}
+      },
+      "id": "search-products",
+      "name": "Search WooCommerce",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [480, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const chatId = $('Catalog Webhook').first().json.body?.chatId || $('Catalog Webhook').first().json.chatId;\nconst products = $input.all().map(i=>i.json);\n\nif (!products || products.length === 0) {\n  return [{ json: { chatId, message: 'لم نجد منتجات مطابقة. جرّب: PS Plus، Xbox، Steam، Apple، Google Play' } }];\n}\n\nlet text = 'نتائج البحث:\\n\\n';\nproducts.slice(0,5).forEach((p,i) => {\n  const price = p.price || p.regular_price || '?';\n  text += `${i+1}. ${p.name}\\n`;\n  text += `   السعر: ${price} ر.س\\n`;\n  if (p.sku) text += `   SKU: ${p.sku}\\n`;\n  text += `   الرابط: ${p.permalink}\\n\\n`;\n});\n\ntext += 'للشراء المباشر: https://neogen.store/shop/';\n\nreturn [{ json: { chatId, message: text } }];"
+      },
+      "id": "format-results",
+      "name": "Format Results",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [700, 300]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.chatId }}",
+        "text": "={{ $json.message }}",
+        "additionalFields": {
+          "disable_web_page_preview": true
+        }
+      },
+      "id": "send-catalog",
+      "name": "Send Catalog Results",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [920, 300],
+      "credentials": { "telegramApi": { "id": "5QJU3KIwtEpU6myF", "name": "NeoGenstoreAlertsBot" } }
+    }
+  ],
+  "connections": {
+    "Catalog Webhook": { "main": [[{"node": "Search WooCommerce", "type": "main", "index": 0}]] },
+    "Search WooCommerce": { "main": [[{"node": "Format Results", "type": "main", "index": 0}]] },
+    "Format Results": { "main": [[{"node": "Send Catalog Results", "type": "main", "index": 0}]] }
+  },
+  "settings": { "executionOrder": "v1" },
+  "tags": [{"name": "telegram-bot"}],
+  "_meta": {
+    "description": "Searches WooCommerce product catalog and returns up to 5 matching products with price and link.",
+    "note": "Replace consumer_key and consumer_secret with actual WooCommerce API keys from neogen.store WP admin > WooCommerce > Settings > Advanced > REST API"
+  }
+}
