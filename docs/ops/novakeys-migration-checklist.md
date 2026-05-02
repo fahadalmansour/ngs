@@ -76,7 +76,7 @@ Status as of 2026-05-02: WordPress installed via Softaculous, domain live.
 - [ ] Create Refund Policy page (slug: `/refund-policy/`)
 - [ ] Create Contact Us page (slug: `/contact/`)
 - [ ] Add national address to footer: 8102 Al Khaboub, Al Malqa, Riyadh 13521
-- [ ] Register on Maroof.sa: https://maroof.sa (link account to novakeys.store)
+- [N/A] ~~Register on Maroof.sa~~ — Maroof platform discontinued by Ministry of Commerce (2026). Monitor mc.gov.sa for replacement program.
 
 ---
 

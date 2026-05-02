@@ -30,13 +30,13 @@
 
 ---
 
-## 3. Maroof Platform ❌
+## 3. Maroof Platform — DISCONTINUED
 | Item | Status | Action |
 |------|--------|--------|
-| Registered on Maroof | ❌ Not confirmed | Register at maroof.sa |
-| Maroof badge on site | ❌ Missing | Add to header after registration |
+| Maroof platform | N/A | Platform discontinued by Ministry of Commerce (2025/2026) |
+| Trust badge alternative | ❌ Pending | Check ministry.gov.sa for replacement e-trust program |
 
-**Action Required:** Register at `https://maroof.sa` using CR number, then embed trust badge in site header. This is the #1 trust signal for Saudi consumers.
+**Note (2026-05-02):** The Maroof platform has been stopped by the Ministry of Commerce. No registration is currently possible. Monitor `mc.gov.sa` for any replacement verification or trust-badge program.
 
 ---
 
@@ -142,7 +142,7 @@ Monitor these channels weekly:
 | Git repo (local) | ✅ Init | Google Drive: novakeys.store/ (React prototype) |
 | CR 7053130576 on site | ❌ Pending | Add to footer and About page |
 | VAT 3145127947 on site | ❌ Pending | Add to invoice/checkout |
-| Maroof registration | ❌ Pending | Register at maroof.sa — different listing from neogen.store |
+| Maroof registration | N/A | Maroof platform discontinued by Ministry — no action possible |
 | Privacy Policy page | ❌ Pending | Create at /privacy-policy/ |
 | Terms page | ❌ Pending | Use docs/ops/terms-and-conditions.html content |
 | Refund Policy page | ❌ Pending | Create at /refund-policy/ |
@@ -156,7 +156,7 @@ Monitor these channels weekly:
 ---
 
 ## Summary Action List (By Priority)
-1. 🔴 Register on **Maroof** platform
+1. ~~Register on Maroof~~ — platform discontinued by Ministry. Check mc.gov.sa for replacement.
 2. 🔴 Add **national address** to site footer
 3. 🔴 Install **YITH Digital Delivery** — stop manual WhatsApp delivery
 4. 🔴 Install **PDF Invoices Pro** with ZATCA QR code
