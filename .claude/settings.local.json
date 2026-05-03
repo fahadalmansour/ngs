@@ -82,7 +82,17 @@
       "Bash(curl -s \"https://neogen.store/wp-json/\")",
       "Read(//Users/fahadalmansour/.ssh/**)",
       "Bash(gh auth *)",
-      "Bash(gh repo *)"
+      "Bash(gh repo *)",
+      "Bash(gh pr *)",
+      "Bash(mkdir -p '/Users/fahadalmansour/Library/CloudStorage/GoogleDrive-fsalmansour@gmail.com/My Drive/novakeys.store/migration-backup')",
+      "Bash(echo \"scp done: $?\")",
+      "Bash(cp /Users/fahadalmansour/ngs/staging/source-products.json '/Users/fahadalmansour/Library/CloudStorage/GoogleDrive-fsalmansour@gmail.com/My Drive/novakeys.store/migration-backup/neogen-source-products-289.json')",
+      "Bash(cp /Users/fahadalmansour/ngs/staging/api.log '/Users/fahadalmansour/Library/CloudStorage/GoogleDrive-fsalmansour@gmail.com/My Drive/novakeys.store/migration-backup/migration-api.log')",
+      "Bash(git -C /Users/fahadalmansour/ngs/apps/neogen-custom status)",
+      "Bash(git -C /Users/fahadalmansour/ngs/apps/neogen-custom diff --stat)",
+      "Bash(git -C /Users/fahadalmansour/ngs/apps/NGS status)",
+      "Bash(git *)",
+      "Bash(xargs command *)"
     ]
   }
 }
