@@ -46,28 +46,28 @@ async function processRow(row, page) {
     if (sku.startsWith('SH-')) {
         // China Sourcing (Smart Home)
         sourceSite = 'AliExpress';
-        supplierPriceUSD = await scrapeMarket(page, 
-            `https://www.aliexpress.com/wholesale?SearchText=${encodeURIComponent(sku)}`, 
-            '.product-price-value'); 
+        supplierPriceUSD = await scrapeMarket(page,
+            `https://www.aliexpress.com/wholesale?SearchText=${encodeURIComponent(sku)}`,
+            '.product-price-value');
     } else {
         // US Sourcing (Networking, etc.) - B&H
         sourceSite = 'B&H';
         // Try SKU first
-        supplierPriceUSD = await scrapeMarket(page, 
-            `https://www.bhphotovideo.com/c/search?Ntt=${encodeURIComponent(sku)}`, 
+        supplierPriceUSD = await scrapeMarket(page,
+            `https://www.bhphotovideo.com/c/search?Ntt=${encodeURIComponent(sku)}`,
             '[data-selenium="pricing-price"], [data-selenium="price"]');
-        
+
         // Fallback to Name if SKU fails
         if (!supplierPriceUSD) {
-            supplierPriceUSD = await scrapeMarket(page, 
-                `https://www.bhphotovideo.com/c/search?Ntt=${encodeURIComponent(name)}`, 
+            supplierPriceUSD = await scrapeMarket(page,
+                `https://www.bhphotovideo.com/c/search?Ntt=${encodeURIComponent(name)}`,
                 '[data-selenium="pricing-price"], [data-selenium="price"]');
         }
     }
 
     // Stage 3: Market Benchmark (Scrape Amazon.sa)
-    const amazonSAPrice = await scrapeMarket(page, 
-        `https://www.amazon.sa/s?k=${encodeURIComponent(name)}`, 
+    const amazonSAPrice = await scrapeMarket(page,
+        `https://www.amazon.sa/s?k=${encodeURIComponent(name)}`,
         '.a-price-whole');
 
     let landedCost = null;
@@ -79,12 +79,12 @@ async function processRow(row, page) {
         const buySAR = supplierPriceUSD * SAR_PER_USD;
         const intlShip = weight * INTL_SHIPPING_KG;
         landedCost = (buySAR + intlShip) * TAX_CUSTOMS_MULT;
-        
+
         // Stage 4: Local Fulfillment & Competitive Logic
         // Break-even = Landed Cost + Riyadh Local Delivery
         const breakEven = landedCost + LOCAL_DELIVERY;
         const targetSalePrice = breakEven * 1.20; // 20% Base Margin
-        
+
         if (amazonSAPrice) {
             if (targetSalePrice < amazonSAPrice) {
                 // Beat Amazon by 5 SAR

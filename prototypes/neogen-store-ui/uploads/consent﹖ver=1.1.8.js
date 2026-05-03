@@ -44,7 +44,7 @@ function cookieadmin_is_obj(consentObj){
 			if(separatorIndex === -1) {
 				return;
 			}
-			
+
 			var cookieName = val.substring(0, separatorIndex).trim();
 			var cookieValue = val.substring(separatorIndex + 1).trim();
 
@@ -52,7 +52,7 @@ function cookieadmin_is_obj(consentObj){
 				originalCookieDescriptor.set.call(document, val);
 				return;
 			}
-			
+
 			// Set cookies which are meant to be deleted
 			if(val.includes('expires=Thu, 01 Jan 1970') || cookieValue.startsWith("deleted;")){
 				originalCookieDescriptor.set.call(document, val);
@@ -61,7 +61,7 @@ function cookieadmin_is_obj(consentObj){
 
 			var cookieInfo = cookieadmin_allcookies[cookieName] || {};
 			var category = (cookieInfo.category || 'uncategorized').toLowerCase();
-			
+
 			// Set necessary cookies
 			if(category == "necessary"){
 				originalCookieDescriptor.set.call(document, val);
@@ -71,7 +71,7 @@ function cookieadmin_is_obj(consentObj){
 			if(cookieadmin_is_obj(cookieadmin_is_consent) || (Array.isArray(cookieadmin_policy['preload']) && cookieadmin_policy['preload'].length > 0)){
 
 				var consentAction = cookieadmin_is_consent.action;
-				
+
 				if(!consentAction){
 					consentAction = cookieadmin_policy['preload'].reduce((a, val) => {a[val] = ''; return a;}, {});
 				}
@@ -79,21 +79,21 @@ function cookieadmin_is_obj(consentObj){
 				if(consentAction.accept || consentAction[category]){
 					originalCookieDescriptor.set.call(document, val);
 				}else{
-					
+
 					var pathMatch = val.match(/path=([^;]+)/i);
 					var domainMatch = val.match(/domain=([^;]+)/i);
 					var path = pathMatch ? pathMatch[1].trim() : '/';
 					var domain = domainMatch ? `domain=${domainMatch[1].trim()};` : '';
-					
+
 					var deleteString = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=${path}; ${domain}`;
 					originalCookieDescriptor.set.call(document, deleteString.trim());
 				}
-				
+
 			}else{
 				(cookieadmin_allcookies[cookieName] = cookieadmin_allcookies[cookieName] || {}).string = val.trim();
 				return false;
 			}
-			
+
 		}
 	});
 // }
@@ -101,16 +101,16 @@ function cookieadmin_is_obj(consentObj){
 
 
 function cookieadmin_is_cookie(name){
-	
+
 	if(!document.cookie) return false;
-	
+
 	var coki = document.cookie.split(";") ;
-	
+
 	if(name == "all"){
 		return coki ? coki : [];
 	}
 	var nam = name + "=";
-	
+
 	for(var i=0; i < coki.length; i++){
 		if(coki[i].trim().indexOf(nam) == 0){
 			try {
@@ -126,7 +126,7 @@ function cookieadmin_is_cookie(name){
 			}
 		}
 	}
-	
+
 	return false;
 }
 
@@ -137,18 +137,18 @@ function cookieadmin_check_consent(){
 			cookieadmin_is_consent.consent = cookieadmin_cookie.consent;
 			delete cookieadmin_cookie.consent;
 		}
-		
+
 		cookieadmin_is_consent.action = cookieadmin_cookie;
 	}
 }
 cookieadmin_check_consent();
 
 function cookieadmin_restore_cookies(update) {
-    
+
 	var cookieadmin_accepted_categories = [];
-	
+
 	if(update.accept && update.accept == "true"){
-		
+
 		document.querySelectorAll(".cookieadmin_toggle").forEach(function(e){
 			key = e.children[0].id;
 			if (key.includes("cookieadmin-")) {
@@ -156,7 +156,7 @@ function cookieadmin_restore_cookies(update) {
 				cookieadmin_accepted_categories.push(key);
 			}
 		});
-		
+
 	}else if(update.reject && update.reject == "true"){
 		return true;
 	}else{
@@ -166,14 +166,14 @@ function cookieadmin_restore_cookies(update) {
 			}
 		}
 	}
-	
-	
+
+
   	for(cookie in cookieadmin_allcookies){
   		document.cookie = cookieadmin_allcookies[cookie].string;
   	};
-	
+
     cookieadmin_accepted_categories.forEach(function(category) {
-		
+
         document.querySelectorAll(
             'script[type="text/plain"][data-cookieadmin-category="' + category + '"]'
         ).forEach(function(el) {
@@ -226,11 +226,11 @@ function cookieadmin_set_cookie(name, value, days = 365, domain = "") {
 
 //Populates modal with consent if selected & adds found cookies
 function cookieadmin_populate_preference(){
-	
+
 	consent = cookieadmin_is_consent.action;
-	
+
 	if(!!consent){
-		
+
 		if(consent.accept){
 			document.querySelectorAll(".cookieadmin_toggle").forEach(function(e){
 				e.children[0].checked = true;
@@ -248,45 +248,45 @@ function cookieadmin_populate_preference(){
 				}
 			}
 		}
-	//Load as per preloaded categories selected by admin	
+	//Load as per preloaded categories selected by admin
 	}else if(cookieadmin_policy['preload'] && cookieadmin_policy['preload'].length > 0){
-		
+
 		cookieadmin_policy['preload'].forEach(function(val){
 			if(btn_ele = document.querySelector("#cookieadmin-" + val)){
 				btn_ele.checked = true;
 			}
 		});
 	}
-	
+
 	var cookieadmin_shown = (typeof cookieadmin_shown !== "undefined") ? cookieadmin_shown : [];
-	
+
 	if(cookieadmin_allcookies){
-		
+
 		var cookieadmin_filtrd = Object.keys(cookieadmin_allcookies).filter(e => !cookieadmin_shown.includes(e));
-		
+
 		for(c_info of cookieadmin_filtrd){
-			
+
 			var category_var = cookieadmin_allcookies[c_info].category;
-			
+
 			if(!category_var){
 				continue;
 			}
 			var card_container = document.querySelector(".cookieadmin-" + category_var.toLowerCase());
-			
+
 			if(!card_container){
 				continue;
 			}
 			card_container.innerHTML = (card_container.innerHTML == 'None') ?  '' : card_container.innerHTML;
-			
+
 			var cookieadmin_exp = cookieadmin_policy.lang.session;
-				
+
 			if(
-				!!cookieadmin_allcookies[c_info].expires 
+				!!cookieadmin_allcookies[c_info].expires
 				&& cookieadmin_allcookies[c_info].expires !== "0000-00-00 00:00:00"
 			){
-				
+
 				var expDate = new Date(cookieadmin_allcookies[c_info].expires.replace(' ', 'T'));
-				
+
 				if (!isNaN(expDate.getTime())) {
 					var daysLeft = Math.ceil((expDate.getTime() - Date.now()) / (1000 * 60 * 60 * 24));
 
@@ -295,33 +295,33 @@ function cookieadmin_populate_preference(){
 					}
 				}
 			}
-			
+
 			card_container.innerHTML += '<div class="cookieadmin-cookie-card"> <div class="cookieadmin-cookie-header"> <strong class="cookieadmin-cookie-name">'+ c_info.replace(/_+$/, "") +'</strong> <span class="cookieadmin-cookie-duration"><b>'+ cookieadmin_policy.lang.duration +':</b> '+ cookieadmin_exp +'</span> </div> <p class="cookieadmin-cookie-description">'+ cookieadmin_allcookies[c_info].description +'</p> <div class="cookieadmin-cookie-tags"> ' + (cookieadmin_allcookies[c_info].platform ? '<span class="cookieadmin-tag">' + cookieadmin_allcookies[c_info].platform + '</span>' : "") + ' </div> </div>';
 			cookieadmin_shown.push(c_info);
 		}
 	}
-		
+
 }
 
 function cookieadmin_toggle_overlay(){
-	
+
 	if(window.getComputedStyle(document.getElementsByClassName("cookieadmin_modal_overlay")[0]).display == "none"){
 		document.getElementsByClassName("cookieadmin_modal_overlay")[0].style.display = "block";
 	}else{
 		document.getElementsByClassName("cookieadmin_modal_overlay")[0].style.display = "none";
 	}
-	
+
 }
 
 function cookieadmin_categorize_cookies(){
-	
+
 	if(!cookieadmin_allcookies){
 		return;
 	}
-	
+
 	var cookieadmin_chk_cookies = {};
 	var cookieadmin_consent_chng = [];
-	
+
 	for(a_cookie in cookieadmin_allcookies){
 		if(!cookieadmin_allcookies[a_cookie].category){
 			cookieadmin_chk_cookies[a_cookie] = cookieadmin_allcookies[a_cookie];
@@ -329,18 +329,18 @@ function cookieadmin_categorize_cookies(){
 			document.cookie = cookieadmin_allcookies[a_cookie].string;
 		}
 	}
-	
+
 	if(!cookieadmin_is_obj(cookieadmin_chk_cookies)){
 		return;
 	}
-	
+
 	/* var xhttp2 = new XMLHttpRequest();
-	
+
 	var data = 'action=cookieadmin_ajax_handler&cookieadmin_act=categorize_cookies&cookieadmin_security=' + cookieadmin_policy.nonce + "&cookieadmin_cookies=" + JSON.stringify(cookieadmin_chk_cookies);
-	
+
 	xhttp2.onload = function() {
 		parsd = JSON.parse(this.responseText);
-		
+
 		if(parsd.success){
 			cookies = parsd.data;
 			for(coki in cookies){
@@ -354,7 +354,7 @@ function cookieadmin_categorize_cookies(){
 			}
 		}
 	}
-	
+
 	xhttp2.open("POST", cookieadmin_policy.ajax_url, true);
 	xhttp2.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
 	xhttp2.send(data); */
@@ -362,7 +362,7 @@ function cookieadmin_categorize_cookies(){
 
 
 document.addEventListener("DOMContentLoaded", function() {
-	
+
 	var cookieadmin_show_reconsent = 0;
 	if(cookieadmin_policy.is_pro != 0 && cookieadmin_pro_vars !== 'undefined' && cookieadmin_pro_vars.reconsent != 0){
 		var cookieadmin_show_reconsent = 1;
@@ -372,42 +372,42 @@ document.addEventListener("DOMContentLoaded", function() {
 	var cookieadmin_ovrlay =  document.createElement("div");
 	cookieadmin_ovrlay.className = "cookieadmin_modal_overlay";
 	document.body.appendChild(cookieadmin_ovrlay);
-	
+
 	var before_consent_dispaly = new CustomEvent('cookieadmin_before_consent_display');
-	
+
 	// For anything that needs to be done before disaplying consent.
 	cookieadmin_policy.hide_banner = false; // initializing
 	window.dispatchEvent(before_consent_dispaly);
 
 	//Show notice or re-consent icon as needed
 	if(!cookieadmin_is_obj(cookieadmin_is_consent) && !cookieadmin_policy.hide_banner){
-		
+
 		if(cookieadmin_policy.cookieadmin_layout !== "popup"){
 				document.getElementsByClassName("cookieadmin_law_container")[0].style.display = "block";
 		}else{
 			cookieadmin_toggle_overlay();
 			document.getElementsByClassName("cookieadmin_cookie_modal")[0].style.display = "flex";
 		}
-		
+
 		/* //block cookie scripts
 		var cookieadmin_blockedScripts = [
 			'https://www.google-analytics.com/analytics.js',
 			'https://connect.facebook.net/en_US/fbevents.js',
 			'https://www.youtube.com/iframe_api'
 		];
-		
+
 		cookieadmin_blockedScripts.forEach(function(scriptUrl) {
 			var scriptTag = document.querySelector(`script[src='${scriptUrl}']`);
 			if (scriptTag) {
 				scriptTag.remove();  // Remove script if already loaded
 			}
 		}); */
-		
+
 	}else if(cookieadmin_show_reconsent){
-		document.getElementsByClassName("cookieadmin_re_consent")[0].style.display = "block";	
-		
+		document.getElementsByClassName("cookieadmin_re_consent")[0].style.display = "block";
+
 	}
-	
+
 	//Edit Notice and Modal contents
 
 	cookieadmin_populate_preference();
@@ -427,7 +427,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		}else{
 			d_ele = data;
 		}
-		
+
 		d_eles = [];
 		if(document.getElementById(d_ele)){
 			d_eles = [document.getElementById(d_ele)];
@@ -435,7 +435,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		if(document.getElementsByClassName(d_ele).length){
 			d_eles = (document.getElementsByClassName(d_ele).length > 1) ? document.getElementsByClassName(d_ele) : [document.getElementsByClassName(d_ele)[0]];
 		}
-		
+
 		if(!!d_eles){
 			i = 0;
 			while(i < d_eles.length){
@@ -451,7 +451,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				}
 				i++;
 			}
-		}		
+		}
 	}
 
 	//Add layout as class
@@ -473,13 +473,13 @@ document.addEventListener("DOMContentLoaded", function() {
 	document.getElementsByClassName("cookieadmin_cookie_modal")[0].classList.add("cookieadmin_" + cookieadmin_policy.cookieadmin_modal);
 
 	/*if(cookieadmin_policy.layout == "footer"){
-		
+
 	}*/
 
 	if(cookieadmin_policy.cookieadmin_modal == "side"){
 		document.getElementsByClassName("cookieadmin_modal_footer")[0].style.flexDirection = "column";
 	}
-		
+
 	// Remove modal close Button
 	if(cookieadmin_policy.cookieadmin_layout == "popup"){
 		document.getElementsByClassName("cookieadmin_close_pref")[0].style.display = "none";
@@ -488,16 +488,16 @@ document.addEventListener("DOMContentLoaded", function() {
 	//show preference modal
 	cookieadmin_show_modal_elemnts = document.querySelectorAll(".cookieadmin_re_consent, .cookieadmin_customize_btn");
 	cookieadmin_show_modal_elemnts.forEach(function(e){
-		
+
 		e.addEventListener("click", function(e){
-			
+
 			/*cookieadmin_is_cookie("all").forEach(function(e){
 				c_name = e.split("=")[0].trim();
 				if(!!cookieadmin_allcookies[c_name]){
 					console.log(JSON.stringify(cookieadmin_allcookies[c_name]));
 				}
 			});*/
-			
+
 			cookieadmin_toggle_overlay();
 			document.getElementsByClassName("cookieadmin_cookie_modal")[0].style.display = "flex";
 			var cookieadmin_re_consent = document.getElementsByClassName("cookieadmin_re_consent")[0];
@@ -509,11 +509,11 @@ document.addEventListener("DOMContentLoaded", function() {
 			if(cookieadmin_law_container){
 				cookieadmin_law_container.style.display = "none";
 			}
-			
+
 			if(cookieadmin_policy["cookieadmin_modal"] == "side"){
 				document.getElementsByClassName("cookieadmin_cookie_modal")[0].style.display = "grid";
 			}
-			
+
 			if(e.target.className == "cookieadmin_re_consent"){
 				document.getElementsByClassName("cookieadmin_close_pref")[0].id = "cookieadmin_re_consent";
 			}else{
@@ -521,15 +521,15 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 		});
 	});
-	
+
 	//Save preference
 	document.querySelector(".cookieadmin_save_btn").addEventListener("click", function(){
-		
+
 		document.getElementsByClassName("cookieadmin_cookie_modal")[0].style.display = "none";
 		if(cookieadmin_show_reconsent){
 			document.getElementsByClassName("cookieadmin_re_consent")[0].style.display = "block";
 		}
-		
+
 		var prefer = {};
 
 		document.querySelectorAll(".cookieadmin_toggle").forEach(function(e){
@@ -537,7 +537,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				prefer[e.children[0].id.replace("cookieadmin-","")] = 'true';
 			}
 		});
-		
+
 		if(Object.keys(prefer).length !== 0){
 			var override_gpc = document.getElementById('cookieadmin-override_gpc');
 			var is_override_gpc = false;
@@ -547,7 +547,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 			if(Object.keys(prefer).length === 3 && !is_override_gpc){
 				let accept_btn = document.querySelectorAll(".cookieadmin_accept_btn");
-			
+
 				if(accept_btn.length > 0){
 					accept_btn[accept_btn.length-1].click();
 				}
@@ -556,14 +556,14 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 		}else{
 			let reject_btn = document.querySelectorAll(".cookieadmin_reject_btn");
-			
+
 			if(reject_btn.length > 0){
 				reject_btn[reject_btn.length-1].click();
 			}
-			
+
 			return;
 		}
-		
+
 		cookieadmin_toggle_overlay();
 
 		cookieadmin_set_consent(prefer, days);
@@ -574,7 +574,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	cookieadmin_save_all_cookie_elemnts = document.querySelectorAll(".cookieadmin_accept_btn, .cookieadmin_reject_btn");
 
 	cookieadmin_save_all_cookie_elemnts.forEach(function(e){
-		
+
 		e.addEventListener("click", function(){
 			// console.log(e);
 
@@ -583,28 +583,28 @@ document.addEventListener("DOMContentLoaded", function() {
 			if(cookieadmin_law_container){
 				cookieadmin_law_container.style.display = "none";
 			}
-			
+
 			var cookieadmin_re_consent = document.getElementsByClassName("cookieadmin_re_consent")[0];
 			if(cookieadmin_re_consent){
 				cookieadmin_re_consent.style.display = "block";
 			}
-			
+
 			if(e.id.includes("modal")){
 				cookieadmin_toggle_overlay();
 			}
-			
+
 			var prefer2 = e.classList.contains("cookieadmin_reject_btn") ? {reject: "true"} : {accept: "true"};
 
 			cookieadmin_set_consent(prefer2, days);
 		});
 	});
-	
+
 	document.querySelectorAll(".cookieadmin_show_pref_cookies").forEach(function(e){
 		e.addEventListener("click", function(el){
-			
+
 			var tgt = el.target.id;
 			tgt = tgt.replace(/-container$/, "");
-			
+
 			if(el.target.classList.contains("dwn")){
 				el.target.innerHTML = "&#9658;";
 				el.target.classList.remove("dwn");
@@ -632,11 +632,11 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 		}
 	});
-	
+
 });
 
 function cookieadmin_set_consent(prefrenc, days){
-	
+
 	if (typeof cookieadmin_pro_set_consent === "function") {
 		return cookieadmin_pro_set_consent(prefrenc, days);
 	}else{
@@ -645,23 +645,23 @@ function cookieadmin_set_consent(prefrenc, days){
 }
 
 function cookieadmin_save_consent_cookie(prefrenc, days, consent_id){
-	
+
 	var cookieadmin_consent = prefrenc;
-		
+
 	if(consent_id){
 		cookieadmin_is_consent.consent = consent_id;
 		cookieadmin_consent['consent'] = consent_id;
 	}
-	
+
 	if(!cookieadmin_is_consent.consent){
 		cookieadmin_is_consent.consent = "";
 	}
-	
+
 	cookieadmin_is_consent["old_action"] = cookieadmin_is_consent.action ? cookieadmin_is_consent.action : {};
 	cookieadmin_is_consent.action = prefrenc;
 	cookieadmin_populate_preference();
 	cookieadmin_set_cookie('cookieadmin_consent', cookieadmin_consent, days);
-	
+
 	if (typeof cookieadmin_update_gcm === "function") {
 		cookieadmin_update_gcm(1);
 	}
@@ -669,7 +669,7 @@ function cookieadmin_save_consent_cookie(prefrenc, days, consent_id){
 	if (typeof cookieadmin_pro_update_clarity_cookie === "function") {
 		cookieadmin_pro_update_clarity_cookie();
 	}
-	
+
 	if(!!cookieadmin_policy.reload_on_consent){
 		location.reload();
 	}else{

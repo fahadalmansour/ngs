@@ -7,7 +7,7 @@
 })()
 
 function cookieadmin_pro_set_consent(prefrenc, days) {
-	
+
 	// Handling GPC override, preventing GPC signal
 	if(cookieadmin_pro_vars && cookieadmin_pro_vars.respect_gpc){
 		if(!cookieadmin_pro_handle_set_gpc()){
@@ -37,11 +37,11 @@ function cookieadmin_pro_set_consent(prefrenc, days) {
 				const parsed = JSON.parse(this.responseText);
 				if (parsed.success && parsed.data && parsed.data.response) {
 					cookieadmin_save_consent_cookie(prefrenc, days, parsed.data.response);
-					
+
 					// Showing override option if we have GPC enabled.
 					if(cookieadmin_pro_vars && cookieadmin_pro_vars.respect_gpc){
 						var overrideEle = document.getElementById('cookieadmin_gpc_override');
-						
+
 						if(overrideEle){
 							overrideEle.style.display = 'block';
 						}
@@ -68,7 +68,7 @@ function cookieadmin_pro_handle_set_gpc(){
 	var consentData = cookieadmin_is_cookie("cookieadmin_consent");
 	if (consentData && consentData.respect_gpc) {
 		var override = document.getElementById('cookieadmin-override_gpc');
-		
+
 		if(!override || !override.checked){
 			alert(cookieadmin_pro_vars.gpc_alert ? cookieadmin_pro_vars.gpc_alert : 'Please accept override GPC before saving preference.');
 			return false;
@@ -105,7 +105,7 @@ function cookieadmin_pro_handle_gpc(){
 	if(!cookieadmin_pro_check_gpc()){
 		return false;
 	}
-	
+
 	// Handling visibility of Override option in Cookie Customizer modal
 	var overRideEle = document.getElementById('cookieadmin_gpc_override');
 	var consentData = cookieadmin_is_cookie("cookieadmin_consent");
@@ -136,19 +136,19 @@ function cookieadmin_pro_handle_gpc(){
 }
 
 function cookieadmin_pro_show_gpc_message() {
-	
+
 	var toast = document.getElementById('cookieadmin-gpc-toast');
-    
+
 	if(!toast){
 		return;
 	}
-	
+
 	closeBtn = toast.querySelector('button');
-	
+
 	if(!closeBtn){
 		return;
 	}
-	
+
 	// Add hover effects for the close button
 	closeBtn.addEventListener('mouseenter', () => closeBtn.style.opacity = '1');
 	closeBtn.addEventListener('mouseleave', () => closeBtn.style.opacity = '0.7');

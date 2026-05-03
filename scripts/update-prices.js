@@ -5,8 +5,8 @@ const csv = require('csv-parser');
 const UPDATE_FILE = 'output/sync/price-sync-daily.csv';
 // Note: In a real scenario, use environment variables for these
 const WP_ADMIN_URL = 'https://neogen.store/wp-admin';
-const USERNAME = process.env.WP_USERNAME || 'admin'; 
-const PASSWORD = process.env.WP_PASSWORD || ''; 
+const USERNAME = process.env.WP_USERNAME || 'admin';
+const PASSWORD = process.env.WP_PASSWORD || '';
 
 async function readUpdates() {
     return new Promise((resolve) => {
@@ -41,25 +41,25 @@ async function readUpdates() {
 
         for (const item of updates) {
             console.log(`Updating [${item.sku}]...`);
-            
+
             // 2. Navigate to Product Search in WooCommerce
             await page.goto(`${WP_ADMIN_URL}/edit.php?post_type=product&s=${item.sku}`);
-            
+
             // 3. Click Quick Edit (assuming first result matches SKU)
             await page.hover('.row-title');
             await page.click('.editinline');
-            
+
             // 4. Update Regular and Sale Price
             await page.fill('input[name="_regular_price"]', item.regular_price);
             await page.fill('input[name="_sale_price"]', item.sale_price);
-            
+
             // 5. Save
             await page.click('.save');
             await page.waitForTimeout(2000); // Wait for AJAX save and UI refresh
 
             // 6. Visual Confirmation: Take a screenshot of the updated row
             fs.mkdirSync('output/screenshots', { recursive: true });
-            await page.screenshot({ 
+            await page.screenshot({
                 path: `output/screenshots/confirm-${item.sku}.png`,
                 fullPage: false,
                 clip: { x: 0, y: 0, width: 1280, height: 400 } // Focus on the top result

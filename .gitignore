@@ -47,3 +47,5 @@ archive/site-captures/*/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+staging/
+migration/
