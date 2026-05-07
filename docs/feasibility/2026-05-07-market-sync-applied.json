@@ -1,0 +1,649 @@
+{
+  "applied_at": "2026-05-07T07:59:00.897156Z",
+  "source_csv": "output/sync/price-sync-live-inscope-2026-05-07.csv",
+  "master_xlsx": "data/catalogs/master/Neogen_Master_Catalog_Blueprint.xlsx",
+  "backup": "Neogen_Master_Catalog_Blueprint.xlsx.backup-20260507-075900",
+  "applied_count": 93,
+  "rejected_too_low": 2,
+  "flagged_for_review": 8,
+  "skipped_no_value": 2,
+  "skipped_already_set": 14,
+  "skipped_no_match": 0,
+  "thresholds": {
+    "suspect_low_ratio": 0.05,
+    "review_low_ratio": 0.2,
+    "review_high_ratio": 5.0
+  },
+  "applied_skus": [
+    {
+      "sku": "NT-MPC-BLK-002",
+      "amazon_sa_ref": 1888.0,
+      "neogen_list": 999.0,
+      "ratio": 1.89
+    },
+    {
+      "sku": "NT-MPC-BLK-001",
+      "amazon_sa_ref": 2476.0,
+      "neogen_list": 2399.0,
+      "ratio": 1.032
+    },
+    {
+      "sku": "NT-MPC-MNF-001",
+      "amazon_sa_ref": 2017.0,
+      "neogen_list": 4599.0,
+      "ratio": 0.439
+    },
+    {
+      "sku": "NT-POE-TPL-001",
+      "amazon_sa_ref": 159.0,
+      "neogen_list": 299.0,
+      "ratio": 0.532
+    },
+    {
+      "sku": "NT-POE-UBQ-001",
+      "amazon_sa_ref": 640.0,
+      "neogen_list": 849.0,
+      "ratio": 0.754
+    },
+    {
+      "sku": "NT-FWL-FTN-001",
+      "amazon_sa_ref": 3146.0,
+      "neogen_list": 6329.0,
+      "ratio": 0.497
+    },
+    {
+      "sku": "NT-FWL-NGT-001",
+      "amazon_sa_ref": 1314.0,
+      "neogen_list": 3399.0,
+      "ratio": 0.387
+    },
+    {
+      "sku": "NT-SFP-FSC-001",
+      "amazon_sa_ref": 65.0,
+      "neogen_list": 129.0,
+      "ratio": 0.504
+    },
+    {
+      "sku": "NT-SRV-NVP-001",
+      "amazon_sa_ref": 261.0,
+      "neogen_list": 249.0,
+      "ratio": 1.048
+    },
+    {
+      "sku": "NT-SRV-STC-001",
+      "amazon_sa_ref": 1089.0,
+      "neogen_list": 1399.0,
+      "ratio": 0.778
+    },
+    {
+      "sku": "NT-UPS-CYB-001",
+      "amazon_sa_ref": 4405.0,
+      "neogen_list": 2419.0,
+      "ratio": 1.821
+    },
+    {
+      "sku": "NT-NAS-QNP-002",
+      "amazon_sa_ref": 2699.0,
+      "neogen_list": 1899.0,
+      "ratio": 1.421
+    },
+    {
+      "sku": "NT-NAS-QNP-001",
+      "amazon_sa_ref": 3378.0,
+      "neogen_list": 2799.0,
+      "ratio": 1.207
+    },
+    {
+      "sku": "NT-NAS-SYN-002",
+      "amazon_sa_ref": 2826.0,
+      "neogen_list": 3499.0,
+      "ratio": 0.808
+    },
+    {
+      "sku": "NT-NAS-SYN-001",
+      "amazon_sa_ref": 1643.0,
+      "neogen_list": 2419.0,
+      "ratio": 0.679
+    },
+    {
+      "sku": "NT-WAP-TPL-002",
+      "amazon_sa_ref": 341.0,
+      "neogen_list": 919.0,
+      "ratio": 0.371
+    },
+    {
+      "sku": "NT-WAP-TPL-001",
+      "amazon_sa_ref": 359.0,
+      "neogen_list": 689.0,
+      "ratio": 0.521
+    },
+    {
+      "sku": "NT-WAP-UBQ-002",
+      "amazon_sa_ref": 807.0,
+      "neogen_list": 1609.0,
+      "ratio": 0.502
+    },
+    {
+      "sku": "NT-NET-MKT-004",
+      "amazon_sa_ref": 2637.0,
+      "neogen_list": 2799.0,
+      "ratio": 0.942
+    },
+    {
+      "sku": "NT-NET-MKT-003",
+      "amazon_sa_ref": 2029.0,
+      "neogen_list": 3109.0,
+      "ratio": 0.653
+    },
+    {
+      "sku": "NT-NET-MKT-002",
+      "amazon_sa_ref": 881.0,
+      "neogen_list": 1199.0,
+      "ratio": 0.735
+    },
+    {
+      "sku": "NT-NET-MKT-001",
+      "amazon_sa_ref": 931.0,
+      "neogen_list": 999.0,
+      "ratio": 0.932
+    },
+    {
+      "sku": "SH-SWB-SWBT-003",
+      "amazon_sa_ref": 1444.0,
+      "neogen_list": 479.0,
+      "ratio": 3.015
+    },
+    {
+      "sku": "SH-SWB-SWBT-002",
+      "amazon_sa_ref": 78.0,
+      "neogen_list": 239.0,
+      "ratio": 0.326
+    },
+    {
+      "sku": "SH-SWB-SWBT-001",
+      "amazon_sa_ref": 340.0,
+      "neogen_list": 559.0,
+      "ratio": 0.608
+    },
+    {
+      "sku": "SH-HUB-AQRA-001",
+      "amazon_sa_ref": 749.0,
+      "neogen_list": 1039.0,
+      "ratio": 0.721
+    },
+    {
+      "sku": "SH-BLD-SWBT-001",
+      "amazon_sa_ref": 282.0,
+      "neogen_list": 649.0,
+      "ratio": 0.435
+    },
+    {
+      "sku": "SH-VDB-EUFY-001",
+      "amazon_sa_ref": 438.0,
+      "neogen_list": 999.0,
+      "ratio": 0.438
+    },
+    {
+      "sku": "SH-VDB-RING-001",
+      "amazon_sa_ref": 727.0,
+      "neogen_list": 999.0,
+      "ratio": 0.728
+    },
+    {
+      "sku": "SH-CAM-RELK-001",
+      "amazon_sa_ref": 639.0,
+      "neogen_list": 1039.0,
+      "ratio": 0.615
+    },
+    {
+      "sku": "SH-CAM-EUFY-001",
+      "amazon_sa_ref": 379.0,
+      "neogen_list": 1649.0,
+      "ratio": 0.23
+    },
+    {
+      "sku": "SH-CAM-ARLO-001",
+      "amazon_sa_ref": 418.0,
+      "neogen_list": 1549.0,
+      "ratio": 0.27
+    },
+    {
+      "sku": "SH-CAM-RING-001",
+      "amazon_sa_ref": 99.0,
+      "neogen_list": 479.0,
+      "ratio": 0.207
+    },
+    {
+      "sku": "SH-PLG-MERS-001",
+      "amazon_sa_ref": 113.0,
+      "neogen_list": 159.0,
+      "ratio": 0.711
+    },
+    {
+      "sku": "SH-PLG-TPLK-001",
+      "amazon_sa_ref": 103.0,
+      "neogen_list": 149.0,
+      "ratio": 0.691
+    },
+    {
+      "sku": "SH-THR-ECOB-001",
+      "amazon_sa_ref": 1076.0,
+      "neogen_list": 1549.0,
+      "ratio": 0.695
+    },
+    {
+      "sku": "SH-THR-NEST-001",
+      "amazon_sa_ref": 1009.0,
+      "neogen_list": 1699.0,
+      "ratio": 0.594
+    },
+    {
+      "sku": "SH-RVC-ECVX-001",
+      "amazon_sa_ref": 1598.0,
+      "neogen_list": 5699.0,
+      "ratio": 0.28
+    },
+    {
+      "sku": "SH-RVC-DREM-001",
+      "amazon_sa_ref": 2999.0,
+      "neogen_list": 4599.0,
+      "ratio": 0.652
+    },
+    {
+      "sku": "SH-RVC-RBRC-001",
+      "amazon_sa_ref": 2899.0,
+      "neogen_list": 4599.0,
+      "ratio": 0.63
+    },
+    {
+      "sku": "SH-LGT-GOVE-002",
+      "amazon_sa_ref": 699.0,
+      "neogen_list": 1499.0,
+      "ratio": 0.466
+    },
+    {
+      "sku": "SH-LGT-GOVE-001",
+      "amazon_sa_ref": 379.0,
+      "neogen_list": 459.0,
+      "ratio": 0.826
+    },
+    {
+      "sku": "SH-LGT-PHUE-002",
+      "amazon_sa_ref": 463.0,
+      "neogen_list": 1149.0,
+      "ratio": 0.403
+    },
+    {
+      "sku": "SH-LGT-PHUE-001",
+      "amazon_sa_ref": 531.0,
+      "neogen_list": 899.0,
+      "ratio": 0.591
+    },
+    {
+      "sku": "SH-LCK-AUGS-001",
+      "amazon_sa_ref": 1699.0,
+      "neogen_list": 1499.0,
+      "ratio": 1.133
+    },
+    {
+      "sku": "SH-LCK-AQRA-001",
+      "amazon_sa_ref": 1699.0,
+      "neogen_list": 1439.0,
+      "ratio": 1.181
+    },
+    {
+      "sku": "SH-LCK-YALE-001",
+      "amazon_sa_ref": 1057.0,
+      "neogen_list": 1549.0,
+      "ratio": 0.682
+    },
+    {
+      "sku": "SH-DSP-GGLE-001",
+      "amazon_sa_ref": 209.0,
+      "neogen_list": 699.0,
+      "ratio": 0.299
+    },
+    {
+      "sku": "SH-DSP-AMZN-001",
+      "amazon_sa_ref": 849.0,
+      "neogen_list": 999.0,
+      "ratio": 0.85
+    },
+    {
+      "sku": "SH-SPK-AMZN-002",
+      "amazon_sa_ref": 239.0,
+      "neogen_list": 459.0,
+      "ratio": 0.521
+    },
+    {
+      "sku": "SH-SPK-GGLE-001",
+      "amazon_sa_ref": 303.0,
+      "neogen_list": 809.0,
+      "ratio": 0.375
+    },
+    {
+      "sku": "SH-SPK-APPL-001",
+      "amazon_sa_ref": 479.0,
+      "neogen_list": 699.0,
+      "ratio": 0.685
+    },
+    {
+      "sku": "SH-SPK-AMZN-001",
+      "amazon_sa_ref": 479.0,
+      "neogen_list": 699.0,
+      "ratio": 0.685
+    },
+    {
+      "sku": "NG-SEC-007",
+      "amazon_sa_ref": 438.0,
+      "neogen_list": 1449.0,
+      "ratio": 0.302
+    },
+    {
+      "sku": "NG-SEC-006",
+      "amazon_sa_ref": 921.0,
+      "neogen_list": 2499.0,
+      "ratio": 0.369
+    },
+    {
+      "sku": "NG-SEC-005",
+      "amazon_sa_ref": 2444.0,
+      "neogen_list": 1599.0,
+      "ratio": 1.528
+    },
+    {
+      "sku": "NG-SEC-003",
+      "amazon_sa_ref": 418.0,
+      "neogen_list": 749.0,
+      "ratio": 0.558
+    },
+    {
+      "sku": "NG-SEC-002",
+      "amazon_sa_ref": 527.0,
+      "neogen_list": 1199.0,
+      "ratio": 0.44
+    },
+    {
+      "sku": "NG-SEC-001",
+      "amazon_sa_ref": 639.0,
+      "neogen_list": 549.0,
+      "ratio": 1.164
+    },
+    {
+      "sku": "NG-DRN-007",
+      "amazon_sa_ref": 4999.0,
+      "neogen_list": 8859.0,
+      "ratio": 0.564
+    },
+    {
+      "sku": "NG-NET-011",
+      "amazon_sa_ref": 499.0,
+      "neogen_list": 1499.0,
+      "ratio": 0.333
+    },
+    {
+      "sku": "NG-NET-010",
+      "amazon_sa_ref": 281.0,
+      "neogen_list": 219.0,
+      "ratio": 1.283
+    },
+    {
+      "sku": "NG-NET-009",
+      "amazon_sa_ref": 130.0,
+      "neogen_list": 209.0,
+      "ratio": 0.622
+    },
+    {
+      "sku": "NG-NET-008",
+      "amazon_sa_ref": 205.0,
+      "neogen_list": 649.0,
+      "ratio": 0.316
+    },
+    {
+      "sku": "NG-NET-007",
+      "amazon_sa_ref": 1942.0,
+      "neogen_list": 549.0,
+      "ratio": 3.537
+    },
+    {
+      "sku": "NG-NET-006",
+      "amazon_sa_ref": 123.0,
+      "neogen_list": 229.0,
+      "ratio": 0.537
+    },
+    {
+      "sku": "NG-NET-005",
+      "amazon_sa_ref": 640.0,
+      "neogen_list": 849.0,
+      "ratio": 0.754
+    },
+    {
+      "sku": "NG-NET-004",
+      "amazon_sa_ref": 931.0,
+      "neogen_list": 1149.0,
+      "ratio": 0.81
+    },
+    {
+      "sku": "NG-NET-003",
+      "amazon_sa_ref": 369.0,
+      "neogen_list": 1399.0,
+      "ratio": 0.264
+    },
+    {
+      "sku": "NG-NET-002",
+      "amazon_sa_ref": 1199.0,
+      "neogen_list": 2419.0,
+      "ratio": 0.496
+    },
+    {
+      "sku": "NG-NET-001",
+      "amazon_sa_ref": 559.0,
+      "neogen_list": 799.0,
+      "ratio": 0.7
+    },
+    {
+      "sku": "NG-SH-015",
+      "amazon_sa_ref": 62.0,
+      "neogen_list": 159.0,
+      "ratio": 0.39
+    },
+    {
+      "sku": "NG-SH-014",
+      "amazon_sa_ref": 176.0,
+      "neogen_list": 439.0,
+      "ratio": 0.401
+    },
+    {
+      "sku": "NG-SH-013",
+      "amazon_sa_ref": 264.0,
+      "neogen_list": 699.0,
+      "ratio": 0.378
+    },
+    {
+      "sku": "NG-SH-012",
+      "amazon_sa_ref": 340.0,
+      "neogen_list": 689.0,
+      "ratio": 0.493
+    },
+    {
+      "sku": "NG-SH-011",
+      "amazon_sa_ref": 153.0,
+      "neogen_list": 279.0,
+      "ratio": 0.548
+    },
+    {
+      "sku": "NG-SH-010",
+      "amazon_sa_ref": 175.0,
+      "neogen_list": 399.0,
+      "ratio": 0.439
+    },
+    {
+      "sku": "NG-SH-009",
+      "amazon_sa_ref": 161.0,
+      "neogen_list": 279.0,
+      "ratio": 0.577
+    },
+    {
+      "sku": "NG-SH-008",
+      "amazon_sa_ref": 100.0,
+      "neogen_list": 189.0,
+      "ratio": 0.529
+    },
+    {
+      "sku": "NG-SH-007",
+      "amazon_sa_ref": 282.0,
+      "neogen_list": 639.0,
+      "ratio": 0.441
+    },
+    {
+      "sku": "NG-SH-006",
+      "amazon_sa_ref": 489.0,
+      "neogen_list": 499.0,
+      "ratio": 0.98
+    },
+    {
+      "sku": "NG-ENT-006",
+      "amazon_sa_ref": 6877.0,
+      "neogen_list": 5599.0,
+      "ratio": 1.228
+    },
+    {
+      "sku": "NG-SH-005",
+      "amazon_sa_ref": 141.0,
+      "neogen_list": 309.0,
+      "ratio": 0.456
+    },
+    {
+      "sku": "NG-SH-004",
+      "amazon_sa_ref": 143.0,
+      "neogen_list": 259.0,
+      "ratio": 0.552
+    },
+    {
+      "sku": "NG-SH-003",
+      "amazon_sa_ref": 189.0,
+      "neogen_list": 359.0,
+      "ratio": 0.526
+    },
+    {
+      "sku": "NG-SH-001",
+      "amazon_sa_ref": 1699.0,
+      "neogen_list": 1649.0,
+      "ratio": 1.03
+    },
+    {
+      "sku": "NG-ENT-005",
+      "amazon_sa_ref": 2802.0,
+      "neogen_list": 3099.0,
+      "ratio": 0.904
+    },
+    {
+      "sku": "NG-ENT-002",
+      "amazon_sa_ref": 3137.0,
+      "neogen_list": 3099.0,
+      "ratio": 1.012
+    },
+    {
+      "sku": "NG-ENT-001",
+      "amazon_sa_ref": 5899.0,
+      "neogen_list": 8099.0,
+      "ratio": 0.728
+    },
+    {
+      "sku": "SH-WIN-ECVX-001",
+      "amazon_sa_ref": 1598.0,
+      "neogen_list": 2299.0,
+      "ratio": 0.695
+    },
+    {
+      "sku": "SH-WIN-HBT-001",
+      "amazon_sa_ref": 1294.0,
+      "neogen_list": 1599.0,
+      "ratio": 0.809
+    },
+    {
+      "sku": "SH-POL-BBT-001",
+      "amazon_sa_ref": 5498.0,
+      "neogen_list": 7499.0,
+      "ratio": 0.733
+    },
+    {
+      "sku": "SH-POL-DOL-001",
+      "amazon_sa_ref": 5956.0,
+      "neogen_list": 5999.0,
+      "ratio": 0.993
+    }
+  ],
+  "review_skus": [
+    {
+      "sku": "NT-KVM-ATN-001",
+      "amazon_sa_ref": 129.0,
+      "neogen_list": 2399.0,
+      "ratio": 0.054,
+      "decision": "flagged_for_manual_review"
+    },
+    {
+      "sku": "NT-KVM-TES-001",
+      "amazon_sa_ref": 65.0,
+      "neogen_list": 689.0,
+      "ratio": 0.094,
+      "decision": "flagged_for_manual_review"
+    },
+    {
+      "sku": "NT-SRV-CBM-001",
+      "amazon_sa_ref": 45.0,
+      "neogen_list": 239.0,
+      "ratio": 0.188,
+      "decision": "flagged_for_manual_review"
+    },
+    {
+      "sku": "NT-UPS-APC-002",
+      "amazon_sa_ref": 198.0,
+      "neogen_list": 1839.0,
+      "ratio": 0.108,
+      "decision": "flagged_for_manual_review"
+    },
+    {
+      "sku": "NT-UPS-APC-001",
+      "amazon_sa_ref": 969.0,
+      "neogen_list": 4899.0,
+      "ratio": 0.198,
+      "decision": "flagged_for_manual_review"
+    },
+    {
+      "sku": "SH-BLD-IKEA-001",
+      "amazon_sa_ref": 96.0,
+      "neogen_list": 1099.0,
+      "ratio": 0.087,
+      "decision": "flagged_for_manual_review"
+    },
+    {
+      "sku": "SH-LGT-LIFX-001",
+      "amazon_sa_ref": 60.0,
+      "neogen_list": 329.0,
+      "ratio": 0.182,
+      "decision": "flagged_for_manual_review"
+    },
+    {
+      "sku": "NG-ENT-010",
+      "amazon_sa_ref": 369.0,
+      "neogen_list": 4199.0,
+      "ratio": 0.088,
+      "decision": "flagged_for_manual_review"
+    },
+    {
+      "sku": "SH-LWN-MAM-001",
+      "amazon_sa_ref": 307.0,
+      "neogen_list": 14999.0,
+      "ratio": 0.02,
+      "decision": "rejected_too_low"
+    },
+    {
+      "sku": "SH-LWN-WRX-001",
+      "amazon_sa_ref": 267.0,
+      "neogen_list": 6999.0,
+      "ratio": 0.038,
+      "decision": "rejected_too_low"
+    }
+  ]
+}

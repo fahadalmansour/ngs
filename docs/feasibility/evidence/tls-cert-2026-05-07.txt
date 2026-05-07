@@ -1,0 +1,5 @@
+subject=CN=neogen.store
+issuer=C=GB, O=Sectigo Limited, CN=Sectigo Public Server Authentication CA DV R36
+notBefore=Apr 29 00:00:00 2026 GMT
+notAfter=Jul 16 23:59:59 2026 GMT
+sha256 Fingerprint=F7:B0:5C:C9:74:EF:4F:CE:64:04:2A:72:7D:0B:0B:16:6F:07:07:B6:5C:C5:26:8B:EB:FF:B6:06:8E:B4:8A:F1

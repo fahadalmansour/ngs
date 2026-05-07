@@ -1,0 +1,82 @@
+Section,Item,Value,Unit,Tag,Source,Notes
+1. Constants,SAR per USD,3.75,SAR/USD,confirmed_from_repo,scripts/live-market-sync.js:10,Hardcoded peg
+1. Constants,Target margin over landed cost,15,%,confirmed_from_repo,scripts/price-governor.js:11,TARGET_MARGIN
+1. Constants,Market variance threshold,5,%,confirmed_from_repo,scripts/price-governor.js:12,MARKET_VARIANCE_THRESHOLD
+1. Constants,International shipping per kg,60,SAR/kg,confirmed_from_repo,scripts/live-market-sync.js:11,INTL_SHIPPING_KG
+1. Constants,Customs + VAT multiplier,1.2075,x,confirmed_from_repo,scripts/live-market-sync.js:12,5% customs + 15% VAT
+1. Constants,Local delivery flat fee,30,SAR/order,confirmed_from_repo,scripts/live-market-sync.js / price_sync.py:35,FLAT_FEE_SAR
+1. Constants,VAT standard rate (KSA),15,%,confirmed_from_web,https://www.cleartax.com/sa/vat-rates-saudi-arabia,Effective 2020-07-01
+1. Constants,Customs duty (electronics typical),5,%,default_office_assumption,office_default_pack,Verify per HS code at ZATCA
+,,,,,,
+2. Worked unit (physical: 1kg item @ $50 FOB),FOB cost USD,50,USD,default_office_assumption,office_default_pack,Sample value; Cost Price FOB column is empty in master CSV (n=0/288)
+2. Worked unit,FOB cost SAR,187.50,SAR,confirmed_from_repo,= 50 * 3.75,
+2. Worked unit,Intl shipping (1kg),60,SAR,confirmed_from_repo,= 1 * 60,
+2. Worked unit,Subtotal pre-customs,247.50,SAR,confirmed_from_repo,= 187.50 + 60,
+2. Worked unit,After customs+VAT (x1.2075),298.86,SAR,confirmed_from_repo,= 247.50 * 1.2075,
+2. Worked unit,Local delivery,30,SAR,confirmed_from_repo,+ 30,
+2. Worked unit,Landed cost (per unit),328.86,SAR,confirmed_from_repo,= 298.86 + 30,
+2. Worked unit,Sale price (15% margin),378.19,SAR,confirmed_from_repo,= 328.86 * 1.15,
+2. Worked unit,Gross margin per unit,49.33,SAR,confirmed_from_repo,= 378.19 - 328.86,
+,,,,,,
+3. Worked unit (digital: gift card),Wholesale FOB,80,USD,default_office_assumption,office_default_pack,Sample - replace with actual supplier price
+3. Worked unit,Wholesale SAR,300.00,SAR,confirmed_from_repo,= 80 * 3.75,
+3. Worked unit,Customs+VAT (digital),1.15,x,default_office_assumption,office_default_pack,Digital often only VAT 15% no customs - verify per code
+3. Worked unit,Landed cost,345.00,SAR,confirmed_from_repo,= 300 * 1.15,
+3. Worked unit,Sale price (15% margin),396.75,SAR,confirmed_from_repo,= 345 * 1.15,
+3. Worked unit,Gross margin per unit,51.75,SAR,confirmed_from_repo,= 396.75 - 345,
+,,,,,,
+4. Operating cost (monthly),VPS hosting (blazr.net plan),unknown,SAR/mo,unknown,not_in_repo,Confirm VPS plan tier and SAR rate
+4. Operating cost,Domain renewal,unknown,SAR/yr,unknown,not_in_repo,Typical .store ~ USD 50-80/yr
+4. Operating cost,Email hosting (Namecheap),unknown,SAR/mo,unknown,not_in_repo,
+4. Operating cost,Tabby/BNPL fee range (low),2.79,%,confirmed_from_web,https://paymentproviders.io/compare/tamara-vs-tabby,Of order value
+4. Operating cost,Tabby/BNPL fee range (high),5.99,%,confirmed_from_web,https://paymentproviders.io/compare/tamara-vs-tabby,Of order value
+4. Operating cost,Mada card fee (typical),unknown,%,unknown,not_published,Checkout.com/Moyasar contract dependent
+4. Operating cost,Stripe fee (intl card),2.9,%,default_office_assumption,office_default_pack,Plus 1 SAR fixed - verify on contract
+4. Operating cost,Marketing budget,unknown,SAR/mo,unknown,not_in_repo,
+,,,,,,
+5. Catalog readiness (2026-05-07),Total products in master,288,count,confirmed_from_repo,data/catalogs/master/Neogen_Master_Catalog_Blueprint.csv,
+5. Catalog readiness,Live products (sitemap),199,count,confirmed_from_live_site,https://neogen.store/wp-sitemap-posts-product-1.xml,
+5. Catalog readiness,Tier-1 ready (PASS + Amazon ref),39,count,confirmed_from_repo,output/spreadsheet/price_floor_audit.csv,
+5. Catalog readiness,Tier-2 ready (PASS only),91,count,confirmed_from_repo,output/spreadsheet/price_floor_audit.csv,
+5. Catalog readiness,Tier-2 digital subset,59,count,confirmed_from_repo,Master + audit join,Gift Cards & Software Keys
+5. Catalog readiness,Tier-2 physical subset,32,count,confirmed_from_repo,Master + audit join,
+5. Catalog readiness,Pricing exceptions (NO_REAL_PRICE_REFERENCE),173,count,confirmed_from_repo,output/spreadsheet/price_floor_audit.csv,Medium risk
+5. Catalog readiness,Pricing exceptions (NEEDS_REFERENCE),24,count,confirmed_from_repo,output/spreadsheet/price_floor_audit.csv,High risk
+5. Catalog readiness,Supplier price coverage,2.7,%,confirmed_from_repo,output/spreadsheet/supplier_sourcing_matrix.csv,39 of 1440 rows
+5. Catalog readiness,Cost Price FOB populated,0,count,confirmed_from_repo,Master CSV column,All 288 rows blank
+5. Catalog readiness,Landed Cost populated,0,count,confirmed_from_repo,Master CSV column,All 288 rows blank
+5. Catalog readiness,Brand populated,0,count,confirmed_from_repo,Master CSV column,All 288 rows blank
+5. Catalog readiness,Country of Origin populated,0,count,confirmed_from_repo,Master CSV column,All 288 rows blank
+,,,,,,
+6. Price distribution (master),Min Regular Price (SAR),5,SAR,confirmed_from_repo,Master CSV statistics,
+6. Price distribution,Median Regular Price (SAR),699,SAR,confirmed_from_repo,Master CSV statistics,
+6. Price distribution,Mean Regular Price (SAR),1570,SAR,confirmed_from_repo,Master CSV statistics,
+6. Price distribution,Max Regular Price (SAR),27999,SAR,confirmed_from_repo,Master CSV statistics,
+6. Price distribution,Tier-2 PASS median Regular,241,SAR,confirmed_from_repo,Master + audit join,Lower than overall median
+6. Price distribution,Tier-2 PASS mean Regular,805,SAR,confirmed_from_repo,Master + audit join,
+,,,,,,
+7. Break-even illustration,Assumed monthly fixed cost,2000,SAR/mo,default_office_assumption,office_default_pack,Replace with confirmed fixed costs
+7. Break-even illustration,Assumed payment fee blended,4,%,default_office_assumption,office_default_pack,Mid of 2.79%-5.99% BNPL range
+7. Break-even illustration,AOV scenario A (low),200,SAR,default_office_assumption,office_default_pack,Below Tier-2 median 241
+7. Break-even illustration,AOV scenario B (median),700,SAR,default_office_assumption,office_default_pack,Near master median 699
+7. Break-even illustration,AOV scenario C (high),1500,SAR,default_office_assumption,office_default_pack,Below master mean 1570
+7. Break-even illustration,Net margin per order @ AOV 200,18,SAR/order,confirmed_from_repo,= 200*0.15 - 200*0.04 - 30/avg_units,Approx; assumes 1 unit/order
+7. Break-even illustration,Net margin per order @ AOV 700,77,SAR/order,confirmed_from_repo,= 700*0.15 - 700*0.04,
+7. Break-even illustration,Net margin per order @ AOV 1500,165,SAR/order,confirmed_from_repo,= 1500*0.15 - 1500*0.04,
+7. Break-even illustration,Break-even orders @ AOV 200,111,orders/mo,default_office_assumption,= 2000/18,
+7. Break-even illustration,Break-even orders @ AOV 700,26,orders/mo,default_office_assumption,= 2000/77,
+7. Break-even illustration,Break-even orders @ AOV 1500,12,orders/mo,default_office_assumption,= 2000/165,
+,,,,,,
+8. Sensitivity,SAR/USD +10%,4.125,SAR/USD,default_office_assumption,office_default_pack,Margin compresses if FX worsens
+8. Sensitivity,SAR/USD -10%,3.375,SAR/USD,default_office_assumption,office_default_pack,Margin expands
+8. Sensitivity,Shipping +5% (per kg),63,SAR/kg,default_office_assumption,office_default_pack,
+8. Sensitivity,Payment fee +2pp (high BNPL),6,%,default_office_assumption,office_default_pack,Worst-case BNPL 5.99% rounded
+,,,,,,
+9. Compliance,VAT rate (KSA),15,%,confirmed_from_web,https://www.cleartax.com/sa/vat-rates-saudi-arabia,Standard rate since 2020-07-01
+9. Compliance,ZATCA Wave 23 threshold,750000,SAR/yr,confirmed_from_web,https://zatca.gov.sa/en/Pages/news_1426.aspx,Deadline 31 Mar 2026
+9. Compliance,ZATCA Wave 24 threshold,375000,SAR/yr,confirmed_from_web,https://zatca.gov.sa/en/Pages/news_1426.aspx,Deadline 30 Jun 2026
+9. Compliance,KSA internet penetration (15-74),99.0,%,confirmed_from_web,https://techafricanews.com/2026/01/07/saudi-arabia-hits-99-internet-usage-among-15-74-year-olds-gastat-reports/,GASTAT 2025
+9. Compliance,KSA internet users 2025,33.9,million,confirmed_from_web,https://datareportal.com/reports/digital-2025-saudi-arabia,
+9. Compliance,Mada e-commerce volume Apr 2025,23.27,SAR billion,confirmed_from_web,https://www.arabnews.com/node/2604150/business-economy,+57% YoY
+9. Compliance,Mada online txn count Apr 2025,132,million,confirmed_from_web,https://www.arabnews.com/node/2604150/business-economy,+40.75% YoY
+9. Compliance,KSA e-payments share of retail 2025,85,%,confirmed_from_web,https://www.spa.gov.sa/en/N2558262,SAMA

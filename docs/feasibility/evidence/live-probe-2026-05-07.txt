@@ -1,0 +1,318 @@
+==========================================
+NeoGen Store — Live Tech Probe Evidence
+Date: 2026-05-07 06:24:56 UTC
+Probe host: MacBook-M1.local
+==========================================
+
+----- https://neogen.store/ -----
+STATUS=200 TTFB=3.074395s SIZE=253008B FINAL=https://neogen.store/
+HTTP/2 200 
+content-type: text/html; charset=UTF-8
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+x-frame-options: SAMEORIGIN
+permissions-policy: interest-cohort=(), browsing-topics=()
+strict-transport-security: max-age=31536000; includeSubDomains
+content-security-policy-report-only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://*.mada.com.sa https://*.checkout.com https://*.tabby.ai https://*.stcpay.com.sa https://*.paypal.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.googleadservices.com https://*.googlesyndication.com https://*.doubleclick.net https://*.gstatic.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.gstatic.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa; frame-src 'self' https://*.youtube.com https://*.youtube-nocookie.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; media-src 'self' blob: https:; upgrade-insecure-requests
+permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"),private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+link: <https://neogen.store/wp-json/>; rel="https://api.w.org/"
+link: <https://neogen.store/wp-json/wp/v2/pages/29>; rel="alternate"; title="JSON"; type="application/json"
+link: <https://neogen.store/>; rel=shortlink
+date: Thu, 07 May 2026 06:25:04 GMT
+server: LiteSpeed
+x-turbo-charged-by: LiteSpeed
+
+
+----- https://neogen.store/shop/ -----
+STATUS=200 TTFB=4.912267s SIZE=196531B FINAL=https://neogen.store/shop/
+HTTP/2 200 
+content-type: text/html; charset=UTF-8
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+x-frame-options: SAMEORIGIN
+permissions-policy: interest-cohort=(), browsing-topics=()
+strict-transport-security: max-age=31536000; includeSubDomains
+content-security-policy-report-only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://*.mada.com.sa https://*.checkout.com https://*.tabby.ai https://*.stcpay.com.sa https://*.paypal.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.googleadservices.com https://*.googlesyndication.com https://*.doubleclick.net https://*.gstatic.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.gstatic.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa; frame-src 'self' https://*.youtube.com https://*.youtube-nocookie.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; media-src 'self' blob: https:; upgrade-insecure-requests
+permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"),private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+link: <https://neogen.store/wp-json/>; rel="https://api.w.org/"
+date: Thu, 07 May 2026 06:25:13 GMT
+server: LiteSpeed
+x-turbo-charged-by: LiteSpeed
+
+
+----- https://neogen.store/cart/ -----
+STATUS=200 TTFB=2.785345s SIZE=430267B FINAL=https://neogen.store/cart/
+HTTP/2 200 
+content-type: text/html; charset=UTF-8
+expires: Wed, 11 Jan 1984 05:00:00 GMT
+cache-control: no-cache, must-revalidate, max-age=0, private
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+x-frame-options: SAMEORIGIN
+permissions-policy: interest-cohort=(), browsing-topics=()
+strict-transport-security: max-age=31536000; includeSubDomains
+content-security-policy-report-only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://*.mada.com.sa https://*.checkout.com https://*.tabby.ai https://*.stcpay.com.sa https://*.paypal.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.googleadservices.com https://*.googlesyndication.com https://*.doubleclick.net https://*.gstatic.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.gstatic.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa; frame-src 'self' https://*.youtube.com https://*.youtube-nocookie.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; media-src 'self' blob: https:; upgrade-insecure-requests
+permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"),private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+link: <https://neogen.store/wp-json/>; rel="https://api.w.org/"
+link: <https://neogen.store/wp-json/wp/v2/pages/23>; rel="alternate"; title="JSON"; type="application/json"
+link: <https://neogen.store/?p=23>; rel=shortlink
+date: Thu, 07 May 2026 06:25:22 GMT
+server: LiteSpeed
+x-turbo-charged-by: LiteSpeed
+
+
+----- https://neogen.store/checkout/ -----
+STATUS=200 TTFB=4.079848s SIZE=430263B FINAL=https://neogen.store/cart/
+HTTP/2 302 
+content-type: text/html; charset=UTF-8
+expires: Wed, 11 Jan 1984 05:00:00 GMT
+cache-control: no-cache, no-store, must-revalidate, max-age=0
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+x-frame-options: SAMEORIGIN
+permissions-policy: interest-cohort=(), browsing-topics=()
+strict-transport-security: max-age=31536000; includeSubDomains
+content-security-policy-report-only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://*.mada.com.sa https://*.checkout.com https://*.tabby.ai https://*.stcpay.com.sa https://*.paypal.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.googleadservices.com https://*.googlesyndication.com https://*.doubleclick.net https://*.gstatic.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.gstatic.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa; frame-src 'self' https://*.youtube.com https://*.youtube-nocookie.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; media-src 'self' blob: https:; upgrade-insecure-requests
+permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"),private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+x-redirect-by: WordPress
+location: https://neogen.store/cart/
+date: Thu, 07 May 2026 06:25:32 GMT
+server: LiteSpeed
+x-turbo-charged-by: LiteSpeed
+
+HTTP/2 200 
+content-type: text/html; charset=UTF-8
+expires: Wed, 11 Jan 1984 05:00:00 GMT
+cache-control: no-cache, must-revalidate, max-age=0, private
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+x-frame-options: SAMEORIGIN
+permissions-policy: interest-cohort=(), browsing-topics=()
+
+----- https://neogen.store/wp-json/ -----
+STATUS=200 TTFB=4.025548s SIZE=1690028B FINAL=https://neogen.store/wp-json/
+HTTP/2 200 
+content-type: application/json; charset=UTF-8
+x-robots-tag: noindex
+link: <https://neogen.store/wp-json/>; rel="https://api.w.org/"
+x-content-type-options: nosniff
+access-control-expose-headers: X-WP-Total, X-WP-TotalPages, Link
+access-control-allow-headers: Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type
+allow: GET
+date: Thu, 07 May 2026 06:25:47 GMT
+server: LiteSpeed
+x-turbo-charged-by: LiteSpeed
+
+
+----- https://neogen.store/robots.txt -----
+STATUS=200 TTFB=2.380950s SIZE=525B FINAL=https://neogen.store/robots.txt
+HTTP/2 200 
+content-type: text/html; charset=UTF-8
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+x-frame-options: SAMEORIGIN
+permissions-policy: interest-cohort=(), browsing-topics=()
+strict-transport-security: max-age=31536000; includeSubDomains
+content-security-policy-report-only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://*.mada.com.sa https://*.checkout.com https://*.tabby.ai https://*.stcpay.com.sa https://*.paypal.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.googleadservices.com https://*.googlesyndication.com https://*.doubleclick.net https://*.gstatic.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.gstatic.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa; frame-src 'self' https://*.youtube.com https://*.youtube-nocookie.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; media-src 'self' blob: https:; upgrade-insecure-requests
+permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"),private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+link: <https://neogen.store/wp-json/>; rel="https://api.w.org/"
+date: Thu, 07 May 2026 06:25:52 GMT
+server: LiteSpeed
+x-turbo-charged-by: LiteSpeed
+
+
+----- https://neogen.store/sitemap.xml -----
+STATUS=200 TTFB=3.230317s SIZE=870B FINAL=https://neogen.store/wp-sitemap.xml
+HTTP/2 301 
+x-redirect-by: WordPress
+location: https://neogen.store/wp-sitemap.xml
+content-type: text/html; charset=UTF-8
+date: Thu, 07 May 2026 06:25:57 GMT
+server: LiteSpeed
+x-turbo-charged-by: LiteSpeed
+
+HTTP/2 200 
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+x-frame-options: SAMEORIGIN
+permissions-policy: interest-cohort=(), browsing-topics=()
+strict-transport-security: max-age=31536000; includeSubDomains
+content-security-policy-report-only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://*.mada.com.sa https://*.checkout.com https://*.tabby.ai https://*.stcpay.com.sa https://*.paypal.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.googleadservices.com https://*.googlesyndication.com https://*.doubleclick.net https://*.gstatic.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.gstatic.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa; frame-src 'self' https://*.youtube.com https://*.youtube-nocookie.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; media-src 'self' blob: https:; upgrade-insecure-requests
+permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"),private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+content-type: application/xml; charset=UTF-8
+date: Thu, 07 May 2026 06:25:58 GMT
+server: LiteSpeed
+x-turbo-charged-by: LiteSpeed
+
+
+----- https://neogen.store/wp-login.php -----
+STATUS=200 TTFB=3.022260s SIZE=12686B FINAL=https://neogen.store/wp-login.php
+HTTP/2 200 
+expires: Wed, 11 Jan 1984 05:00:00 GMT
+cache-control: no-cache, must-revalidate, max-age=0, no-store, private
+content-type: text/html; charset=UTF-8
+set-cookie: wordpress_test_cookie=WP%20Cookie%20check; path=/; secure; HttpOnly
+x-frame-options: SAMEORIGIN
+content-security-policy: frame-ancestors 'self';
+referrer-policy: strict-origin-when-cross-origin
+date: Thu, 07 May 2026 06:26:04 GMT
+server: LiteSpeed
+x-turbo-charged-by: LiteSpeed
+
+
+----- https://neogen.store/ar/ -----
+STATUS=200 TTFB=5.230542s SIZE=286490B FINAL=https://neogen.store/product/arduino-mega-2560-rev3-the-ultimate-microcontroller-board-for-advanced-projects/
+HTTP/2 301 
+expires: Wed, 11 Jan 1984 05:00:00 GMT
+cache-control: no-cache, must-revalidate, max-age=0, no-store, private
+content-type: text/html; charset=UTF-8
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+x-frame-options: SAMEORIGIN
+permissions-policy: interest-cohort=(), browsing-topics=()
+strict-transport-security: max-age=31536000; includeSubDomains
+content-security-policy-report-only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://*.mada.com.sa https://*.checkout.com https://*.tabby.ai https://*.stcpay.com.sa https://*.paypal.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.googleadservices.com https://*.googlesyndication.com https://*.doubleclick.net https://*.gstatic.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.gstatic.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa; frame-src 'self' https://*.youtube.com https://*.youtube-nocookie.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; media-src 'self' blob: https:; upgrade-insecure-requests
+permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"),private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+x-redirect-by: WordPress
+location: https://neogen.store/product/arduino-mega-2560-rev3-the-ultimate-microcontroller-board-for-advanced-projects/
+date: Thu, 07 May 2026 06:26:15 GMT
+server: LiteSpeed
+x-turbo-charged-by: LiteSpeed
+
+HTTP/2 200 
+content-type: text/html; charset=UTF-8
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+x-frame-options: SAMEORIGIN
+permissions-policy: interest-cohort=(), browsing-topics=()
+strict-transport-security: max-age=31536000; includeSubDomains
+content-security-policy-report-only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://*.mada.com.sa https://*.checkout.com https://*.tabby.ai https://*.stcpay.com.sa https://*.paypal.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.googleadservices.com https://*.googlesyndication.com https://*.doubleclick.net https://*.gstatic.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.gstatic.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa; frame-src 'self' https://*.youtube.com https://*.youtube-nocookie.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; media-src 'self' blob: https:; upgrade-insecure-requests
+
+----- https://neogen.store/feed/ -----
+STATUS=200 TTFB=2.102508s SIZE=1749B FINAL=https://neogen.store/feed/
+HTTP/2 200 
+content-type: application/rss+xml; charset=UTF-8
+last-modified: Fri, 01 May 2026 19:18:37 GMT
+etag: "1b8bf75216e5fc912c4d4c8d340a0cc6"
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+x-frame-options: SAMEORIGIN
+permissions-policy: interest-cohort=(), browsing-topics=()
+strict-transport-security: max-age=31536000; includeSubDomains
+content-security-policy-report-only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://*.mada.com.sa https://*.checkout.com https://*.tabby.ai https://*.stcpay.com.sa https://*.paypal.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.googleadservices.com https://*.googlesyndication.com https://*.doubleclick.net https://*.gstatic.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.gstatic.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa; frame-src 'self' https://*.youtube.com https://*.youtube-nocookie.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; media-src 'self' blob: https:; upgrade-insecure-requests
+permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"),private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+link: <https://neogen.store/wp-json/>; rel="https://api.w.org/"
+date: Thu, 07 May 2026 06:26:21 GMT
+server: LiteSpeed
+x-turbo-charged-by: LiteSpeed
+
+
+----- https://neogen.store/wp-sitemap.xml -----
+STATUS=200 TTFB=2.120696s SIZE=870B FINAL=https://neogen.store/wp-sitemap.xml
+HTTP/2 200 
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+x-frame-options: SAMEORIGIN
+permissions-policy: interest-cohort=(), browsing-topics=()
+strict-transport-security: max-age=31536000; includeSubDomains
+content-security-policy-report-only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://*.mada.com.sa https://*.checkout.com https://*.tabby.ai https://*.stcpay.com.sa https://*.paypal.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.googleadservices.com https://*.googlesyndication.com https://*.doubleclick.net https://*.gstatic.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.gstatic.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa; frame-src 'self' https://*.youtube.com https://*.youtube-nocookie.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; media-src 'self' blob: https:; upgrade-insecure-requests
+permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"),private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+content-type: application/xml; charset=UTF-8
+date: Thu, 07 May 2026 06:26:26 GMT
+server: LiteSpeed
+x-turbo-charged-by: LiteSpeed
+
+
+----- https://neogen.store/wp-sitemap-posts-product-1.xml -----
+STATUS=200 TTFB=2.574452s SIZE=28277B FINAL=https://neogen.store/wp-sitemap-posts-product-1.xml
+HTTP/2 200 
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+x-frame-options: SAMEORIGIN
+permissions-policy: interest-cohort=(), browsing-topics=()
+strict-transport-security: max-age=31536000; includeSubDomains
+content-security-policy-report-only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://*.mada.com.sa https://*.checkout.com https://*.tabby.ai https://*.stcpay.com.sa https://*.paypal.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.googleadservices.com https://*.googlesyndication.com https://*.doubleclick.net https://*.gstatic.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.gstatic.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa; frame-src 'self' https://*.youtube.com https://*.youtube-nocookie.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; media-src 'self' blob: https:; upgrade-insecure-requests
+permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"),private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+content-type: application/xml; charset=UTF-8
+date: Thu, 07 May 2026 06:26:31 GMT
+server: LiteSpeed
+x-turbo-charged-by: LiteSpeed
+
+
+----- https://neogen.store/return-policy/ -----
+STATUS=404 TTFB=3.160546s SIZE=164673B FINAL=https://neogen.store/return-policy/
+HTTP/2 404 
+expires: Wed, 11 Jan 1984 05:00:00 GMT
+cache-control: no-cache, must-revalidate, max-age=0, no-store, private
+content-type: text/html; charset=UTF-8
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+x-frame-options: SAMEORIGIN
+permissions-policy: interest-cohort=(), browsing-topics=()
+strict-transport-security: max-age=31536000; includeSubDomains
+content-security-policy-report-only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://*.mada.com.sa https://*.checkout.com https://*.tabby.ai https://*.stcpay.com.sa https://*.paypal.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.googleadservices.com https://*.googlesyndication.com https://*.doubleclick.net https://*.gstatic.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.gstatic.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa; frame-src 'self' https://*.youtube.com https://*.youtube-nocookie.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; media-src 'self' blob: https:; upgrade-insecure-requests
+permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"),private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+link: <https://neogen.store/wp-json/>; rel="https://api.w.org/"
+date: Thu, 07 May 2026 06:26:38 GMT
+server: LiteSpeed
+x-turbo-charged-by: LiteSpeed
+
+
+----- https://neogen.store/refund_returns/ -----
+STATUS=404 TTFB=2.790723s SIZE=164677B FINAL=https://neogen.store/refund_returns/
+HTTP/2 404 
+expires: Wed, 11 Jan 1984 05:00:00 GMT
+cache-control: no-cache, must-revalidate, max-age=0, no-store, private
+content-type: text/html; charset=UTF-8
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+x-frame-options: SAMEORIGIN
+permissions-policy: interest-cohort=(), browsing-topics=()
+strict-transport-security: max-age=31536000; includeSubDomains
+content-security-policy-report-only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://*.mada.com.sa https://*.checkout.com https://*.tabby.ai https://*.stcpay.com.sa https://*.paypal.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.googleadservices.com https://*.googlesyndication.com https://*.doubleclick.net https://*.gstatic.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.gstatic.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa; frame-src 'self' https://*.youtube.com https://*.youtube-nocookie.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; media-src 'self' blob: https:; upgrade-insecure-requests
+permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"),private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+link: <https://neogen.store/wp-json/>; rel="https://api.w.org/"
+date: Thu, 07 May 2026 06:26:44 GMT
+server: LiteSpeed
+x-turbo-charged-by: LiteSpeed
+
+
+----- https://neogen.store/privacy-policy/ -----
+STATUS=200 TTFB=2.407189s SIZE=158051B FINAL=https://neogen.store/privacy-policy/
+HTTP/2 200 
+content-type: text/html; charset=UTF-8
+x-pingback: https://neogen.store/xmlrpc.php
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+x-frame-options: SAMEORIGIN
+permissions-policy: interest-cohort=(), browsing-topics=()
+strict-transport-security: max-age=31536000; includeSubDomains
+content-security-policy-report-only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://*.mada.com.sa https://*.checkout.com https://*.tabby.ai https://*.stcpay.com.sa https://*.paypal.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.googleadservices.com https://*.googlesyndication.com https://*.doubleclick.net https://*.gstatic.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.gstatic.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa; frame-src 'self' https://*.youtube.com https://*.youtube-nocookie.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; media-src 'self' blob: https:; upgrade-insecure-requests
+permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"),private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+link: <https://neogen.store/wp-json/>; rel="https://api.w.org/"
+link: <https://neogen.store/wp-json/wp/v2/pages/3>; rel="alternate"; title="JSON"; type="application/json"
+link: <https://neogen.store/?p=3>; rel=shortlink
+date: Thu, 07 May 2026 06:26:51 GMT
+server: LiteSpeed
+x-turbo-charged-by: LiteSpeed
+
+
+----- https://neogen.store/terms-and-conditions/ -----
+STATUS=404 TTFB=2.583011s SIZE=164701B FINAL=https://neogen.store/terms-and-conditions/
+HTTP/2 404 
+expires: Wed, 11 Jan 1984 05:00:00 GMT
+cache-control: no-cache, must-revalidate, max-age=0, no-store, private
+content-type: text/html; charset=UTF-8
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+x-frame-options: SAMEORIGIN
+permissions-policy: interest-cohort=(), browsing-topics=()
+strict-transport-security: max-age=31536000; includeSubDomains
+content-security-policy-report-only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://*.mada.com.sa https://*.checkout.com https://*.tabby.ai https://*.stcpay.com.sa https://*.paypal.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.googleadservices.com https://*.googlesyndication.com https://*.doubleclick.net https://*.gstatic.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://*.gstatic.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa; frame-src 'self' https://*.youtube.com https://*.youtube-nocookie.com https://*.tabby.ai https://*.checkout.com https://*.stcpay.com.sa https://*.applepay.cdn-apple.com; media-src 'self' blob: https:; upgrade-insecure-requests
+permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"),private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+link: <https://neogen.store/wp-json/>; rel="https://api.w.org/"
+date: Thu, 07 May 2026 06:26:57 GMT
+server: LiteSpeed
+x-turbo-charged-by: LiteSpeed
+
+

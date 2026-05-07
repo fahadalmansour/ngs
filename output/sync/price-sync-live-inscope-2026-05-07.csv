@@ -1,0 +1,120 @@
+SKU,Name,Category,Weight_kg,Source_Site,Source_Price_USD,Amazon_SA_Ref_SAR,Landed_Cost_SAR,Target_Sale_SAR,Notes
+NT-MPC-DEL-001,Dell OptiPlex 7070 Micro (Refurb),Homelab | هوم لاب,1.5,B&H,,2581,,,No source price on B&H
+NT-MPC-BLK-002,Beelink EQ12 (Intel N100),Homelab | هوم لاب,1,B&H,,1888,,,No source price on B&H
+NT-MPC-BLK-001,Beelink SER7 (Ryzen 7 7735HS),Homelab | هوم لاب,1.2,B&H,,2476,,,No source price on B&H
+NT-MPC-MNF-001,MinisForum MS-01 (Homelab Server),Homelab | هوم لاب,2.5,B&H,,2017,,,No source price on B&H
+NT-POE-TPL-001,TP-Link TL-SG1005P 5-Port PoE,Networking | شبكات واتصالات,0.8,B&H,,159,,,No source price on B&H
+NT-POE-UBQ-001,Ubiquiti USW-Lite-8-PoE,Networking | شبكات واتصالات,0.9,B&H,,640,,,No source price on B&H
+NT-KVM-ATN-001,ATEN CS1924M 4-Port DP KVM,Homelab | هوم لاب,3.5,B&H,,129,,,No source price on B&H
+NT-KVM-TES-001,TESmart HKS0401A1U 4-Port HDMI KVM,Homelab | هوم لاب,2.5,B&H,,65,,,No source price on B&H
+NT-FWL-FTN-001,Fortinet FortiGate 60F,Homelab | هوم لاب,1.5,B&H,,3146,,,No source price on B&H
+NT-FWL-NGT-002,Netgate 2100 MAX pfSense+ Gateway,Homelab | هوم لاب,1.2,B&H,,2191,,,No source price on B&H
+NT-FWL-NGT-001,Netgate 4200 MAX pfSense+ Gateway,Homelab | هوم لاب,2.5,B&H,,1314,,,No source price on B&H
+NT-CBL-GEN-001,Cat6a Shielded Bulk Cable (305m),Networking | شبكات واتصالات,12,B&H,,65,,,No source price on B&H
+NT-CBL-FSC-001,10G SFP+ DAC Twinax Cable (1m),Networking | شبكات واتصالات,0.15,B&H,,65,,,No source price on B&H
+NT-SFP-FSC-001,FS.com 10GBASE-SR SFP+ Transceiver,Networking | شبكات واتصالات,0.1,B&H,,65,,,No source price on B&H
+NT-SRV-NVP-001,NavePoint 1U Cantilever Rack Shelf,Homelab | هوم لاب,3,B&H,,261,,,No source price on B&H
+NT-SRV-CBM-001,Cable Matters 24-Port Cat6 Patch Panel (1U),Homelab | هوم لاب,1.5,B&H,,45,,,No source price on B&H
+NT-SRV-STC-001,StarTech RK12WALLOA 12U Wall-Mount Rack,Homelab | هوم لاب,15,B&H,,1089,,,No source price on B&H
+NT-UPS-APC-002,APC Back-UPS Pro BX1500M (Tower),Homelab | هوم لاب,12,B&H,,198,,,No source price on B&H
+NT-UPS-CYB-001,CyberPower OR1500LCDRM1U (1500VA 1U),Homelab | هوم لاب,14,B&H,,4405,,,No source price on B&H
+NT-UPS-APC-001,APC Smart-UPS SMT1500RM2UC (1500VA Rack),Homelab | هوم لاب,16,B&H,,969,,,No source price on B&H
+NT-NAS-QNP-002,QNAP TS-262-4G (2-Bay),Homelab | هوم لاب,3.5,B&H,,2699,,,No source price on B&H
+NT-NAS-QNP-001,QNAP TS-464-8G (4-Bay),Homelab | هوم لاب,5.5,B&H,,3378,,,No source price on B&H
+NT-NAS-SYN-002,Synology DS925+ (4-Bay),Homelab | هوم لاب,5.5,B&H,,2826,,,No source price on B&H
+NT-NAS-SYN-001,Synology DS225+ (2-Bay),Homelab | هوم لاب,3,B&H,,1643,,,No source price on B&H
+NT-WAP-TPL-002,TP-Link Omada EAP650,Networking | شبكات واتصالات,0.6,B&H,,341,,,No source price on B&H
+NT-WAP-TPL-001,TP-Link Omada EAP610,Networking | شبكات واتصالات,0.6,B&H,,359,,,No source price on B&H
+NT-WAP-UBQ-002,Ubiquiti UniFi U7 Pro,Networking | شبكات واتصالات,0.9,B&H,,807,,,No source price on B&H
+NT-WAP-UBQ-001,Ubiquiti UniFi U6 Pro,Networking | شبكات واتصالات,0.8,B&H,,755,,,No source price on B&H
+NT-NET-UBQ-001,Ubiquiti USW-Pro-24-PoE,Networking | شبكات واتصالات,5,B&H,,3282,,,No source price on B&H
+NT-NET-MKT-004,MikroTik CRS312-4C+8XG-RM,Networking | شبكات واتصالات,3,B&H,,2637,,,No source price on B&H
+NT-NET-MKT-003,MikroTik CRS328-24P-4S+RM (PoE),Networking | شبكات واتصالات,5,B&H,,2029,,,No source price on B&H
+NT-NET-MKT-002,MikroTik CRS326-24G-2S+RM,Networking | شبكات واتصالات,3.5,B&H,,881,,,No source price on B&H
+NT-NET-MKT-001,MikroTik CRS305-1G-4S+IN,Networking | شبكات واتصالات,0.5,B&H,,931,,,No source price on B&H
+SH-SWB-SWBT-003,SwitchBot Blind Tilt,Smart Home & IoT | أتمتة المنزل الذكي,0.4,AliExpress,,1444,,,No source price on AliExpress
+SH-SWB-SWBT-002,SwitchBot Bot (Smart Button Pusher),Smart Home & IoT | أتمتة المنزل الذكي,0.2,AliExpress,,78,,,No source price on AliExpress
+SH-SWB-SWBT-001,SwitchBot Hub 2 (Matter Enabled),Smart Home & IoT | أتمتة المنزل الذكي,0.3,AliExpress,,340,,,No source price on AliExpress
+SH-HUB-HUBI-001,Hubitat Elevation C-8 Pro,Smart Home & IoT | أتمتة المنزل الذكي,0.5,AliExpress,,,,,No source price on AliExpress
+SH-HUB-HASS-001,Home Assistant Green,Smart Home & IoT | أتمتة المنزل الذكي,0.6,AliExpress,,816,,,No source price on AliExpress
+SH-HUB-AQRA-001,Aqara Hub M3,Smart Home & IoT | أتمتة المنزل الذكي,0.3,AliExpress,,749,,,No source price on AliExpress
+SH-BLD-IKEA-001,IKEA FYRTUR Blackout Smart Roller Blind,Smart Home & IoT | أتمتة المنزل الذكي,3.5,AliExpress,,96,,,No source price on AliExpress
+SH-BLD-SWBT-001,SwitchBot Curtain 3,Smart Home & IoT | أتمتة المنزل الذكي,0.5,AliExpress,,282,,,No source price on AliExpress
+SH-VDB-EUFY-001,Eufy Video Doorbell E340 (Dual Camera),Smart Home & IoT | أتمتة المنزل الذكي,1.2,AliExpress,,438,,,No source price on AliExpress
+SH-VDB-RING-001,Ring Battery Doorbell Plus,Smart Home & IoT | أتمتة المنزل الذكي,0.6,AliExpress,,727,,,No source price on AliExpress
+SH-CAM-RELK-001,Reolink Argus 4 Pro (4K),Smart Home & IoT | أتمتة المنزل الذكي,0.6,AliExpress,,639,,,No source price on AliExpress
+SH-CAM-EUFY-001,Eufy eufyCam 3 (4K + HomeBase 3 Kit),Smart Home & IoT | أتمتة المنزل الذكي,3.5,AliExpress,,379,,,No source price on AliExpress
+SH-CAM-ARLO-001,Arlo Pro 5 2K Spotlight Camera,Smart Home & IoT | أتمتة المنزل الذكي,0.5,AliExpress,,418,,,No source price on AliExpress
+SH-CAM-RING-001,Ring Indoor Cam (2nd Gen),Smart Home & IoT | أتمتة المنزل الذكي,0.3,AliExpress,,99,,,No source price on AliExpress
+SH-PLG-MERS-001,Meross Smart Plug Mini MSS110 (HomeKit),Smart Home & IoT | أتمتة المنزل الذكي,0.15,AliExpress,,113,,,No source price on AliExpress
+SH-PLG-TPLK-001,"TP-Link Tapo P125M Smart Plug (Matter, 2-pack)",Smart Home & IoT | أتمتة المنزل الذكي,0.3,AliExpress,,103,,,No source price on AliExpress
+SH-THR-ECOB-001,Ecobee Smart Thermostat Premium,Smart Home & IoT | أتمتة المنزل الذكي,0.5,AliExpress,,1076,,,No source price on AliExpress
+SH-THR-NEST-001,Google Nest Learning Thermostat (4th Gen),Smart Home & IoT | أتمتة المنزل الذكي,0.5,AliExpress,,1009,,,No source price on AliExpress
+SH-RVC-ECVX-001,Ecovacs Deebot X9 Pro Omni,Smart Home & IoT | أتمتة المنزل الذكي,13,AliExpress,,1598,,,No source price on AliExpress
+SH-RVC-DREM-001,Dreame L50 Ultra,Smart Home & IoT | أتمتة المنزل الذكي,12,AliExpress,,2999,,,No source price on AliExpress
+SH-RVC-RBRC-001,Roborock Qrevo CurvX,Smart Home & IoT | أتمتة المنزل الذكي,11,AliExpress,,2899,,,No source price on AliExpress
+SH-LGT-GOVE-002,Govee Glide Hexagon Light Panels Ultra (10-pack),Smart Home & IoT | أتمتة المنزل الذكي,3.5,AliExpress,,699,,,No source price on AliExpress
+SH-LGT-GOVE-001,Govee RGBIC LED Strip M1 (5m),Smart Home & IoT | أتمتة المنزل الذكي,0.6,AliExpress,,379,,,No source price on AliExpress
+SH-LGT-LIFX-001,LIFX Color A19 1100lm Bulb,Smart Home & IoT | أتمتة المنزل الذكي,0.2,AliExpress,,60,,,No source price on AliExpress
+SH-LGT-PHUE-002,Philips Hue Gradient Lightstrip (2m),Smart Home & IoT | أتمتة المنزل الذكي,0.5,AliExpress,,463,,,No source price on AliExpress
+SH-LGT-PHUE-001,Philips Hue Starter Kit (3x A19 + Bridge),Smart Home & IoT | أتمتة المنزل الذكي,1.2,AliExpress,,531,,,No source price on AliExpress
+SH-LCK-AUGS-001,August Wi-Fi Smart Lock (4th Gen),Smart Home & IoT | أتمتة المنزل الذكي,1,AliExpress,,1699,,,No source price on AliExpress
+SH-LCK-AQRA-001,Aqara Smart Lock U200,Smart Home & IoT | أتمتة المنزل الذكي,1.8,AliExpress,,1699,,,No source price on AliExpress
+SH-LCK-YALE-001,Yale Assure Lock 2 Wi-Fi,Smart Home & IoT | أتمتة المنزل الذكي,1.5,AliExpress,,1057,,,No source price on AliExpress
+SH-DSP-GGLE-001,Google Nest Hub (2nd Gen),Smart Home & IoT | أتمتة المنزل الذكي,1.2,AliExpress,,209,,,No source price on AliExpress
+SH-DSP-AMZN-001,Amazon Echo Show 8 (3rd Gen),Smart Home & IoT | أتمتة المنزل الذكي,1.3,AliExpress,,849,,,No source price on AliExpress
+SH-SPK-AMZN-002,Amazon Echo Dot (5th Gen),Smart Home & IoT | أتمتة المنزل الذكي,0.4,AliExpress,,239,,,No source price on AliExpress
+SH-SPK-GGLE-001,Google Nest Audio,Smart Home & IoT | أتمتة المنزل الذكي,1.3,AliExpress,,303,,,No source price on AliExpress
+SH-SPK-APPL-001,Apple HomePod Mini,Smart Home & IoT | أتمتة المنزل الذكي,0.5,AliExpress,,479,,,No source price on AliExpress
+SH-SPK-AMZN-001,Amazon Echo (4th Gen),Smart Home & IoT | أتمتة المنزل الذكي,1,AliExpress,,479,,,No source price on AliExpress
+NG-SEC-007,Eufy Video Doorbell S330 - Dual Camera Smart Doorbell (2K + Package Cam),Security & Surveillance | أمن ومراقبة,0.8,B&H,,438,,,No source price on B&H
+NG-SEC-006,Ajax Hub 2 Plus - Professional Wireless Smart Alarm System,Security & Surveillance | أمن ومراقبة,1.5,B&H,,921,,,No source price on B&H
+NG-SEC-005,Reolink 16-Channel PoE NVR (RLN16-410) - 4K Network Video Recorder,Security & Surveillance | أمن ومراقبة,4.5,B&H,,2444,,,No source price on B&H
+NG-SEC-004,Ubiquiti UniFi Protect G4 Doorbell Pro - 5MP Smart Doorbell with Fingerprint Reader,Security & Surveillance | أمن ومراقبة,1.2,B&H,,49,,,No source price on B&H
+NG-SEC-003,Hikvision DS-2CD2143G2-I - 4MP AcuSense Dome Camera,Security & Surveillance | أمن ومراقبة,0.8,B&H,,418,,,No source price on B&H
+NG-SEC-002,Reolink Argus 4 Pro - Solar-Powered Wireless 4K Security Camera,Security & Surveillance | أمن ومراقبة,1.2,B&H,,527,,,No source price on B&H
+NG-SEC-001,Reolink RLC-810A - 4K PoE AI Security Camera,Security & Surveillance | أمن ومراقبة,0.8,B&H,,639,,,No source price on B&H
+NG-DRN-007,"Roborock S8 MaxV Ultra - Smart Robot Vacuum with 10,000Pa Suction",Smart Home & IoT | أتمتة المنزل الذكي,12,B&H,,4999,,,No source price on B&H
+NG-NET-012,Ubiquiti UniFi Cloud Gateway Ultra - All-in-One UniFi Gateway,Networking | شبكات واتصالات,0.8,B&H,,543,,,No source price on B&H
+NG-NET-011,TP-Link Archer AXE75 - AXE5400 Tri-Band WiFi 6E Router,Networking | شبكات واتصالات,1.2,B&H,,499,,,No source price on B&H
+NG-NET-010,Ubiquiti UniFi USW-Flex-Mini - Ultra-Compact 5-Port Managed Switch,Networking | شبكات واتصالات,0.2,B&H,,281,,,No source price on B&H
+NG-NET-009,Netgear GS308E - 8-Port Gigabit Plus Smart Managed Switch,Networking | شبكات واتصالات,0.6,B&H,,130,,,No source price on B&H
+NG-NET-008,MikroTik hEX S (RB760iGS) - 5-Port Gigabit Router with SFP and USB,Networking | شبكات واتصالات,0.5,B&H,,205,,,No source price on B&H
+NG-NET-007,Ubiquiti EdgeRouter X - Advanced Gigabit Router in a Pocket-Sized Form,Networking | شبكات واتصالات,0.3,B&H,,1942,,,No source price on B&H
+NG-NET-006,TP-Link TL-SG108E - 8-Port Gigabit Easy Smart Managed Switch,Networking | شبكات واتصالات,0.4,B&H,,123,,,No source price on B&H
+NG-NET-005,Ubiquiti UniFi 6 Lite - WiFi 6 Access Point (AX1500),Networking | شبكات واتصالات,0.5,B&H,,640,,,No source price on B&H
+NG-NET-004,MikroTik CRS305-1G-4S+IN - 4-Port 10G SFP+ Desktop Switch,Networking | شبكات واتصالات,0.5,B&H,,931,,,No source price on B&H
+NG-NET-003,Ubiquiti UniFi Switch Lite 16 PoE - 16-Port Managed Gigabit PoE+ Switch,Networking | شبكات واتصالات,2,B&H,,369,,,No source price on B&H
+NG-NET-002,TP-Link Deco XE75 (3-Pack) - AXE5400 WiFi 6E Whole-Home Mesh System,Networking | شبكات واتصالات,3,B&H,,1199,,,No source price on B&H
+NG-NET-001,MikroTik hAP ax3 - WiFi 6 Router with RouterOS Power,Networking | شبكات واتصالات,1,B&H,,559,,,No source price on B&H
+NG-SH-015,Sonoff SNZB-02D Zigbee Temperature &amp; Humidity Sensor with LCD Display,Smart Home & IoT | أتمتة المنزل الذكي,0.1,B&H,,62,,,No source price on B&H
+NG-SH-014,MOES Zigbee Smart Thermostat (BHT-002-GCLZB) - Programmable HVAC Control,Smart Home & IoT | أتمتة المنزل الذكي,0.3,B&H,,176,,,No source price on B&H
+NG-SH-013,Zemismart Zigbee Smart Tubular Motor (ZM25TQ) - Heavy-Duty Roller Blind Motor,Smart Home & IoT | أتمتة المنزل الذكي,1.5,B&H,,264,,,No source price on B&H
+NG-SH-012,Aqara Roller Shade Driver E1 (RSD-M01) - Smart Roller Blind Motor with HomeKit,Smart Home & IoT | أتمتة المنزل الذكي,0.8,B&H,,340,,,No source price on B&H
+NG-SH-011,SwitchBot Bot (S1) - Robotic Finger That Makes Any Button Smart,Smart Home & IoT | أتمتة المنزل الذكي,0.2,B&H,,153,,,No source price on B&H
+NG-SH-010,Eve Energy Smart Plug (Matter/Thread) - Next-Gen Smart Plug with Power Monitoring,Smart Home & IoT | أتمتة المنزل الذكي,0.2,B&H,,175,,,No source price on B&H
+NG-SH-009,Aqara Motion Sensor P1 (MS-S02) - Wide-Angle 170° Smart PIR Sensor,Smart Home & IoT | أتمتة المنزل الذكي,0.1,B&H,,161,,,No source price on B&H
+NG-SH-008,Shelly Plus 1PM - Smart Wi-Fi Relay with Power Monitoring,Smart Home & IoT | أتمتة المنزل الذكي,0.15,B&H,,100,,,No source price on B&H
+NG-SH-007,SwitchBot Curtain 3 (W2400000) - Turn Any Curtain Smart in Minutes,Smart Home & IoT | أتمتة المنزل الذكي,0.5,B&H,,282,,,No source price on B&H
+NG-SH-006,Aqara Hub M2 (HM2-G01) - Multi-Protocol Smart Home Gateway,Smart Home & IoT | أتمتة المنزل الذكي,0.3,B&H,,489,,,No source price on B&H
+NG-ENT-010,Ubiquiti UniFi Switch Pro 24 PoE (USW-Pro-24-PoE) - Smart Managed PoE+ Switch,Homelab | هوم لاب,5,B&H,,369,,,No source price on B&H
+NG-ENT-009,HPE ProLiant DL380 Gen10 Server (Refurbished) - Data Center Power at Smart Pricing,Homelab | هوم لاب,32,B&H,,5899,,,No source price on B&H
+NG-ENT-008,APC Smart-UPS 1500VA LCD RM 2U (SMT1500RMI2U) - Pure Sine Wave Rack UPS,Homelab | هوم لاب,16,B&H,,,,,No source price on B&H
+NG-ENT-007,MikroTik CRS326-24G-2S+RM 24-Port Managed Gigabit Switch with 10G SFP+,Homelab | هوم لاب,3.5,B&H,,881,,,No source price on B&H
+NG-ENT-006,Synology DiskStation DS1621+ 6-Bay NAS - Enterprise Storage Powerhouse,Homelab | هوم لاب,8,B&H,,6877,,,No source price on B&H
+NG-SH-005,Sonoff TX Ultimate (T5) Smart Wall Switch - Interactive Elegance with RGB,Smart Home & IoT | أتمتة المنزل الذكي,0.4,B&H,,141,,,No source price on B&H
+NG-SH-004,Aqara Water Leak Sensor - Safeguard Your Home from Water Damage,Smart Home & IoT | أتمتة المنزل الذكي,0.1,B&H,,143,,,No source price on B&H
+NG-SH-003,Broadlink RM4 Pro - Universal Smart Remote for IR &amp; RF Devices,Smart Home & IoT | أتمتة المنزل الذكي,0.2,B&H,,189,,,No source price on B&H
+NG-SH-002,UniFi Protect G4 Pro Camera - 4K Ultra HD Surveillance Excellence,Smart Home & IoT | أتمتة المنزل الذكي,0.8,B&H,,418,,,No source price on B&H
+NG-SH-001,Aqara Smart Door Lock A100 - Elite Security with Apple HomeKey Support,Smart Home & IoT | أتمتة المنزل الذكي,1.8,B&H,,1699,,,No source price on B&H
+NG-ENT-005,Asustor Flashstor 6 (FS6706T) - All-NVMe SSD NAS for Extreme Performance,Homelab | هوم لاب,2,B&H,,2802,,,No source price on B&H
+NG-ENT-004,UniFi 6 Long-Range (U6-LR) - High-Performance WiFi 6 Access Point,Homelab | هوم لاب,1.2,B&H,,755,,,No source price on B&H
+NG-ENT-003,Ubiquiti UniFi Dream Machine Pro (UDM-Pro) - All-in-One Enterprise Network Console,Homelab | هوم لاب,3.5,B&H,,899,,,No source price on B&H
+NG-ENT-002,Asustor Lockerstor 4 (AS6604T) - Professional 4-Bay NAS for Creators,Homelab | هوم لاب,4.5,B&H,,3137,,,No source price on B&H
+NG-ENT-001,"Dell PowerEdge R730 Refurbished Server - Enterprise Power, Smart Investment",Homelab | هوم لاب,28,B&H,,5899,,,No source price on B&H
+SH-WIN-ECVX-001,Ecovacs WINBOT W2 OMNI - Robotic Window Cleaner,Smart Home & IoT | أتمتة المنزل الذكي,3.5,AliExpress,,1598,,,No source price on AliExpress
+SH-WIN-HBT-001,HOBOT-R3 - Window Cleaning Robot,Smart Home & IoT | أتمتة المنزل الذكي,2.5,AliExpress,,1294,,,No source price on AliExpress
+SH-LWN-MAM-001,Mammotion LUBA 2 AWD 5000H - Wireless Robotic Lawn Mower,Smart Home & IoT | أتمتة المنزل الذكي,35,AliExpress,,307,,,No source price on AliExpress
+SH-LWN-WRX-001,Worx Landroid Vision M600 - Camera-Guided Robot Mower,Smart Home & IoT | أتمتة المنزل الذكي,15,AliExpress,,267,,,No source price on AliExpress
+SH-POL-BBT-001,Beatbot AquaSense Pro - Cordless Pool Cleaning Robot,Smart Home & IoT | أتمتة المنزل الذكي,12,AliExpress,,5498,,,No source price on AliExpress
+SH-POL-DOL-001,Maytronics Dolphin Premier - Robotic Pool Cleaner,Smart Home & IoT | أتمتة المنزل الذكي,15,AliExpress,,5956,,,No source price on AliExpress
