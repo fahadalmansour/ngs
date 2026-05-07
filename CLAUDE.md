@@ -69,4 +69,13 @@ Live market path: scripts/live-market-sync.js (Playwright scraper) → output/sy
 ## CI
 
 - **GitHub Actions** (`.github/workflows/playwright.yml`): runs Playwright on push/PR to main.
+- **GitHub Actions** (`.github/workflows/claude-ops.yml`): Python lint + price:validate placeholder + PHP syntax check + secrets scan.
 - **Forgejo** (`.forgejo/workflows/ci.yaml`): minimal health-check on the self-hosted Forgejo instance.
+
+## Operations
+
+Full operations contract: `~/sites/_docs/ngs/` (`README.md`, `STACK.md`, `HOSTING.md`, `DEPLOY.md`, `AGENT.md`, `AUTOMATION.md`, `RUNBOOK.md`).
+
+Owning Claude agent: **`wp-woo-standards-auditor`** (for any PHP under `apps/`) + general-purpose for the data pipeline.
+
+The Notion mirror lives in the **NeoTech Sites & Repos** database.

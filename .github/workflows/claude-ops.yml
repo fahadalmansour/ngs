@@ -1,0 +1,64 @@
+name: claude-ops
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  python-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install ruff
+        run: pip install ruff
+      - name: Lint scripts
+        run: ruff check scripts/ || true
+        continue-on-error: true
+
+  node-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - name: price:validate (skipped — needs fixture CSVs)
+        run: |
+          echo "price:validate currently runs against output/sync/* which is .gitignored;"
+          echo "wire fixture CSVs into the repo before enabling this gate."
+        continue-on-error: true
+
+  php-syntax-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+      - name: php -l on apps/
+        run: |
+          set -e
+          fail=0
+          while IFS= read -r f; do
+            php -l "$f" || fail=1
+          done < <(find apps -name '*.php' -not -path '*/vendor/*' -not -path '*/node_modules/*')
+          exit $fail
+
+  secrets-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
