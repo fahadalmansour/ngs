@@ -649,8 +649,12 @@ def wp(*args, capture=True, dry_run=False):
     if dry_run:
         print(f"  $ wp {' '.join(shlex.quote(a) for a in args)[:140]}")
         return ""
+    # Python 3.6 compat: capture_output kwarg was added in 3.7.
+    stdout = subprocess.PIPE if capture else None
+    stderr = subprocess.PIPE if capture else None
     try:
-        result = subprocess.run(cmd, capture_output=capture, text=True, timeout=60)
+        result = subprocess.run(cmd, stdout=stdout, stderr=stderr,
+                                universal_newlines=True, timeout=60)
     except subprocess.TimeoutExpired:
         print(f"  ✗ TIMEOUT: wp {args[0] if args else ''}")
         return None
