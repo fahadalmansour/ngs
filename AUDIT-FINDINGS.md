@@ -7,7 +7,7 @@ Notion: https://www.notion.so/e38bdfd54e3343109402b1def5e8c693
 
 > Constraint: targeted component-level fixes only. No theme rewrites. Findings that would require a rewrite live under **OUT-OF-SCOPE**.
 
-**Tally:** 2 BLOCKER · 5 HIGH · 7 MEDIUM · 2 LOW · 1 OUT-OF-SCOPE · 1 RESOLVED = **18 findings** (B1 resolved 2026-05-08 18:55, +M-rev added)
+**Tally:** 2 BLOCKER · 4 HIGH · 6 MEDIUM · 2 LOW · 1 OUT-OF-SCOPE · 3 RESOLVED = **18 findings** (B1, H4, M-rev resolved 2026-05-08 — H4 + M-rev pending v1.48.0 Pull Latest)
 
 ---
 
@@ -58,11 +58,12 @@ In practice Layers 1+2 don't intercept (markup is still emitted — verified 16 
 - Fix: Swap to a single-product showcase or a 2×1 hero grid; current 1×4 thumbnail strip on 360 has icons under 40 px.
 - Evidence: Hero has a huge "NEOGEN جيل التقنية القادم" headline above a row of 4 micro-thumbnails (router/dot/keyboard/backpack); thumbnails too small to identify the products.
 
-### H4. Home page has massive empty-whitespace gap below hero — no category tiles, no value props, no social proof
+### H4. Home page has massive empty-whitespace gap below hero — no category tiles, no value props, no social proof ✅ RESOLVED 2026-05-08 (v1.48.0)
 - Viewport / page / locale: 1280 / home / en
-- Source: `apps/neogen-custom/mu-plugins/neogen-theme-assets/templates/front-page.php`
-- Fix: Either populate the front-page.php sections (the 5 `wc_get_products` calls likely return empty arrays at the moment) OR hide empty section wrappers via `if ( ! empty( $products ) )` guards.
-- Evidence: ~3 viewport heights of pure white space between hero and the 4-icon trust strip near the footer — strongly suggests rendered-but-empty WooCommerce product blocks.
+- Same root cause as M-rev (`.reveal{opacity:0}` was hiding all section heads, making the page read empty in the audit screenshot).
+- After: `~/.claude/reports/neogen-store/screenshots/2026-05-08-after/home-1280-en.png` (full hero + featured + categories + new-arrivals + deals + brands + trust strip + footer all visible).
+- Fix shipped: `apps/neogen-custom/mu-plugins/neogen-theme-assets/neogen.{css,js}` v1.48.0 (commit `a11e1ee`). Defaults `.reveal` to opacity:1; JS opts in to the scroll animation.
+- Original hypothesis (empty `wc_get_products`) was wrong — sections do render content; the `.reveal` opacity simply suppressed them visually.
 
 ### H5. Footer trust-strip icons (Mada/Apple Pay, Shipping, 14-day return, 12-month warranty) lose alignment on 360
 - Source: `apps/neogen-custom/themes/blocksy-child/template-parts/footer-trust.php`
@@ -104,12 +105,15 @@ In practice Layers 1+2 don't intercept (markup is still emitted — verified 16 
 - Fix: Wrap commercial-registration / VAT / phone numerals in `<bdi>` (or explicit `dir="ltr"`) so digits keep grouping inside an RTL paragraph.
 - Evidence: AR footer shows "سجل تجاري:" followed by digits that mix bidi orientation — ragged left edges and inconsistent column alignment vs. the EN counterpart.
 
-### M-rev. Product cards default to `opacity:0` until IntersectionObserver fires — empty shop for slow-JS / crawler / no-JS visitors
+### M-rev. Product cards default to `opacity:0` until IntersectionObserver fires — empty shop for slow-JS / crawler / no-JS visitors ✅ RESOLVED 2026-05-08 (v1.48.0)
 - Source: `apps/neogen-custom/mu-plugins/neogen-theme-assets/neogen.css:1940-1946` and `neogen.js:120-138`
-- Discovered: 2026-05-08 during B1 verification — Playwright `fullPage: true` shots captured the entire shop at `opacity:0` because below-fold cards never entered the IntersectionObserver root.
-- Risk: SEO crawlers that don't fully execute JS, users on slow networks (KSA mobile), and any user with `prefers-reduced-motion` or JS disabled all see a blank shop archive. The `prefers-reduced-motion` media query at `:1948` lowers the duration but doesn't change the `opacity:0` default state.
-- Fix (component-level): default `.reveal` to `opacity:1; transform:none;` and have the JS *add* a `.reveal-init` class on DOMReady that re-applies `opacity:0; transform:translateY(24px)` only when JS is present. The IntersectionObserver still toggles `.in` for the animation. This makes cards visible without JS while preserving the scroll-reveal effect for JS-enabled visitors.
-- Severity rationale: not a blocker (cards do appear with motion on a normal user session), but a real revenue/SEO leak under realistic conditions.
+- Discovered: 2026-05-08 during B1 verification — Playwright `fullPage:true` captured the entire shop at `opacity:0` because below-fold cards never entered the IntersectionObserver root.
+- Risk: crawlers, slow networks, prefers-reduced-motion users, and no-JS visitors all saw a blank archive. Also the underlying cause of H4 (3-viewport empty home).
+- Fix shipped (commit `a11e1ee`, v1.48.0):
+  - CSS: `.reveal` defaults to `opacity:1; transform:none`. The hidden+animate state moved under a `.ng-reveal-ready .reveal` ancestor selector.
+  - JS: `reveal()` adds `ng-reveal-ready` to `<html>` on first run, then IntersectionObserver toggles `.in` as before.
+  - Net effect: identical animation for JS visitors; readable content immediately for everyone else.
+- Pending: operator clicks Pull Latest at `/wp-admin/tools.php?page=neogen-deploy` to deploy v1.48.0.
 
 ---
 
