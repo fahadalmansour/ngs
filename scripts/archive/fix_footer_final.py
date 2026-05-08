@@ -13,7 +13,9 @@ WP_URL = "https://neogen.store"
 WP_ADMIN = f"{WP_URL}/wp-admin"
 WP_LOGIN = f"{WP_URL}/wp-login.php"
 USERNAME = "admin"
-PASSWORD = "OtiXQOQTG2WAEg=="
+PASSWORD = os.environ.get("WP_ADMIN_PASSWORD", "")
+if not PASSWORD:
+    raise RuntimeError("Missing WP_ADMIN_PASSWORD environment variable; set WP_ADMIN_PASSWORD before running this script.")
 SCREENSHOTS_DIR = "/Volumes/Fahadmega/NGS_Business/screenshots"
 
 async def fix_footer_content():

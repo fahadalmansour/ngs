@@ -13,6 +13,13 @@ archive/products-legacy/Products/.env
 # API credentials and secrets
 *credentials*
 *secrets*
+wp-config.php
+wp-config-*.php
+!wp-config-sample.php
+*.pem
+*.key
+*.sql
+*.sql.gz
 
 # Backup files
 *.backup-*

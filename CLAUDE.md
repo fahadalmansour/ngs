@@ -79,3 +79,21 @@ Full operations contract: `~/sites/_docs/ngs/` (`README.md`, `STACK.md`, `HOSTIN
 Owning Claude agent: **`wp-woo-standards-auditor`** (for any PHP under `apps/`) + general-purpose for the data pipeline.
 
 The Notion mirror lives in the **NeoTech Sites & Repos** database.
+
+## Pre-flight checklist (binding before any push) — added 2026-05-07
+
+NeoGen has **no staging** — every push to `apps/neogen-custom/` is prod. So every PHP/JS change goes through the audit before the push:
+
+- **Trigger:** *"Audit the current file using the standards in `wordpress-engineer` and fix any violations."*
+- **Skill stack:** `wordpress-engineer` (user-scope, master) → `wordpress` (project-local, NeoGen gotchas) → `woocommerce-specialist`.
+- **Slash command:** `/check-all` (the project-local skill is more conservative — surfaces every BLOCKER and HIGH, marks "deploy risk" footer).
+- **Auditor agent:** `wp-woo-standards-auditor`.
+
+## MCP integration
+
+- `neogen_woo` is registered user-scope, read-only by default. Connection: `claude mcp get neogen_woo`. Path: custom direct-to-WC server at `~/scripts/woo-mcp/index.js`. To enable writes, see `~/scripts/woo-mcp/README.md`.
+
+## Repo-readiness backlog
+
+- Latest readiness audit: `~/.claude/reports/neogen/readiness-2026-05-07.md`
+- Verdict: **READY-WITH-CAVEATS.** No BLOCKERs. Top-3 priorities: block `/wp-json/wp/v2/users` enumeration, enable LiteSpeed cache + Cloudflare orange-cloud (TTFB 2.5–2.7s today), promote CSP from report-only to enforce.
