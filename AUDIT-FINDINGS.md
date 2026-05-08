@@ -7,11 +7,21 @@ Notion: https://www.notion.so/e38bdfd54e3343109402b1def5e8c693
 
 > Constraint: targeted component-level fixes only. No theme rewrites. Findings that would require a rewrite live under **OUT-OF-SCOPE**.
 
-**Tally:** 2 BLOCKER · 2 HIGH · 6 MEDIUM · 2 LOW · 1 OUT-OF-SCOPE · 5 RESOLVED = **18 findings** (B1, H3, H4, H5, M-rev resolved 2026-05-08 — H3/H4/H5/M-rev pending v1.48.0+v1.49.0 Pull Latest)
+**Tally:** 2 BLOCKER · 2 HIGH · 6 MEDIUM · 2 LOW · 1 OUT-OF-SCOPE · 6 RESOLVED = **19 findings** (B1, B-cat, H3, H4, H5, M-rev resolved 2026-05-08 — H3/H4/H5/M-rev/B-cat pending v1.48.0+v1.49.0+v1.50.0 Pull Latest)
 
 ---
 
 ## RESOLVED
+
+### B-cat. Cross-nav rack on `/product-category/<slug>/` shows long English description as Arabic title ✅ RESOLVED 2026-05-08 (v1.50.0)
+- Surfaced 2026-05-08 via user screenshot of `/product-category/gaming/` — was NOT in the original 17-finding sweep because the audit only shot `/shop/`, not category archives.
+- Symptom: the bottom "تصفّح فئات أخرى" rack rendered 3 of 6 tiles (Smart Home, Networking, Security & Surveillance) with their full multi-paragraph English category description leaking into `.ng-rack-title .ar`, complete with HTML-encoded `&lt;strong&gt;` tags as literal text. The 6 dark numbered circles in the user screenshot were the `.ng-rack-count` "<b>N</b> منتج" badges; the narrow text columns beside them were the misplaced descriptions.
+- Cause: `apps/neogen-custom/mu-plugins/neogen-theme.php:362` was `$ar_name = trim((string) $term->description);` — pulling the operator-edited SEO landing copy field straight into a 1-line title slot, with no length or language guard. The same lookup in `templates/front-page.php:813-821` already had the right guard pattern; the rack function never adopted it.
+- Fix shipped (commit `64cd767`, v1.50.0): mirror the english/length guard from front-page.php (threshold 60 chars, tighter than home tile's 100); fall back to `ng_ar_label( $term->name )` which strips the English side of "English | Arabic" pipe-separated term names. Plus a defense-in-depth 2-line `-webkit-line-clamp` on `.ng-rack-title .ar`.
+- SEO meta path untouched — `neogen-seo-engine.php:176-177` still feeds the descriptions into the meta-description tag.
+- Verified: `~/.claude/reports/neogen-store/screenshots/2026-05-08-after/cat-gaming-1280-en-v1.50.0.png`.
+
+---
 
 ### B1. Shop archive renders ONLY blue "Compare" placeholder bars — no product cards anywhere ✅ RESOLVED 2026-05-08
 - Viewport / page / locale: **all viewports / shop / en + ar**
