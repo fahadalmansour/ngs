@@ -7,7 +7,7 @@ Notion: https://www.notion.so/e38bdfd54e3343109402b1def5e8c693
 
 > Constraint: targeted component-level fixes only. No theme rewrites. Findings that would require a rewrite live under **OUT-OF-SCOPE**.
 
-**Tally:** 2 BLOCKER · 4 HIGH · 6 MEDIUM · 2 LOW · 1 OUT-OF-SCOPE · 3 RESOLVED = **18 findings** (B1, H4, M-rev resolved 2026-05-08 — H4 + M-rev pending v1.48.0 Pull Latest)
+**Tally:** 2 BLOCKER · 2 HIGH · 6 MEDIUM · 2 LOW · 1 OUT-OF-SCOPE · 5 RESOLVED = **18 findings** (B1, H3, H4, H5, M-rev resolved 2026-05-08 — H3/H4/H5/M-rev pending v1.48.0+v1.49.0 Pull Latest)
 
 ---
 
@@ -52,11 +52,10 @@ In practice Layers 1+2 don't intercept (markup is still emitted — verified 16 
 - Fix: Switch to a non-modal bottom-bar variant or reduce its width on 360 so the LOG IN form is reachable without dismissing.
 - Evidence: On `account-360-en.png` the cookie modal sits directly over the username/password inputs — visitor cannot SEE the login form let alone tap into it without first dismissing the modal.
 
-### H3. Home hero component is wrong fitness — tiny product strip + oversized headline reads as broken/empty
+### H3. Home hero component is wrong fitness — tiny product strip + oversized headline reads as broken/empty ✅ RESOLVED 2026-05-08 (v1.49.0)
 - Viewport / page / locale: 360 / home / en + ar
-- Source: `apps/neogen-custom/mu-plugins/neogen-theme-assets/templates/front-page.php`
-- Fix: Swap to a single-product showcase or a 2×1 hero grid; current 1×4 thumbnail strip on 360 has icons under 40 px.
-- Evidence: Hero has a huge "NEOGEN جيل التقنية القادم" headline above a row of 4 micro-thumbnails (router/dot/keyboard/backpack); thumbnails too small to identify the products.
+- Fix shipped (commit `68a3713`, `neogen.css` `.ng-hero-collage` rule): hide the decorative `aria-hidden` collage below 480 px. Hero now reads as kicker → h1 → wordmark → copy → CTAs without the 4 micro-thumbnails.
+- After: `~/.claude/reports/neogen-store/screenshots/2026-05-08-after/home-360-en-v1.49.0.png`
 
 ### H4. Home page has massive empty-whitespace gap below hero — no category tiles, no value props, no social proof ✅ RESOLVED 2026-05-08 (v1.48.0)
 - Viewport / page / locale: 1280 / home / en
@@ -65,10 +64,10 @@ In practice Layers 1+2 don't intercept (markup is still emitted — verified 16 
 - Fix shipped: `apps/neogen-custom/mu-plugins/neogen-theme-assets/neogen.{css,js}` v1.48.0 (commit `a11e1ee`). Defaults `.reveal` to opacity:1; JS opts in to the scroll animation.
 - Original hypothesis (empty `wc_get_products`) was wrong — sections do render content; the `.reveal` opacity simply suppressed them visually.
 
-### H5. Footer trust-strip icons (Mada/Apple Pay, Shipping, 14-day return, 12-month warranty) lose alignment on 360
-- Source: `apps/neogen-custom/themes/blocksy-child/template-parts/footer-trust.php`
-- Fix: Drop trust strip to a 2×2 grid below 420 px; current 4-up forces cards to <80 px wide and labels truncate.
-- Evidence: 4 trust cards squeeze into one row on 360, payment-method labels wrap onto 3+ lines and overlap their icons.
+### H5. Footer trust-strip icons (Mada/Apple Pay, Shipping, 14-day return, 12-month warranty) lose alignment on 360 ✅ RESOLVED 2026-05-08 (v1.49.0)
+- Note: actual source is `mu-plugins/neogen-theme.php:1705-` (the audit pointer to `themes/blocksy-child/template-parts/footer-trust.php` is wrong — that path doesn't exist in the deployable overlay).
+- Fix shipped (commit `68a3713`, `neogen.css` `.ng-foot-trust` block): drop the trust strip to a 1-column stack below 420 px. Items get full width, padding 14×16, sub-label 11.5 px line-height 1.45.
+- The 980 px breakpoint already drops 4-col → 2-col; the new 420 px breakpoint drops 2-col → 1-col for the smallest phones.
 
 ---
 
