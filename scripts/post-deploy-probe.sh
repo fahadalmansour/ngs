@@ -255,6 +255,20 @@ fi
 # xmlrpc exposure
 if echo "$HEADERS" | grep -qi "x-pingback:"; then
     warn "x-pingback header present — xmlrpc.php advertised (consider disabling)"
+else
+    ok "X-Pingback header stripped (XML-RPC discovery hidden)"
+fi
+
+# Direct GET to /xmlrpc.php — should be 403 once neogen-security.php (v1.40.0+) is live
+XMLRPC_RESULT=$(fetch_status "$SITE/xmlrpc.php" | cut -d'|' -f1)
+if [[ "$XMLRPC_RESULT" == "403" ]]; then
+    ok "/xmlrpc.php → 403 (disabled at the entry, not just the application)"
+elif [[ "$XMLRPC_RESULT" == "405" ]]; then
+    ok "/xmlrpc.php → 405 Method Not Allowed (WordPress default — XML-RPC may still be reachable via POST)"
+elif [[ "$XMLRPC_RESULT" == "200" ]]; then
+    warn "/xmlrpc.php → 200 (XML-RPC enabled — credential-stuffing target)"
+else
+    info "/xmlrpc.php → $XMLRPC_RESULT (unusual; investigate)"
 fi
 
 # CSP enforcement
